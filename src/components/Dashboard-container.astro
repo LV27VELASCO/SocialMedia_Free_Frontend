@@ -1,0 +1,886 @@
+<!-- Animated Background Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div
+        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+    >
+    </div>
+    <div
+        class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 2s;"
+    >
+    </div>
+    <div
+        class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 4s;"
+    >
+    </div>
+</div>
+
+<!-- Header -->
+<header
+    class="relative z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Mobile Menu Button -->
+            <button
+                id="mobileMenuBtn"
+                class="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors "
+            >
+                <span class="text-2xl">☰</span>
+            </button>
+
+            <!-- Logo -->
+            <div class="text-xl sm:text-2xl font-bold text-white">
+                🚀 <span class="gradient-text">WeeklySocial</span>
+            </div>
+
+            <!-- User Menu -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                
+                <!-- User Profile -->
+                <div class="user-profile flex items-center space-x-2 sm:space-x-3 bg-white/10 rounded-full px-2 sm:px-4 py-2">
+                    <div
+                        class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                    >
+                        U
+                    </div>
+                    <span id="userNameH" class="hidden sm:block text-white font-medium"
+                        ></span
+                    >
+                    <button onclick="toggleUserMenu()" class="text-white ">
+                        <span class="text-sm sm:text-lg">▼</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Layout -->
+<div class="flex min-h-screen">
+    <!-- Mobile Overlay -->
+    <div
+        id="mobileOverlay"
+        class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"
+    >
+    </div>
+
+    <!-- Sidebar -->
+    <aside
+        id="sidebar"
+        class="fixed lg:relative inset-y-0 left-0 z-50 w-64 bg-black/20 backdrop-blur-lg border-r border-white/10 p-4 sm:p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+    >
+        <nav class="space-y-2">
+            <button
+                class="nav-item  w-full active flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
+                onclick="showSection('dashboard')"
+            >
+                <span class="text-lg sm:text-xl">📊</span>
+                <span>Dashboard</span>
+            </button>
+            <button 
+                class="nav-item  w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
+                onclick="showSection('orders')"
+            >
+                <span class="text-lg sm:text-xl">📦</span>
+                <span>Mis Pedidos</span>
+            </button>
+            <!-- onclick="showSection('subscription')" -->
+            <button
+                class="nav-item  w-full hidden flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
+            >
+                <span class="text-lg sm:text-xl">💳</span>
+                <span>Suscripción</span>
+            </button>
+        </nav>
+
+        <!-- Logout Button -->
+        <div
+            class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20"
+        >
+            <button
+                onclick="logout()"
+                class="w-full  flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-red-300 hover:bg-red-500 hover:bg-opacity-20 transition-colors text-sm sm:text-base"
+            >
+                <span class="text-lg sm:text-xl">🚪</span>
+                <span>Cerrar Sesión</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 sm:p-6 lg:ml-0 overflow-y-auto">
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="section">
+            <!-- Welcome Message -->
+            <div class="mb-6 sm:mb-8 animate-fade-in">
+                <h1
+                    class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2"
+                >
+                    ¡Hola, <span id="userName" class="gradient-text"></span>! 👋
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300">
+                    Aquí tienes un resumen de tu actividad y crecimiento
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8"
+            >
+                <!-- Total Followers -->
+                <div
+                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                >
+                    <div class="flex items-center justify-between mb-3 sm:mb-4">
+                        <div class="text-2xl sm:text-3xl">👥</div>
+                        <div
+                            class="text-green-400 text-xs sm:text-sm font-semibold hidden"
+                        >
+                            +12.5%
+                        </div>
+                    </div>
+                    <div
+                        class="text-xl sm:text-2xl font-bold text-white mb-1"
+                        id="totalFollowers"
+                    >
+                        0
+                    </div>
+                    <div class="text-gray-400 text-xs sm:text-sm">
+                        Total Seguidores
+                    </div>
+                </div>
+
+                <!-- Total Likes -->
+                <div
+                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                    style="animation-delay: 0.1s;"
+                >
+                    <div class="flex items-center justify-between mb-3 sm:mb-4">
+                        <div class="text-2xl sm:text-3xl">❤️</div>
+                        <div
+                            class="text-green-400 text-xs sm:text-sm font-semibold hidden"
+                        >
+                            +8.3%
+                        </div>
+                    </div>
+                    <div
+                        class="text-xl sm:text-2xl font-bold text-white mb-1"
+                        id="totalLikes"
+                    >
+                        0
+                    </div>
+                    <div class="text-gray-400 text-xs sm:text-sm">
+                        Total Likes
+                    </div>
+                </div>
+
+                <!-- Total Views -->
+                <div
+                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                    style="animation-delay: 0.2s;"
+                >
+                    <div class="flex items-center justify-between mb-3 sm:mb-4">
+                        <div class="text-2xl sm:text-3xl">👁️</div>
+                        <div
+                            class="text-green-400 text-xs sm:text-sm font-semibold hidden"
+                        >
+                            +15.7%
+                        </div>
+                    </div>
+                    <div
+                        class="text-xl sm:text-2xl font-bold text-white mb-1"
+                        id="totalViews"
+                    >
+                        0
+                    </div>
+                    <div class="text-gray-400 text-xs sm:text-sm">
+                        Total Visualizaciones
+                    </div>
+                </div>
+
+                <!-- Active Orders -->
+                <div
+                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                    style="animation-delay: 0.3s;"
+                >
+                    <div class="flex items-center justify-between mb-3 sm:mb-4">
+                        <div class="text-2xl sm:text-3xl">⚡</div>
+                        <div
+                            class="text-blue-400 text-xs sm:text-sm font-semibold hidden"
+                        >
+                            En proceso
+                        </div>
+                    </div>
+                    <div id="totalOrder" class="text-xl sm:text-2xl font-bold text-white mb-1">
+                        0
+                    </div>
+                    <div class="text-gray-400 text-xs sm:text-sm">
+                        Pedidos realizados
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Quick Actions -->
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8"
+            >
+                <!-- Recent Activity -->
+                <div class="stat-card rounded-2xl p-6">
+                    <h3
+                        class="text-xl font-bold text-white mb-6 flex items-center"
+                    >
+                        <span class="text-2xl mr-3">📋</span>
+                        Actividad Reciente
+                    </h3>
+                    <div class="space-y-4" id="recentActivity">
+                        <!-- Aquí se insertarán las actividades recientes -->
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="stat-card rounded-2xl p-6">
+                    <h3
+                        class="text-xl font-bold text-white mb-6 flex items-center"
+                    >
+                        <span class="text-2xl mr-3">🚀</span>
+                        Acciones Rápidas
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <button id="btnNewOrderDashboard"
+                            class="card-hover  bg-gradient-to-r from-pink-500 to-purple-500/50 border border-pink-400/30 rounded-xl p-3 sm:p-4 text-center"
+                        >
+                            <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
+                                ➕
+                            </div>
+                            <div
+                                class="text-white font-medium text-xs sm:text-sm"
+                            >
+                                Nuevo Pedido
+                            </div>
+                        </button>
+
+                        <button
+                            onclick="showSection('orders')"
+                            class="card-hover  bg-gradient-to-r from-amber-600 to-amber-500/50 border border-blue-400/30 rounded-xl p-3 sm:p-4 text-center"
+                        >
+                            <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
+                                📦
+                            </div>
+                            <div
+                                class="text-white font-medium text-xs sm:text-sm"
+                            >
+                                Mis Pedidos
+                            </div>
+                        </button>
+
+                        <button 
+                            class="card-hover hidden  bg-gradient-to-r from-green-500 to-teal-500/50 border border-green-400/30 rounded-xl p-3 sm:p-4 text-center"
+                        >
+                            <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
+                                💳
+                            </div>
+                            <div
+                                class="text-white font-medium text-xs sm:text-sm"
+                            >
+                                Suscripción
+                            </div>
+                        </button>
+
+                        <button
+                            onclick="logout()"
+                            class="card-hover  bg-gradient-to-r from-red-600 to-red-400/50 border border-yellow-400/30 rounded-xl p-3 sm:p-4 text-center"
+                        >
+                            <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
+                                🚪
+                            </div>
+                            <div
+                                class="text-white font-medium text-xs sm:text-sm"
+                            >
+                                 Cerrar Sesión
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Section -->
+        <div id="orders-section" class="section">
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-white mb-2">
+                    Mis <span class="gradient-text">Pedidos</span>
+                </h1>
+                <p class="text-xl text-gray-300">
+                    Historial completo de todos tus pedidos
+                </p>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="stat-card rounded-2xl p-6">
+                <div id="btnOrder" class="flex justify-end mb-4">
+                    <button id="btnNewOrder" class="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:scale-105 transform transition-all duration-300 ">
+                      Enviar nueva orden
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-white/20">
+                                <th
+                                    class="text-left text-white font-semibold py-4"
+                                    >Fecha</th
+                                >
+                                <th
+                                    class="text-left text-white font-semibold py-4"
+                                    >Servicio</th
+                                >
+                                <th
+                                    class="text-left text-white font-semibold py-4"
+                                    >Red Social</th
+                                >
+                                <th
+                                    class="text-left text-white font-semibold py-4"
+                                    >Cantidad</th
+                                >
+                                <th
+                                    class="text-left text-white font-semibold py-4"
+                                    >Estado</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Ordenes a renderizar -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription Section -->
+        <div id="subscription-section" class="section hidden">
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-white mb-2">
+                    Mi <span class="gradient-text">Suscripción</span>
+                </h1>
+                <p class="text-xl text-gray-300">
+                    Gestiona tu plan y facturación
+                </p>
+            </div>
+
+            <!-- Current Plan -->
+            <div class="stat-card rounded-2xl p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-white">Plan Actual</h3>
+                    <span
+                        class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full font-semibold"
+                    >
+                        ✅ Activo
+                    </span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="text-4xl font-bold text-white mb-2">
+                            €20<span class="text-xl text-gray-400">/mes</span>
+                        </div>
+                        <div class="text-gray-300 mb-4">Plan Premium</div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Seguidores ilimitados</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Likes y visualizaciones</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Soporte prioritario 24/7</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Estadísticas avanzadas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Próximo cobro:</span
+                                >
+                                <span class="text-white font-semibold"
+                                    >15 Feb 2024</span
+                                >
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-300"
+                                    >Método de pago:</span
+                                >
+                                <span class="text-white font-semibold"
+                                    >•••• 4242</span
+                                >
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Estado:</span>
+                                <span class="text-green-300 font-semibold"
+                                    >Activo</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mt-6 space-y-3">
+                            <button
+                                class="w-full px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300"
+                            >
+                                Actualizar método de pago
+                            </button>
+                            <button 
+                                class="w-full px-4 py-3 bg-red-500/20 text-red-300 font-semibold rounded-xl hover:bg-opacity-30 transition-colors"
+                            >
+                                Cancelar suscripción
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing History -->
+            <div class="stat-card rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-white mb-6">
+                    Historial de Facturación
+                </h3>
+                <div class="space-y-4">
+                    <div
+                        class="flex items-center justify-between p-4 bg-white/5 rounded-xl"
+                    >
+                        <div>
+                            <div class="text-white font-medium">
+                                Suscripción Premium
+                            </div>
+                            <div class="text-gray-400 text-sm">15 Ene 2024</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-white font-semibold">€20.00</div>
+                            <button
+                                class="text-blue-300 text-sm hover:text-blue-200"
+                                >Descargar</button
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center justify-between p-4 bg-white/5 rounded-xl"
+                    >
+                        <div>
+                            <div class="text-white font-medium">
+                                Validación de tarjeta
+                            </div>
+                            <div class="text-gray-400 text-sm">01 Ene 2024</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-green-300 font-semibold">
+                                €1.00 (Reembolsado)
+                            </div>
+                            <button
+                                class="text-blue-300 text-sm hover:text-blue-200"
+                                >Descargar</button
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- User Menu Dropdown -->
+<div
+    id="userMenu"
+    class="hidden fixed top-16 right-6 bg-black/50 backdrop-blur-lg rounded-2xl p-4 z-50 border border-white/20"
+>
+    <div class="space-y-2">
+        <button
+            onclick="logout()"
+            class="block px-4 py-2 text-red-300 hover:bg-red-500 hover:bg-opacity-20 rounded-xl transition-colors"
+        >
+            🚪 Cerrar Sesión
+        </a>
+    </div>
+</div>
+
+<div
+    id="AlertModal"
+    class="fixed hidden inset-0 bg-black/50 flex items-center justify-center p-4 z-50" >
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 max-w-md w-full border border-white/20 flex flex-col justify-center">
+        <div class="text-center mb-6">
+            <div id="modalIcon" class="text-4xl mb-4">🚨</div>
+            <h2 id="modalTitle" class="text-2xl font-bold text-white mb-2">
+                Recuperar Contraseña
+            </h2>
+            <p  id="modalMessage" class="text-gray-300">
+                Te enviaremos un enlace para restablecer tu contraseña
+            </p>
+        </div>
+        <button id="modalCloseBtn" class="flex-1  px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300">
+            Vale
+        </button>
+    </div>
+</div>
+
+<div
+    id="loaderModal"
+    class="hidden opacity-0 fixed inset-0 z-[70] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-200"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="loaderTitle"
+  >
+    <div class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl">
+      <div class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-pink-400/40 border-t-transparent animate-spin"></div>
+      <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">Procesando</h2>
+      <p data-loader-text class="text-gray-200 text-sm">Por favor, espera un momento...</p>
+    </div>
+  </div>
+
+<script type="module" src="/src/scripts/dashboard.js"></script>
+<!-- JavaScript -->
+<script is:inline>
+    // ---------------- FUNCIONES ----------------
+    function redirectToLogin() {
+        window.location.href = "/login";
+        localStorage.clear();
+    }
+
+    
+    function calculateTotals(data) {
+        const totals = { followers: 0, likes: 0, views: 0, orders:0};
+
+        if (!Array.isArray(data)) return totals; // seguridad
+
+        data.forEach(order => {
+            if (!order || typeof order.quantity !== "number") return; // seguridad
+            switch (order.service) {
+            case "followers":
+                totals.followers += order.quantity;
+                break;
+            case "likes":
+                totals.likes += order.quantity;
+                break;
+            case "views":
+                totals.views += order.quantity;
+                break;
+            }
+        });
+
+        totals.orders = data.length;
+
+        return totals;
+    }
+
+    function animateNumbers(totals) {
+        if (!totals) return; // seguridad extra
+
+        const followers = document.getElementById("totalFollowers");
+        const likes = document.getElementById("totalLikes");
+        const views = document.getElementById("totalViews");
+        const orders = document.getElementById("totalOrder");
+
+        animateValue(followers, 0, totals.followers || 0, 2000);
+        animateValue(likes, 0, totals.likes || 0, 2000);
+        animateValue(views, 0, totals.views || 0, 2000);
+        animateValue(orders, 0, totals.orders || 0, 2000);
+    }
+
+    function animateValue(element, start, end, duration) {
+        if (!element) return; // seguridad extra
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            element.textContent = value.toLocaleString();
+            if (progress < 1) {
+            window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    function renderRecentActivity(data) {
+        const container = document.getElementById("recentActivity");
+        if (!container) return;
+
+        // Ordenar por fecha (más reciente primero)
+        const sorted = [...data].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+        // Tomar solo los 3 más recientes
+        const recent = sorted.slice(0, 3);
+
+        // Limpiar contenedor
+        container.innerHTML = "";
+
+        // Agregar elementos
+        recent.forEach(order => {
+            const { quantity, social, service, created_at } = order;
+            const timeAgo = getTimeAgo(created_at);
+            const color = getServiceColor(service);
+            const icon = getServiceIcon(service);
+
+            container.innerHTML += `
+            <div class="flex items-center space-x-4 p-3 ${color.bg} rounded-xl">
+                <div class="w-10 h-10 ${color.circle} rounded-full flex items-center justify-center text-white">
+                ${icon}
+                </div>
+                <div class="flex-1">
+                <div class="text-white font-medium">
+                    Pedido completado
+                </div>
+                <div class="${color.text} text-sm">
+                    +${quantity} ${service} en ${capitalize(social)}
+                </div>
+                <div class="text-gray-400 text-xs">
+                    ${timeAgo}
+                </div>
+                </div>
+            </div>
+            `;
+        });
+    }
+
+    function renderOrdersTable(data) {
+        const tbody = document.querySelector("#orders-section table tbody");
+        const btnOrder = document.getElementById("btnOrder");
+
+        //si hay mas de 3 registros ocultar boton
+        if(data.length > 3){
+            btnOrder.classList.add("hidden");
+        }
+
+        tbody.innerHTML = ""; // Limpiar contenido actual
+
+        data.forEach(order => {
+            const tr = document.createElement("tr");
+            tr.className = "border-b border-white/10";
+
+            tr.innerHTML = `
+                <td class="py-4 text-gray-300">${formatDate(order.created_at)}</td>
+                <td class="py-4 text-white">${getServiceName(order.service)}</td>
+                <td class="py-4 text-white">${getSocialIcon(order.social)} ${order.social}</td>
+                <td class="py-4 text-white">${order.quantity.toLocaleString()}</td>
+                <td class="py-4">
+                    <span class="px-3 py-2 bg-green-500/20 text-green-300 rounded-full text-sm">
+                        ✅ Exitoso
+                    </span>
+                </td>
+            `;
+
+            tbody.appendChild(tr);
+        });
+    }
+
+    // ---------------- Helpers ----------------
+
+    function showLoader(message = 'Procesando...') {
+        const modal = document.getElementById('loaderModal');
+        const label = modal.querySelector('[data-loader-text]');
+        if (label) label.textContent = message;
+
+        modal.classList.remove('hidden');
+        requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        });
+
+        // Bloquea el scroll de fondo
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function hideLoader() {
+        const modal = document.getElementById('loaderModal');
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        }, 200); // sincronizado con transition-opacity
+    }
+
+    function showModal({ icon = "🚨", title = "Alerta", message = "" }) {
+        const modal = document.getElementById("AlertModal");
+        const iconEl = document.getElementById("modalIcon");
+        const titleEl = document.getElementById("modalTitle");
+        const messageEl = document.getElementById("modalMessage");
+
+        iconEl.textContent = icon;
+        titleEl.textContent = title;
+        messageEl.textContent = message;
+
+        modal.classList.remove("hidden");
+
+        // Cerrar modal al hacer clic en botón
+        document.getElementById("modalCloseBtn").onclick = () => {
+            modal.classList.add("hidden");
+        };
+    }
+
+    function getTimeAgo(dateString) {
+        const now = new Date();
+        const updated = new Date(dateString);
+        const diffMs = now - updated;
+        const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+
+        if (diffHours < 24) {
+            return `Hace ${diffHours} hora${diffHours !== 1 ? 's' : ''}`;
+        } else {
+            const diffDays = Math.floor(diffHours / 24);
+            return `Hace ${diffDays} día${diffDays !== 1 ? 's' : ''}`;
+        }
+    }
+
+    function getServiceColor(service) {
+        switch (service) {
+            case "followers":
+            return { bg: "bg-green-500/20", circle: "bg-green-500", text: "text-green-300" };
+            case "likes":
+            return { bg: "bg-pink-500/20", circle: "bg-pink-500", text: "text-pink-300" };
+            case "views":
+            return { bg: "bg-blue-500/20", circle: "bg-blue-500", text: "text-blue-300" };
+            default:
+            return { bg: "bg-gray-500/20", circle: "bg-gray-500", text: "text-gray-300" };
+        }
+    }
+
+    function getServiceIcon(service) {
+        switch (service) {
+            case "followers": return "👥";
+            case "likes": return "❤️";
+            case "views": return "👁️";
+            default: return "📦";
+        }
+    }
+
+    function getServiceName(service) {
+        switch (service) {
+            case "followers": return "👥Seguidores";
+            case "likes": return "❤️ Likes";
+            case "views": return "👁️ Visualizaciones";
+            default: return "📦";
+        }
+    }
+
+    function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // Formatear fecha a YYYY-MM-DD
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toISOString().split("T")[0];
+    }
+
+    // Iconos según red social
+    function getSocialIcon(social) {
+        const icons = {
+            "instagram": "📸",
+            "tiktok": "🎵",
+            "facebook": "👤"
+        };
+        return icons[social] || "🌐";
+    }
+
+</script>
+
+<script is:inline>
+    // Navigation
+    function showSection(sectionName) {
+        // Hide all sections
+        document.querySelectorAll(".section").forEach((section) => {
+            section.classList.add("hidden");
+        });
+
+        // Show selected section
+        document
+            .getElementById(sectionName + "-section")
+            .classList.remove("hidden");
+
+        // Update active nav item
+        document.querySelectorAll(".nav-item").forEach((item) => {
+            item.classList.remove("active");
+        });
+        event.target.closest(".nav-item").classList.add("active");
+    }
+
+    // Toggle user menu
+    function toggleUserMenu() {
+        const menu = document.getElementById("userMenu");
+        menu.classList.toggle("hidden");
+    }
+
+    // Close user menu when clicking outside
+    document.addEventListener("click", function (e) {
+        const menu = document.getElementById("userMenu");
+        const userProfile = e.target.closest(".user-profile");
+
+        if (!menu.contains(e.target) && !userProfile) {
+            menu.classList.add("hidden");
+        }
+    });
+
+    function viewAnalytics() {
+        showSection("analytics");
+    }
+
+    function manageSubscription() {
+        showSection("subscription");
+    }
+
+
+    function logout() {
+        localStorage.clear();
+        window.location.href ='/'
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(animateNumbers, 500);
+
+        // Add entrance animations
+        const cards = document.querySelectorAll(".stat-card");
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add("animate-slide-up");
+        });
+    });
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+
+    mobileMenuBtn.addEventListener("click", function () {
+        sidebar.classList.toggle("-translate-x-full");
+        mobileOverlay.classList.toggle("hidden");
+    });
+
+    mobileOverlay.addEventListener("click", function () {
+        sidebar.classList.add("-translate-x-full");
+        mobileOverlay.classList.add("hidden");
+    });
+
+    // Close mobile menu when clicking nav items
+    document.querySelectorAll(".nav-item").forEach((item) => {
+        item.addEventListener("click", function () {
+            if (window.innerWidth < 1024) {
+                sidebar.classList.add("-translate-x-full");
+                mobileOverlay.classList.add("hidden");
+            }
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", function () {
+        if (window.innerWidth >= 1024) {
+            sidebar.classList.remove("-translate-x-full");
+            mobileOverlay.classList.add("hidden");
+        }
+    });
+
+</script>
