@@ -1,0 +1,486 @@
+<!-- Animated Background Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div
+        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+    >
+    </div>
+    <div
+        class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 2s;"
+    >
+    </div>
+    <div
+        class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 4s;"
+    >
+    </div>
+</div>
+
+<!-- Header -->
+<header class="relative z-50 py-6">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-white">
+                🚀 <span class="gradient-text2">WeeklySocial</span>
+            </div>
+
+            <!-- Back Button -->
+            <button
+                onclick="history.back()"
+                class="back-button  flex items-center space-x-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full text-white hover:bg-white/20 border border-white/20"
+            >
+                <span>←</span>
+                <span>Volver</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="relative z-10 container mx-auto px-6 pb-12">
+    <!-- Page Title -->
+    <div class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Términos y <span class="gradient-text2">Condiciones</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+            Última actualización: <strong>31/07/2025</strong>
+        </p>
+    </div>
+
+    <!-- Content Card -->
+    <div
+        class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 content-glow border border-white/20 animate-slide-up"
+    >
+        <!-- Welcome Message -->
+        <div
+            class="mb-8 p-6 bg-gradient-to-r from-pink-500 to-purple-500/20 rounded-2xl border border-pink-400/30"
+        >
+            <p class="text-white text-lg leading-relaxed">
+                <strong>Bienvenido/a a WeeklySocial.</strong><br />
+                Al registrarte y utilizar nuestro servicio, aceptas los siguientes
+                términos y condiciones:
+            </p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="mb-10 p-6 bg-white/5 rounded-2xl border border-white/10">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                📋 Índice de contenidos
+            </h3>
+            <div class="grid md:grid-cols-2 gap-2 text-gray-300">
+                <a href="#objeto" class="hover:text-pink-300 transition-colors"
+                    >1. Objeto del servicio</a
+                >
+                <a
+                    href="#validacion"
+                    class="hover:text-pink-300 transition-colors"
+                    >2. Validación de tarjeta</a
+                >
+                <a
+                    href="#suscripcion"
+                    class="hover:text-pink-300 transition-colors"
+                    >3. Suscripción automática</a
+                >
+                <a
+                    href="#reembolsos"
+                    class="hover:text-pink-300 transition-colors"
+                    >4. Reembolsos</a
+                >
+                <a
+                    href="#cancelacion"
+                    class="hover:text-pink-300 transition-colors"
+                    >5. Cancelación</a
+                >
+                <a href="#uso" class="hover:text-pink-300 transition-colors"
+                    >6. Uso aceptable</a
+                >
+                <a
+                    href="#proteccion"
+                    class="hover:text-pink-300 transition-colors"
+                    >7. Protección de datos</a
+                >
+                <a
+                    href="#modificaciones"
+                    class="hover:text-pink-300 transition-colors"
+                    >8. Modificaciones</a
+                >
+                <a
+                    href="#contacto"
+                    class="hover:text-pink-300 transition-colors">9. Contacto</a
+                >
+            </div>
+        </div>
+
+        <!-- Terms Content -->
+        <div class="space-y-8 text-gray-200">
+            <!-- Section 1 -->
+            <section
+                id="objeto"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">🎯</span>
+                    1. Objeto del servicio
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>
+                        WeeklySocial ofrece un servicio de promoción en redes
+                        sociales mediante el cual podrás recibir seguidores y
+                        aumentar tu visibilidad online.
+                    </p>
+                    <p>
+                        El registro inicial es gratuito, pero requiere una
+                        validación de tarjeta para evitar usos fraudulentos.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section
+                id="validacion"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">💳</span>
+                    2. Validación de tarjeta y cobro inicial
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p><strong>Para completar el registro:</strong></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            Se realizará un cobro temporal de <strong
+                                class="text-yellow-300">1€</strong
+                            > a tu tarjeta para verificar que es válida.
+                        </li>
+                        <li>
+                            Este importe será <strong class="text-green-300"
+                                >reembolsado automáticamente</strong
+                            > en un plazo máximo de 5 días hábiles, según las políticas
+                            de tu banco.
+                        </li>
+                        <li>
+                            No se realizarán otros cargos durante las primeras
+                            dos semanas desde el registro.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section
+                id="suscripcion"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">🔄</span>
+                    3. Suscripción automática
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p><strong>Al finalizar el período inicial:</strong></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            Se activará automáticamente una suscripción de <strong
+                                class="text-pink-300">20€/mes</strong
+                            > por el servicio premium de promoción de seguidores.
+                        </li>
+                        <li>
+                            Este cargo se realizará cada mes en la misma fecha
+                            de tu registro inicial, salvo que canceles la
+                            suscripción antes del vencimiento del período
+                            gratuito.
+                        </li>
+                        <li>
+                            Podrás cancelar en cualquier momento desde tu panel
+                            de usuario o contactando a soporte.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section
+                id="reembolsos"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">💰</span>
+                    4. Reembolsos
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            El primer euro cobrado como validación <strong
+                                class="text-green-300"
+                                >siempre será reembolsado</strong
+                            >.
+                        </li>
+                        <li>
+                            Los pagos de suscripción ya cobrados no son
+                            reembolsables, salvo que la ley aplicable disponga
+                            lo contrario.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section
+                id="cancelacion"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">❌</span>
+                    5. Cancelación
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            Puedes cancelar la suscripción en cualquier momento
+                            antes del siguiente cobro mensual.
+                        </li>
+                        <li>
+                            Si cancelas, seguirás disfrutando del servicio hasta
+                            el fin del período ya pagado.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section
+                id="uso"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">✅</span>
+                    6. Uso aceptable
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            El servicio está destinado solo a <strong
+                                class="text-yellow-300"
+                                >mayores de 18 años</strong
+                            >.
+                        </li>
+                        <li>
+                            No está permitido utilizar el servicio para perfiles
+                            falsos, spam o actividades ilegales.
+                        </li>
+                        <li>
+                            Nos reservamos el derecho de suspender cuentas que
+                            incumplan estas reglas.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section
+                id="proteccion"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">🔒</span>
+                    7. Protección de datos
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            Tu información personal y de pago se maneja de forma
+                            segura conforme al <strong class="text-blue-300"
+                                >Reglamento General de Protección de Datos
+                                (RGPD)</strong
+                            >.
+                        </li>
+                        <li>
+                            No almacenamos directamente los números de tu
+                            tarjeta; el procesamiento se realiza mediante un
+                            proveedor de pagos seguro <strong
+                                class="text-purple-300">(Stripe)</strong
+                            >.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section
+                id="modificaciones"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">📝</span>
+                    8. Modificaciones de los términos
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            Nos reservamos el derecho de actualizar estos
+                            términos en cualquier momento.
+                        </li>
+                        <li>
+                            Se notificará a los usuarios por correo electrónico
+                            y mediante la plataforma.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section
+                id="contacto"
+                class="section-hover p-6 rounded-2xl border border-white/10"
+            >
+                <h2
+                    class="text-2xl font-bold text-white mb-4 flex items-center"
+                >
+                    <span class="text-3xl mr-3">📧</span>
+                    9. Contacto
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>
+                        Para cualquier consulta o solicitud de cancelación,
+                        puedes escribirnos a:
+                    </p>
+                    <div
+                        class="bg-gradient-to-r from-pink-500 to-purple-500/20 p-4 rounded-xl border border-pink-400/30"
+                    >
+                        <p
+                            class="text-xl font-semibold text-white flex items-center"
+                        >
+                            📧 <a
+                                href="mailto:soporte@weeklysocial.com"
+                                class="ml-2 hover:text-pink-300 transition-colors"
+                                >soporte@weeklysocial.com</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="mt-12 pt-8 border-t border-white/20 text-center">
+            <div
+                class="bg-gradient-to-r from-green-500 to-blue-500/20 p-6 rounded-2xl border border-green-400/30 mb-6"
+            >
+                <p class="text-white text-lg">
+                    <strong>¿Tienes alguna duda sobre estos términos?</strong
+                    ><br />
+                    Nuestro equipo de soporte está aquí para ayudarte
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    onclick="history.back()"
+                    class="back-button  px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-2xl hover:scale-105 transform transition-all duration-300"
+                >
+                    ← Volver
+                </button>
+                <a
+                    href="mailto:soporte@weeklysocial.com"
+                    class="px-8 py-4 bg-white/10 backdrop-blur-lg text-white font-bold rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+                >
+                    📧 Contactar soporte
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="relative z-10 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p class="text-gray-400 text-sm">
+            © 2024 WeeklySocial. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button
+    id="scrollToTop"
+    class="fixed  bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300 opacity-0 pointer-events-none z-50"
+>
+    ↑
+</button>
+
+<!-- JavaScript -->
+<script is:inline>
+    // Scroll to top functionality
+    const scrollToTopBtn = document.getElementById("scrollToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.style.opacity = "1";
+            scrollToTopBtn.style.pointerEvents = "auto";
+        } else {
+            scrollToTopBtn.style.opacity = "0";
+            scrollToTopBtn.style.pointerEvents = "none";
+        }
+    });
+
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        });
+    });
+
+    // Add entrance animations to sections
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "all 0.6s ease-out";
+        observer.observe(section);
+    });
+</script>
