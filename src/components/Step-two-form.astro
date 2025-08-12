@@ -1,6 +1,5 @@
 ---
-
- // tu Public Key
+// tu Public Key
 ---
 
 <!-- Animated Background Elements -->
@@ -25,7 +24,7 @@
 <div class="relative z-10 w-full max-w-lg mx-auto animate-fade-in">
     <!-- Logo/Brand -->
     <div class="text-center mb-8">
-        <a href="/" class="text-3xl font-bold text-white mb-2 ">
+        <a href="/" class="text-3xl font-bold text-white mb-2">
             🚀 <span class="gradient-text2">WeeklySocial</span>
         </a>
     </div>
@@ -83,7 +82,9 @@
         </div>
 
         <!-- Card Preview -->
-        <div class="bg-gradient-to-br from-indigo-400 to-purple-600 rounded-xl p-5 text-white font-mono mb-6 animate-card-flip">
+        <div
+            class="bg-gradient-to-br from-indigo-400 to-purple-600 rounded-xl p-5 text-white font-mono mb-6 animate-card-flip"
+        >
             <div class="flex justify-between items-start mb-4">
                 <div class="text-sm opacity-80">TARJETA DE CRÉDITO</div>
                 <div class="text-2xl">💳</div>
@@ -114,8 +115,11 @@
                     Número de tarjeta
                 </label>
                 <div class="relative">
-                    
-                    <div id="card-number" class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-6 py-5 bg-white/40 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"></div>
+                    <div
+                        id="card-number"
+                        class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-6 py-5 bg-white/40 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"
+                    >
+                    </div>
                     <div
                         class="absolute inset-y-0 right-0 flex items-center pr-6"
                     >
@@ -171,7 +175,11 @@
                         maxlength="5"
                         class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-4 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"
                     /> -->
-                    <div id="card-expiry" class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-4 py-5 bg-white/40 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"></div>
+                    <div
+                        id="card-expiry"
+                        class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-4 py-5 bg-white/40 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"
+                    >
+                    </div>
                 </div>
                 <div class="space-y-2">
                     <label
@@ -190,7 +198,11 @@
                         maxlength="4"
                         class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-4 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"
                     /> -->
-                    <div id="card-cvc" class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-4 py-5 bg-white/40 border border-white/30 rounded-2xl text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"></div>
+                    <div
+                        id="card-cvc"
+                        class="transition-all duration-300 focus:-translate-y-0.5 focus:shadow-[0_10px_25px_rgba(139,92,246,0.2)] w-full px-4 py-5 bg-white/40 border border-white/30 rounded-2xl text-lg focus:outline-none focus:border-pink-400 focus:bg-white/30"
+                    >
+                    </div>
                 </div>
             </div>
 
@@ -232,14 +244,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Error Message -->
             <p id="message2" class="text-center text-sm mt-2"></p>
 
             <!-- Submit Button -->
             <button
                 type="submit"
-                class="transition-all  duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_35px_rgba(236,72,153,0.4)] bg-pink-500 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-bold text-xl py-5 px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-pink-300/50 animate-pulse-slow"
+                class="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_35px_rgba(236,72,153,0.4)] bg-pink-500 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-bold text-xl py-5 px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-pink-300/50 animate-pulse-slow"
             >
                 <span class="flex items-center justify-center space-x-3">
                     <span>🚀 Validar y obtener seguidores</span>
@@ -284,46 +296,173 @@
         </p>
     </div>
 </div>
+<!-- Cargar Stripe desde su CDN -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    window.addEventListener('load', () => {
+        const stripe =  Stripe(import.meta.env.PUBLIC_STRIPE_PK);
+        const appearance = {
+            theme: "stripe",
 
-<script type="module">
-    import "../scripts/card-stripe.js"
-</script>
+            variables: {
+                colorPrimary: "#0570de",
+                colorBackground: "#ffffff",
+                colorText: "#30313d",
+                colorDanger: "#df1b41",
+                fontFamily: "Ideal Sans, system-ui, sans-serif",
+                spacingUnit: "2px",
+                borderRadius: "4px",
+                // See all possible variables below
+            },
+        };
+        const elements = stripe.elements();
 
+        const cardNumber = elements.create("cardNumber");
+        cardNumber.mount("#card-number");
 
-<!-- JavaScript for Form Enhancement -->
-<script is:inline>
-    
-        const cardNameInput = document.getElementById('cardNameInput');
+        const cardExpiry = elements.create("cardExpiry");
+        cardExpiry.mount("#card-expiry");
 
-        // Update card preview
-        function updateCardPreview() {
-            const cardName = document.getElementById('cardName');
+        const cardCvc = elements.create("cardCvc");
+        cardCvc.mount("#card-cvc");
+
+        const form = document.getElementById("payment-form");
+
+        if (!form) return; // Evita el error de null
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Show loading state
+            const button = document.querySelector<HTMLButtonElement>('button[type="submit"]');
+            const messageEl = document.getElementById("message2");
+            if (!button ||!messageEl) return;
+            const originalText = button.innerHTML;
+            button.innerHTML =
+                '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Validando tarjeta...</span></span>';
+            button.disabled = true;
             
-            // Update card name
-            cardName.textContent = cardNameInput.value.toUpperCase() || 'TU NOMBRE';
+
+            const { paymentMethod, error } = await stripe.createPaymentMethod({
+                type: "card",
+                card: cardNumber,
+            });
+
+            if (error) {
+                messageEl.textContent = error.message;
+                messageEl.className =
+                    "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
+                button.innerHTML = originalText;
+                button.disabled = false;
+                return;
+            }
+
+            const res = await validate_pay(paymentMethod, originalText);
+        });
+    })
+
+    async function getToken() {
+        const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
+
+        if (!res.ok) {
+            throw new Error("Error al obtener el token");
         }
 
+        const data = await res.json();
+        return data.token; // O la propiedad que te envíe el token
+    }
+
+    async function validate_pay(paymentMethod:any, originalText:any) {
+        const token = await getToken();
+
+        const dataRegister = JSON.parse(localStorage.getItem("Register") as string);
+        const button = document.querySelector<HTMLButtonElement>('button[type="submit"]');
+        const messageEl = document.getElementById("message2");
+        if (!button ||!messageEl) return;
+
+        const res = await fetch(
+            `${import.meta.env.PUBLIC_API}/validate-pay-method`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    paymentMethodId: paymentMethod.id,
+                    name: dataRegister.nombre,
+                    email: dataRegister.email,
+                    socialMedia: dataRegister.redSocial,
+                    url: dataRegister.url,
+                    accion: dataRegister.accion,
+                }),
+            },
+        );
+        const data = await res.json();
+        if (!res.ok) {
+            messageEl.textContent = data.detail;
+            messageEl.className =
+                "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
+            button.innerHTML = originalText;
+            button.disabled = false;
+            return;
+        }
+
+        if (data.error) {
+            messageEl.textContent = data.error;
+            messageEl.className =
+                "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
+            button.innerHTML = originalText;
+            button.disabled = false;
+            return;
+        } else {
+            // Simulate form processing
+            setTimeout(() => {
+                window.location.href = "confirmation-success";
+
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+            messageEl.textContent = data.message;
+            messageEl.className = "text-green-600 text-center text-sm";
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }
+    }
+</script>
+<!-- JavaScript for Form Enhancement -->
+<script is:inline>
+    const cardNameInput = document.getElementById("cardNameInput");
+
+    // Update card preview
+    function updateCardPreview() {
+        const cardName = document.getElementById("cardName");
+
         // Update card name
-        cardNameInput.addEventListener('input', updateCardPreview);
+        cardName.textContent = cardNameInput.value.toUpperCase() || "TU NOMBRE";
+    }
 
-        // Input animations
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
+    // Update card name
+    cardNameInput.addEventListener("input", updateCardPreview);
+
+    // Input animations
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((input) => {
+        input.addEventListener("focus", function () {
+            this.parentElement.style.transform = "scale(1.02)";
         });
 
-        // Add floating animation to form on load
-        window.addEventListener("load", function () {
-           isRegistered = localStorage.getItem("Register")
-            if(!isRegistered){
-                this.location.href = 'register'
-            }
+        input.addEventListener("blur", function () {
+            this.parentElement.style.transform = "scale(1)";
         });
+    });
 
+    // Add floating animation to form on load
+    window.addEventListener("load", function () {
+        isRegistered = localStorage.getItem("Register");
+        if (!isRegistered) {
+            this.location.href = "register";
+        }
+    });
 </script>
