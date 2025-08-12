@@ -1,8 +1,7 @@
 import { loadStripe } from "@stripe/stripe-js";
-import { environment } from "../environments/environment";
 
 (async () => {
-  const stripe = await loadStripe(environment.pkStripe);
+  const stripe = await loadStripe(import.meta.env.PUBLIC_STRIPE_PK);
     const appearance = {
     theme: 'stripe',
 
@@ -58,7 +57,7 @@ import { environment } from "../environments/environment";
 })();
 
 async function getToken() {
-  const res = await fetch(`${environment.api}/token`);
+  const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
 
   if (!res.ok) {
     throw new Error('Error al obtener el token');
@@ -76,7 +75,7 @@ async function validate_pay(paymentMethod, originalText) {
     const button = document.querySelector('button[type="submit"]');
     const messageEl = document.getElementById('message2');
 
-    const res = await fetch(`${environment.api}/validate-pay-method`, {
+    const res = await fetch(`${import.meta.env.PUBLIC_API}/validate-pay-method`, {
       method: 'POST',
       headers: { 
       'Content-Type': 'application/json',

@@ -1,6 +1,3 @@
-import { environment } from "../environments/environment";
-
-
 const usuarioInput = document.getElementById("usuario");
 const passwordInput = document.getElementById("password");
 const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -38,7 +35,7 @@ document
             '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Iniciando sesión...</span></span>';
         button.disabled = true;
         try {
-            const res = await fetch(`${environment.api}/login`, {
+            const res = await fetch(`${import.meta.env.PUBLIC_API}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -75,7 +72,7 @@ document
 
 
 async function getToken() {
-    const res = await fetch(`${environment.api}/token`);
+    const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
 
     if (!res.ok) {
         throw new Error('Error al obtener el token');
@@ -110,7 +107,7 @@ document.getElementById("btnResetPw")
 
         try {
             const token = await getToken();
-            const res = await fetch(`${environment.api}/recovery-password`, {
+            const res = await fetch(`${import.meta.env.PUBLIC_API}/recovery-password`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

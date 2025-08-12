@@ -1,4 +1,3 @@
-import { environment } from "../environments/environment";
 
 (async () => {
 
@@ -29,7 +28,7 @@ import { environment } from "../environments/environment";
 })();
 
 async function fetchDashboardData(access_token) {
-    const res = await fetch(`${environment.api}/dashboard`, {
+    const res = await fetch(`${import.meta.env.PUBLIC_API}/dashboard`, {
         headers: { "Authorization": `Bearer ${access_token}` }
     });
 
@@ -69,7 +68,7 @@ document.getElementById("btnNewOrder").addEventListener("click", async function 
 async function fetchNewOrder(access_token) {
     showLoader();
     try {
-        const res = await fetch(`${environment.api}/new-order`, {
+        const res = await fetch(`${import.meta.env.PUBLIC_API}/new-order`, {
             headers: { Authorization: `Bearer ${access_token}` },
         });
 
