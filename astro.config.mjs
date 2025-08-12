@@ -7,16 +7,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
-      allowedHosts: [
-        'www.weeklysocial.es',
-        'weeklysocial.es'
-      ]
+      allowedHosts:true
     },
     preview: {
-      allowedHosts: [
-        'www.weeklysocial.es',
-        'weeklysocial.es'
-      ]
+      allowedHosts: true
     }
   }
 });
