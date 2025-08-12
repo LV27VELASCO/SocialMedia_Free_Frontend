@@ -18,13 +18,14 @@
 
 <!-- Header -->
 <header
-    class="relative z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
+    class="relative z-50 bg-black/20 backdrop-blur-lg border-b border-white/10"
+>
     <div class="container mx-auto px-4 sm:px-6 py-4">
         <div class="flex items-center justify-between">
             <!-- Mobile Menu Button -->
             <button
                 id="mobileMenuBtn"
-                class="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors "
+                class="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors"
             >
                 <span class="text-2xl">☰</span>
             </button>
@@ -36,18 +37,19 @@
 
             <!-- User Menu -->
             <div class="flex items-center space-x-2 sm:space-x-4">
-                
                 <!-- User Profile -->
-                <div class="user-profile flex items-center space-x-2 sm:space-x-3 bg-white/10 rounded-full px-2 sm:px-4 py-2">
+                <div
+                    class="user-profile flex items-center space-x-2 sm:space-x-3 bg-white/10 rounded-full px-2 sm:px-4 py-2"
+                >
                     <div
                         class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
                     >
                         U
                     </div>
-                    <span id="userNameH" class="hidden sm:block text-white font-medium"
-                        ></span
-                    >
-                    <button onclick="toggleUserMenu()" class="text-white ">
+                    <span
+                        id="userNameH"
+                        class="hidden sm:block text-white font-medium"></span>
+                    <button onclick="toggleUserMenu()" class="text-white">
                         <span class="text-sm sm:text-lg">▼</span>
                     </button>
                 </div>
@@ -72,14 +74,14 @@
     >
         <nav class="space-y-2">
             <button
-                class="nav-item  w-full active flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
+                class="nav-item w-full active flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
                 onclick="showSection('dashboard')"
             >
                 <span class="text-lg sm:text-xl">📊</span>
                 <span>Dashboard</span>
             </button>
-            <button 
-                class="nav-item  w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
+            <button
+                class="nav-item w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
                 onclick="showSection('orders')"
             >
                 <span class="text-lg sm:text-xl">📦</span>
@@ -87,7 +89,7 @@
             </button>
             <!-- onclick="showSection('subscription')" -->
             <button
-                class="nav-item  w-full hidden flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
+                class="nav-item w-full hidden flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
             >
                 <span class="text-lg sm:text-xl">💳</span>
                 <span>Suscripción</span>
@@ -95,12 +97,10 @@
         </nav>
 
         <!-- Logout Button -->
-        <div
-            class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20"
-        >
+        <div class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20">
             <button
                 onclick="logout()"
-                class="w-full  flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-red-300 hover:bg-red-500 hover:bg-opacity-20 transition-colors text-sm sm:text-base"
+                class="w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-red-300 hover:bg-red-500 hover:bg-opacity-20 transition-colors text-sm sm:text-base"
             >
                 <span class="text-lg sm:text-xl">🚪</span>
                 <span>Cerrar Sesión</span>
@@ -212,7 +212,10 @@
                             En proceso
                         </div>
                     </div>
-                    <div id="totalOrder" class="text-xl sm:text-2xl font-bold text-white mb-1">
+                    <div
+                        id="totalOrder"
+                        class="text-xl sm:text-2xl font-bold text-white mb-1"
+                    >
                         0
                     </div>
                     <div class="text-gray-400 text-xs sm:text-sm">
@@ -247,8 +250,9 @@
                         Acciones Rápidas
                     </h3>
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                        <button id="btnNewOrderDashboard"
-                            class="card-hover  bg-gradient-to-r from-pink-500 to-purple-500/50 border border-pink-400/30 rounded-xl p-3 sm:p-4 text-center"
+                        <button
+                            id="btnNewOrderDashboard"
+                            class="card-hover bg-gradient-to-r from-pink-500 to-purple-500/50 border border-pink-400/30 rounded-xl p-3 sm:p-4 text-center"
                         >
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 ➕
@@ -262,7 +266,7 @@
 
                         <button
                             onclick="showSection('orders')"
-                            class="card-hover  bg-gradient-to-r from-amber-600 to-amber-500/50 border border-blue-400/30 rounded-xl p-3 sm:p-4 text-center"
+                            class="card-hover bg-gradient-to-r from-amber-600 to-amber-500/50 border border-blue-400/30 rounded-xl p-3 sm:p-4 text-center"
                         >
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 📦
@@ -274,8 +278,8 @@
                             </div>
                         </button>
 
-                        <button 
-                            class="card-hover hidden  bg-gradient-to-r from-green-500 to-teal-500/50 border border-green-400/30 rounded-xl p-3 sm:p-4 text-center"
+                        <button
+                            class="card-hover hidden bg-gradient-to-r from-green-500 to-teal-500/50 border border-green-400/30 rounded-xl p-3 sm:p-4 text-center"
                         >
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 💳
@@ -289,7 +293,7 @@
 
                         <button
                             onclick="logout()"
-                            class="card-hover  bg-gradient-to-r from-red-600 to-red-400/50 border border-yellow-400/30 rounded-xl p-3 sm:p-4 text-center"
+                            class="card-hover bg-gradient-to-r from-red-600 to-red-400/50 border border-yellow-400/30 rounded-xl p-3 sm:p-4 text-center"
                         >
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 🚪
@@ -297,7 +301,7 @@
                             <div
                                 class="text-white font-medium text-xs sm:text-sm"
                             >
-                                 Cerrar Sesión
+                                Cerrar Sesión
                             </div>
                         </button>
                     </div>
@@ -319,8 +323,11 @@
             <!-- Orders Table -->
             <div class="stat-card rounded-2xl p-6">
                 <div id="btnOrder" class="flex justify-end mb-4">
-                    <button id="btnNewOrder" class="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:scale-105 transform transition-all duration-300 ">
-                      Enviar nueva orden
+                    <button
+                        id="btnNewOrder"
+                        class="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:scale-105 transform transition-all duration-300"
+                    >
+                        Enviar nueva orden
                     </button>
                 </div>
                 <div class="overflow-x-auto">
@@ -436,7 +443,7 @@
                             >
                                 Actualizar método de pago
                             </button>
-                            <button 
+                            <button
                                 class="w-full px-4 py-3 bg-red-500/20 text-red-300 font-semibold rounded-xl hover:bg-opacity-30 transition-colors"
                             >
                                 Cancelar suscripción
@@ -506,24 +513,30 @@
             class="block px-4 py-2 text-red-300 hover:bg-red-500 hover:bg-opacity-20 rounded-xl transition-colors"
         >
             🚪 Cerrar Sesión
-        </a>
+        </button>
     </div>
 </div>
 
 <div
     id="AlertModal"
-    class="fixed hidden inset-0 bg-black/50 flex items-center justify-center p-4 z-50" >
-    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 max-w-md w-full border border-white/20 flex flex-col justify-center">
+    class="fixed hidden inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+>
+    <div
+        class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 max-w-md w-full border border-white/20 flex flex-col justify-center"
+    >
         <div class="text-center mb-6">
             <div id="modalIcon" class="text-4xl mb-4">🚨</div>
             <h2 id="modalTitle" class="text-2xl font-bold text-white mb-2">
                 Recuperar Contraseña
             </h2>
-            <p  id="modalMessage" class="text-gray-300">
+            <p id="modalMessage" class="text-gray-300">
                 Te enviaremos un enlace para restablecer tu contraseña
             </p>
         </div>
-        <button id="modalCloseBtn" class="flex-1  px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300">
+        <button
+            id="modalCloseBtn"
+            class="flex-1 px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300"
+        >
             Vale
         </button>
     </div>
@@ -535,42 +548,169 @@
     role="dialog"
     aria-modal="true"
     aria-labelledby="loaderTitle"
-  >
-    <div class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl">
-      <div class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-pink-400/40 border-t-transparent animate-spin"></div>
-      <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">Procesando</h2>
-      <p data-loader-text class="text-gray-200 text-sm">Por favor, espera un momento...</p>
+>
+    <div
+        class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl"
+    >
+        <div
+            class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-pink-400/40 border-t-transparent animate-spin"
+        >
+        </div>
+        <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">
+            Procesando
+        </h2>
+        <p data-loader-text class="text-gray-200 text-sm">
+            Por favor, espera un momento...
+        </p>
     </div>
-  </div>
+</div>
 
-<script type="module" src="/scripts/dashboard.js">
-</script>
-<!-- JavaScript -->
-<script is:inline>
-    // ---------------- FUNCIONES ----------------
+<script>
+    window.addEventListener("load", () => {
+
+        const btnNewOrder = document.getElementById("btnNewOrderDashboard") as HTMLButtonElement | null;
+        const btnNewOrder2 = document.getElementById("btnNewOrder") as HTMLButtonElement | null;
+
+        if(!btnNewOrder||!btnNewOrder2) return
+
+        (async () => {
+            const access_token = localStorage.getItem("access_token");
+            if (!access_token) return redirectToLogin();
+
+            const name = document.getElementById("userName");
+            const nameH = document.getElementById("userNameH");
+            const userName = localStorage.getItem("userName");
+
+            if (name && userName && nameH) {
+                name.innerText = userName;
+                nameH.innerText = userName;
+            }
+
+            try {
+                const data = await fetchDashboardData(access_token);
+                const totals = calculateTotals(data || []);
+                animateNumbers(totals);
+                // Mostrar actividad reciente
+                renderRecentActivity(data);
+                // Mostrar historial ordenes
+                renderOrdersTable(data);
+            } catch (err) {
+                console.error(err);
+                redirectToLogin();
+            }
+        })();
+
+        async function fetchDashboardData(access_token:string) {
+            const res = await fetch(`${import.meta.env.PUBLIC_API}/dashboard`, {
+                headers: { Authorization: `Bearer ${access_token}` },
+            });
+
+            if (!res.ok) redirectToLogin();
+
+            return res.json(); // siempre devuelve array
+        }
+
+        btnNewOrder.addEventListener("click", async function (e) {
+                const access_token = localStorage.getItem("access_token");
+                if (!access_token) return redirectToLogin();
+
+                try {
+                    const data = await fetchNewOrder(access_token);
+                    console.log(data);
+                } catch (err) {
+                    console.error(err);
+                    redirectToLogin();
+                }
+            });
+
+        btnNewOrder2.addEventListener("click", async function (e) {
+                e.preventDefault();
+                const access_token = localStorage.getItem("access_token");
+                if (!access_token) return redirectToLogin();
+
+                try {
+                    const data = await fetchNewOrder(access_token);
+                    console.log(data);
+                } catch (err) {
+                    console.error(err);
+                    redirectToLogin();
+                }
+            });
+
+        async function fetchNewOrder(access_token:string) {
+            showLoader();
+            try {
+                const res = await fetch(
+                    `${import.meta.env.PUBLIC_API}/new-order`,
+                    {
+                        headers: { Authorization: `Bearer ${access_token}` },
+                    },
+                );
+
+                const data = await res.json();
+                hideLoader();
+                if (!res.ok) {
+                    // error, mostrar modal con icono de alerta
+                    showModal({
+                        icon: "🚨",
+                        title: "Error",
+                        message:
+                            data.message || data.detail || "Ocurrió un error.",
+                    });
+                    return;
+                }
+
+                // éxito, mostrar modal con icono de éxito
+                showModal({
+                    icon: "✅",
+                    title: "Éxito",
+                    message: data.message || "Operación exitosa.",
+                });
+                return;
+            } catch (error) {
+                hideLoader();
+                showModal({
+                    icon: "🚨",
+                    title: "Error",
+                    message: "Error de conexión o inesperado.",
+                });
+                return;
+            }
+        }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(animateNumbers, 500);
+        // Add entrance animations
+        const cards = document.querySelectorAll(".stat-card") as any;
+        cards.forEach((card:any, index:any) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add("animate-slide-up");
+        });
+    });
+
+        // ---------------- FUNCIONES ----------------
     function redirectToLogin() {
         window.location.href = "/login";
         localStorage.clear();
     }
 
-    
-    function calculateTotals(data) {
-        const totals = { followers: 0, likes: 0, views: 0, orders:0};
+    function calculateTotals(data:any) {
+        const totals = { followers: 0, likes: 0, views: 0, orders: 0 };
 
         if (!Array.isArray(data)) return totals; // seguridad
 
-        data.forEach(order => {
+        data.forEach((order) => {
             if (!order || typeof order.quantity !== "number") return; // seguridad
             switch (order.service) {
-            case "followers":
-                totals.followers += order.quantity;
-                break;
-            case "likes":
-                totals.likes += order.quantity;
-                break;
-            case "views":
-                totals.views += order.quantity;
-                break;
+                case "followers":
+                    totals.followers += order.quantity;
+                    break;
+                case "likes":
+                    totals.likes += order.quantity;
+                    break;
+                case "views":
+                    totals.views += order.quantity;
+                    break;
             }
         });
 
@@ -579,7 +719,7 @@
         return totals;
     }
 
-    function animateNumbers(totals) {
+    function animateNumbers(totals:any) {
         if (!totals) return; // seguridad extra
 
         const followers = document.getElementById("totalFollowers");
@@ -593,27 +733,32 @@
         animateValue(orders, 0, totals.orders || 0, 2000);
     }
 
-    function animateValue(element, start, end, duration) {
+    function animateValue(element:any, start:number, end:number, duration:number) {
         if (!element) return; // seguridad extra
-        let startTimestamp = null;
-        const step = (timestamp) => {
+        let startTimestamp:any = null;
+        const step = (timestamp:any) => {
             if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const progress = Math.min(
+                (timestamp - startTimestamp) / duration,
+                1,
+            );
             const value = Math.floor(progress * (end - start) + start);
             element.textContent = value.toLocaleString();
             if (progress < 1) {
-            window.requestAnimationFrame(step);
+                window.requestAnimationFrame(step);
             }
         };
         window.requestAnimationFrame(step);
     }
 
-    function renderRecentActivity(data) {
+    function renderRecentActivity(data:any) {
         const container = document.getElementById("recentActivity");
         if (!container) return;
 
         // Ordenar por fecha (más reciente primero)
-        const sorted = [...data].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+        const sorted = [...data].sort(
+            (a:any, b:any) => new Date(b.created_at) - new Date(a.created_at),
+        );
 
         // Tomar solo los 3 más recientes
         const recent = sorted.slice(0, 3);
@@ -622,7 +767,7 @@
         container.innerHTML = "";
 
         // Agregar elementos
-        recent.forEach(order => {
+        recent.forEach((order) => {
             const { quantity, social, service, created_at } = order;
             const timeAgo = getTimeAgo(created_at);
             const color = getServiceColor(service);
@@ -649,18 +794,18 @@
         });
     }
 
-    function renderOrdersTable(data) {
-        const tbody = document.querySelector("#orders-section table tbody");
-        const btnOrder = document.getElementById("btnOrder");
+    function renderOrdersTable(data:any) {
+        const tbody = document.querySelector("#orders-section table tbody") as HTMLTableSectionElement;
+        const btnOrder = document.getElementById("btnOrder") as HTMLButtonElement;
 
         //si hay mas de 3 registros ocultar boton
-        if(data.length > 3){
+        if (data.length > 3) {
             btnOrder.classList.add("hidden");
         }
 
         tbody.innerHTML = ""; // Limpiar contenido actual
 
-        data.forEach(order => {
+        data.forEach((order:any) => {
             const tr = document.createElement("tr");
             tr.className = "border-b border-white/10";
 
@@ -682,34 +827,34 @@
 
     // ---------------- Helpers ----------------
 
-    function showLoader(message = 'Procesando...') {
-        const modal = document.getElementById('loaderModal');
-        const label = modal.querySelector('[data-loader-text]');
+    function showLoader(message = "Procesando...") {
+        const modal = document.getElementById("loaderModal") as HTMLDivElement;
+        const label = modal.querySelector("[data-loader-text]");
         if (label) label.textContent = message;
 
-        modal.classList.remove('hidden');
+        modal.classList.remove("hidden");
         requestAnimationFrame(() => {
-        modal.classList.remove('opacity-0');
+            modal.classList.remove("opacity-0");
         });
 
         // Bloquea el scroll de fondo
-        document.body.classList.add('overflow-hidden');
+        document.body.classList.add("overflow-hidden");
     }
 
     function hideLoader() {
-        const modal = document.getElementById('loaderModal');
-        modal.classList.add('opacity-0');
+        const modal = document.getElementById("loaderModal") as HTMLDivElement;
+        modal.classList.add("opacity-0");
         setTimeout(() => {
-        modal.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
         }, 200); // sincronizado con transition-opacity
     }
 
     function showModal({ icon = "🚨", title = "Alerta", message = "" }) {
-        const modal = document.getElementById("AlertModal");
-        const iconEl = document.getElementById("modalIcon");
-        const titleEl = document.getElementById("modalTitle");
-        const messageEl = document.getElementById("modalMessage");
+        const modal = document.getElementById("AlertModal") as HTMLDivElement;
+        const iconEl = document.getElementById("modalIcon") as HTMLDivElement;
+        const titleEl = document.getElementById("modalTitle") as HTMLParagraphElement;
+        const messageEl = document.getElementById("modalMessage") as HTMLParagraphElement;
 
         iconEl.textContent = icon;
         titleEl.textContent = title;
@@ -718,76 +863,101 @@
         modal.classList.remove("hidden");
 
         // Cerrar modal al hacer clic en botón
-        document.getElementById("modalCloseBtn").onclick = () => {
+        (document.getElementById("modalCloseBtn")as HTMLButtonElement).onclick = () => {
             modal.classList.add("hidden");
         };
     }
 
-    function getTimeAgo(dateString) {
-        const now = new Date();
-        const updated = new Date(dateString);
+    function getTimeAgo(dateString:string) {
+        const now:any = new Date();
+        const updated:any = new Date(dateString);
         const diffMs = now - updated;
         const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
 
         if (diffHours < 24) {
-            return `Hace ${diffHours} hora${diffHours !== 1 ? 's' : ''}`;
+            return `Hace ${diffHours} hora${diffHours !== 1 ? "s" : ""}`;
         } else {
             const diffDays = Math.floor(diffHours / 24);
-            return `Hace ${diffDays} día${diffDays !== 1 ? 's' : ''}`;
+            return `Hace ${diffDays} día${diffDays !== 1 ? "s" : ""}`;
         }
     }
 
-    function getServiceColor(service) {
+    function getServiceColor(service:string) {
         switch (service) {
             case "followers":
-            return { bg: "bg-green-500/20", circle: "bg-green-500", text: "text-green-300" };
+                return {
+                    bg: "bg-green-500/20",
+                    circle: "bg-green-500",
+                    text: "text-green-300",
+                };
             case "likes":
-            return { bg: "bg-pink-500/20", circle: "bg-pink-500", text: "text-pink-300" };
+                return {
+                    bg: "bg-pink-500/20",
+                    circle: "bg-pink-500",
+                    text: "text-pink-300",
+                };
             case "views":
-            return { bg: "bg-blue-500/20", circle: "bg-blue-500", text: "text-blue-300" };
+                return {
+                    bg: "bg-blue-500/20",
+                    circle: "bg-blue-500",
+                    text: "text-blue-300",
+                };
             default:
-            return { bg: "bg-gray-500/20", circle: "bg-gray-500", text: "text-gray-300" };
+                return {
+                    bg: "bg-gray-500/20",
+                    circle: "bg-gray-500",
+                    text: "text-gray-300",
+                };
         }
     }
 
-    function getServiceIcon(service) {
+    function getServiceIcon(service:string) {
         switch (service) {
-            case "followers": return "👥";
-            case "likes": return "❤️";
-            case "views": return "👁️";
-            default: return "📦";
+            case "followers":
+                return "👥";
+            case "likes":
+                return "❤️";
+            case "views":
+                return "👁️";
+            default:
+                return "📦";
         }
     }
 
-    function getServiceName(service) {
+    function getServiceName(service:string) {
         switch (service) {
-            case "followers": return "👥Seguidores";
-            case "likes": return "❤️ Likes";
-            case "views": return "👁️ Visualizaciones";
-            default: return "📦";
+            case "followers":
+                return "👥Seguidores";
+            case "likes":
+                return "❤️ Likes";
+            case "views":
+                return "👁️ Visualizaciones";
+            default:
+                return "📦";
         }
     }
 
-    function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    function capitalize(str:string) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     // Formatear fecha a YYYY-MM-DD
-    function formatDate(dateString) {
+    function formatDate(dateString:string) {
         const date = new Date(dateString);
         return date.toISOString().split("T")[0];
     }
 
     // Iconos según red social
-    function getSocialIcon(social) {
-        const icons = {
-            "instagram": "📸",
-            "tiktok": "🎵",
-            "facebook": "👤"
+    function getSocialIcon(social:string) {
+        const icons:any = {
+            instagram: "📸",
+            tiktok: "🎵",
+            facebook: "👤",
         };
         return icons[social] || "🌐";
     }
 
+    });
 </script>
 
 <script is:inline>
@@ -834,23 +1004,10 @@
         showSection("subscription");
     }
 
-
     function logout() {
         localStorage.clear();
-        window.location.href ='/'
+        window.location.href = "/";
     }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(animateNumbers, 500);
-
-        // Add entrance animations
-        const cards = document.querySelectorAll(".stat-card");
-        cards.forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-            card.classList.add("animate-slide-up");
-        });
-    });
-
     // Mobile menu functionality
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const sidebar = document.getElementById("sidebar");
@@ -883,5 +1040,4 @@
             mobileOverlay.classList.add("hidden");
         }
     });
-
 </script>

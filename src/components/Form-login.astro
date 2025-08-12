@@ -238,18 +238,18 @@
     // Login form submission
     window.addEventListener('load', () => {
 
-    const usuarioInput = document.getElementById("usuario") as HTMLInputElement | null;
-    const passwordInput = document.getElementById("password") as HTMLInputElement | null;
-    const btnLogin = document.getElementById("loginButton") as HTMLButtonElement | null;
-    const formGlow = document.querySelector(".form-glow") as HTMLDivElement | null;
-    const resetPwInput = document.getElementById("resetEmail") as HTMLInputElement | null;
-    const btnResetPw = document.getElementById("btnResetPw") as HTMLButtonElement | null;
-    const btnResetPw2 = document.querySelector("#cancelReset")as HTMLButtonElement | null;
-    const messageEl = document.getElementById("message3") as HTMLParagraphElement | null;
+    const usuarioInput = document.getElementById("usuario") as HTMLInputElement;
+    const passwordInput = document.getElementById("password") as HTMLInputElement;
+    const btnLogin = document.getElementById("loginButton") as HTMLButtonElement;
+    const formGlow = document.querySelector(".form-glow") as HTMLDivElement;
+    const resetPwInput = document.getElementById("resetEmail") as HTMLInputElement;
+    const btnResetPw = document.getElementById("btnResetPw") as HTMLButtonElement;
+    const btnResetPw2 = document.querySelector("#cancelReset")as HTMLButtonElement;
+    const messageEl = document.getElementById("message3") as HTMLParagraphElement;
 
     const errorDiv = document.getElementById("errorMessage") as HTMLDivElement;
     const errorText = document.getElementById("errorText") as HTMLParagraphElement;
-     if(!errorDiv ||!errorDiv ||!messageEl ||!btnResetPw2 || !resetPwInput || !btnResetPw ||!usuarioInput || !passwordInput || !btnLogin || !formGlow)return
+    const originalText = btnLogin.innerHTML;
 
     const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     // Show loading state
@@ -279,15 +279,20 @@
                 return;
             }
 
-            const originalText = btnLogin.innerHTML;
             btnLogin.innerHTML =
                 '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Iniciando sesión...</span></span>';
             btnLogin.disabled = true;
-            try {
+            const token = await getToken();
+            await login(token, email, password)
+        });
+
+    async function login(token:string,email:string,password:string) {
+        try {
                 const res = await fetch(`${import.meta.env.PUBLIC_API}/login`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
                     },
                     body: JSON.stringify({ email, password }),
                 });
@@ -316,7 +321,7 @@
                 btnLogin.innerHTML = originalText;
                 btnLogin.disabled = false;
             }
-        });
+    }
 
     async function getToken() {
         const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
