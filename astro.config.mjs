@@ -4,13 +4,19 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    vite: {
+  vite: {
     plugins: [tailwindcss()],
     server: {
-    allowedHosts: [
-      'www.weeklysocial.es',
-      'weeklysocial.es'
-    ]
-  },
-}
+      allowedHosts: [
+        'www.weeklysocial.es',
+        'weeklysocial.es'
+      ]
+    },
+    preview: {
+      allowedHosts: [
+        'www.weeklysocial.es',
+        'weeklysocial.es'
+      ]
+    }
+  }
 });
