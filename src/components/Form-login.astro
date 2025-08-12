@@ -234,17 +234,30 @@
     </div>
 </div>
 
-<script is:inline>
-    const usuarioInput = document.getElementById("usuario");
-    const passwordInput = document.getElementById("password");
+<script>
+    // Login form submission
+    window.addEventListener('load', () => {
+
+    const usuarioInput = document.getElementById("usuario") as HTMLInputElement | null;
+    const passwordInput = document.getElementById("password") as HTMLInputElement | null;
+    const btnLogin = document.getElementById("loginButton") as HTMLButtonElement | null;
+    const formGlow = document.querySelector(".form-glow") as HTMLDivElement | null;
+    const resetPwInput = document.getElementById("resetEmail") as HTMLInputElement | null;
+    const btnResetPw = document.getElementById("btnResetPw") as HTMLButtonElement | null;
+    const btnResetPw2 = document.querySelector("#cancelReset")as HTMLButtonElement | null;
+    const messageEl = document.getElementById("message3") as HTMLParagraphElement | null;
+
+    const errorDiv = document.getElementById("errorMessage") as HTMLDivElement;
+    const errorText = document.getElementById("errorText") as HTMLParagraphElement;
+     if(!errorDiv ||!errorDiv ||!messageEl ||!btnResetPw2 || !resetPwInput || !btnResetPw ||!usuarioInput || !passwordInput || !btnLogin || !formGlow)return
+
     const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     // Show loading state
-    const button = document.getElementById("loginButton");
 
-    // Login form submission
-    document
-        .getElementById("loginForm")
-        .addEventListener("submit", async function (e) {
+    const form = document.getElementById("loginForm");
+    if(!form)return
+
+    form.addEventListener("submit", async function (e) {
             e.preventDefault();
 
             const email = usuarioInput.value.trim();
@@ -261,15 +274,15 @@
                 return;
             }
 
-            if (password < 6) {
+            if (password.length < 6) {
                 showError("La contraseña debe tener minimo 6 carácteres");
                 return;
             }
 
-            const originalText = button.innerHTML;
-            button.innerHTML =
+            const originalText = btnLogin.innerHTML;
+            btnLogin.innerHTML =
                 '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Iniciando sesión...</span></span>';
-            button.disabled = true;
+            btnLogin.disabled = true;
             try {
                 const res = await fetch(`${import.meta.env.PUBLIC_API}/login`, {
                     method: "POST",
@@ -293,15 +306,15 @@
                     window.location.href = "/dashboard"; // O tu ruta real
                 }, 1500);
             } catch (err) {
+                console.log(err)
                 showError("Ocurrió un error, intentarlo mas tarde");
-                document.querySelector(".form-glow").style.animation =
-                    "shake 0.5s ease-in-out";
+                formGlow.style.animation ="shake 0.5s ease-in-out";
                 setTimeout(() => {
-                    document.querySelector(".form-glow").style.animation = "";
+                    formGlow.style.animation = "";
                 }, 500);
             } finally {
-                button.innerHTML = originalText;
-                button.disabled = false;
+                btnLogin.innerHTML = originalText;
+                btnLogin.disabled = false;
             }
         });
 
@@ -316,28 +329,23 @@
         return data.token; // O la propiedad que te envíe el token
     }
 
-    document
-        .getElementById("btnResetPw")
-        .addEventListener("click", async function (e) {
+    btnResetPw.addEventListener("click", async function (e) {
             e.preventDefault();
-            let email = document.getElementById("resetEmail");
-            const button = document.querySelector("#btnResetPw");
-            const button2 = document.querySelector("#cancelReset");
-            const messageEl = document.getElementById("message3");
-            const originalText = button.innerHTML;
-            button.innerHTML =
-                '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Enviando...</span></span>';
-            button.disabled = true;
-            button2.disabled = true;
 
-            if (!email.value) {
+            const originalText = btnResetPw.innerHTML;
+            btnResetPw.innerHTML =
+                '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Enviando...</span></span>';
+            btnResetPw.disabled = true;
+            btnResetPw2.disabled = true;
+
+            if (!resetPwInput.value) {
                 messageEl.textContent = "Ingresa email";
                 messageEl.className =
                     "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
-                button.innerHTML = originalText;
-                button.disabled = false;
-                button2.disabled = false;
-                email.value = "";
+                btnResetPw.innerHTML = originalText;
+                btnResetPw.disabled = false;
+                btnResetPw2.disabled = false;
+                resetPwInput.value = "";
                 return;
             }
 
@@ -352,7 +360,7 @@
                             Authorization: `Bearer ${token}`,
                         },
                         body: JSON.stringify({
-                            email: email.value,
+                            email: resetPwInput.value,
                         }),
                     },
                 );
@@ -361,37 +369,59 @@
                     messageEl.textContent = data.message;
                     messageEl.className =
                         "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    button2.disabled = false;
-                    email.value = "";
+                    btnResetPw.innerHTML = originalText;
+                    btnResetPw.disabled = false;
+                    btnResetPw2.disabled = false;
+                    resetPwInput.value = "";
                     return;
                 }
                 // Simulate form processing
                 setTimeout(() => {
                     // Reset button
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    button2.disabled = false;
+                    btnResetPw.innerHTML = originalText;
+                    btnResetPw.disabled = false;
+                    btnResetPw2.disabled = false;
                 }, 2000);
                 messageEl.textContent = data.message;
                 messageEl.className =
                     "text-green-600 text-center text-sm bg-green-300/20 p-4 rounded-xl";
-                button.innerHTML = originalText;
-                button.disabled = false;
-                button2.disabled = false;
-                email.value = "";
+                btnResetPw.innerHTML = originalText;
+                btnResetPw.disabled = false;
+                btnResetPw2.disabled = false;
+                resetPwInput.value = "";
                 return;
-            } catch {
-                messageEl.textContent = data.message;
+            } catch (err) {
+                messageEl.textContent = 'Ocurrió un error, intentar mas tarde';
                 messageEl.className =
                     "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
-                button.innerHTML = originalText;
-                button.disabled = false;
-                email.value = "";
+                btnResetPw.innerHTML = originalText;
+                btnResetPw.disabled = false;
+                resetPwInput.value = "";
                 return;
             }
-        });
+        })
+
+    // Show error message
+    function showError(message:string) {
+        errorText.textContent = message;
+        errorDiv.classList.remove("hidden");
+
+        setTimeout(() => {
+            errorDiv.classList.add("hidden");
+        }, 5000);
+    }
+
+    // Show success message
+    function showSuccess(message:string) {
+        errorText.textContent = message;
+        errorDiv.className =
+            "bg-green-500/20 border border-green-400/30 rounded-xl p-4";
+        (errorDiv.querySelector("span")as HTMLSpanElement).textContent = "✅";
+        (errorDiv.querySelector("span")as HTMLSpanElement).className = "text-green-300 text-xl";
+        (errorDiv.querySelector("p")as HTMLParagraphElement).className = "text-green-100 text-sm";
+        errorDiv.classList.remove("hidden");
+    }
+    });
 </script>
 <!-- JavaScript -->
 <script is:inline>
@@ -407,31 +437,6 @@
             passwordInput.type = "password";
             toggleIcon.textContent = "👁️";
         }
-    }
-
-    // Show error message
-    function showError(message) {
-        const errorDiv = document.getElementById("errorMessage");
-        const errorText = document.getElementById("errorText");
-        errorText.textContent = message;
-        errorDiv.classList.remove("hidden");
-
-        setTimeout(() => {
-            errorDiv.classList.add("hidden");
-        }, 5000);
-    }
-
-    // Show success message
-    function showSuccess(message) {
-        const errorDiv = document.getElementById("errorMessage");
-        const errorText = document.getElementById("errorText");
-        errorText.textContent = message;
-        errorDiv.className =
-            "bg-green-500/20 border border-green-400/30 rounded-xl p-4";
-        errorDiv.querySelector("span").textContent = "✅";
-        errorDiv.querySelector("span").className = "text-green-300 text-xl";
-        errorDiv.querySelector("p").className = "text-green-100 text-sm";
-        errorDiv.classList.remove("hidden");
     }
 
     // Show forgot password modal

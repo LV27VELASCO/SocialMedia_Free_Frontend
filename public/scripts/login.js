@@ -58,6 +58,7 @@ document
             }, 1500);
 
         } catch (err) {
+            console.log(err)
             showError("Ocurrió un error, intentarlo mas tarde");
             document.querySelector('.form-glow').style.animation = 'shake 0.5s ease-in-out';
             setTimeout(() => {

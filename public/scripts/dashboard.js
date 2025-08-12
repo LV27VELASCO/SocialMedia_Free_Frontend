@@ -2,7 +2,7 @@
 (async () => {
 
     const access_token = localStorage.getItem("access_token");
-    if (!access_token) return redirectToLogin();
+    //if (!access_token) return redirectToLogin();
 
     const name = document.getElementById("userName")
     const nameH = document.getElementById("userNameH")
@@ -23,7 +23,7 @@
         renderOrdersTable(data)
     } catch (err) {
         console.error(err);
-        redirectToLogin();
+        //redirectToLogin();
     }
 })();
 
@@ -32,7 +32,7 @@ async function fetchDashboardData(access_token) {
         headers: { "Authorization": `Bearer ${access_token}` }
     });
 
-    if (!res.ok) redirectToLogin();
+    //if (!res.ok) redirectToLogin();
 
     return res.json(); // siempre devuelve array
 }
