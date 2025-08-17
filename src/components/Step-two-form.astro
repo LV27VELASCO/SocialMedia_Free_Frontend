@@ -296,6 +296,28 @@
         </p>
     </div>
 </div>
+<div
+    id="loaderModal"
+    class="hidden opacity-0 fixed inset-0 z-[70] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-200"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="loaderTitle"
+>
+    <div
+        class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl"
+    >
+        <div
+            class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-pink-400/40 border-t-transparent animate-spin"
+        >
+        </div>
+        <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">
+            Procesando
+        </h2>
+        <p data-loader-text class="text-gray-200 text-sm">
+            Por favor, espera un momento...
+        </p>
+    </div>
+</div>
 <!-- Cargar Stripe desde su CDN -->
 <script src="https://js.stripe.com/v3/"></script>
 <script>
@@ -332,15 +354,28 @@
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
+            const cardNameInput = document.getElementById("cardNameInput") as HTMLInputElement;
 
             // Show loading state
             const button = document.querySelector<HTMLButtonElement>('button[type="submit"]');
             const messageEl = document.getElementById("message2");
             if (!button ||!messageEl) return;
+
+            showLoader();
             const originalText = button.innerHTML;
             button.innerHTML =
                 '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Validando tarjeta...</span></span>';
             button.disabled = true;
+
+            if(!cardNameInput.value){
+                messageEl.textContent = "Nombre obligatorio";
+                messageEl.className =
+                    "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
+                button.innerHTML = originalText;
+                button.disabled = false;
+                hideLoader();
+                return;
+            }
             
 
             const { paymentMethod, error } = await stripe.createPaymentMethod({
@@ -354,10 +389,11 @@
                     "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
                 button.innerHTML = originalText;
                 button.disabled = false;
+                hideLoader();
                 return;
             }
 
-            const res = await validate_pay(paymentMethod, originalText);
+            const res = await validate_pay(paymentMethod, originalText, cardNameInput.value);
         });
     })
 
@@ -365,20 +401,31 @@
         const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
 
         if (!res.ok) {
-            throw new Error("Error al obtener el token");
+            return false
         }
 
         const data = await res.json();
         return data.token; // O la propiedad que te envíe el token
     }
 
-    async function validate_pay(paymentMethod:any, originalText:any) {
+    async function validate_pay(paymentMethod:any, originalText:any, cardName:any) {
         const token = await getToken();
 
         const dataRegister = JSON.parse(localStorage.getItem("Register") as string);
         const button = document.querySelector<HTMLButtonElement>('button[type="submit"]');
         const messageEl = document.getElementById("message2");
         if (!button ||!messageEl) return;
+
+        if (!token) {
+            messageEl.textContent = "Ocurrió un error, intentarlo más tarde";
+            messageEl.className =
+                "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
+            button.innerHTML = originalText;
+            button.disabled = false;
+            hideLoader();
+            return;
+        }
+
 
         const res = await fetch(
             `${import.meta.env.PUBLIC_API}/validate-pay-method`,
@@ -391,6 +438,7 @@
                 body: JSON.stringify({
                     paymentMethodId: paymentMethod.id,
                     name: dataRegister.nombre,
+                    cardName:cardName,
                     email: dataRegister.email,
                     socialMedia: dataRegister.redSocial,
                     url: dataRegister.url,
@@ -405,6 +453,7 @@
                 "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
             button.innerHTML = originalText;
             button.disabled = false;
+            hideLoader();
             return;
         }
 
@@ -414,21 +463,42 @@
                 "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
             button.innerHTML = originalText;
             button.disabled = false;
+            hideLoader();
             return;
         } else {
             // Simulate form processing
             setTimeout(() => {
                 window.location.href = "confirmation-success";
-
-                // Reset button
-                button.innerHTML = originalText;
-                button.disabled = false;
             }, 2000);
             messageEl.textContent = data.message;
             messageEl.className = "text-green-600 text-center text-sm";
             button.innerHTML = originalText;
             button.disabled = false;
+            hideLoader();
         }
+    }
+
+    function showLoader(message = "Procesando solicitud...") {
+        const modal = document.getElementById("loaderModal") as HTMLDivElement;
+        const label = modal.querySelector("[data-loader-text]");
+        if (label) label.textContent = message;
+
+        modal.classList.remove("hidden");
+        requestAnimationFrame(() => {
+            modal.classList.remove("opacity-0");
+        });
+
+        // Bloquea el scroll de fondo
+        document.body.classList.add("overflow-hidden");
+    }
+
+    function hideLoader() {
+        const modal = document.getElementById("loaderModal") as HTMLDivElement;
+        modal.classList.add("opacity-0");
+        setTimeout(() => {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        }, 200); // sincronizado con transition-opacity
     }
 </script>
 <!-- JavaScript for Form Enhancement -->
