@@ -227,3 +227,24 @@ button, a{
   stroke-dashoffset: 251.2;
   transition: stroke-dashoffset 2s ease-in-out;
 }
+
+.step-number {
+            background: linear-gradient(45deg, #ec4899, #8b5cf6);
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+        }
+
+.legal-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+  
+.legal-section {
+            scroll-margin-top: 100px;
+        }

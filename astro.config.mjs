@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   server: {
       allowedHosts: [
-        '.weeklysocial.es'
+        '.wklysocial.com'
       ]
     },
   vite: {
