@@ -1,0 +1,615 @@
+<section id="Faqs" class="py-20 grid place-content-center">
+    <div class="container mx-auto px-6">
+        <!-- Page Header -->
+        <div class="text-center mb-12 animate-fade-in">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                ❓ <span class="gradient-text">Preguntas Frecuentes</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Encuentra respuestas a las dudas más comunes sobre nuestros servicios
+            </p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8 animate-slide-up">
+            <button onclick="filterFAQ('all')"
+                class="category-tab active px-6 py-3 rounded-full text-white font-medium border border-white/20"
+                data-category="all">
+                🌟 Todas
+            </button>
+            <button onclick="filterFAQ('general')"
+                class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
+                data-category="general">
+                📋 General
+            </button>
+            <button onclick="filterFAQ('seguridad')"
+                class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
+                data-category="seguridad">
+                🔒 Seguridad
+            </button>
+            <button onclick="filterFAQ('pagos')"
+                class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
+                data-category="pagos">
+                💳 Pagos
+            </button>
+            <button onclick="filterFAQ('entrega')"
+                class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
+                data-category="entrega">
+                🚀 Entrega
+            </button>
+        </div>
+
+        <!-- FAQ Container -->
+        <div class="faq-card rounded-2xl max-w-3xl p-6 sm:p-8 animate-slide-up">
+
+            <!-- Search Bar -->
+            <div class="mb-8">
+                <div class="relative">
+                    <input type="text" id="searchFAQ" placeholder="🔍 Buscar en las preguntas frecuentes..."
+                        class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300"
+                        oninput="searchFAQ()">
+                    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <span class="text-xl">🔍</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Items -->
+            <div id="faqContainer" class="space-y-4">
+
+                <!-- General Questions -->
+                <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">🤔</span>
+                            <span class="text-white font-semibold text-lg">¿Qué es WklySocial y cómo funciona?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <p class="mb-4">WklySocial es una plataforma que te ayuda a hacer
+                                crecer tu presencia en redes sociales de forma orgánica y segura.</p>
+                            <ul class="list-disc list-inside space-y-2 ml-4">
+                                <li>Conectamos tu contenido con audiencias reales interesadas en tu nicho</li>
+                                <li>Cumplimos con todas las políticas de las plataformas sociales</li>
+                                <li>Ofrecemos crecimiento gradual y natural para evitar penalizaciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">📱</span>
+                            <span class="text-white font-semibold text-lg">¿En qué redes sociales funcionan sus
+                                servicios?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <p class="mb-4">Ofrecemos servicios para las principales plataformas de redes sociales:</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/5 rounded-lg p-3 text-center">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xl">📸</span>
+                                        <span class="text-white font-medium">Instagram</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 mt-1 text-start">Seguidores</p>
+                                </div>
+                                <div class="bg-white/5 rounded-lg p-3">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xl">🎵</span>
+                                        <span class="text-white font-medium">TikTok</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 mt-1 text-start">Seguidores</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Questions -->
+                <div class="faq-item rounded-xl overflow-hidden" data-category="seguridad">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">🔒</span>
+                            <span class="text-white font-semibold text-lg">¿Es seguro usar WklySocial? ¿Pueden suspender
+                                mi cuenta?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <div class="bg-green-500/20 border border-green-500/30 rounded-lg p-4 mb-4">
+                                <h4 class="text-green-200 font-semibold flex items-center">
+                                    <span class="mr-2">✅</span>
+                                    100% Seguro y Legal
+                                </h4>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Utilizamos solo métodos orgánicos y éticos de marketing</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Cumplimos estrictamente con los términos de servicio de cada plataforma</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Entrega gradual para simular crecimiento natural</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Más de 50,000 clientes satisfechos sin incidentes</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-xl overflow-hidden" data-category="seguridad">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">🛡️</span>
+                            <span class="text-white font-semibold text-lg">¿Necesitan mi contraseña o datos
+                                personales?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <div class="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-4">
+                                <h4 class="text-red-200 font-semibold flex items-center">
+                                    <span class="mr-2">🚫</span>
+                                    NUNCA pedimos contraseñas
+                                </h4>
+                            </div>
+                            <p class="mb-4">Solo necesitamos información pública para nuestros servicios:</p>
+                            <ul class="space-y-2 ml-4">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-blue-400">•</span>
+                                    <span>URL de tu perfil público</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-blue-400">•</span>
+                                    <span>Tu email para comunicaciones</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-blue-400">•</span>
+                                    <span>Datos de facturación (encriptados)</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 text-sm text-gray-400">Si alguien te pide tu contraseña, NO es de WklySocial.
+                                Repórtalo inmediatamente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Questions -->
+                <div class="faq-item rounded-xl overflow-hidden" data-category="pagos">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">💳</span>
+                            <span class="text-white font-semibold text-lg">¿Cómo protegemos tu pago?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <p class="mb-4">Aplicamos medidas de seguridad avanzadas que nos ayudan a:</p>
+                            <ul class="space-y-3 mb-4">
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>Validar que tu método de pago sea seguro</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>Prevenir fraudes y accesos no autorizados</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>Mantener la calidad y continuidad del servicio</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>Cumplir con las regulaciones financieras internacionales</span>
+                                </li>
+                            </ul>
+                            <div class="bg-red-500/20 border border-red-500/30 rounded-lg p-4">
+                                <p class="text-red-200 font-semibold">🚫 No realizamos cargos de verificación
+                                    adicionales: solo pagarás por el servicio que elijas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-xl overflow-hidden" data-category="pagos">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">💰</span>
+                            <span class="text-white font-semibold text-lg">¿Qué métodos de pago aceptan?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <p class="mb-4">Aceptamos los siguientes métodos de pago seguros:</p>
+                            <div class="flex justify-center items-center gap-4">
+                                <div class="bg-white/5 rounded-lg p-4">
+                                    <h4 class="text-white font-semibold flex items-center">
+                                        <span class="mr-2">💳</span>
+                                        Tarjetas de Crédito/Débito
+                                    </h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Visa</li>
+                                        <li>• Mastercard</li>
+                                        <li>• American Express</li>
+                                        <li>• Maestro</li>
+                                        <li>• Discover</li>
+                                        <li>• Diners Club</li>
+                                        <li>• UnionPay</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="mt-4 p-3 bg-blue-500/20 rounded-lg">
+                                <p class="text-blue-200 text-sm">🔒 Todos los pagos están protegidos con encriptación
+                                    SSL de 256 bits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Questions -->
+                <div class="faq-item rounded-xl overflow-hidden" data-category="entrega">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">⏰</span>
+                            <span class="text-white font-semibold text-lg">¿Cuánto tiempo tardan en llegar los
+                                seguidores?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <p class="mb-4">Los tiempos de entrega varían según el paquete seleccionado:</p>
+                            <div class="space-y-4">
+                                <div class="bg-white/5 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-white font-semibold">🚀 Inicio de entrega</h4>
+                                        <span class="text-green-300 font-bold">2-4 horas</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Primeros seguidores empiezan a llegar</p>
+                                </div>
+                                <div class="bg-white/5 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-white font-semibold">📈 Entrega completa</h4>
+                                        <span class="text-blue-300 font-bold">1-7 días</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Dependiendo del tamaño del paquete</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-3 bg-yellow-500/20 rounded-lg">
+                                <p class="text-yellow-200 text-sm">⚡ La entrega es gradual para mantener la naturalidad
+                                    y evitar penalizaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-xl overflow-hidden" data-category="entrega">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">👥</span>
+                            <span class="text-white font-semibold text-lg">¿Los seguidores son reales o bots?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <div class="bg-green-500/20 border border-green-500/30 rounded-lg p-4 mb-4">
+                                <h4 class="text-green-200 font-semibold flex items-center">
+                                    <span class="mr-2">✅</span>
+                                    100% Seguidores Reales
+                                </h4>
+                            </div>
+                            <p class="mb-4">Todos nuestros seguidores son personas reales con cuentas activas:</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Perfiles completos con fotos y biografías</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Actividad regular en sus propias cuentas</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Interacción genuina con contenido</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span>Segmentación por intereses y demografía</span>
+                                </li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-red-500/20 rounded-lg">
+                                <p class="text-red-200 text-sm">🚫 NO utilizamos bots, cuentas falsas o métodos
+                                    automatizados</p>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <p>WklySocial impulsa tu contenido de forma personalizada dentro de una red exclusiva de
+                                    aliados confiables.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Questions -->
+                <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">🔄</span>
+                            <span class="text-white font-semibold text-lg">¿Ofrecen garantía de reembolso?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <div class="bg-green-500/20 border border-green-500/30 rounded-lg p-4 mb-4">
+                                <h4 class="text-green-200 font-semibold flex items-center">
+                                    <span class="mr-2">💰</span>
+                                    Garantía de Satisfacción 100%
+                                </h4>
+                            </div>
+                            <p class="mb-4">Ofrecemos múltiples garantías para tu tranquilidad:</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span><strong>Reembolso completo</strong> si no recibes los seguidores
+                                        prometidos</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span><strong>Reposición gratuita</strong> si los seguidores disminuyen en 30
+                                        días</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span><strong>Soporte 24/7</strong> para resolver cualquier problema</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <span class="text-green-400 mt-1">✓</span>
+                                    <span><strong>30 días</strong> para solicitar reembolso sin preguntas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+                    <button
+                        class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">💬</span>
+                            <span class="text-white font-semibold text-lg">¿Cómo puedo contactar con soporte?</span>
+                        </div>
+                        <span class="faq-icon text-white text-xl">▼</span>
+                    </button>
+                    <div class="faq-content px-6">
+                        <div class="text-gray-300 leading-relaxed">
+                            <p class="mb-4">Estamos disponibles 24/7 para ayudarte:</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-white/5 rounded-lg p-4">
+                                    <h4 class="text-white font-semibold flex items-center">
+                                        <span class="mr-2">📧</span>
+                                        Email
+                                    </h4>
+                                    <p class="text-sm text-gray-400 mb-3">Respuesta en 2-4 horas</p>
+                                    <a href="mailto:soporte@wklysocial.com"
+                                        class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-sm rounded-lg hover:scale-105 transform transition-all duration-300 inline-block">
+                                        Enviar Email
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden text-center py-12">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-2xl font-bold text-white mb-2">No se encontraron resultados</h3>
+                <p class="text-gray-300 mb-6">Intenta con otros términos de búsqueda o contacta con nuestro soporte</p>
+                <button onclick="clearSearch()"
+                    class="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:scale-105 transform transition-all duration-300">
+                    Limpiar Búsqueda
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script is:inline>
+        // Toggle FAQ item
+        function toggleFAQ(trigger) {
+            const faqItem = trigger.closest('.faq-item');
+            const content = faqItem.querySelector('.faq-content');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-content').classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            if (isActive) {
+                faqItem.classList.remove('active');
+                content.classList.remove('active');
+            } else {
+                faqItem.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+
+        // Filter FAQ by category
+        function filterFAQ(category) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.category === category) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Show/hide FAQ items
+            faqItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Close all open items when filtering
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-content').classList.remove('active');
+            });
+        }
+
+        // Search FAQ
+        function searchFAQ() {
+            const searchTerm = document.getElementById('searchFAQ').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-trigger span:nth-child(2)').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                    hasResults = true;
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Show/hide no results message
+            if (hasResults || searchTerm === '') {
+                noResults.classList.add('hidden');
+            } else {
+                noResults.classList.remove('hidden');
+            }
+            
+            // Reset category filter when searching
+            if (searchTerm !== '') {
+                document.querySelectorAll('.category-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+            }
+        }
+
+        // Clear search
+        function clearSearch() {
+            document.getElementById('searchFAQ').value = '';
+            document.getElementById('noResults').classList.add('hidden');
+            filterFAQ('all');
+        }
+
+
+        function openChat() {
+            alert('Abriendo chat de soporte...');
+            // Aquí se integraría el sistema de chat real
+        }
+
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-slide-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+
+            // Initialize FAQ items with smooth transitions
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.style.transition = 'all 0.3s ease';
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close all open FAQ items
+                document.querySelectorAll('.faq-item.active').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-content').classList.remove('active');
+                });
+            }
+        });
+    </script>

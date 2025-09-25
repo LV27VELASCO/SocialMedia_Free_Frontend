@@ -1,32 +1,23 @@
 <!-- Animated Background Elements -->
 <div class="fixed inset-0 overflow-hidden pointer-events-none">
     <div
-        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-    >
+        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element">
     </div>
-    <div
-        class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-        style="animation-delay: 2s;"
-    >
+    <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 2s;">
     </div>
-    <div
-        class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-        style="animation-delay: 4s;"
-    >
+    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 4s;">
     </div>
 </div>
 
 <!-- Header -->
-<header
-    class="relative z-50 bg-black/20 backdrop-blur-lg border-b border-white/10"
->
+<header class="relative z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
     <div class="container mx-auto px-4 sm:px-6 py-4">
         <div class="flex items-center justify-between">
             <!-- Mobile Menu Button -->
-            <button
-                id="mobileMenuBtn"
-                class="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors"
-            >
+            <button id="mobileMenuBtn"
+                class="lg:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors">
                 <span class="text-2xl">☰</span>
             </button>
 
@@ -39,16 +30,12 @@
             <div class="flex items-center space-x-2 sm:space-x-4">
                 <!-- User Profile -->
                 <div
-                    class="user-profile flex items-center space-x-2 sm:space-x-3 bg-white/10 rounded-full px-2 sm:px-4 py-2"
-                >
+                    class="user-profile flex items-center space-x-2 sm:space-x-3 bg-white/10 rounded-full px-2 sm:px-4 py-2">
                     <div
-                        class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                    >
+                        class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                         U
                     </div>
-                    <span
-                        id="userNameH"
-                        class="hidden sm:block text-white font-medium"></span>
+                    <span id="userNameH" class="hidden sm:block text-white font-medium"></span>
                     <button onclick="toggleUserMenu()" class="text-white">
                         <span class="text-sm sm:text-lg">▼</span>
                     </button>
@@ -61,36 +48,28 @@
 <!-- Main Layout -->
 <div class="flex min-h-screen">
     <!-- Mobile Overlay -->
-    <div
-        id="mobileOverlay"
-        class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden"
-    >
+    <div id="mobileOverlay" class="hidden fixed inset-0 bg-black/50 z-40 lg:hidden">
     </div>
 
     <!-- Sidebar -->
-    <aside
-        id="sidebar"
-        class="fixed lg:relative inset-y-0 left-0 z-50 w-64 bg-black/20 backdrop-blur-lg border-r border-white/10 p-4 sm:p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
-    >
+    <aside id="sidebar"
+        class="fixed lg:relative inset-y-0 left-0 z-50 w-64 bg-black/20 backdrop-blur-lg border-r border-white/10 p-4 sm:p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
         <nav class="space-y-2">
             <button
                 class="nav-item w-full active flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
-                onclick="showSection('dashboard')"
-            >
+                onclick="showSection('dashboard')">
                 <span class="text-lg sm:text-xl">📊</span>
                 <span>Dashboard</span>
             </button>
             <button
                 class="nav-item w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
-                onclick="showSection('orders')"
-            >
+                onclick="showSection('orders')">
                 <span class="text-lg sm:text-xl">📦</span>
                 <span>Mis Pedidos</span>
             </button>
             <!-- onclick="showSection('subscription')" -->
             <button
-                class="nav-item w-full hidden flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base"
-            >
+                class="nav-item w-full hidden flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-white text-sm sm:text-base">
                 <span class="text-lg sm:text-xl">💳</span>
                 <span>Suscripción</span>
             </button>
@@ -98,10 +77,8 @@
 
         <!-- Logout Button -->
         <div class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/20">
-            <button
-                onclick="logout()"
-                class="w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-red-300 hover:bg-red-500 hover:bg-opacity-20 transition-colors text-sm sm:text-base"
-            >
+            <button onclick="logout()"
+                class="w-full flex items-center space-x-3 px-3 sm:px-4 py-3 rounded-xl text-red-300 hover:bg-red-500 hover:bg-opacity-20 transition-colors text-sm sm:text-base">
                 <span class="text-lg sm:text-xl">🚪</span>
                 <span>Cerrar Sesión</span>
             </button>
@@ -114,9 +91,7 @@
         <div id="dashboard-section" class="section">
             <!-- Welcome Message -->
             <div class="mb-6 sm:mb-8 animate-fade-in">
-                <h1
-                    class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2"
-                >
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
                     ¡Hola, <span id="userName" class="gradient-text"></span>! 👋
                 </h1>
                 <p class="text-lg sm:text-xl text-gray-300">
@@ -125,25 +100,16 @@
             </div>
 
             <!-- Stats Cards -->
-            <div
-                class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8"
-            >
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 <!-- Total Followers -->
-                <div
-                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
-                >
+                <div class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up">
                     <div class="flex items-center justify-between mb-3 sm:mb-4">
                         <div class="text-2xl sm:text-3xl">👥</div>
-                        <div
-                            class="text-green-400 text-xs sm:text-sm font-semibold hidden"
-                        >
+                        <div class="text-green-400 text-xs sm:text-sm font-semibold hidden">
                             +12.5%
                         </div>
                     </div>
-                    <div
-                        class="text-xl sm:text-2xl font-bold text-white mb-1"
-                        id="totalFollowers"
-                    >
+                    <div class="text-xl sm:text-2xl font-bold text-white mb-1" id="totalFollowers">
                         0
                     </div>
                     <div class="text-gray-400 text-xs sm:text-sm">
@@ -152,22 +118,15 @@
                 </div>
 
                 <!-- Total Likes -->
-                <div
-                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
-                    style="animation-delay: 0.1s;"
-                >
+                <div class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                    style="animation-delay: 0.1s;">
                     <div class="flex items-center justify-between mb-3 sm:mb-4">
                         <div class="text-2xl sm:text-3xl">❤️</div>
-                        <div
-                            class="text-green-400 text-xs sm:text-sm font-semibold hidden"
-                        >
+                        <div class="text-green-400 text-xs sm:text-sm font-semibold hidden">
                             +8.3%
                         </div>
                     </div>
-                    <div
-                        class="text-xl sm:text-2xl font-bold text-white mb-1"
-                        id="totalLikes"
-                    >
+                    <div class="text-xl sm:text-2xl font-bold text-white mb-1" id="totalLikes">
                         0
                     </div>
                     <div class="text-gray-400 text-xs sm:text-sm">
@@ -176,22 +135,15 @@
                 </div>
 
                 <!-- Total Views -->
-                <div
-                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
-                    style="animation-delay: 0.2s;"
-                >
+                <div class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                    style="animation-delay: 0.2s;">
                     <div class="flex items-center justify-between mb-3 sm:mb-4">
                         <div class="text-2xl sm:text-3xl">👁️</div>
-                        <div
-                            class="text-green-400 text-xs sm:text-sm font-semibold hidden"
-                        >
+                        <div class="text-green-400 text-xs sm:text-sm font-semibold hidden">
                             +15.7%
                         </div>
                     </div>
-                    <div
-                        class="text-xl sm:text-2xl font-bold text-white mb-1"
-                        id="totalViews"
-                    >
+                    <div class="text-xl sm:text-2xl font-bold text-white mb-1" id="totalViews">
                         0
                     </div>
                     <div class="text-gray-400 text-xs sm:text-sm">
@@ -200,22 +152,15 @@
                 </div>
 
                 <!-- Active Orders -->
-                <div
-                    class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
-                    style="animation-delay: 0.3s;"
-                >
+                <div class="stat-card card-hover rounded-2xl p-4 sm:p-6 animate-slide-up"
+                    style="animation-delay: 0.3s;">
                     <div class="flex items-center justify-between mb-3 sm:mb-4">
                         <div class="text-2xl sm:text-3xl">⚡</div>
-                        <div
-                            class="text-blue-400 text-xs sm:text-sm font-semibold hidden"
-                        >
+                        <div class="text-blue-400 text-xs sm:text-sm font-semibold hidden">
                             En proceso
                         </div>
                     </div>
-                    <div
-                        id="totalOrder"
-                        class="text-xl sm:text-2xl font-bold text-white mb-1"
-                    >
+                    <div id="totalOrder" class="text-xl sm:text-2xl font-bold text-white mb-1">
                         0
                     </div>
                     <div class="text-gray-400 text-xs sm:text-sm">
@@ -225,14 +170,10 @@
             </div>
 
             <!-- Recent Activity & Quick Actions -->
-            <div
-                class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8"
-            >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
                 <!-- Recent Activity -->
                 <div class="stat-card rounded-2xl p-6">
-                    <h3
-                        class="text-xl font-bold text-white mb-6 flex items-center"
-                    >
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center">
                         <span class="text-2xl mr-3">📋</span>
                         Actividad Reciente
                     </h3>
@@ -243,64 +184,47 @@
 
                 <!-- Quick Actions -->
                 <div class="stat-card rounded-2xl p-6">
-                    <h3
-                        class="text-xl font-bold text-white mb-6 flex items-center"
-                    >
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center">
                         <span class="text-2xl mr-3">🚀</span>
                         Acciones Rápidas
                     </h3>
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
-                        <button
-                            id="btnNewOrderDashboard"
-                            class="card-hover bg-gradient-to-r from-pink-500 to-purple-500/50 border border-pink-400/30 rounded-xl p-3 sm:p-4 text-center"
-                        >
+                        <button id="btnNewOrderDashboard"
+                            class="card-hover bg-gradient-to-r from-pink-500 to-purple-500/50 border border-pink-400/30 rounded-xl p-3 sm:p-4 text-center">
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 ➕
                             </div>
-                            <div
-                                class="text-white font-medium text-xs sm:text-sm"
-                            >
+                            <div class="text-white font-medium text-xs sm:text-sm">
                                 Nuevo Pedido
                             </div>
                         </button>
 
-                        <button
-                            onclick="showSection('orders')"
-                            class="card-hover bg-gradient-to-r from-amber-600 to-amber-500/50 border border-blue-400/30 rounded-xl p-3 sm:p-4 text-center"
-                        >
+                        <button onclick="showSection('orders')"
+                            class="card-hover bg-gradient-to-r from-amber-600 to-amber-500/50 border border-blue-400/30 rounded-xl p-3 sm:p-4 text-center">
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 📦
                             </div>
-                            <div
-                                class="text-white font-medium text-xs sm:text-sm"
-                            >
+                            <div class="text-white font-medium text-xs sm:text-sm">
                                 Mis Pedidos
                             </div>
                         </button>
 
                         <button
-                            class="card-hover hidden bg-gradient-to-r from-green-500 to-teal-500/50 border border-green-400/30 rounded-xl p-3 sm:p-4 text-center"
-                        >
+                            class="card-hover hidden bg-gradient-to-r from-green-500 to-teal-500/50 border border-green-400/30 rounded-xl p-3 sm:p-4 text-center">
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 💳
                             </div>
-                            <div
-                                class="text-white font-medium text-xs sm:text-sm"
-                            >
+                            <div class="text-white font-medium text-xs sm:text-sm">
                                 Suscripción
                             </div>
                         </button>
 
-                        <button
-                            onclick="logout()"
-                            class="card-hover bg-gradient-to-r from-red-600 to-red-400/50 border border-yellow-400/30 rounded-xl p-3 sm:p-4 text-center"
-                        >
+                        <button onclick="logout()"
+                            class="card-hover bg-gradient-to-r from-red-600 to-red-400/50 border border-yellow-400/30 rounded-xl p-3 sm:p-4 text-center">
                             <div class="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 🚪
                             </div>
-                            <div
-                                class="text-white font-medium text-xs sm:text-sm"
-                            >
+                            <div class="text-white font-medium text-xs sm:text-sm">
                                 Cerrar Sesión
                             </div>
                         </button>
@@ -323,10 +247,8 @@
             <!-- Orders Table -->
             <div class="stat-card rounded-2xl p-6">
                 <div id="btnOrder" class="flex justify-end mb-4">
-                    <button
-                        id="btnNewOrder"
-                        class="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:scale-105 transform transition-all duration-300"
-                    >
+                    <button id="btnNewOrder"
+                        class="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:scale-105 transform transition-all duration-300">
                         Enviar nueva orden
                     </button>
                 </div>
@@ -334,26 +256,11 @@
                     <table class="w-full">
                         <thead>
                             <tr class="border-b border-white/20">
-                                <th
-                                    class="text-left text-white font-semibold py-4"
-                                    >Fecha</th
-                                >
-                                <th
-                                    class="text-left text-white font-semibold py-4"
-                                    >Servicio</th
-                                >
-                                <th
-                                    class="text-left text-white font-semibold py-4"
-                                    >Red Social</th
-                                >
-                                <th
-                                    class="text-left text-white font-semibold py-4"
-                                    >Cantidad</th
-                                >
-                                <th
-                                    class="text-left text-white font-semibold py-4"
-                                    >Estado</th
-                                >
+                                <th class="text-left text-white font-semibold py-4">Fecha</th>
+                                <th class="text-left text-white font-semibold py-4">Servicio</th>
+                                <th class="text-left text-white font-semibold py-4">Red Social</th>
+                                <th class="text-left text-white font-semibold py-4">Cantidad</th>
+                                <th class="text-left text-white font-semibold py-4">Estado</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -379,9 +286,7 @@
             <div class="stat-card rounded-2xl p-6 mb-8">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-2xl font-bold text-white">Plan Actual</h3>
-                    <span
-                        class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full font-semibold"
-                    >
+                    <span class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full font-semibold">
                         ✅ Activo
                     </span>
                 </div>
@@ -415,37 +320,26 @@
                     <div>
                         <div class="space-y-4">
                             <div class="flex justify-between">
-                                <span class="text-gray-300">Próximo cobro:</span
-                                >
-                                <span class="text-white font-semibold"
-                                    >15 Feb 2024</span
-                                >
+                                <span class="text-gray-300">Próximo cobro:</span>
+                                <span class="text-white font-semibold">15 Feb 2024</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-300"
-                                    >Método de pago:</span
-                                >
-                                <span class="text-white font-semibold"
-                                    >•••• 4242</span
-                                >
+                                <span class="text-gray-300">Método de pago:</span>
+                                <span class="text-white font-semibold">•••• 4242</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-300">Estado:</span>
-                                <span class="text-green-300 font-semibold"
-                                    >Activo</span
-                                >
+                                <span class="text-green-300 font-semibold">Activo</span>
                             </div>
                         </div>
 
                         <div class="mt-6 space-y-3">
                             <button
-                                class="w-full px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300"
-                            >
+                                class="w-full px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300">
                                 Actualizar método de pago
                             </button>
                             <button
-                                class="w-full px-4 py-3 bg-red-500/20 text-red-300 font-semibold rounded-xl hover:bg-opacity-30 transition-colors"
-                            >
+                                class="w-full px-4 py-3 bg-red-500/20 text-red-300 font-semibold rounded-xl hover:bg-opacity-30 transition-colors">
                                 Cancelar suscripción
                             </button>
                         </div>
@@ -459,9 +353,7 @@
                     Historial de Facturación
                 </h3>
                 <div class="space-y-4">
-                    <div
-                        class="flex items-center justify-between p-4 bg-white/5 rounded-xl"
-                    >
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
                         <div>
                             <div class="text-white font-medium">
                                 Suscripción Premium
@@ -470,16 +362,11 @@
                         </div>
                         <div class="text-right">
                             <div class="text-white font-semibold">€20.00</div>
-                            <button
-                                class="text-blue-300 text-sm hover:text-blue-200"
-                                >Descargar</button
-                            >
+                            <button class="text-blue-300 text-sm hover:text-blue-200">Descargar</button>
                         </div>
                     </div>
 
-                    <div
-                        class="flex items-center justify-between p-4 bg-white/5 rounded-xl"
-                    >
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
                         <div>
                             <div class="text-white font-medium">
                                 Validación de tarjeta
@@ -490,10 +377,7 @@
                             <div class="text-green-300 font-semibold">
                                 €1.00 (Reembolsado)
                             </div>
-                            <button
-                                class="text-blue-300 text-sm hover:text-blue-200"
-                                >Descargar</button
-                            >
+                            <button class="text-blue-300 text-sm hover:text-blue-200">Descargar</button>
                         </div>
                     </div>
                 </div>
@@ -503,27 +387,19 @@
 </div>
 
 <!-- User Menu Dropdown -->
-<div
-    id="userMenu"
-    class="hidden fixed top-16 right-6 bg-black/50 backdrop-blur-lg rounded-2xl p-4 z-50 border border-white/20"
->
+<div id="userMenu"
+    class="hidden fixed top-16 right-6 bg-black/50 backdrop-blur-lg rounded-2xl p-4 z-50 border border-white/20">
     <div class="space-y-2">
-        <button
-            onclick="logout()"
-            class="block px-4 py-2 text-red-300 hover:bg-red-500 hover:bg-opacity-20 rounded-xl transition-colors"
-        >
+        <button onclick="logout()"
+            class="block px-4 py-2 text-red-300 hover:bg-red-500 hover:bg-opacity-20 rounded-xl transition-colors">
             🚪 Cerrar Sesión
         </button>
     </div>
 </div>
 
-<div
-    id="AlertModal"
-    class="fixed hidden inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
->
+<div id="AlertModal" class="fixed hidden inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
     <div
-        class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 max-w-md w-full border border-white/20 flex flex-col justify-center"
-    >
+        class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 max-w-md w-full border border-white/20 flex flex-col justify-center">
         <div class="text-center mb-6">
             <div id="modalIcon" class="text-4xl mb-4">🚨</div>
             <h2 id="modalTitle" class="text-2xl font-bold text-white mb-2">
@@ -533,28 +409,18 @@
                 Te enviaremos un enlace para restablecer tu contraseña
             </p>
         </div>
-        <button
-            id="modalCloseBtn"
-            class="flex-1 px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300"
-        >
+        <button id="modalCloseBtn"
+            class="flex-1 px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300">
             Vale
         </button>
     </div>
 </div>
 
-<div
-    id="loaderModal"
+<div id="loaderModal"
     class="hidden opacity-0 fixed inset-0 z-[70] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-200"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="loaderTitle"
->
-    <div
-        class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl"
-    >
-        <div
-            class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-pink-400/40 border-t-transparent animate-spin"
-        >
+    role="dialog" aria-modal="true" aria-labelledby="loaderTitle">
+    <div class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl">
+        <div class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-pink-400/40 border-t-transparent animate-spin">
         </div>
         <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">
             Procesando
@@ -564,7 +430,6 @@
         </p>
     </div>
 </div>
-
 <script>
     window.addEventListener("load", () => {
 

@@ -1,19 +1,13 @@
-
 <!-- Animated Background Elements -->
 <div class="fixed inset-0 overflow-hidden pointer-events-none">
     <div
-        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-    >
+        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element">
     </div>
-    <div
-        class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-        style="animation-delay: 2s;"
-    >
+    <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 2s;">
     </div>
-    <div
-        class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-        style="animation-delay: 4s;"
-    >
+    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 4s;">
     </div>
 </div>
 
@@ -27,10 +21,8 @@
             </div>
 
             <!-- Back Button -->
-            <button
-                onclick="history.back()"
-                class="back-button  flex items-center space-x-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full text-white hover:bg-white/20 border border-white/20"
-            >
+            <button onclick="history.back()"
+                class="back-button  flex items-center space-x-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full text-white hover:bg-white/20 border border-white/20">
                 <span>←</span>
                 <span>Volver</span>
             </button>
@@ -38,266 +30,302 @@
     </div>
 </header>
 
-    <!-- Main Content -->
-    <main class="relative z-10 container mx-auto px-6 pb-12">
+<!-- Main Content -->
+<main class="relative z-10 container mx-auto px-6 pb-12">
 
-        <!-- Page Title -->
-        <div class="text-center mb-12 animate-fade-in">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                📋 <span class="gradient-text">Aviso Legal</span>
-            </h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Información legal sobre el uso de nuestros servicios y plataforma
-                    </p>
-            <p class="text-xl text-gray-300">
-                Última actualización: <strong>31/07/2025</strong>
+    <!-- Page Title -->
+    <div class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            📋 <span class="gradient-text">Aviso Legal</span>
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Información legal sobre el uso de nuestros servicios y plataforma
+        </p>
+        <p class="text-xl text-gray-300">
+            Última actualización: <strong>31/07/2025</strong>
+        </p>
+    </div>
+
+    <div
+        class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 content-glow border border-white/20 animate-slide-up">
+        <!-- Welcome Message -->
+        <div class="mb-8 p-6 bg-gradient-to-r from-pink-500 to-purple-500/20 rounded-2xl border border-pink-400/30">
+            <p class="text-white text-lg leading-relaxed">
+                <strong>Bienvenido/a a WklySocial.</strong><br />
+                Al registrarte y utilizar nuestro servicio, aceptas los siguientes
+                términos y condiciones:
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 content-glow border border-white/20 animate-slide-up">
-        <!-- Welcome Message -->
-            <div class="mb-8 p-6 bg-gradient-to-r from-pink-500 to-purple-500/20 rounded-2xl border border-pink-400/30">
-                <p class="text-white text-lg leading-relaxed">
-                    <strong>Bienvenido/a a WklySocial.</strong><br />
-                    Al registrarte y utilizar nuestro servicio, aceptas los siguientes
-                    términos y condiciones:
+        <!-- Table of Contents -->
+        <div class="mb-10 p-6 bg-white/5 rounded-2xl border border-white/10">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                📋 Índice de contenidos
+            </h3>
+            <div class="grid md:grid-cols-2 gap-2 text-gray-300">
+                <a href="#datos-identificativos" class="hover:text-pink-300 transition-colors">1. Datos
+                    Identificativos</a>
+                <a href="#objeto-condiciones" class="hover:text-pink-300 transition-colors">2. Objeto y Condiciones</a>
+                <a href="#servicios" class="hover:text-pink-300 transition-colors">3. Servicios Ofrecidos</a>
+                <a href="#responsabilidades" class="hover:text-pink-300 transition-colors">4. Responsabilidades</a>
+                <a href="#propiedad-intelectual" class="hover:text-pink-300 transition-colors">5. Propiedad
+                    Intelectual</a>
+                <a href="#proteccion-datos" class="hover:text-pink-300 transition-colors">6. Protección de Datos</a>
+                <a href="#cookies" class="hover:text-pink-300 transition-colors">7. Política de Cookies</a>
+                <a href="#legislacion" class="hover:text-pink-300 transition-colors">8. Legislación Aplicable</a>
+                <a href="#contacto" class="hover:text-pink-300 transition-colors">9. Contacto</a>
+            </div>
+        </div>
+
+        <div class="space-y-8 text-gray-200">
+            <!-- 1. Datos Identificativos -->
+            <section id="datos-identificativos" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🏢</span>
+                        1. Datos Identificativos
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la
+                            Sociedad de la Información y de Comercio Electrónico, se informa de los siguientes datos:
+                        </p>
+
+                        <div class="bg-white/20 bg-opacity-5 rounded-lg p-4 space-y-2">
+                            <p><strong class="text-white">Denominación social:</strong> Sponsor Telecom S.l.</p>
+                            <p><strong class="text-white">CIF:</strong> B97553424</p>
+                            <p><strong class="text-white">Domicilio social:</strong> Calle Capitan Haya 1, Planta 15
+                                28020 Madrid</p>
+                            <p><strong class="text-white">Teléfono:</strong> 913076630</p>
+                            <p><strong class="text-white">Email:</strong> soporte@wklysocial.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Objeto y Condiciones -->
+            <section id="objeto-condiciones" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">📋</span>
+                        2. Objeto y Condiciones de Uso
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>El presente aviso legal regula el uso del sitio web <strong
+                                class="text-white">www.wklysocial.com</strong> (en adelante, "la web"), del que es
+                            titular Sponsor Telecom S.l.</p>
+
+                        <p>La navegación por la web atribuye la condición de usuario del mismo e implica la aceptación
+                            plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.
+                        </p>
+
+                        <div
+                            class="bg-yellow-500 bg-opacity-10 border border-yellow-500 border-opacity-30 rounded-lg p-4">
+                            <p class="text-yellow-200"><strong>⚠️ Importante:</strong> Si no está conforme con alguna de
+                                las condiciones aquí establecidas, no debe usar esta web.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Servicios Ofrecidos -->
+            <section id="servicios" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🚀</span>
+                        3. Servicios Ofrecidos
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>WklySocial ofrece servicios de marketing digital y crecimiento en redes sociales, incluyendo:
+                        </p>
+
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Incremento de seguidores en plataformas de redes sociales</li>
+                            <li>Aumento de interacciones (likes, comentarios, visualizaciones)</li>
+                            <li>Análisis y estadísticas de rendimiento</li>
+                        </ul>
+
+                        <div class="bg-blue-500 bg-opacity-10 border border-blue-500 border-opacity-30 rounded-lg p-4">
+                            <p class="text-blue-200"><strong>ℹ️ Nota:</strong> Todos nuestros servicios cumplen con las
+                                políticas y términos de uso de las respectivas plataformas de redes sociales.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Responsabilidades -->
+            <section id="responsabilidades" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">⚖️</span>
+                        4. Responsabilidades del Usuario y la Empresa
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <h3 class="text-lg font-semibold text-white">4.1. Responsabilidades del Usuario</h3>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Proporcionar información veraz y actualizada</li>
+                            <li>Usar los servicios de forma legal y ética</li>
+                            <li>No violar las políticas de las redes sociales</li>
+                            <li>Mantener la confidencialidad de sus credenciales</li>
+                            <li>Cumplir con los términos y condiciones establecidos</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold text-white mt-6">4.2. Limitaciones de Responsabilidad</h3>
+                        <p>Sponsor Telecom S.l. no se hace responsable de:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Cambios en las políticas de las plataformas de redes sociales</li>
+                            <li>Suspensiones o penalizaciones por parte de terceros</li>
+                            <li>Interrupciones del servicio por causas técnicas ajenas</li>
+                            <li>Uso indebido de los servicios por parte del usuario</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Propiedad Intelectual -->
+            <section id="propiedad-intelectual" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">©️</span>
+                        5. Propiedad Intelectual e Industrial
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>Todos los contenidos del sitio web, incluyendo a título enunciativo pero no limitativo,
+                            textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño
+                            gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a Sponsor Telecom
+                            S.l.</p>
+
+                        <p>Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública,
+                            incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de
+                            esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico,
+                            sin la autorización de Sponsor Telecom.</p>
+
+                        <div class="bg-red-500 bg-opacity-10 border border-red-500 border-opacity-30 rounded-lg p-4">
+                            <p class="text-red-200"><strong>🚫 Prohibido:</strong> El uso no autorizado de los
+                                contenidos puede constituir una infracción de los derechos de propiedad intelectual.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Protección de Datos -->
+            <section id="proteccion-datos" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🔒</span>
+                        6. Protección de Datos Personales
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>Sponsor Telecom S.l. cumple con el Reglamento General de Protección de Datos (RGPD) y la Ley
+                            Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.</p>
+
+                        <h3 class="text-lg font-semibold text-white">Responsable del Tratamiento</h3>
+                        <div class="bg-white/20 bg-opacity-5 rounded-lg p-4">
+                            <p><strong class="text-white">Responsable:</strong> Sponsor Telecom S.l.</p>
+                            <p><strong class="text-white">DPO:</strong> soporte@wklysocial.com</p>
+                            <p><strong class="text-white">Finalidad:</strong> Prestación de servicios y comunicaciones
+                                comerciales</p>
+                            <p><strong class="text-white">Legitimación:</strong> Consentimiento del interesado y
+                                ejecución contractual</p>
+                        </div>
+
+                        <h3 class="text-lg font-semibold text-white">Derechos del Usuario</h3>
+                        <p>Puede ejercer sus derechos de acceso, rectificación, supresión, limitación, portabilidad y
+                            oposición contactando con nosotros en: <strong
+                                class="text-white">soporte@wklysocial.com</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Política de Cookies -->
+            <section id="cookies" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🍪</span>
+                        7. Política de Cookies
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de
+                            navegación y ofrecer contenidos de interés.</p>
+
+                        <h3 class="text-lg font-semibold text-white">Tipos de Cookies Utilizadas</h3>
+                        <div class="space-y-3">
+                            <div class="bg-white/20 bg-opacity-5 rounded-lg p-3">
+                                <p><strong class="text-white">Cookies Técnicas:</strong> Necesarias para el
+                                    funcionamiento del sitio</p>
+                            </div>
+                            <div class="bg-white/20 bg-opacity-5 rounded-lg p-3">
+                                <p><strong class="text-white">Cookies Analíticas:</strong> Para análisis estadístico del
+                                    tráfico web</p>
+                            </div>
+                        </div>
+
+                        <p>Puede configurar o rechazar las cookies en la configuración de su navegador.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Legislación Aplicable -->
+            <section id="legislacion" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">⚖️</span>
+                        8. Legislación Aplicable y Jurisdicción
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>La relación entre WklySocial y el Usuario se regirá por la normativa española vigente y
+                            cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Madrid.</p>
+
+                        <p>En caso de que cualquier disposición del presente Aviso Legal resultara inexigible o nula en
+                            virtud de la legislación aplicable o como consecuencia de una resolución judicial o
+                            administrativa, dicha inexigibilidad o nulidad no hará que el presente Aviso Legal resulte
+                            inexigible o nulo en su conjunto.</p>
+
+                        <div
+                            class="bg-green-500 bg-opacity-10 border border-green-500 border-opacity-30 rounded-lg p-4">
+                            <p class="text-green-200"><strong>✅ Resolución de Conflictos:</strong> Priorizamos la
+                                resolución amistosa de cualquier controversia antes de acudir a la vía judicial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Contacto -->
+            <section id="contacto" class="legal-section animate-slide-up">
+                <div class="section-card rounded-xl p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <span class="text-3xl mr-3">📞</span>
+                        9. Información de Contacto
+                    </h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>Para cualquier consulta relacionada con este Aviso Legal, puede contactar con nosotros a
+                            través de:</p>
+
+                        <div class="grid gap-4 place-content-center">
+                            <div class="bg-white/20 bg-opacity-5 rounded-lg p-4">
+                                <h4 class="text-white font-semibold mb-2">📧 Email</h4>
+                                <p>soporte@wklysocial.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Info -->
+            <div class="text-center pt-8 border-t border-white border-opacity-20">
+                <p class="text-gray-400 text-sm">
+                    Este aviso legal fue actualizado por última vez el 31 de julio de 2025.
+                </p>
+                <p class="text-gray-400 text-sm mt-2">
+                    © 2025 WklySocial Todos los derechos reservados.
                 </p>
             </div>
 
-            <!-- Table of Contents -->
-            <div class="mb-10 p-6 bg-white/5 rounded-2xl border border-white/10">
-                <h3 class="text-xl font-bold text-white mb-4 flex items-center">
-                    📋 Índice de contenidos
-                </h3>
-                <div class="grid md:grid-cols-2 gap-2 text-gray-300">
-                    <a href="#datos-identificativos" class="hover:text-pink-300 transition-colors">1. Datos Identificativos</a>
-                    <a href="#objeto-condiciones" class="hover:text-pink-300 transition-colors">2. Objeto y Condiciones</a>
-                    <a href="#servicios" class="hover:text-pink-300 transition-colors">3. Servicios Ofrecidos</a>
-                    <a href="#responsabilidades" class="hover:text-pink-300 transition-colors">4. Responsabilidades</a>
-                    <a href="#propiedad-intelectual" class="hover:text-pink-300 transition-colors">5. Propiedad Intelectual</a>
-                    <a href="#proteccion-datos" class="hover:text-pink-300 transition-colors">6. Protección de Datos</a>
-                    <a href="#cookies" class="hover:text-pink-300 transition-colors">7. Política de Cookies</a>
-                    <a href="#legislacion" class="hover:text-pink-300 transition-colors">8. Legislación Aplicable</a>
-                    <a href="#contacto" class="hover:text-pink-300 transition-colors">9. Contacto</a>
-                </div>
-            </div>
-
-            <div class="space-y-8 text-gray-200">
-                            <!-- 1. Datos Identificativos -->
-                            <section id="datos-identificativos" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">🏢</span>
-                                        1. Datos Identificativos
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, se informa de los siguientes datos:</p>
-                                        
-                                        <div class="bg-white/20 bg-opacity-5 rounded-lg p-4 space-y-2">
-                                            <p><strong class="text-white">Denominación social:</strong> Sponsor Telecom S.l.</p>
-                                            <p><strong class="text-white">CIF:</strong> B97553424</p>
-                                            <p><strong class="text-white">Domicilio social:</strong> Calle Capitan Haya 1, Planta 15 28020 Madrid</p>
-                                            <p><strong class="text-white">Teléfono:</strong> 913076630</p>
-                                            <p><strong class="text-white">Email:</strong> soporte@wklysocial.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 2. Objeto y Condiciones -->
-                            <section id="objeto-condiciones" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">📋</span>
-                                        2. Objeto y Condiciones de Uso
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>El presente aviso legal regula el uso del sitio web <strong class="text-white">www.wklysocial.com</strong> (en adelante, "la web"), del que es titular Sponsor Telecom S.l.</p>
-                                        
-                                        <p>La navegación por la web atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
-                                        
-                                        <div class="bg-yellow-500 bg-opacity-10 border border-yellow-500 border-opacity-30 rounded-lg p-4">
-                                            <p class="text-yellow-200"><strong>⚠️ Importante:</strong> Si no está conforme con alguna de las condiciones aquí establecidas, no debe usar esta web.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 3. Servicios Ofrecidos -->
-                            <section id="servicios" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">🚀</span>
-                                        3. Servicios Ofrecidos
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>WklySocial ofrece servicios de marketing digital y crecimiento en redes sociales, incluyendo:</p>
-                                        
-                                        <ul class="list-disc list-inside space-y-2 ml-4">
-                                            <li>Incremento de seguidores en plataformas de redes sociales</li>
-                                            <li>Aumento de interacciones (likes, comentarios, visualizaciones)</li>
-                                            <li>Análisis y estadísticas de rendimiento</li>
-                                        </ul>
-                                        
-                                        <div class="bg-blue-500 bg-opacity-10 border border-blue-500 border-opacity-30 rounded-lg p-4">
-                                            <p class="text-blue-200"><strong>ℹ️ Nota:</strong> Todos nuestros servicios cumplen con las políticas y términos de uso de las respectivas plataformas de redes sociales.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 4. Responsabilidades -->
-                            <section id="responsabilidades" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">⚖️</span>
-                                        4. Responsabilidades del Usuario y la Empresa
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <h3 class="text-lg font-semibold text-white">4.1. Responsabilidades del Usuario</h3>
-                                        <ul class="list-disc list-inside space-y-2 ml-4">
-                                            <li>Proporcionar información veraz y actualizada</li>
-                                            <li>Usar los servicios de forma legal y ética</li>
-                                            <li>No violar las políticas de las redes sociales</li>
-                                            <li>Mantener la confidencialidad de sus credenciales</li>
-                                            <li>Cumplir con los términos y condiciones establecidos</li>
-                                        </ul>
-                                        
-                                        <h3 class="text-lg font-semibold text-white mt-6">4.2. Limitaciones de Responsabilidad</h3>
-                                        <p>Sponsor Telecom S.l. no se hace responsable de:</p>
-                                        <ul class="list-disc list-inside space-y-2 ml-4">
-                                            <li>Cambios en las políticas de las plataformas de redes sociales</li>
-                                            <li>Suspensiones o penalizaciones por parte de terceros</li>
-                                            <li>Interrupciones del servicio por causas técnicas ajenas</li>
-                                            <li>Uso indebido de los servicios por parte del usuario</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 5. Propiedad Intelectual -->
-                            <section id="propiedad-intelectual" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">©️</span>
-                                        5. Propiedad Intelectual e Industrial
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>Todos los contenidos del sitio web, incluyendo a título enunciativo pero no limitativo, textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a Sponsor Telecom S.l.</p>
-                                        
-                                        <p>Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Sponsor Telecom.</p>
-                                        
-                                        <div class="bg-red-500 bg-opacity-10 border border-red-500 border-opacity-30 rounded-lg p-4">
-                                            <p class="text-red-200"><strong>🚫 Prohibido:</strong> El uso no autorizado de los contenidos puede constituir una infracción de los derechos de propiedad intelectual.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 6. Protección de Datos -->
-                            <section id="proteccion-datos" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">🔒</span>
-                                        6. Protección de Datos Personales
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>Sponsor Telecom S.l. cumple con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.</p>
-                                        
-                                        <h3 class="text-lg font-semibold text-white">Responsable del Tratamiento</h3>
-                                        <div class="bg-white/20 bg-opacity-5 rounded-lg p-4">
-                                            <p><strong class="text-white">Responsable:</strong> Sponsor Telecom S.l.</p>
-                                            <p><strong class="text-white">DPO:</strong> soporte@wklysocial.com</p>
-                                            <p><strong class="text-white">Finalidad:</strong> Prestación de servicios y comunicaciones comerciales</p>
-                                            <p><strong class="text-white">Legitimación:</strong> Consentimiento del interesado y ejecución contractual</p>
-                                        </div>
-                                        
-                                        <h3 class="text-lg font-semibold text-white">Derechos del Usuario</h3>
-                                        <p>Puede ejercer sus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición contactando con nosotros en: <strong class="text-white">soporte@wklysocial.com</strong></p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 7. Política de Cookies -->
-                            <section id="cookies" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">🍪</span>
-                                        7. Política de Cookies
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación y ofrecer contenidos de interés.</p>
-                                        
-                                        <h3 class="text-lg font-semibold text-white">Tipos de Cookies Utilizadas</h3>
-                                        <div class="space-y-3">
-                                            <div class="bg-white/20 bg-opacity-5 rounded-lg p-3">
-                                                <p><strong class="text-white">Cookies Técnicas:</strong> Necesarias para el funcionamiento del sitio</p>
-                                            </div>
-                                            <div class="bg-white/20 bg-opacity-5 rounded-lg p-3">
-                                                <p><strong class="text-white">Cookies Analíticas:</strong> Para análisis estadístico del tráfico web</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <p>Puede configurar o rechazar las cookies en la configuración de su navegador.</p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 8. Legislación Aplicable -->
-                            <section id="legislacion" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">⚖️</span>
-                                        8. Legislación Aplicable y Jurisdicción
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>La relación entre WklySocial y el Usuario se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Madrid.</p>
-                                        
-                                        <p>En caso de que cualquier disposición del presente Aviso Legal resultara inexigible o nula en virtud de la legislación aplicable o como consecuencia de una resolución judicial o administrativa, dicha inexigibilidad o nulidad no hará que el presente Aviso Legal resulte inexigible o nulo en su conjunto.</p>
-                                        
-                                        <div class="bg-green-500 bg-opacity-10 border border-green-500 border-opacity-30 rounded-lg p-4">
-                                            <p class="text-green-200"><strong>✅ Resolución de Conflictos:</strong> Priorizamos la resolución amistosa de cualquier controversia antes de acudir a la vía judicial.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- 9. Contacto -->
-                            <section id="contacto" class="legal-section animate-slide-up">
-                                <div class="section-card rounded-xl p-6">
-                                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                                        <span class="text-3xl mr-3">📞</span>
-                                        9. Información de Contacto
-                                    </h2>
-                                    <div class="text-gray-300 space-y-4">
-                                        <p>Para cualquier consulta relacionada con este Aviso Legal, puede contactar con nosotros a través de:</p>
-                                        
-                                        <div class="grid gap-4 place-content-center">
-                                            <div class="bg-white/20 bg-opacity-5 rounded-lg p-4">
-                                                <h4 class="text-white font-semibold mb-2">📧 Email</h4>
-                                                <p>soporte@wklysocial.com</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- Footer Info -->
-                            <div class="text-center pt-8 border-t border-white border-opacity-20">
-                                <p class="text-gray-400 text-sm">
-                                    Este aviso legal fue actualizado por última vez el 31 de julio de 2025.
-                                </p>
-                                <p class="text-gray-400 text-sm mt-2">
-                                    © 2025 WklySocial Todos los derechos reservados.
-                                </p>
-                            </div>
-
-            </div>
-
         </div>
 
-        </div>
-    </main>
+    </div>
+
+    </div>
+</main>
 
     <!-- JavaScript -->
     <script is:inline>

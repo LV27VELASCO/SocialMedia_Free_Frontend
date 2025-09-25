@@ -1,354 +1,397 @@
 <!-- Animated Background Elements -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"></div>
-        <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element" style="animation-delay: 4s;"></div>
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div
+        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element">
+    </div>
+    <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
+        style="animation-delay: 4s;"></div>
+</div>
+
+<!-- Header -->
+<header class="relative z-50 py-6">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-white">
+                🚀 <span class="gradient-text2">WklySocial</span>
+            </div>
+
+            <!-- Back Button -->
+            <button onclick="history.back()"
+                class="back-button  flex items-center space-x-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full text-white hover:bg-white/20 border border-white/20">
+                <span>←</span>
+                <span>Volver</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="relative z-10 container mx-auto px-6 pb-12">
+
+    <!-- Page Title -->
+    <div class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Política de <span class="gradient-text2">Privacidad</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+            Última actualización: <strong>31/07/2025</strong>
+        </p>
     </div>
 
-    <!-- Header -->
-    <header class="relative z-50 py-6">
-        <div class="container mx-auto px-6">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="text-2xl font-bold text-white">
-                    🚀 <span class="gradient-text2">WklySocial</span>
-                </div>
-                
-                <!-- Back Button -->
-                <button onclick="history.back()" class="back-button  flex items-center space-x-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full text-white hover:bg-white/20 border border-white/20">
-                    <span>←</span>
-                    <span>Volver</span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <!-- Content Card -->
+    <div
+        class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 content-glow border border-white/20 animate-slide-up">
 
-    <!-- Main Content -->
-    <main class="relative z-10 container mx-auto px-6 pb-12">
-        
-        <!-- Page Title -->
-        <div class="text-center mb-12 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                Política de <span class="gradient-text2">Privacidad</span>
-            </h1>
-            <p class="text-xl text-gray-300">
-                Última actualización: <strong>31/07/2025</strong>
+        <!-- Welcome Message -->
+        <div class="mb-8 p-6 bg-gradient-to-r from-blue-500 to-purple-500/20 rounded-2xl border border-blue-400/30">
+            <p class="text-white text-lg leading-relaxed">
+                <strong>En WklySocial valoramos tu privacidad.</strong><br>
+                Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas
+                nuestro servicio.
             </p>
         </div>
 
-        <!-- Content Card -->
-        <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 content-glow border border-white/20 animate-slide-up">
-            
-            <!-- Welcome Message -->
-            <div class="mb-8 p-6 bg-gradient-to-r from-blue-500 to-purple-500/20 rounded-2xl border border-blue-400/30">
-                <p class="text-white text-lg leading-relaxed">
-                    <strong>En WklySocial valoramos tu privacidad.</strong><br>
-                    Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro servicio.
+        <!-- Table of Contents -->
+        <div class="mb-10 p-6 bg-white/5 rounded-2xl border border-white/10">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                📋 Índice de contenidos
+            </h3>
+            <div class="grid md:grid-cols-2 gap-2 text-gray-300">
+                <a href="#informacion" class="hover:text-pink-300 transition-colors">1. Información que recopilamos</a>
+                <a href="#uso" class="hover:text-pink-300 transition-colors">2. Cómo usamos tu información</a>
+                <a href="#compartir" class="hover:text-pink-300 transition-colors">3. Compartir información</a>
+                <a href="#cookies" class="hover:text-pink-300 transition-colors">4. Cookies y tecnologías</a>
+                <a href="#seguridad" class="hover:text-pink-300 transition-colors">5. Seguridad de datos</a>
+                <a href="#derechos" class="hover:text-pink-300 transition-colors">6. Tus derechos</a>
+                <a href="#retencion" class="hover:text-pink-300 transition-colors">7. Retención de datos</a>
+                <a href="#menores" class="hover:text-pink-300 transition-colors">8. Menores de edad</a>
+                <a href="#cambios" class="hover:text-pink-300 transition-colors">9. Cambios en la política</a>
+                <a href="#contacto" class="hover:text-pink-300 transition-colors">10. Contacto</a>
+            </div>
+        </div>
+
+        <!-- Privacy Content -->
+        <div class="space-y-8 text-gray-200">
+
+            <!-- Section 1 -->
+            <section id="informacion" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">📊</span>
+                    1. Información que recopilamos
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <h3 class="text-lg font-semibold text-pink-300">Información personal que nos proporcionas:</h3>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>Datos de registro:</strong> Nombre o apodo, dirección de correo electrónico</li>
+                        <li><strong>Información de pago:</strong> Datos de tarjeta de crédito (procesados de forma
+                            segura por Stripe)</li>
+                        <li><strong>Información de redes sociales:</strong> Nombres de usuario y perfiles que deseas
+                            promocionar</li>
+                        <li><strong>Comunicaciones:</strong> Mensajes que nos envías a través de soporte</li>
+                    </ul>
+
+                    <h3 class="text-lg font-semibold text-pink-300 mt-6">Información recopilada automáticamente:</h3>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>Datos de uso:</strong> Cómo interactúas con nuestro servicio</li>
+                        <li><strong>Información técnica:</strong> Dirección IP, tipo de navegador, sistema operativo
+                        </li>
+                        <li><strong>Cookies:</strong> Para mejorar tu experiencia de usuario</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="uso" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">🎯</span>
+                    2. Cómo usamos tu información
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>Utilizamos tu información personal para:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong class="text-green-300">Proporcionar el servicio:</strong> Entregar seguidores y
+                            promocionar tus perfiles</li>
+                        <li><strong class="text-blue-300">Procesar pagos:</strong> Gestionar suscripciones y
+                            validaciones de tarjeta</li>
+                        <li><strong class="text-yellow-300">Comunicación:</strong> Enviarte actualizaciones,
+                            confirmaciones y soporte</li>
+                        <li><strong class="text-purple-300">Mejoras del servicio:</strong> Analizar el uso para
+                            optimizar la plataforma</li>
+                        <li><strong class="text-pink-300">Seguridad:</strong> Prevenir fraudes y proteger la plataforma
+                        </li>
+                        <li><strong class="text-indigo-300">Cumplimiento legal:</strong> Cumplir con obligaciones
+                            legales y regulatorias</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="compartir" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">🤝</span>
+                    3. Compartir información
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p><strong class="text-red-300">No vendemos ni alquilamos tu información personal.</strong> Solo
+                        compartimos datos en estas situaciones:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>Proveedores de servicios:</strong> Stripe para procesamiento de pagos, servicios de
+                            email</li>
+                        <li><strong>Cumplimiento legal:</strong> Cuando sea requerido por ley o autoridades competentes
+                        </li>
+                        <li><strong>Protección de derechos:</strong> Para proteger nuestros derechos legales o los de
+                            nuestros usuarios</li>
+                        <li><strong>Transferencia de negocio:</strong> En caso de fusión, adquisición o venta de activos
+                        </li>
+                    </ul>
+
+                    <div class="bg-green-500/20 p-4 rounded-xl border border-green-400/30 mt-4">
+                        <p class="text-green-100"><strong>Garantía:</strong> Todos nuestros proveedores cumplen con
+                            estrictos estándares de privacidad y seguridad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="cookies" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">🍪</span>
+                    4. Cookies y tecnologías similares
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>Utilizamos cookies para mejorar tu experiencia:</p>
+
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-blue-500/20 p-4 rounded-xl border border-blue-400/30">
+                            <h4 class="font-semibold text-blue-300 mb-2">Cookies esenciales</h4>
+                            <p class="text-sm">Necesarias para el funcionamiento básico del sitio</p>
+                        </div>
+                        <div class="bg-purple-500/20 p-4 rounded-xl border border-purple-400/30">
+                            <h4 class="font-semibold text-purple-300 mb-2">Cookies de rendimiento</h4>
+                            <p class="text-sm">Nos ayudan a entender cómo usas el sitio</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">Puedes controlar las cookies a través de la configuración de tu navegador.</p>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="seguridad" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">🔒</span>
+                    5. Seguridad de datos
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>Implementamos múltiples medidas de seguridad:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong class="text-green-300">Encriptación SSL:</strong> Todas las comunicaciones están
+                            encriptadas</li>
+                        <li><strong class="text-blue-300">Procesamiento seguro:</strong> Los datos de pago se procesan a
+                            través de Stripe (PCI DSS compliant)</li>
+                        <li><strong class="text-purple-300">Acceso limitado:</strong> Solo personal autorizado puede
+                            acceder a datos personales</li>
+                        <li><strong class="text-yellow-300">Monitoreo continuo:</strong> Supervisamos constantemente
+                            posibles amenazas</li>
+                        <li><strong class="text-pink-300">Copias de seguridad:</strong> Realizamos backups regulares y
+                            seguros</li>
+                    </ul>
+
+                    <div class="bg-yellow-500/20 p-4 rounded-xl border border-yellow-400/30 mt-4">
+                        <p class="text-yellow-100"><strong>Importante:</strong> Ningún sistema es 100% seguro. Te
+                            recomendamos usar contraseñas fuertes y mantener tu información de acceso privada.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="derechos" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">⚖️</span>
+                    6. Tus derechos (RGPD)
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>Bajo el RGPD, tienes los siguientes derechos:</p>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="space-y-3">
+                            <div class="bg-green-500/20 p-3 rounded-lg border border-green-400/30">
+                                <h4 class="font-semibold text-green-300">✅ Derecho de acceso</h4>
+                                <p class="text-sm">Solicitar una copia de tus datos</p>
+                            </div>
+                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-400/30">
+                                <h4 class="font-semibold text-blue-300">✏️ Derecho de rectificación</h4>
+                                <p class="text-sm">Corregir datos incorrectos</p>
+                            </div>
+                            <div class="bg-red-500/20 p-3 rounded-lg border border-red-400/30">
+                                <h4 class="font-semibold text-red-300">🗑️ Derecho de supresión</h4>
+                                <p class="text-sm">Solicitar la eliminación de tus datos</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-purple-500/20 p-3 rounded-lg border border-purple-400/30">
+                                <h4 class="font-semibold text-purple-300">⏸️ Derecho de limitación</h4>
+                                <p class="text-sm">Restringir el procesamiento</p>
+                            </div>
+                            <div class="bg-yellow-500/20 p-3 rounded-lg border border-yellow-400/30">
+                                <h4 class="font-semibold text-yellow-300">📦 Derecho de portabilidad</h4>
+                                <p class="text-sm">Transferir tus datos a otro servicio</p>
+                            </div>
+                            <div class="bg-pink-500/20 p-3 rounded-lg border border-pink-400/30">
+                                <h4 class="font-semibold text-pink-300">🚫 Derecho de oposición</h4>
+                                <p class="text-sm">Oponerte al procesamiento</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">Para ejercer cualquiera de estos derechos, contáctanos en <strong
+                            class="text-blue-300">soporte@wklysocial.com</strong></p>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="retencion" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">⏰</span>
+                    7. Retención de datos
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>Conservamos tu información personal durante:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong class="text-green-300">Cuenta activa:</strong> Mientras mantengas tu cuenta activa
+                        </li>
+                        <li><strong class="text-blue-300">Después de cancelación:</strong> Hasta 2 años para cumplir
+                            obligaciones legales</li>
+                        <li><strong class="text-yellow-300">Datos de pago:</strong> Según requerimientos de Stripe y
+                            regulaciones financieras</li>
+                        <li><strong class="text-purple-300">Comunicaciones de soporte:</strong> Hasta 3 años para
+                            referencia</li>
+                    </ul>
+
+                    <div class="bg-blue-500/20 p-4 rounded-xl border border-blue-400/30 mt-4">
+                        <p class="text-blue-100"><strong>Eliminación automática:</strong> Los datos se eliminan
+                            automáticamente cuando ya no son necesarios.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section id="menores" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">👶</span>
+                    8. Menores de edad
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <div class="bg-red-500/20 p-4 rounded-xl border border-red-400/30">
+                        <p class="text-red-100 font-semibold">
+                            <strong>Nuestro servicio está destinado únicamente a personas mayores de 18 años.</strong>
+                        </p>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>No recopilamos intencionalmente información de menores de 18 años</li>
+                        <li>Si descubrimos que hemos recopilado datos de un menor, los eliminaremos inmediatamente</li>
+                        <li>Los padres pueden contactarnos si creen que su hijo ha proporcionado información personal
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section id="cambios" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">📝</span>
+                    9. Cambios en esta política
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Podemos actualizar esta política de privacidad ocasionalmente</li>
+                        <li>Te notificaremos sobre cambios significativos por correo electrónico</li>
+                        <li>La fecha de "última actualización" se modificará en la parte superior</li>
+                        <li>Te recomendamos revisar esta política periódicamente</li>
+                    </ul>
+
+                    <div class="bg-green-500/20 p-4 rounded-xl border border-green-400/30 mt-4">
+                        <p class="text-green-100"><strong>Tu consentimiento:</strong> Al continuar usando el servicio
+                            después de los cambios, aceptas la política actualizada.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10 -->
+            <section id="contacto" class="section-hover p-6 rounded-2xl border border-white/10">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="text-3xl mr-3">📧</span>
+                    10. Contacto y preguntas
+                </h2>
+                <div class="space-y-4 leading-relaxed">
+                    <p>Si tienes preguntas sobre esta política de privacidad o quieres ejercer tus derechos,
+                        contáctanos:</p>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div
+                            class="bg-gradient-to-r from-pink-500 to-purple-500/20 p-4 rounded-xl border border-pink-400/30">
+                            <h4 class="font-semibold text-pink-300 mb-2">📧 Email</h4>
+                            <a href="mailto:soporte@wklysocial.com"
+                                class="text-white hover:text-pink-300 transition-colors">soporte@wklysocial.com</a>
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-blue-500 to-indigo-500/20 p-4 rounded-xl border border-blue-400/30">
+                            <h4 class="font-semibold text-blue-300 mb-2">⏰ Tiempo de respuesta</h4>
+                            <p class="text-white">Máximo 72 horas</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-500/20 p-4 rounded-xl border border-yellow-400/30">
+                        <p class="text-yellow-100"><strong>Delegado de Protección de Datos:</strong> Para consultas
+                            específicas sobre RGPD, incluye "DPO" en el asunto del email.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="mt-12 pt-8 border-t border-white/20 text-center">
+            <div class="bg-gradient-to-r from-green-500 to-blue-500/20 p-6 rounded-2xl border border-green-400/30 mb-6">
+                <p class="text-white text-lg">
+                    <strong>¿Tienes dudas sobre tu privacidad?</strong><br>
+                    Estamos aquí para ayudarte y proteger tus datos
                 </p>
             </div>
 
-            <!-- Table of Contents -->
-            <div class="mb-10 p-6 bg-white/5 rounded-2xl border border-white/10">
-                <h3 class="text-xl font-bold text-white mb-4 flex items-center">
-                    📋 Índice de contenidos
-                </h3>
-                <div class="grid md:grid-cols-2 gap-2 text-gray-300">
-                    <a href="#informacion" class="hover:text-pink-300 transition-colors">1. Información que recopilamos</a>
-                    <a href="#uso" class="hover:text-pink-300 transition-colors">2. Cómo usamos tu información</a>
-                    <a href="#compartir" class="hover:text-pink-300 transition-colors">3. Compartir información</a>
-                    <a href="#cookies" class="hover:text-pink-300 transition-colors">4. Cookies y tecnologías</a>
-                    <a href="#seguridad" class="hover:text-pink-300 transition-colors">5. Seguridad de datos</a>
-                    <a href="#derechos" class="hover:text-pink-300 transition-colors">6. Tus derechos</a>
-                    <a href="#retencion" class="hover:text-pink-300 transition-colors">7. Retención de datos</a>
-                    <a href="#menores" class="hover:text-pink-300 transition-colors">8. Menores de edad</a>
-                    <a href="#cambios" class="hover:text-pink-300 transition-colors">9. Cambios en la política</a>
-                    <a href="#contacto" class="hover:text-pink-300 transition-colors">10. Contacto</a>
-                </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="history.back()"
+                    class="back-button  px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-2xl hover:scale-105 transform transition-all duration-300">
+                    ← Volver
+                </button>
+                <a href="mailto:soporte@wklysocial.com"
+                    class="px-8 py-4 bg-white/10 backdrop-blur-lg text-white font-bold rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
+                    📧 Contactar sobre privacidad
+                </a>
             </div>
-
-            <!-- Privacy Content -->
-            <div class="space-y-8 text-gray-200">
-
-                <!-- Section 1 -->
-                <section id="informacion" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">📊</span>
-                        1. Información que recopilamos
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <h3 class="text-lg font-semibold text-pink-300">Información personal que nos proporcionas:</h3>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li><strong>Datos de registro:</strong> Nombre o apodo, dirección de correo electrónico</li>
-                            <li><strong>Información de pago:</strong> Datos de tarjeta de crédito (procesados de forma segura por Stripe)</li>
-                            <li><strong>Información de redes sociales:</strong> Nombres de usuario y perfiles que deseas promocionar</li>
-                            <li><strong>Comunicaciones:</strong> Mensajes que nos envías a través de soporte</li>
-                        </ul>
-                        
-                        <h3 class="text-lg font-semibold text-pink-300 mt-6">Información recopilada automáticamente:</h3>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li><strong>Datos de uso:</strong> Cómo interactúas con nuestro servicio</li>
-                            <li><strong>Información técnica:</strong> Dirección IP, tipo de navegador, sistema operativo</li>
-                            <li><strong>Cookies:</strong> Para mejorar tu experiencia de usuario</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Section 2 -->
-                <section id="uso" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🎯</span>
-                        2. Cómo usamos tu información
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p>Utilizamos tu información personal para:</p>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li><strong class="text-green-300">Proporcionar el servicio:</strong> Entregar seguidores y promocionar tus perfiles</li>
-                            <li><strong class="text-blue-300">Procesar pagos:</strong> Gestionar suscripciones y validaciones de tarjeta</li>
-                            <li><strong class="text-yellow-300">Comunicación:</strong> Enviarte actualizaciones, confirmaciones y soporte</li>
-                            <li><strong class="text-purple-300">Mejoras del servicio:</strong> Analizar el uso para optimizar la plataforma</li>
-                            <li><strong class="text-pink-300">Seguridad:</strong> Prevenir fraudes y proteger la plataforma</li>
-                            <li><strong class="text-indigo-300">Cumplimiento legal:</strong> Cumplir con obligaciones legales y regulatorias</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Section 3 -->
-                <section id="compartir" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🤝</span>
-                        3. Compartir información
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p><strong class="text-red-300">No vendemos ni alquilamos tu información personal.</strong> Solo compartimos datos en estas situaciones:</p>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li><strong>Proveedores de servicios:</strong> Stripe para procesamiento de pagos, servicios de email</li>
-                            <li><strong>Cumplimiento legal:</strong> Cuando sea requerido por ley o autoridades competentes</li>
-                            <li><strong>Protección de derechos:</strong> Para proteger nuestros derechos legales o los de nuestros usuarios</li>
-                            <li><strong>Transferencia de negocio:</strong> En caso de fusión, adquisición o venta de activos</li>
-                        </ul>
-                        
-                        <div class="bg-green-500/20 p-4 rounded-xl border border-green-400/30 mt-4">
-                            <p class="text-green-100"><strong>Garantía:</strong> Todos nuestros proveedores cumplen con estrictos estándares de privacidad y seguridad.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 4 -->
-                <section id="cookies" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🍪</span>
-                        4. Cookies y tecnologías similares
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p>Utilizamos cookies para mejorar tu experiencia:</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4 mt-4">
-                            <div class="bg-blue-500/20 p-4 rounded-xl border border-blue-400/30">
-                                <h4 class="font-semibold text-blue-300 mb-2">Cookies esenciales</h4>
-                                <p class="text-sm">Necesarias para el funcionamiento básico del sitio</p>
-                            </div>
-                            <div class="bg-purple-500/20 p-4 rounded-xl border border-purple-400/30">
-                                <h4 class="font-semibold text-purple-300 mb-2">Cookies de rendimiento</h4>
-                                <p class="text-sm">Nos ayudan a entender cómo usas el sitio</p>
-                            </div>
-                        </div>
-                        
-                        <p class="mt-4">Puedes controlar las cookies a través de la configuración de tu navegador.</p>
-                    </div>
-                </section>
-
-                <!-- Section 5 -->
-                <section id="seguridad" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">🔒</span>
-                        5. Seguridad de datos
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p>Implementamos múltiples medidas de seguridad:</p>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li><strong class="text-green-300">Encriptación SSL:</strong> Todas las comunicaciones están encriptadas</li>
-                            <li><strong class="text-blue-300">Procesamiento seguro:</strong> Los datos de pago se procesan a través de Stripe (PCI DSS compliant)</li>
-                            <li><strong class="text-purple-300">Acceso limitado:</strong> Solo personal autorizado puede acceder a datos personales</li>
-                            <li><strong class="text-yellow-300">Monitoreo continuo:</strong> Supervisamos constantemente posibles amenazas</li>
-                            <li><strong class="text-pink-300">Copias de seguridad:</strong> Realizamos backups regulares y seguros</li>
-                        </ul>
-                        
-                        <div class="bg-yellow-500/20 p-4 rounded-xl border border-yellow-400/30 mt-4">
-                            <p class="text-yellow-100"><strong>Importante:</strong> Ningún sistema es 100% seguro. Te recomendamos usar contraseñas fuertes y mantener tu información de acceso privada.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 6 -->
-                <section id="derechos" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">⚖️</span>
-                        6. Tus derechos (RGPD)
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p>Bajo el RGPD, tienes los siguientes derechos:</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="space-y-3">
-                                <div class="bg-green-500/20 p-3 rounded-lg border border-green-400/30">
-                                    <h4 class="font-semibold text-green-300">✅ Derecho de acceso</h4>
-                                    <p class="text-sm">Solicitar una copia de tus datos</p>
-                                </div>
-                                <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-400/30">
-                                    <h4 class="font-semibold text-blue-300">✏️ Derecho de rectificación</h4>
-                                    <p class="text-sm">Corregir datos incorrectos</p>
-                                </div>
-                                <div class="bg-red-500/20 p-3 rounded-lg border border-red-400/30">
-                                    <h4 class="font-semibold text-red-300">🗑️ Derecho de supresión</h4>
-                                    <p class="text-sm">Solicitar la eliminación de tus datos</p>
-                                </div>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="bg-purple-500/20 p-3 rounded-lg border border-purple-400/30">
-                                    <h4 class="font-semibold text-purple-300">⏸️ Derecho de limitación</h4>
-                                    <p class="text-sm">Restringir el procesamiento</p>
-                                </div>
-                                <div class="bg-yellow-500/20 p-3 rounded-lg border border-yellow-400/30">
-                                    <h4 class="font-semibold text-yellow-300">📦 Derecho de portabilidad</h4>
-                                    <p class="text-sm">Transferir tus datos a otro servicio</p>
-                                </div>
-                                <div class="bg-pink-500/20 p-3 rounded-lg border border-pink-400/30">
-                                    <h4 class="font-semibold text-pink-300">🚫 Derecho de oposición</h4>
-                                    <p class="text-sm">Oponerte al procesamiento</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <p class="mt-4">Para ejercer cualquiera de estos derechos, contáctanos en <strong class="text-blue-300">soporte@wklysocial.com</strong></p>
-                    </div>
-                </section>
-
-                <!-- Section 7 -->
-                <section id="retencion" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">⏰</span>
-                        7. Retención de datos
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p>Conservamos tu información personal durante:</p>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li><strong class="text-green-300">Cuenta activa:</strong> Mientras mantengas tu cuenta activa</li>
-                            <li><strong class="text-blue-300">Después de cancelación:</strong> Hasta 2 años para cumplir obligaciones legales</li>
-                            <li><strong class="text-yellow-300">Datos de pago:</strong> Según requerimientos de Stripe y regulaciones financieras</li>
-                            <li><strong class="text-purple-300">Comunicaciones de soporte:</strong> Hasta 3 años para referencia</li>
-                        </ul>
-                        
-                        <div class="bg-blue-500/20 p-4 rounded-xl border border-blue-400/30 mt-4">
-                            <p class="text-blue-100"><strong>Eliminación automática:</strong> Los datos se eliminan automáticamente cuando ya no son necesarios.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 8 -->
-                <section id="menores" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">👶</span>
-                        8. Menores de edad
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <div class="bg-red-500/20 p-4 rounded-xl border border-red-400/30">
-                            <p class="text-red-100 font-semibold">
-                                <strong>Nuestro servicio está destinado únicamente a personas mayores de 18 años.</strong>
-                            </p>
-                        </div>
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li>No recopilamos intencionalmente información de menores de 18 años</li>
-                            <li>Si descubrimos que hemos recopilado datos de un menor, los eliminaremos inmediatamente</li>
-                            <li>Los padres pueden contactarnos si creen que su hijo ha proporcionado información personal</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Section 9 -->
-                <section id="cambios" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">📝</span>
-                        9. Cambios en esta política
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <ul class="list-disc list-inside space-y-2 ml-4">
-                            <li>Podemos actualizar esta política de privacidad ocasionalmente</li>
-                            <li>Te notificaremos sobre cambios significativos por correo electrónico</li>
-                            <li>La fecha de "última actualización" se modificará en la parte superior</li>
-                            <li>Te recomendamos revisar esta política periódicamente</li>
-                        </ul>
-                        
-                        <div class="bg-green-500/20 p-4 rounded-xl border border-green-400/30 mt-4">
-                            <p class="text-green-100"><strong>Tu consentimiento:</strong> Al continuar usando el servicio después de los cambios, aceptas la política actualizada.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 10 -->
-                <section id="contacto" class="section-hover p-6 rounded-2xl border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                        <span class="text-3xl mr-3">📧</span>
-                        10. Contacto y preguntas
-                    </h2>
-                    <div class="space-y-4 leading-relaxed">
-                        <p>Si tienes preguntas sobre esta política de privacidad o quieres ejercer tus derechos, contáctanos:</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-gradient-to-r from-pink-500 to-purple-500/20 p-4 rounded-xl border border-pink-400/30">
-                                <h4 class="font-semibold text-pink-300 mb-2">📧 Email</h4>
-                                <a href="mailto:soporte@wklysocial.com" class="text-white hover:text-pink-300 transition-colors">soporte@wklysocial.com</a>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-500 to-indigo-500/20 p-4 rounded-xl border border-blue-400/30">
-                                <h4 class="font-semibold text-blue-300 mb-2">⏰ Tiempo de respuesta</h4>
-                                <p class="text-white">Máximo 72 horas</p>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-yellow-500/20 p-4 rounded-xl border border-yellow-400/30">
-                            <p class="text-yellow-100"><strong>Delegado de Protección de Datos:</strong> Para consultas específicas sobre RGPD, incluye "DPO" en el asunto del email.</p>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-
-            <!-- Bottom CTA -->
-            <div class="mt-12 pt-8 border-t border-white/20 text-center">
-                <div class="bg-gradient-to-r from-green-500 to-blue-500/20 p-6 rounded-2xl border border-green-400/30 mb-6">
-                    <p class="text-white text-lg">
-                        <strong>¿Tienes dudas sobre tu privacidad?</strong><br>
-                        Estamos aquí para ayudarte y proteger tus datos
-                    </p>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="history.back()" class="back-button  px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-2xl hover:scale-105 transform transition-all duration-300">
-                        ← Volver
-                    </button>
-                    <a href="mailto:soporte@wklysocial.com" class="px-8 py-4 bg-white/10 backdrop-blur-lg text-white font-bold rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
-                        📧 Contactar sobre privacidad
-                    </a>
-                </div>
-            </div>
-
         </div>
 
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="relative z-10 py-8 text-center">
-        <div class="container mx-auto px-6">
-            <p class="text-gray-400 text-sm">
-                © 2024 WklySocial. Todos los derechos reservados. | Cumplimos con RGPD
-            </p>
-        </div>
-    </footer>
+</main>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="fixed  bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300 opacity-0 pointer-events-none z-50">
-        ↑
-    </button>
+<!-- Footer -->
+<footer class="relative z-10 py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p class="text-gray-400 text-sm">
+            © 2025 WklySocial. Todos los derechos reservados. | Cumplimos con RGPD
+        </p>
+    </div>
+</footer>
 
+<!-- Scroll to Top Button -->
+<button id="scrollToTop"
+    class="fixed  bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300 opacity-0 pointer-events-none z-50">
+    ↑
+</button>
     <!-- JavaScript -->
     <script is:inline>
         // Scroll to top functionality
