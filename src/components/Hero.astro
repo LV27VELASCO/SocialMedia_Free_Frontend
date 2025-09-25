@@ -620,7 +620,7 @@ import tiktok from "../assets/tiktok.svg";
             // Validate terms acceptance
             if (!formData.get('acceptTerms')) {
                 errormessage.textContent = `🚨: Debes aceptar los terminos`;
-                errormessage.classList.add("text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30");
+                errormessage.classList.add("text-red-300", "text-sm", "bg-red-500/20", "p-4", "rounded-xl", "border", "border-red-400/30");
                 errormessage.classList.remove("hidden")
                 button.innerHTML = originalText;
                 button.disabled = false;
@@ -632,7 +632,7 @@ import tiktok from "../assets/tiktok.svg";
             // Validate card name
             if(!formData.get('card-name')){
                 errormessage.textContent = `🚨: Nombre del Titular es requerido`;
-                errormessage.classList.add("text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30");
+                errormessage.classList.add("text-red-300", "text-sm", "bg-red-500/20", "p-4", "rounded-xl", "border", "border-red-400/30");
                 errormessage.classList.remove("hidden")
                 button.innerHTML = originalText;
                 button.disabled = false;
@@ -647,7 +647,7 @@ import tiktok from "../assets/tiktok.svg";
             
             if (error) {
                 errormessage.textContent = `🚨: ${error.message}`;
-                errormessage.classList.add("text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30");
+                errormessage.classList.add("text-red-300", "text-sm", "bg-red-500/20", "p-4", "rounded-xl", "border", "border-red-400/30");
                 errormessage.classList.remove("hidden")
                 button.innerHTML = originalText;
                 button.disabled = false;
