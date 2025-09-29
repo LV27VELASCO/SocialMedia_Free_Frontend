@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
       allowedHosts: [
         '.wklysocial.com',
-        '.weeklysocial.es'
+        '.wklysocial.com'
       ]
     },
   vite: {
