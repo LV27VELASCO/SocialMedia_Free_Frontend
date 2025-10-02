@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import TermsAndConditions from "../components/Terms-and-conditions.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
@@ -6,7 +8,9 @@ import "../styles/global.css";
 
 
 <Layout>
-    <main class="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900">
+    <main class="m-auto">
+        <Header/>
         <TermsAndConditions/>
+        <Footer/>
     </main>
 </Layout>

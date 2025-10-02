@@ -1,25 +1,5 @@
-<!-- Animated Background Elements -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div
-        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element">
-    </div>
-    <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element"
-        style="animation-delay: 2s;">
-    </div>
-    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element"
-        style="animation-delay: 4s;">
-    </div>
-</div>
-
 <!-- Main Login Container -->
-<div class="relative z-10 w-full max-w-md mx-auto animate-fade-in">
-    <!-- Logo/Brand -->
-    <div class="text-center mb-8">
-        <a href="/" class="text-4xl block font-bold text-white mb-4">
-            🚀 <span class="gradient-text">WklySocial</span>
-        </a>
-        <p class="text-gray-300 text-lg">Accede a tu panel de control</p>
-    </div>
+<div class="relative z-10 w-full max-w-md mx-auto animate-fade-in py-20">
 
     <!-- Login Card -->
     <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 form-glow border border-white/20 animate-slide-up">
@@ -29,7 +9,7 @@
                 ¡Bienvenido de vuelta!
             </h1>
             <p class="text-lg text-gray-200">
-                Inicia sesión para gestionar tus seguidores
+                Por favor ingrese sus datos de inicio de sesión a continuación
             </p>
         </div>
 
@@ -43,9 +23,9 @@
                 <div class="relative">
                     <input type="email" id="usuario" name="usuario" required autocomplete="off"
                         placeholder="johndoe@example.com"
-                        class="input-focus w-full px-6 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-opacity-30" />
+                        class="input-focus w-full px-6 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-blue-400 focus:bg-opacity-30" />
                     <div class="absolute inset-y-0 right-0 flex items-center pr-6">
-                        <span class="text-pink-300 text-xl">👤</span>
+                        <span class="text-blue-300 text-xl">👤</span>
                     </div>
                 </div>
             </div>
@@ -58,18 +38,22 @@
                 <div class="relative">
                     <input type="password" id="password" name="password" required autocomplete="off"
                         placeholder="Tu contraseña segura"
-                        class="input-focus w-full px-6 py-4 pr-16 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-pink-400 focus:bg-opacity-30" />
+                        class="input-focus w-full px-6 py-4 pr-16 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-blue-400 focus:bg-opacity-30" />
                     <div class="absolute cursor-pointer inset-y-0 right-0 flex items-center pr-6 space-x-2">
-                        <span class="password-toggle text-pink-300 text-xl" onclick="togglePassword()"
+                        <span class="password-toggle text-blue-300 text-xl" onclick="togglePassword()"
                             id="passwordToggle">👁️</span>
                     </div>
                 </div>
+                
             </div>
-
+            <div class="mb-4 text-purple-200 text-xs flex">
+                <span>💡</span>
+                <p>Se le ha enviado un correo electrónico con sus datos de inicio de sesión después de su compra.</p>
+            </div>
             <!-- Remember Me & Forgot Password -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3"></div>
-                <a href="#" class="link-hover text-pink-300 hover:text-pink-200 font-medium"
+                <a href="#" class="link-hover text-blue-300 hover:text-blue-200 font-medium"
                     onclick="showForgotPassword()">
                     ¿Olvidaste tu contraseña?
                 </a>
@@ -87,43 +71,13 @@
 
             <!-- Login Button -->
             <button type="submit"
-                class="button-hover w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-bold text-xl py-5 px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-pink-300 focus:ring-opacity-50 animate-pulse-slow"
+                class="button-hover w-full opacity-75 hover:opacity-100 bg-gradient-to-br from-slate-800 via-purple-900 to-slate-900 text-white font-bold text-xl py-5 px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50"
                 id="loginButton">
                 <span class="flex items-center justify-center space-x-3">
                     <span>🔐 Iniciar Sesión</span>
                 </span>
             </button>
         </form>
-
-        <!-- Sign Up Link -->
-        <div class="mt-8 pt-6 border-t border-white/20 text-center">
-            <p class="text-gray-300">
-                ¿No tienes una cuenta?
-                <a href="/register" class="link-hover text-pink-300 hover:text-pink-200 font-semibold ml-1">
-                    Regístrate gratis →
-                </a>
-            </p>
-        </div>
-
-        <!-- Security Badge -->
-        <div class="mt-6 text-center">
-            <div
-                class="inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-400/50 rounded-full text-green-300 text-sm font-semibold">
-                🔒 Conexión segura SSL
-            </div>
-        </div>
-    </div>
-
-    <!-- Help Section -->
-    <div class="mt-8 text-center">
-        <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-            <h3 class="text-white font-semibold mb-3">¿Necesitas ayuda?</h3>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="mailto:soporte@wklysocial.com" class="link-hover text-blue-300 hover:text-blue-200 text-sm">
-                    📧 soporte@wklysocial.com
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -145,7 +99,7 @@
             <div>
                 <label for="resetEmail" class="block text-white font-medium mb-2">Email</label>
                 <input type="email" id="resetEmail" autocomplete="off" required placeholder="tu@email.com"
-                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:border-pink-400" />
+                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:border-blue-400" />
             </div>
 
             <p id="message3" class="text-center text-sm mt-2"></p>
@@ -156,7 +110,7 @@
                     Cancelar
                 </button>
                 <button id="btnResetPw" type="button"
-                    class="flex-1 px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300">
+                    class="flex-1 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl hover:scale-105 transform transition-all duration-300">
                     Enviar
                 </button>
             </div>

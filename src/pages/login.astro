@@ -1,5 +1,7 @@
 ---
+import Footer from '../components/Footer.astro';
 import FormLogin from '../components/Form-login.astro';
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 
@@ -9,7 +11,9 @@ import "../styles/global.css";
 
 
 <Layout>
-    <main class="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 flex items-center justify-center p-4">
+    <main class="m-auto">
+        <Header/>
         <FormLogin/>
+        <Footer/>
     </main>
 </Layout>

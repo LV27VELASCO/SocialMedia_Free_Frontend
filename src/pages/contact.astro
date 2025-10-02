@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FormContact from "../components/Form-contact.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import Faqs from "../components/Faqs.astro";
 ---
 <Layout>
-    <main class="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900">
+    <main class="m-auto">
+        <Header/>
         <FormContact/>
+        <Faqs/>
+        <Footer/>
     </main>
 </Layout>

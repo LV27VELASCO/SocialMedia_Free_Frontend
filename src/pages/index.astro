@@ -1,12 +1,9 @@
 ---
 import WhyChooseUs from '../components/WhyChooseUs.astro';
-import Cta from '../components/Cta.astro';
 import Faqs from '../components/Faqs.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import HowItWorks from '../components/How-It-works.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 
@@ -15,14 +12,14 @@ import "../styles/global.css";
 ---
 
 <Layout>
-	<main class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 min-h-screen">
+	<main class="m-auto">
         <Header/>
         <Hero/>
-        <WhyChooseUs/>
-        <HowItWorks/>
+        <!-- <WhyChooseUs/>
+        <HowItWorks/> -->
         <Faqs/>
         <!-- <Testimonials/> -->
-        <Cta/>
+        <!-- <Cta/> -->
         <Footer/>
     </main>
 </Layout>

@@ -1,0 +1,457 @@
+---
+import tiktok from "../assets/tiktok.svg";
+import PaymentModal from "../components/modals/payment-modal.astro";
+import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
+---
+
+<!-- Hero Section -->
+<section id="inicio" class="relative overflow-hidden">
+
+    <div class="relative container mx-auto px-6 py-20 text-center">
+        <div class="max-w-4xl mx-auto">
+            <!-- Main Headline -->
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+                Impulsa tu visibilidad en <span class="gradient-text-tiktok">TikTok</span>
+                <br />
+            </h1>
+            <!-- Subheadline -->
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                🔥 <strong class="text-yellow-400">Cero bots. Cero cuentas inventadas.</strong> Solo visibilidad
+                verdadera a través de nuestra red confiable de socios, siguiendo todas las reglas de la plataforma.
+            </p>
+
+            <!-- Hero Input Section -->
+            <div class="max-w-2xl mx-auto mb-8">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/30">
+                    <form id="heroForm" class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex-1 relative">
+                            <input maxlength="20" type="text" id="usernameInput" name="usernameInput" autocomplete="off"
+                                placeholder="@ingresa usuario tiktok"
+                                class="w-full px-6 py-4 text-lg bg-white20 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                required />
+                            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                <img src={tiktok.src} alt="logo tiktok">
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="px-8 py-4 bg-gradient-to-tl from-red-600/80 via-red-500 to-red-600/80 text-white font-bold text-lg rounded-xl hover:scale-105 transform transition-all duration-300 shadow-2xl flex items-center justify-center space-x-2 whitespace-nowrap">
+                            <span>Continuar</span>
+                            <span>→</span>
+                        </button>
+                    </form>
+                    <p id="message-error" class="hidden text-red-300 text-sm px-4 py-1 border-red-600 border bg-red-400/30 w-fit m-auto my-4 rounded-4xl"></p>
+                    <div class="flex items-center justify-center space-x-6 mt-4 text-sm text-gray-300">
+                        <div class="flex items-center space-x-1">
+                            <span class="text-green-400">✓</span>
+                            <span>Seguro y privado</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <span class="text-green-400">✓</span>
+                            <span>Sin Bots</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <span class="text-green-400">✓</span>
+                            <span>Resultados Reales</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap justify-center gap-8 mb-8">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-yellow-400">
+                        +4.5k
+                    </div>
+                    <div class="text-gray-300">Campañas vendidas</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-green-400">
+                        98%
+                    </div>
+                    <div class="text-gray-300">Satisfacción</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-blue-400">
+                        +3.2k
+                    </div>
+                    <div class="text-gray-300">Videos virales</div>
+                </div>
+            </div>
+            <!-- CTA Button -->
+            <div class="space-y-2">
+                <p class="text-sm text-gray-400">
+                    ⚡ Mejora tu presencia en redes sociales
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<SelectFollowersTiktok />
+
+<PaymentModal/>
+
+<!-- Modal de Selección -->
+<div id="followersModal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div
+        class="mx-4 w-full max-w-2xl h-[90%] overflow-y-scroll bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
+        <!-- Modal Header -->
+        <div class="text-center mb-8">
+            <div class="text-6xl mb-4">🚀</div>
+            <h2 class="text-3xl font-bold text-white mb-2">¡Casi Listo!</h2>
+            <p class="text-gray-300">
+                Elige un objetivo de seguidores y confirma tu email
+            </p>
+        </div>
+
+        <!-- Selected Platform Info -->
+        <div class="bg-white/5 rounded-xl p-4 mb-6 flex items-center justify-center space-x-3">
+            <span class="text-2xl" id="modal-platform-icon">🎵</span>
+            <span class="text-white font-medium">Usuario: <span id="modal-username" class="text-blue-300">
+                </span>
+            </span>
+        </div>
+
+        <form id="formFollowers" class="space-y-6">
+            <!-- Followers Selection -->
+            <div>
+                <p class="block text-white font-medium mb-4 text-center">
+                    👥 ¿Cual es tu objetivo de seguidores?
+                </p>
+                <div id="PriceTiktok" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 pt-6">
+                    <!-- 500 Followers -->
+                    <button type="button" onclick="selectFollowers(500)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">500</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">2.8€</span>
+                            <span class="text-sm text-gray-400 line-through">3.9€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -28%
+                        </div>
+                    </button>
+
+                    <!-- 1K Followers -->
+                    <button type="button" onclick="selectFollowers(1000)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">1K</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">5.9€</span>
+                            <span class="text-sm text-gray-400 line-through">8€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -26%
+                        </div>
+                    </button>
+
+                    <!-- 2.5K Followers -->
+                    <button type="button" onclick="selectFollowers(2500)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">2.5K</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">8.8€</span>
+                            <span class="text-sm text-gray-400 line-through">10€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -12%
+                        </div>
+                    </button>
+
+                    <!-- 5K Followers - POPULAR -->
+                    <button type="button" onclick="selectFollowers(5000)"
+                        class="followers-option pricing-card popular rounded-2xl p-5 text-center cursor-pointer relative overflow-visible">
+                        <div class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
+                            Más Popular
+                        </div>
+                        <div class="text-4xl font-bold gradient-text mb-2">5K</div>
+                        <div class="text-blue-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">12.8€</span>
+                            <span class="text-sm text-gray-400 line-through">15€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -15%
+                        </div>
+                    </button>
+
+                    <!-- 10K Followers -->
+                    <button type="button" onclick="selectFollowers(10000)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">10K</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Premium</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">38.8€</span>
+                            <span class="text-sm text-gray-400 line-through">45€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -14%
+                        </div>
+                    </button>
+
+                    <!-- 20K Followers -->
+                    <button type="button" onclick="selectFollowers(20000)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">20K</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Premium</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">74.8€</span>
+                            <span class="text-sm text-gray-400 line-through">84.9€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -12%
+                        </div>
+                    </button>
+
+                    <!-- 35K Followers -->
+                    <button type="button" onclick="selectFollowers(35000)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">35K</div>
+                        <div class="text-yellow-300 text-xs font-semibold mb-3 uppercase tracking-wider">VIP</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">110€</span>
+                            <span class="text-sm text-gray-400 line-through">130.9€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -16%
+                        </div>
+                    </button>
+
+                    <!-- 50K Followers -->
+                    <button type="button" onclick="selectFollowers(50000)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">50K</div>
+                        <div class="text-yellow-300 text-xs font-semibold mb-3 uppercase tracking-wider">VIP</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">135€</span>
+                            <span class="text-sm text-gray-400 line-through">150.9€</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -11%
+                        </div>
+                    </button>
+                </div>
+                <input type="hidden" id="selectedFollowers" name="followers" required />
+            </div>
+
+            <!-- Email Input -->
+            <div>
+                <label for="modalEmail" class="block text-white font-medium mb-2">
+                    📧 Tu Email
+                </label>
+                <input type="email" id="modalEmail" name="email" placeholder="tu@email.com"
+                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required />
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <button type="submit"
+                    class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white font-bold rounded-xl hover:scale-105 transform transition-all duration-300 shadow-2xl">
+                    🚀 Continuar
+                </button>
+            </div>
+
+            <!-- Benefits -->
+            <div class="bg-white/20 border border-white/30 rounded-xl p-4 space-y-4">
+                <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
+                        <p><strong>TrendyUp</strong> opera en total conformidad con las políticas de TikTok, Instagram y
+                                Google Ads. Nuestro método excluye la automatización, las interacciones artificiales y
+                                cualquier acceso indebido a las cuentas de los usuarios.</p>
+                </div>
+                <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
+                        <p>Potenciamos la visibilidad de tu perfil compartiendo tu contenido de manera directa con una
+                            red global que reúne creadores auténticos, plataformas móviles, comunidades temáticas e
+                            influencers. El volumen contratado definirá tu nivel de exposición en estas colaboraciones.
+                        </p>
+                </div>
+
+                <div class="bg-gray-500/20 border border-gray-500/30 rounded-xl p-4">
+                    <h3 class="text-gray-200 font-semibold mb-2 flex items-center">
+                        <span class="mr-2">📄</span>
+                        Aviso legal:
+                    </h3>
+                    <ul class="text-gray-300 text-sm space-y-1">
+                        <li>El nivel de visibilidad está marcado por la calidad del contenido, su pertinencia en la
+                            audiencia y la consistencia al compartirlo. TrendyUp facilita herramientas para impulsarla,
+                            sin garantizar resultados concretos en métricas como seguidores o participación.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="loaderModal"
+    class="hidden opacity-0 fixed inset-0 z-[70] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-200"
+    role="dialog" aria-modal="true" aria-labelledby="loaderTitle">
+    <div class="mx-4 w-full max-w-sm rounded-2xl border border-white/20 bg-white/10 p-6 text-center shadow-xl">
+        <div class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-blue-400/40 border-t-transparent animate-spin">
+        </div>
+        <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">
+            Procesando
+        </h2>
+        <p data-loader-text class="text-gray-200 text-sm">
+            Por favor, espera un momento... <br>
+            <span class="pt-3">No recargues la ventana</span>
+        </p>
+    </div>
+</div>
+
+
+<!-- Hero Form -->
+<script is:inline>
+    // Hero input Submit
+    document.getElementById('heroForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        openModal();
+    });
+    // Auto-add @ symbol to input
+    document.getElementById('usernameInput').addEventListener('input', function(e) {
+        let value = e.target.value;
+        // If the input is empty or doesn't start with @, add it
+        if (value.length === 0 || !value.startsWith('@')) {
+            // If user typed something but no @, add @ at the beginning
+            if (value.length > 0 && !value.startsWith('@')) {
+                e.target.value = '@' + value;
+            }
+            // If input is empty and user starts typing, add @
+            else if (value.length === 0) {
+                e.target.value = '@';
+            }
+        }
+        // Prevent user from deleting the @ symbol
+        if (value.length > 0 && !value.startsWith('@')) {
+            e.target.value = '@' + value.replace('@', '');
+        }
+    });
+    // Handle keydown to prevent deleting @ at position 0
+    document.getElementById("usernameInput").addEventListener("keydown", function (e) {
+        const input = e.target;
+        const cursorPosition = input.selectionStart;
+
+        // Evitar borrar el @ inicial
+        if ((e.key === "Backspace" || e.key === "Delete") && cursorPosition <= 1) {
+            e.preventDefault();
+            // Mantener cursor después de @
+            setTimeout(() => {
+                input.setSelectionRange(1, 1);
+            }, 0);
+        }
+
+        // Evitar espacios
+        if (e.key === " " || e.code === "Space") {
+            e.preventDefault();
+        }
+    });
+
+    // Adicionalmente, eliminar cualquier espacio que se haya pegado
+    document.getElementById("usernameInput").addEventListener("input", function (e) {
+        const input = e.target;
+        input.value = input.value.replace(/\s+/g, "");
+    });
+    // Set initial @ when input gets focus
+    document.getElementById('usernameInput').addEventListener('focus', function(e) {
+        if (e.target.value === '') {
+            e.target.value = '@';
+            // Position cursor after @
+            setTimeout(() => {
+                e.target.setSelectionRange(1, 1);
+            }, 0);
+        }
+    });
+
+    function openModal() {
+        const error = document.getElementById('message-error');
+        const username = document.getElementById('usernameInput').value.trim();
+        if (!username || username === '@') {
+            error.classList.remove("hidden")
+            error.innerText = "Debe ingresar usuario de tiktok"
+            setTimeout(() => {
+                error.classList.add("hidden")
+            }, 5000);
+            return;
+        }
+        // Update modal with user data
+        document.getElementById('modal-username').textContent = username;
+        document.getElementById('modal-platform-icon').textContent = selectedPlatform === 'instagram' ? '📸' : '🎵';
+        // Show modal
+        document.getElementById('followersModal').classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+</script>
+
+<script is:inline>
+    async function openPaymentModal() {
+        const orderData = JSON.parse(localStorage.getItem("orderData"));
+        if (!orderData) {
+            alert("Error: No se encontraron datos del pedido");
+            return;
+        }
+        // Update payment modal with order data
+        document.getElementById("payment-username").textContent =
+            "@" + orderData.username;
+        document.getElementById("payment-platform").textContent =
+            orderData.platform === "instagram" ? "Instagram" : "TikTok";
+        document.getElementById("payment-platform-icon").textContent =
+            orderData.platform === "instagram" ? "📸" : "🎵";
+        document.getElementById("payment-followers").textContent =
+            orderData.followers.toLocaleString() + " Seguidores";
+        // Set price based on followers
+        let basePrice = "GRATIS";
+        if (orderData.followers > 400) {
+            if (orderData.platform === "instagram") {
+                const priceMapInsta = {
+                    500: "€1.8",
+                    1000: "€3.8",
+                    2500: "€6.8",
+                    5000: "€12.8",
+                    10000: "€25.8",
+                    20000: "€45.8",
+                    35000: "€52.9",
+                    50000: "€75.9",
+                };
+                basePrice = priceMapInsta[orderData.followers] || "€29.99";
+            } else {
+                const priceMapTiktok = {
+                    500: "€2.8",
+                    1000: "€5.8",
+                    2500: "€8.9",
+                    5000: "€12.8",
+                    10000: "€38.8",
+                    20000: "€74.8",
+                    35000: "€110",
+                    50000: "€135",
+                };
+                basePrice = priceMapTiktok[orderData.followers] || "€29.99";
+            }
+        }
+        document.getElementById("payment-price").textContent = basePrice;
+        document.getElementById("total-pay").textContent = basePrice;
+        // Show payment modal
+        document.getElementById("paymentModal").classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+    }
+    // Función para volver al modal de seguidores
+    function backToFollowersModal() {
+        closePaymentModal();
+        document.getElementById("followersModal").classList.remove("hidden");
+        document.body.classList.add("overflow-hidden"); // Ensure body overflow is handled
+    }
+    
+    // Función para cerrar modal de pago
+    function closePaymentModal() {
+        document.getElementById("paymentModal").classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        // Reset form
+        document.getElementById("payment-form").reset();
+    }
+</script>

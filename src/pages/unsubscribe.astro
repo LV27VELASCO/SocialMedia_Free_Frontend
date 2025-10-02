@@ -1,7 +1,9 @@
 ---
 import UnsuscribeForm from '../components/Unsuscribe-form.astro';
+import Header from "../components/Header.astro";
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
+import Footer from '../components/Footer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,7 +11,9 @@ import "../styles/global.css";
 
 
 <Layout>
-    <main class="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900">
+    <main class="m-auto">
+        <Header/>
         <UnsuscribeForm/>
+        <Footer/>
     </main>
 </Layout>

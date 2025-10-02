@@ -1,0 +1,450 @@
+<div id="paymentModal"
+    class="hidden fixed inset-0 z-[70] flex items-center justify-center bg-black/50 backdrop-blur-sm overflow-y-auto">
+    <div
+        class="mx-4 my-8 h-[90%] overflow-y-scroll w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
+        
+        <!-- Added close button in top-right corner -->
+        <button onclick="closePaymentModal()"
+            class="close-button absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-red-500/20 border border-white/20 hover:border-red-400 text-white hover:text-red-400 text-xl font-bold transition-all z-10"
+            aria-label="Cerrar modal">
+            ×
+        </button>
+        
+        <!-- Modal Header -->
+        <div class="text-center mb-8">
+            <div class="text-6xl mb-4">💳</div>
+            <h2 class="text-3xl font-bold text-white mb-2">Finalizar Pedido</h2>
+            <p class="text-gray-300">
+                Completa tu pago y comienza a recibir seguidores
+            </p>
+        </div>
+
+        <form id="payment-form" class="space-y-6">
+            <!-- Order Summary -->
+            <div class="bg-white/5 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                    <span class="mr-3">📋</span>
+                    Resumen del Pedido
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl" id="payment-platform-icon">🎵</span>
+                            <div>
+                                <div class="text-white font-medium" id="payment-username">
+                                    @usuario
+                                </div>
+                                <div class="text-gray-300 text-sm" id="payment-platform">
+                                    TikTok
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-white font-bold" id="payment-followers">
+                                1,000 Seguidores
+                            </div>
+                            <div class="text-green-300 text-sm" id="payment-price">
+                                GRATIS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Information -->
+            <div class="bg-white/5 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                    <span class="mr-3">💳</span>
+                    Información de la Tarjeta
+                </h3>
+
+                <div class="space-y-4">
+                    <!-- Card Number -->
+                    <div>
+                        <label for="card-number" class="block text-white font-medium mb-2">
+                            Número de Tarjeta
+                        </label>
+                        <div class="relative">
+                            <div id="card-number"
+                                class="w-full px-4 py-3 bg-white/40 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                            </div>
+                            <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                                <div id="cardType" class="text-2xl">💳</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expiry and CVV -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label for="card-expiry" class="block text-white font-medium mb-2">
+                                F. Caducidad
+                            </label>
+                            <div id="card-expiry"
+                                class="w-full px-4 py-3 bg-white/40 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="card-cvc" class="block text-white font-medium mb-2">
+                                CVV
+                            </label>
+                            <div id="card-cvc"
+                                class="w-full px-4 py-3 bg-white/40 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cardholder Name -->
+                    <div>
+                        <label for="card-name" class="block text-white font-medium mb-2">
+                            Nombre del Titular
+                        </label>
+                        <input type="text" id="card-name" name="card-name" placeholder="Juan Pérez"
+                            class="w-full px-4 py-3 bg-white/40 border border-white/30 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="bg-white/5 rounded-xl p-6">
+                <div class="flex items-start space-x-4">
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" class="checkbox-custom mt-1" required />
+                    <div class="flex-1">
+                        <label for="acceptTerms" class="text-white font-medium cursor-pointer">
+                            Acepto los términos y condiciones
+                        </label>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Al marcar esta casilla, acepto los
+                            <a href="/terms" target="_blank"
+                                class="text-blue-300 hover:text-blue-200 underline">Términos y Condiciones</a>, la <a
+                                href="/privacity" target="_blank"
+                                class="text-blue-300 hover:text-blue-200 underline">Política de Privacidad</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Notice -->
+            <div class="bg-green-500/20 border border-green-500/30 rounded-xl p-4">
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🔒</span>
+                    <div>
+                        <h4 class="text-green-200 font-semibold mb-2">
+                            Pago 100% Seguro
+                        </h4>
+                        <ul class="text-green-300 text-sm space-y-1">
+                            <li>• Soporte 24/7 horas</li>
+                            <li>• Datos encriptados con SSL</li>
+                            <li>• Sin cargos ocultos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total -->
+            <div class="bg-white/10 rounded-xl p-6 border border-white/20">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="text-white font-semibold text-lg">
+                            Total a Pagar
+                        </h4>
+                    </div>
+                    <div class="text-right">
+                        <div id="total-pay" class="text-2xl font-bold text-white">
+                            €1.00
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-around items-center flex-wrap mt-4 gap-2">
+                    <div
+                        class="flex items-center text-white text-xs px-3 py-1 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-indigo-500/30 text-white rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z">
+                            </path>
+                        </svg>
+                        <p class="pl-1">Transacción segura</p>
+                    </div>
+                    <div
+                        class="flex items-center text-white text-xs px-3 py-1 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-indigo-500/30 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z">
+                            </path>
+                        </svg>
+                        <p class="pl-1">Cifrado SSL seguro</p>
+                    </div>
+                    <div
+                        class="flex items-center text-white text-xs px-3 py-1 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-indigo-500/30 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z">
+                            </path>
+                        </svg>
+                        <p class="pl-1">Servicio garantizado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorMessage"
+                class="hidden text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30">
+            </div>
+
+            <div id="SuccessMessage"
+                class="hidden text-green-300 text-sm bg-green-500/20 p-4 rounded-xl border border-green-400/30">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <button type="button" onclick="backToFollowersModal()"
+                    class="flex-1 px-6 py-3 bg-gray-600/50 text-white font-semibold rounded-xl hover:bg-opacity-70 transition-all duration-300">
+                    ← Volver
+                </button>
+                <button id="btn-pay" type="submit"
+                    class="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold rounded-xl hover:scale-105 transform transition-all duration-300 shadow-2xl">
+                    💳 Procesar Pago
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    if (!window.Stripe) {
+        const script = document.createElement("script");
+        script.src = "https://js.stripe.com/v3/";
+        script.async = true;
+        document.head.appendChild(script);
+    }
+</script>
+<!-- Logica Pagos -->
+<script>
+    window.addEventListener("load", () => {
+        const stripe = Stripe(import.meta.env.PUBLIC_STRIPE_PK);
+        const appearance = {
+            theme: "night",
+            variables: {
+                fontFamily: "Sohne, system-ui, sans-serif",
+                fontWeightNormal: "500",
+                borderRadius: "8px",
+                colorBackground: "#0A2540",
+                colorPrimary: "#EFC078",
+                accessibleColorOnColorPrimary: "#1A1B25",
+                colorText: "white",
+                colorTextSecondary: "white",
+                colorTextPlaceholder: "#ABB2BF",
+                tabIconColor: "white",
+                logoColor: "dark",
+            },
+            rules: {
+                ".Input": {
+                    backgroundColor: "#212D63",
+                    border: "1px solid var(--colorPrimary)",
+                },
+            },
+        };
+        const elements = stripe.elements({
+            appearance,
+        });
+        const cardNumber = elements.create("cardNumber");
+        cardNumber.mount("#card-number");
+        const cardExpiry = elements.create("cardExpiry");
+        cardExpiry.mount("#card-expiry");
+        const cardCvc = elements.create("cardCvc");
+        cardCvc.mount("#card-cvc");
+        const form = document.getElementById("payment-form");
+        if (!form) return; // Evita el error de null
+        form.addEventListener("submit", async (e: any) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const orderData = JSON.parse(
+                localStorage.getItem("orderData") as string,
+            );
+            // // Show loading state
+            const button = document.querySelector<HTMLButtonElement>("#btn-pay");
+            const errormessage = document.getElementById("errorMessage");
+            if (!errormessage || !button) return;
+            errormessage.classList.add("hidden");
+            showLoader();
+            const originalText = button.innerHTML;
+            button.innerHTML =
+                '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Validando tarjeta...</span></span>';
+            button.disabled = true;
+            // Validate terms acceptance
+            if (!formData.get("acceptTerms")) {
+                errormessage.textContent = `🚨: Debes aceptar los terminos`;
+                errormessage.classList.add(
+                    "text-red-300",
+                    "text-sm",
+                    "bg-red-500/20",
+                    "p-4",
+                    "rounded-xl",
+                    "border",
+                    "border-red-400/30",
+                );
+                errormessage.classList.remove("hidden");
+                button.innerHTML = originalText;
+                button.disabled = false;
+                hideLoader();
+                return;
+            }
+            // Validate card name
+            if (!formData.get("card-name")) {
+                errormessage.textContent = `🚨: Nombre del Titular es requerido`;
+                errormessage.classList.add(
+                    "text-red-300",
+                    "text-sm",
+                    "bg-red-500/20",
+                    "p-4",
+                    "rounded-xl",
+                    "border",
+                    "border-red-400/30",
+                );
+                errormessage.classList.remove("hidden");
+                button.innerHTML = originalText;
+                button.disabled = false;
+                hideLoader();
+                return;
+            }
+            const { paymentMethod, error } = await stripe.createPaymentMethod({
+                type: "card",
+                card: cardNumber,
+            });
+            if (error) {
+                errormessage.textContent = `🚨: ${error.message}`;
+                errormessage.classList.add(
+                    "text-red-300",
+                    "text-sm",
+                    "bg-red-500/20",
+                    "p-4",
+                    "rounded-xl",
+                    "border",
+                    "border-red-400/30",
+                );
+                errormessage.classList.remove("hidden");
+                button.innerHTML = originalText;
+                button.disabled = false;
+                hideLoader();
+                return;
+            }
+            
+            const res = await checkout_product(
+                paymentMethod,
+                originalText,
+                formData.get("card-name")?.toString(),
+            );
+        });
+    });
+    async function getToken() {
+        try {
+            const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
+
+            if (!res.ok) {
+            return false; // el servidor respondió pero con error
+            }
+
+            const data = await res.json();
+            return data.token; // tu token
+        } catch (err) {
+            console.error("Error en getToken:", err);
+            return false; // error de red o fetch roto
+        } 
+    }
+    async function checkout_product(
+        paymentMethod: any,
+        originalText: any,
+        cardName: any,
+    ) {
+        const token = await getToken();
+        console.log(token)
+        const orderData = JSON.parse(
+            localStorage.getItem("orderData") as string,
+        );
+        const button = document.querySelector<HTMLButtonElement>("#btn-pay");
+        const errormessage = document.getElementById("errorMessage");
+        const successmessage = document.getElementById("SuccessMessage");
+        if (!button || !errormessage || !successmessage) return;
+        successmessage.classList.add("hidden");
+        errormessage.classList.add("hidden");
+        if (!token) {
+            errormessage.classList.remove("hidden");
+            errormessage.textContent = "¡Ups! Ocurrió un error, por favor intentarlo mas tarde";
+            button.innerHTML = originalText;
+            button.disabled = false;
+            hideLoader();
+            return;
+        }
+        const res = await fetch(`${import.meta.env.PUBLIC_API}/checkout`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                paymentMethodId: paymentMethod.id,
+                cardName: cardName.toLowerCase().trim(),
+                username: orderData.username.toLowerCase().trim(),
+                email: orderData.email.toLowerCase().trim(),
+                platform: orderData.platform.toLowerCase().trim(),
+                quantity: orderData.followers,
+            }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            errormessage.classList.remove("hidden");
+            errormessage.textContent = data.detail;
+            button.innerHTML = originalText;
+            button.disabled = false;
+            hideLoader();
+            return;
+        }
+        if (data.error) {
+            errormessage.classList.remove("hidden");
+            errormessage.textContent = data.error;
+            button.innerHTML = originalText;
+            button.disabled = false;
+            hideLoader();
+            return;
+        } else {
+            (
+                document.getElementById("formFollowers") as HTMLFormElement
+            ).reset();
+            // Simulate form processing
+            setTimeout(() => {
+                window.location.href = "confirmation-success";
+            }, 2000);
+            localStorage.setItem("url", data.url);
+            successmessage.classList.remove("hidden");
+            successmessage.textContent = data.message;
+            button.innerHTML = originalText;
+            button.disabled = false;
+            hideLoader();
+        }
+    }
+
+    function showLoader(message = "Procesando solicitud...") {
+        const modal = document.getElementById("loaderModal") as HTMLDivElement;
+        const label = modal.querySelector("[data-loader-text]");
+        if (label) label.textContent = message;
+        modal.classList.remove("hidden");
+        requestAnimationFrame(() => {
+            modal.classList.remove("opacity-0");
+        });
+        // Bloquea el scroll de fondo
+        document.body.classList.add("overflow-hidden");
+    }
+
+    function hideLoader() {
+        const modal = document.getElementById("loaderModal") as HTMLDivElement;
+        modal.classList.add("opacity-0");
+        setTimeout(() => {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        }, 200); // sincronizado con transition-opacity
+    }
+</script>

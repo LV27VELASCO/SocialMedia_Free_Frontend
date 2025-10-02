@@ -1,314 +1,160 @@
-<!-- Animated Background Elements -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div
-        class="absolute top-20 left-10 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element">
-    </div>
-    <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-        style="animation-delay: 2s;">
-    </div>
-    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 floating-element"
-        style="animation-delay: 4s;">
-    </div>
-</div>
-
-<!-- Header -->
-<header class="relative z-50 py-6">
-    <div class="container mx-auto px-6">
-        <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="text-2xl font-bold text-white">
-                🚀 <span class="gradient-text2">WklySocial</span>
-            </div>
-
-            <!-- Back Button -->
-            <button onclick="history.back()"
-                class="back-button  flex items-center space-x-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full text-white hover:bg-white/20 border border-white/20">
-                <span>←</span>
-                <span>Volver</span>
-            </button>
-        </div>
-    </div>
-</header>
-
 <!-- Main Content -->
-<main class="relative z-10 container mx-auto px-6 pb-12">
-    <!-- Page Title -->
-    <div class="text-center mb-12 animate-fade-in">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            Términos y <span class="gradient-text2">Condiciones</span>
-        </h1>
-        <p class="text-xl text-gray-300">
-            Última actualización: <strong>31/07/2025</strong>
-        </p>
-    </div>
-
-    <!-- Content Card -->
-    <div
-        class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 content-glow border border-white/20 animate-slide-up">
-        <!-- Welcome Message -->
-        <div class="mb-8 p-6 bg-gradient-to-r from-pink-500 to-purple-500/20 rounded-2xl border border-pink-400/30">
-            <p class="text-white text-lg leading-relaxed">
-                <strong>Bienvenido/a a WklySocial.</strong><br />
-                Al registrarte y utilizar nuestro servicio, aceptas los siguientes
-                términos y condiciones:
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Title -->
+        <div class="text-center mb-12 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 ">
+                Términos y <span class="gradient-text">Condiciones</span>
+            </h1>
+            <p class="text-xl text-gray-300">
+                Última actualización: <strong>31/07/2025</strong>
             </p>
         </div>
 
-        <!-- Table of Contents -->
-        <div class="mb-10 p-6 bg-white/5 rounded-2xl border border-white/10">
-            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
-                📋 Índice de contenidos
-            </h3>
-            <div class="grid md:grid-cols-2 gap-2 text-gray-300">
-                <a href="#objeto" class="hover:text-pink-300 transition-colors">1. Objeto del servicio</a>
-                <a href="#validacion" class="hover:text-pink-300 transition-colors">2. Validación de tarjeta</a>
-                <a href="#suscripcion" class="hover:text-pink-300 transition-colors">3. Suscripción automática</a>
-                <a href="#reembolsos" class="hover:text-pink-300 transition-colors">4. Reembolsos</a>
-                <a href="#cancelacion" class="hover:text-pink-300 transition-colors">5. Cancelación</a>
-                <a href="#uso" class="hover:text-pink-300 transition-colors">6. Uso aceptable</a>
-                <a href="#proteccion" class="hover:text-pink-300 transition-colors">7. Protección de datos</a>
-                <a href="#modificacion" class="hover:text-pink-300 transition-colors">8. Modificaciones</a>
-                <a href="#contacto" class="hover:text-pink-300 transition-colors">9. Contacto</a>
-            </div>
-        </div>
-
-        <!-- Terms Content -->
-        <div class="space-y-8 text-gray-200">
-            <!-- Section 1 -->
-            <section id="objeto" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">🎯</span>
-                    1. Objeto del servicio
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <p>
-                        WklySocial ofrece un servicio de promoción en redes
-                        sociales mediante el cual podrás recibir seguidores y
-                        aumentar tu visibilidad online.
-                    </p>
-                    <p>
-                        El registro inicial es gratuito, pero requiere una
-                        validación de tarjeta para evitar usos fraudulentos.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Section 2 -->
-            <section id="validacion" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">💳</span>
-                    2. Validación de tarjeta y cobro inicial
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <p><strong>Para completar el registro:</strong></p>
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            Tu tarjeta será validada mediante sistemas de seguridad, sin aplicar cargos adicionales.
-                        </li>
-                        <li>
-                            El primer pago por el servicio solo se realizará al confirmar tu pedido.
-                        </li>
-                        <li>
-                            No se efectuarán otros cobros durante las primeras dos semanas desde tu registro.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 3 -->
-            <section id="suscripcion" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">🔄</span>
-                    3. Suscripción automática
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <p><strong>Al finalizar el período inicial:</strong></p>
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            Se activará automáticamente una suscripción de <strong
-                                class="text-pink-300">20€/mes</strong> por el servicio premium de promoción de
-                            seguidores.
-                        </li>
-                        <li>
-                            Este cargo se realizará cada mes en la misma fecha
-                            de tu registro inicial, salvo que canceles la
-                            suscripción antes del vencimiento del período
-                            gratuito.
-                        </li>
-                        <li>
-                            Podrás cancelar en cualquier momento desde tu panel
-                            de usuario o contactando a soporte.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 4 -->
-            <section id="reembolsos" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">💰</span>
-                    4. Reembolsos
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            En caso de realizarse un cargo inicial de validación de 1 €, este <strong
-                                class="text-green-300">siempre será reembolsado</strong>.
-                        </li>
-                        <li>
-                            Los pagos de suscripción ya cobrados no son
-                            reembolsables, salvo que la ley aplicable disponga
-                            lo contrario.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 5 -->
-            <section id="cancelacion" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">❌</span>
-                    5. Cancelación
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            Puedes cancelar la suscripción en cualquier momento
-                            antes del siguiente cobro mensual.
-                        </li>
-                        <li>
-                            Si cancelas, seguirás disfrutando del servicio hasta
-                            el fin del período ya pagado.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 6 -->
-            <section id="uso" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">✅</span>
-                    6. Uso aceptable
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            El servicio está destinado solo a <strong class="text-yellow-300">mayores de 18
-                                años</strong>.
-                        </li>
-                        <li>
-                            No está permitido utilizar el servicio para perfiles
-                            falsos, spam o actividades ilegales.
-                        </li>
-                        <li>
-                            Nos reservamos el derecho de suspender cuentas que
-                            incumplan estas reglas.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 7 -->
-            <section id="proteccion" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">🔒</span>
-                    7. Protección de datos
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            Tu información personal y de pago se maneja de forma
-                            segura conforme al <strong class="text-blue-300">Reglamento General de Protección de Datos
-                                (RGPD)</strong>.
-                        </li>
-                        <li>
-                            No almacenamos directamente los números de tu
-                            tarjeta; el procesamiento se realiza mediante un
-                            proveedor de pagos seguro <strong class="text-purple-300">(Stripe)</strong>.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 8 -->
-            <section id="modificacion" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">📝</span>
-                    8. Modificación de los términos
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li>
-                            Nos reservamos el derecho de actualizar estos
-                            términos en cualquier momento.
-                        </li>
-                        <li>
-                            Se notificará a los usuarios por correo electrónico
-                            y mediante la plataforma.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 9 -->
-            <section id="contacto" class="section-hover p-6 rounded-2xl border border-white/10">
-                <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span class="text-3xl mr-3">📧</span>
-                    9. Contacto
-                </h2>
-                <div class="space-y-4 leading-relaxed">
-                    <p>
-                        Para cualquier consulta o solicitud de cancelación,
-                        puedes escribirnos a:
-                    </p>
-                    <div
-                        class="bg-gradient-to-r from-pink-500 to-purple-500/20 p-4 rounded-xl border border-pink-400/30">
-                        <p class="text-xl font-semibold text-white flex items-center">
-                            📧 <a href="mailto:soporte@wklysocial.com"
-                                class="hover:text-pink-300 transition-colors text-[11px] sm:ml-2 sm:text-sm md:text-base">
-                                soporte@wklysocial.com
-                            </a>
-                        </p>
+        <!-- Content Card -->
+        <div class="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 p-8 md:p-12">
+            <!-- Content -->
+            <div class="space-y-8 text-gray-300 leading-relaxed">
+                <!-- Section 1 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">1. INTRODUCCIÓN</h2>
+                    <div class="space-y-3">
+                        <p><strong>1.1</strong> Estos Términos y Condiciones ("Acuerdo") son celebrados por <strong>Sponsor Telecom S.L.</strong> ("Nosotros", "Nos" o "Nuestro"), una empresa constituida y registrada en el España con el codigo CIF B97553424, con domicilio social en Calle Capitan Haya 1, Planta 15 28020 Madrid, España.</p>
+                        <p><strong>1.2</strong> Estos Términos rigen su acceso y uso de los servicios de suscripción que Sponsor Telecom S.L. ofrece a través del sitio web TrendyUp. Al acceder y utilizar el Servicio, usted («Usted» o «Su») acepta estos Términos. Si no los acepta, no debe utilizar nuestros servicios.</p>
                     </div>
-                </div>
-            </section>
-        </div>
+                </section>
 
-        <!-- Bottom CTA -->
-        <div class="mt-12 pt-8 border-t border-white/20 text-center">
-            <div class="bg-gradient-to-r from-green-500 to-blue-500/20 p-6 rounded-2xl border border-green-400/30 mb-6">
-                <p class="text-white text-lg">
-                    <strong>¿Tienes alguna duda sobre estos términos?</strong><br />
-                    Nuestro equipo de soporte está aquí para ayudarte
-                </p>
+                <!-- Section 2 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">2. DEFINICIONES</h2>
+                    <div class="space-y-3">
+                        <p><strong>2.1 "Cliente"</strong> se refiere a cualquier individuo que se suscribe al servicio para uso personal.</p>
+                        <p><strong>2.2 "Servicio"</strong> se refiere a todos los servicios proporcionados por Sponsor Telecom S.L., incluidos los servicios de visibilidad de contenido, información de perfil público y soporte promocional manual a través de nuestra red de socios privados disponible a través del Servicio de suscripción.</p>
+                        <p><strong>2.3 "Servicio de suscripción"</strong> se refiere al paquete de suscripción opcional ofrecido por Sponsor Telecom S.L., que incluye la mejora de la visibilidad a través de información compartida gestionada por personas y segmentación de nichos y otras funciones relacionadas, como se detalla en la página de suscripción.</p>
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">3. REGISTRO</h2>
+                    <div class="space-y-3">
+                        <p><strong>3.1</strong> Para acceder y utilizar el Servicio, se crea automáticamente una cuenta en el Sitio ("Cuenta") que contendrá cierta información de registro, incluida una dirección de correo electrónico válida, una contraseña e información de pago. Usted acepta proporcionar información precisa y completa y actualizar esta información según sea necesario para mantenerla precisa.</p>
+                        <p><strong>3.2</strong> Para suscribirse al Servicio, debe ser mayor de edad y estar en condiciones de celebrar contratos vinculantes en su jurisdicción. Al crear una cuenta, declara y garantiza que cumple con estos requisitos de elegibilidad.</p>
+                        <p><strong>3.3</strong> Al registrarse, usted acepta suscribirse automáticamente al Servicio de suscripción, que proporciona acceso continuo a herramientas de participación de la audiencia y cualquier acceso relacionado a servicios de soporte de visibilidad como se describe en estos Términos y la Política de suscripción, sujeto a las políticas de cancelación detalladas en estos Términos.</p>
+                    </div>
+                </section>
+
+                <!-- Section 4 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">4. CONDICIONES DE USO</h2>
+                    <div class="space-y-3">
+                        <p><strong>4.1 Validez:</strong> Su suscripción es válida únicamente después de que confirmemos el pago correspondiente. El acceso al Servicio es estrictamente personal e intransferible. Usted es responsable de mantener la confidencialidad de sus credenciales de inicio de sesión y de cualquier actividad realizada a través de su Cuenta.</p>
+                        <p><strong>4.2 Uso no autorizado:</strong> Está estrictamente prohibido compartir, transferir o sublicenciar su cuenta o el acceso al servicio. Cualquier acción de este tipo puede dar lugar a la cancelación inmediata sin reembolso y a posibles acciones legales.</p>
+                        <p><strong>4.3 Uso para Crecimiento Personal y Monetización:</strong> El Servicio está diseñado para ayudarte a aumentar tu visibilidad mediante la promoción manual de contenido que cumpla con las normas. Si bien puede contribuir a objetivos personales más amplios, como la monetización, no se ofrecen garantías directas de rendimiento.</p>
+                        <p class="pl-6">Sin embargo, las siguientes actividades están estrictamente prohibidas:</p>
+                        <ul class="list-disc pl-12 space-y-2">
+                            <li>Utilizar el Servicio para fines no relacionados con el crecimiento personal o de las redes sociales, como revender o redistribuir el servicio o su contenido.</li>
+                            <li>Participar en conductas que violen los términos de las plataformas en las que usted está construyendo su presencia en las redes sociales.</li>
+                            <li>Utilizar el Servicio de manera que dañe o denigre nuestra reputación o viole las leyes aplicables.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 5 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">5. FUNCIONAMIENTO DEL SERVICIO</h2>
+                    <div class="space-y-3">
+                        <p><strong>5.1 Restricciones de uso:</strong> Usted acepta utilizar el Servicio exclusivamente para fines personales relacionados con la mejora de su plataforma de redes sociales. Las siguientes actividades están prohibidas y constituirán un incumplimiento de estos Términos:</p>
+                        <ul class="list-disc pl-12 space-y-2">
+                            <li>Compartir o distribuir estrategias, herramientas o contenido proporcionado bajo el Servicio.</li>
+                            <li>Intentar explotar el Servicio con fines fraudulentos, ilegales o comerciales no relacionados con el crecimiento personal.</li>
+                            <li>Utilizar el Servicio de cualquier forma que viole los términos y condiciones de plataformas de terceros.</li>
+                            <li>Participar en actividades que puedan dañar, interrumpir o degradar la calidad de nuestro Servicio.</li>
+                        </ul>
+                        <p><strong>5.2 Período de prueba:</strong> Algunas compras pueden incluir una suscripción de prueba de 24 horas. Pueden cancelarla sin cargo durante este período. Este período de prueba solo está disponible para ciertas compras y únicamente tras la aceptación de estos Términos.</p>
+                        <p><strong>5.3 Acceso y prestación del servicio:</strong> Tras la confirmación de la suscripción y el procesamiento exitoso del pago, recibirá:</p>
+                        <ul class="list-disc pl-12 space-y-2">
+                            <li>Promoción manual de su contenido público a través de nuestra red examinada de aplicaciones, comunidades y creadores.</li>
+                            <li>Información de visibilidad basada en información de perfil disponible públicamente.</li>
+                        </ul>
+                        <p><strong>5.4 Modificación del Servicio:</strong> Nos reservamos el derecho de modificar, actualizar o discontinuar cualquier componente del Servicio a nuestra discreción, siempre que dichas modificaciones no disminuyan materialmente el valor del Servicio. Se le notificará cualquier cambio significativo por correo electrónico con al menos 30 días de anticipación.</p>
+                        <p><strong>5.5 Sin garantías de rendimiento:</strong> El Servicio no garantiza la interacción, el aumento de seguidores, el posicionamiento en la plataforma ni los ingresos. Los resultados varían según la calidad, la consistencia y la relevancia del contenido para la audiencia.</p>
+                        <p><strong>5.6 Autorización de pago:</strong> Al suscribirse, usted autoriza a Sponsor Telecom S.L. a cobrar la tarifa de suscripción al método de pago proporcionado al momento del pago.</p>
+                        <p><strong>5.7 Métodos de Pago:</strong> Los pagos del Servicio de Suscripción se procesan a través del Sitio mediante métodos de pago seguros. Sponsor Telecom S.L. utiliza proveedores de pago externos que cumplen con los estándares de seguridad PCI DSS. Su información de pago se procesa de forma segura y Sponsor Telecom S.L. no almacena sus datos de pago.</p>
+                    </div>
+                </section>
+
+                <!-- Section 6 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">6. PROPIEDAD INTELECTUAL</h2>
+                    <div class="space-y-3">
+                        <p><strong>6.1 Propiedad del contenido:</strong> Todos los derechos de propiedad intelectual relacionados con el Sitio, el Servicio y los materiales asociados pertenecen exclusivamente a Sponsor Telecom S.L..</p>
+                        <p><strong>6.2 Licencia limitada:</strong> Al suscribirse al Servicio, se le otorga una licencia no exclusiva, intransferible y revocable para acceder y utilizar el Servicio únicamente para fines personales de acuerdo con estos Términos.</p>
+                        <p><strong>6.3 Usos prohibidos:</strong> No puede reproducir, realizar ingeniería inversa, distribuir, modificar, crear trabajos derivados, exhibir públicamente ni explotar ninguna parte del Servicio sin nuestro consentimiento previo por escrito.</p>
+                        <p><strong>6.4 Cumplimiento de derechos:</strong> Tomaremos todas las medidas legales y técnicas para proteger nuestra propiedad intelectual. El uso no autorizado puede resultar en la terminación inmediata de su suscripción y en posibles acciones legales.</p>
+                    </div>
+                </section>
+
+                <!-- Section 7 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">7. RESPONSABILIDAD Y LIMITACIONES</h2>
+                    <div class="space-y-3">
+                        <p><strong>7.1 Exención de responsabilidad del servicio:</strong> El Servicio se proporciona "tal como está" y "según disponibilidad", sin garantías de ningún tipo, expresas o implícitas, incluidas, entre otras, garantías de comerciabilidad, idoneidad para un fin determinado o no infracción.</p>
+                        <p><strong>7.2 Limitaciones de responsabilidad:</strong> En la máxima medida permitida por la ley, Sponsor Telecom S.L. no será responsable de:</p>
+                        <ul class="list-disc pl-12 space-y-2">
+                            <li>Cualquier daño directo, indirecto, incidental o consecuente que resulte de su uso o imposibilidad de usar el Servicio.</li>
+                            <li>Cualquier pérdida de ganancias, ingresos, datos u oportunidades comerciales que surjan de su uso del Servicio.</li>
+                        </ul>
+                        <p><strong>7.3 Responsabilidad del cliente:</strong> Usted reconoce que los resultados del uso del Servicio dependen de factores fuera de nuestro control, incluidos su esfuerzo, cumplimiento de estrategias y algoritmos de plataformas de terceros.</p>
+                        <p><strong>7.4 Cumplimiento de la Plataforma:</strong> No nos responsabilizamos de ninguna acción que plataformas de terceros tomen contra sus cuentas debido a su uso del Servicio. Usted es responsable de garantizar el cumplimiento de las condiciones de uso de cualquier plataforma de terceros donde utilice nuestros servicios.</p>
+                        <p><strong>7.5 Disponibilidad del Servicio:</strong> Si bien nos esforzamos por garantizar un Servicio ininterrumpido, no garantizamos que el Sitio o el Servicio estén disponibles en todo momento. Pueden producirse interrupciones temporales debido a tareas de mantenimiento, problemas técnicos o factores que escapan a nuestro control.</p>
+                    </div>
+                </section>
+
+                <!-- Section 8 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">8. POLÍTICA DE PRIVACIDAD</h2>
+                    <div class="space-y-3">
+                        <p><strong>8.1 Seguridad:</strong> La información de los clientes se almacena de forma segura y se maneja de conformidad con las leyes aplicables. Para obtener más información, consulte nuestra <a href="/privacity" class="text-blue-400 hover:text-blue-300 underline">Política de Privacidad</a>.</p>
+                    </div>
+                </section>
+
+                <!-- Section 9 -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">9. DISPOSICIONES GENERALES</h2>
+                    <div class="space-y-3">
+                        <p><strong>9.1 Fuerza mayor:</strong> Ninguna de las partes será responsable por demoras o incumplimientos en el cumplimiento de las obligaciones bajo estos Términos debido a eventos fuera de su control razonable, incluidos desastres naturales, actos de gobierno o fallas técnicas.</p>
+                        <p><strong>9.2 Divisibilidad:</strong> Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes permanecerán en pleno vigor y efecto. La disposición inválida será reemplazada por una disposición válida que se aproxime lo más posible a la intención original.</p>
+                        <p><strong>9.3 Comunicación:</strong> Todas las comunicaciones relativas a estos Términos deberán enviarse a:</p>
+                        <ul class="list-none pl-6 space-y-1">
+                            <li><strong>Correo electrónico:</strong> <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300">contact@trendyup.es</a></li>
+                            <li><strong>Dirección postal:</strong> Calle Capitan Haya 1, Planta 15 28020 Madrid, España</li>
+                        </ul>
+                        <p><strong>9.4 Ley aplicable y jurisdicción:</strong> Estos Términos y cualquier disputa que surja de ellos se regirán e interpretarán de conformidad con las leyes del España.</p>
+                        <ul class="list-disc pl-12 space-y-2">
+                            <li>Si usted inicia una reclamación legal, deberá presentarla ante los tribunales de Madrid.</li>
+                            <li>Si nosotros iniciamos una reclamación legal, se presentará ante los tribunales de su domicilio.</li>
+                        </ul>
+                        <p><strong>9.5 Acuerdo completo:</strong> Estos Términos constituyen el acuerdo completo entre usted y nosotros con respecto al Servicio y reemplazan cualquier acuerdo o comunicación anterior.</p>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="mt-12 pt-8 border-t border-white/10">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Contacto</h3>
+                    <p>Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos en:</p>
+                    <ul class="mt-4 space-y-2">
+                        <li><strong>Email:</strong> <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300">contact@trendyup.es</a></li>
+                        <li><strong>Dirección:</strong> Calle Capitan Haya 1, Planta 15 28020 Madrid, España</li>
+                        <li><strong>Empresa:</strong> Sponsor Telecom S.L. (Registro: 12553665)</li>
+                    </ul>
+                </section>
             </div>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="history.back()"
-                    class="back-button  px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-2xl hover:scale-105 transform transition-all duration-300">
-                    ← Volver
-                </button>
-                <a href="mailto:soporte@wklysocial.com"
-                    class="px-8 py-4 bg-white/10 backdrop-blur-lg text-white font-bold rounded-2xl hover:bg-white/20 transition-all duration-300 border border-white/20">
-                    📧 Contactar soporte
-                </a>
-            </div>
         </div>
-    </div>
-</main>
-
-<!-- Footer -->
-<footer class="relative z-10 py-8 text-center">
-    <div class="container mx-auto px-6">
-        <p class="text-gray-400 text-sm">
-            © 2025 WklySocial. Todos los derechos reservados.
-        </p>
-    </div>
-</footer>
+</section>
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTop"
-    class="fixed  bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300 opacity-0 pointer-events-none z-50">
+    class="fixed  bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300 opacity-0 pointer-events-none z-50">
     ↑
 </button>
 <!-- JavaScript -->
