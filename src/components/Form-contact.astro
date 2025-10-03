@@ -20,7 +20,7 @@
                 <p>
                     <strong class="font-semibold text-lg">Contacto por correo electrónico:</strong><br>
                     <span class="text-gray-300">
-                        contacto@trendyup.com
+                        contacto@trendyup.es
                     </span>
                 </p>
                 <p>
@@ -46,11 +46,11 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Name -->
                         <div class="space-y-2">
-                            <label for="nombre" class="block text-white font-medium text-lg">
+                            <label for="name_user" class="block text-white font-medium text-lg">
                                 Nombre completo
                             </label>
                             <div class="relative">
-                                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo"
+                                <input type="text" id="name_user" name="name_user" required placeholder="Tu nombre completo"
                                     autocomplete="off"
                                     class="input-focus w-full px-6 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-blue-400 focus:bg-white/30">
                                 <div class="absolute inset-y-0 right-0 flex items-center pr-6">
@@ -61,11 +61,11 @@
 
                         <!-- Email -->
                         <div class="space-y-2">
-                            <label for="email" class="block text-white font-medium text-lg">
+                            <label for="email_user" class="block text-white font-medium text-lg">
                                 Correo electrónico
                             </label>
                             <div class="relative">
-                                <input type="email" id="email" name="email" required autocomplete="off"
+                                <input type="email" id="email_user" name="email_user" required autocomplete="off"
                                     placeholder="tu@email.com"
                                     class="input-focus w-full px-6 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-blue-400 focus:bg-white/30">
                                 <div class="absolute inset-y-0 right-0 flex items-center pr-6">
@@ -77,14 +77,17 @@
 
                     <!-- Message -->
                     <div class="space-y-2">
-                        <label for="mensaje" class="block text-white font-medium text-lg">
+                        <label for="message_user" class="block text-white font-medium text-lg">
                             Mensaje
                         </label>
-                        <textarea id="mensaje" name="mensaje" required rows="6" autocomplete="off"
+                        <textarea id="message_user" name="message_user" required rows="6" autocomplete="off"
                             placeholder="Describe tu consulta con el mayor detalle posible..."
                             class="input-focus w-full px-6 py-4 bg-white/20 border border-white/30 rounded-2xl text-white placeholder-gray-300 text-lg focus:outline-none focus:border-blue-400 focus:bg-white/30 resize-none"></textarea>
                     </div>
 
+                    <p id="error-message" class="hidden text-center text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30">
+                      
+                    </p>
                     <!-- Submit Button -->
                     <button type="submit"
                         class="button-hover  w-full bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white font-bold text-xl py-5 px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300/50">
@@ -100,64 +103,139 @@
 
 </section>
 
+<!-- Success Modal -->
+<div id="successModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 ">
+    <!-- Overlay -->
+    <div class="modal-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+    <!-- Modal Content -->
+    <div class="modal-content relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 max-w-md w-full border border-white/20 shadow-2xl">
+        <!-- Close Button -->
+        <button onclick="closeSuccessModal()"
+            class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:rotate-90 transition-all duration-300 group"
+            aria-label="Cerrar modal">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <!-- Success Icon -->
+        <div class="flex justify-center mb-4">
+            <div class="text-2xl font-bold flex items-center">
+                    <img src="/TrendyUp.png" class="size-14 opacity-85" alt="Logo TrendyUp">
+                    <span class="bg-gradient-to-tr from-orange-400  to-purple-700 text-transparent bg-clip-text">Trendy</span><span class="gradient-text text-3xl">Up</span>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <p class="text-purple-200 text-lg text-center leading-relaxed mb-8">
+            Tu mensaje ha sido registrado con éxito. Te contactaremos en el menor tiempo posible.
+        </p>
+
+        <!-- Action Button -->
+        <button onclick="closeSuccessModal()"
+            class="w-full px-6 py-3 bg-blue-700 hover:bg-blue-800 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg">
+            Entendido
+        </button>
+    </div>
+</div>
+
 <!-- JavaScript -->
-<script is:inline>
+<script>
+
+    window.addEventListener('load', () => {
+
+        const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        const name_user = document.getElementById("name_user") as HTMLInputElement;
+        const email_user = document.getElementById("email_user") as HTMLInputElement;
+        const message_user = document.getElementById("message_user") as HTMLInputElement;
+        const button = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const errormessage = document.getElementById("error-message") as HTMLDivElement;
+
+        const form = document.getElementById("contactForm") as HTMLFormElement;
+        if(!form)return
+
         // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
+            const name = name_user.value.trim();
+            const email = email_user.value.trim();
+            const message = message_user.value.trim();
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            await sendEmail(name, email, message)
+        });
+
+      async function sendEmail(name_user:string, email_user:string, textarea_user:string){
             
-            // Show loading state
-            const button = this.querySelector('button[type="submit"]');
             const originalText = button.innerHTML;
             button.innerHTML = '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Enviando...</span></span>';
             button.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                alert(`¡Gracias ${data.nombre}! Tu mensaje ha sido enviado. Te responderemos en ${data.urgente ? '1-3 horas' : '6-24 horas'}.`);
-                
-                // Reset form
-                this.reset();
-                
-                // Reset button
+
+            const token = await getToken();
+
+            // Basic validation
+            if (name_user.length === 0 || email_user.length === 0 || textarea_user.length === 0) {
+                errormessage.classList.remove("hidden");
+                errormessage.textContent = "🚨 Por favor completa todos los campos";
                 button.innerHTML = originalText;
                 button.disabled = false;
-            }, 2000);
-        });
+                return;
+            }
 
-        // FAQ Toggle functionality
-        document.querySelectorAll('.faq-toggle').forEach(button => {
-            button.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('span:last-child');
-                
-                if (content.classList.contains('hidden')) {
-                    content.classList.remove('hidden');
-                    icon.textContent = '−';
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    content.classList.add('hidden');
-                    icon.textContent = '+';
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        });
+            if (!emailRegex.test(email_user)) {
+                errormessage.classList.remove("hidden");
+                errormessage.textContent = "🚨 Formato de email inválido";
+                button.innerHTML = originalText;
+                button.disabled = false;
+                return;
+            }
 
-        // Input animations
-        const inputs = document.querySelectorAll('input, textarea, select');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
+            if (!token) {
+                errormessage.classList.remove("hidden");
+                errormessage.textContent = "🚨 Ha oocurrido un error, intentarlo mas tarde";
+                button.innerHTML = originalText;
+                button.disabled = false;
+                return;
+            }
+
+        const res = await fetch(`${import.meta.env.PUBLIC_API}/contact-mesagge`, 
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    name: name_user.toLowerCase().trim(),
+                    email: email_user.toLowerCase().trim(),
+                    textarea: textarea_user.toLowerCase().trim(),
+                }),
             });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
-        });
+            const data = await res.json();
+
+            if (!res.ok) {
+                errormessage.classList.remove("hidden");
+                errormessage.textContent = data.message;
+                button.innerHTML = originalText;
+                button.disabled = false;
+                return;
+            }else{
+                button.innerHTML = originalText;
+                button.disabled = false;
+                showSuccessModal()
+            }
+        }
+
+      async function getToken() {
+            const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
+
+            if (!res.ok) {
+                throw new Error("Error al obtener el token");
+            }
+
+            const data = await res.json();
+            return data.token; // O la propiedad que te envíe el token
+        }
 
         // Add entrance animations
         const observerOptions = {
@@ -165,20 +243,46 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry: IntersectionObserverEntry) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    (entry.target as HTMLElement).style.opacity = '1';
+                    (entry.target as HTMLElement).style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.animate-slide-up').forEach(element => {
+        const elementDiv =(document.querySelectorAll('.animate-slide-up') as NodeListOf<HTMLDivElement>)
+        elementDiv.forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(30px)';
             element.style.transition = 'all 0.6s ease-out';
             observer.observe(element);
         });
+
+        function showSuccessModal() {
+            const modal = document.getElementById('successModal') as HTMLDivElement;
+            modal.classList.remove('hidden');
+            // Reset form
+            form.reset();
+            
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                closeSuccessModal();
+            }, 5000);
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal') as HTMLDivElement;
+            modal.classList.add('hidden');
+            
+            // Reset form
+            form.reset();
+        }
+    })
+
+    
+       
+
 </script>
