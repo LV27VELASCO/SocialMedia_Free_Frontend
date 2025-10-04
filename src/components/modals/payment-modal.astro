@@ -433,7 +433,7 @@
         }
     }
 
-    function showLoader(message = "Procesando solicitud...") {
+    function showLoader(message = "Este proceso puede tardar algunos minutos. Por favor, espere mientras completamos la operación.") {
         const modal = document.getElementById("loaderModal") as HTMLDivElement;
         const label = modal.querySelector("[data-loader-text]");
         if (label) label.textContent = message;
