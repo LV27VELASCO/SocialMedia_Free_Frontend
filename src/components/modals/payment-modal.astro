@@ -257,6 +257,13 @@
         cardExpiry.mount("#card-expiry");
         const cardCvc = elements.create("cardCvc");
         cardCvc.mount("#card-cvc");
+
+        const errormessage = document.getElementById("errorMessage");
+        if (!errormessage) return;
+        
+        errormessage.classList.add("hidden");
+
+
         const form = document.getElementById("payment-form");
         if (!form) return; // Evita el error de null
         form.addEventListener("submit", async (e: any) => {
@@ -267,9 +274,7 @@
             );
             // // Show loading state
             const button = document.querySelector<HTMLButtonElement>("#btn-pay");
-            const errormessage = document.getElementById("errorMessage");
-            if (!errormessage || !button) return;
-            errormessage.classList.add("hidden");
+            if (!button) return;
             showLoader();
             const originalText = button.innerHTML;
             button.innerHTML =
@@ -339,6 +344,7 @@
                 formData.get("card-name")?.toString(),
             );
         });
+
     });
     async function getToken() {
         try {
@@ -447,4 +453,6 @@
             document.body.classList.remove("overflow-hidden");
         }, 200); // sincronizado con transition-opacity
     }
+
+
 </script>

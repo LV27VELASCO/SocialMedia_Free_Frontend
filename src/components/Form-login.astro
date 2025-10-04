@@ -183,7 +183,7 @@
 
                 const data = await res.json();
                 if (!res.ok) {
-                    console.log(res);
+                  
                     showError("Usuario o contraseña incorrectos");
                     return;
                 }
@@ -195,7 +195,7 @@
                     window.location.href = "/dashboard"; // O tu ruta real
                 }, 1500);
             } catch (err) {
-                console.log(err)
+                
                 showError("Ocurrió un error, intentarlo mas tarde");
                 formGlow.style.animation ="shake 0.5s ease-in-out";
                 setTimeout(() => {
