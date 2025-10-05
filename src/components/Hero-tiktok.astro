@@ -40,7 +40,9 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                             <span>→</span>
                         </button>
                     </form>
-                    <p id="message-error" class="hidden text-center text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30"></p>
+                    <p id="message-error"
+                        class="hidden text-center text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30">
+                    </p>
                     <div class="flex items-center justify-center space-x-6 mt-4 text-sm text-gray-300">
                         <div class="flex items-center space-x-1">
                             <span class="text-green-400">✓</span>
@@ -91,10 +93,11 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
 
 <SelectFollowersTiktok />
 
-<PaymentModal/>
+<PaymentModal />
 
 <!-- Modal de Selección -->
-<div id="followersModal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+<div id="followersModal"
+    class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
     <div
         class="mx-4 w-full max-w-2xl h-[90%] overflow-y-scroll bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
         <!-- Modal Header -->
@@ -121,17 +124,31 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                     👥 ¿Cual es tu objetivo de seguidores?
                 </p>
                 <div id="PriceTiktok" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 pt-6">
+                    <!-- 250 Followers -->
+                    <button type="button" onclick="selectFollowers(250)"
+                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="text-4xl font-bold text-white mb-2">250</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">€4.9</span>
+                            <span class="text-sm text-gray-400 line-through">€6.9</span>
+                        </div>
+                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
+                            -29%
+                        </div>
+                    </button>
+
                     <!-- 500 Followers -->
                     <button type="button" onclick="selectFollowers(500)"
                         class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
                         <div class="text-4xl font-bold text-white mb-2">500</div>
                         <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">2.8€</span>
-                            <span class="text-sm text-gray-400 line-through">3.9€</span>
+                            <span class="text-2xl font-bold text-green-400">€7.9</span>
+                            <span class="text-sm text-gray-400 line-through">€12.9</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -28%
+                            -39%
                         </div>
                     </button>
 
@@ -141,8 +158,8 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                         <div class="text-4xl font-bold text-white mb-2">1K</div>
                         <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">5.9€</span>
-                            <span class="text-sm text-gray-400 line-through">8€</span>
+                            <span class="text-2xl font-bold text-green-400">€11.9</span>
+                            <span class="text-sm text-gray-400 line-through">€16</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
                             -26%
@@ -155,28 +172,29 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                         <div class="text-4xl font-bold text-white mb-2">2.5K</div>
                         <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">8.8€</span>
-                            <span class="text-sm text-gray-400 line-through">10€</span>
+                            <span class="text-2xl font-bold text-green-400">€26.9</span>
+                            <span class="text-sm text-gray-400 line-through">€39.9</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -12%
+                            -33%
                         </div>
                     </button>
 
                     <!-- 5K Followers - POPULAR -->
                     <button type="button" onclick="selectFollowers(5000)"
                         class="followers-option pricing-card popular rounded-2xl p-5 text-center cursor-pointer relative overflow-visible">
-                        <div class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
+                        <div
+                            class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
                             Más Popular
                         </div>
                         <div class="text-4xl font-bold gradient-text mb-2">5K</div>
                         <div class="text-blue-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">12.8€</span>
-                            <span class="text-sm text-gray-400 line-through">15€</span>
+                            <span class="text-2xl font-bold text-green-400">€47.9</span>
+                            <span class="text-sm text-gray-400 line-through">€69.9</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -15%
+                            -31%
                         </div>
                     </button>
 
@@ -186,59 +204,44 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                         <div class="text-4xl font-bold text-white mb-2">10K</div>
                         <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Premium</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">38.8€</span>
-                            <span class="text-sm text-gray-400 line-through">45€</span>
+                            <span class="text-2xl font-bold text-green-400">€84.9</span>
+                            <span class="text-sm text-gray-400 line-through">€129.9</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -14%
+                            -35%
                         </div>
                     </button>
 
-                    <!-- 20K Followers -->
-                    <button type="button" onclick="selectFollowers(20000)"
+                    <!-- 15K Followers -->
+                    <button type="button" onclick="selectFollowers(15000)"
                         class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">20K</div>
+                        <div class="text-4xl font-bold text-white mb-2">15K</div>
                         <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Premium</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">74.8€</span>
-                            <span class="text-sm text-gray-400 line-through">84.9€</span>
+                            <span class="text-2xl font-bold text-green-400">€119.9</span>
+                            <span class="text-sm text-gray-400 line-through">€179.9</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -12%
+                            -33%
                         </div>
                     </button>
 
-                    <!-- 35K Followers -->
-                    <button type="button" onclick="selectFollowers(35000)"
+                    <!-- 25K Followers -->
+                    <button type="button" onclick="selectFollowers(25000)"
                         class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">35K</div>
+                        <div class="text-4xl font-bold text-white mb-2">25K</div>
                         <div class="text-yellow-300 text-xs font-semibold mb-3 uppercase tracking-wider">VIP</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">110€</span>
-                            <span class="text-sm text-gray-400 line-through">130.9€</span>
+                            <span class="text-2xl font-bold text-green-400">€189.9</span>
+                            <span class="text-sm text-gray-400 line-through">€289.9</span>
                         </div>
                         <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -16%
-                        </div>
-                    </button>
-
-                    <!-- 50K Followers -->
-                    <button type="button" onclick="selectFollowers(50000)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">50K</div>
-                        <div class="text-yellow-300 text-xs font-semibold mb-3 uppercase tracking-wider">VIP</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">135€</span>
-                            <span class="text-sm text-gray-400 line-through">150.9€</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -11%
+                            -34%
                         </div>
                     </button>
                 </div>
                 <input type="hidden" id="selectedFollowers" name="followers" required />
             </div>
-
             <!-- Email Input -->
             <div>
                 <label for="modalEmail" class="block text-white font-medium mb-2">
@@ -260,15 +263,15 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
             <!-- Benefits -->
             <div class="bg-white/20 border border-white/30 rounded-xl p-4 space-y-4">
                 <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                        <p><strong>TrendyUp</strong> opera en total conformidad con las políticas de TikTok, Instagram y
-                                Google Ads. Nuestro método excluye la automatización, las interacciones artificiales y
-                                cualquier acceso indebido a las cuentas de los usuarios.</p>
+                    <p><strong>TrendyUp</strong> opera en total conformidad con las políticas de TikTok, Instagram y
+                        Google Ads. Nuestro método excluye la automatización, las interacciones artificiales y
+                        cualquier acceso indebido a las cuentas de los usuarios.</p>
                 </div>
                 <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                        <p>Potenciamos la visibilidad de tu perfil compartiendo tu contenido de manera directa con una
-                            red global que reúne creadores auténticos, plataformas móviles, comunidades temáticas e
-                            influencers. El volumen contratado definirá tu nivel de exposición en estas colaboraciones.
-                        </p>
+                    <p>Potenciamos la visibilidad de tu perfil compartiendo tu contenido de manera directa con una
+                        red global que reúne creadores auténticos, plataformas móviles, comunidades temáticas e
+                        influencers. El volumen contratado definirá tu nivel de exposición en estas colaboraciones.
+                    </p>
                 </div>
 
                 <div class="bg-gray-500/20 border border-gray-500/30 rounded-xl p-4">
@@ -406,29 +409,29 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
             orderData.followers.toLocaleString() + " Seguidores";
         // Set price based on followers
         let basePrice = "GRATIS";
-        if (orderData.followers > 400) {
+        if (orderData.followers > 200) {
             if (orderData.platform === "instagram") {
                 const priceMapInsta = {
-                    500: "€1.8",
-                    1000: "€3.8",
-                    2500: "€6.8",
-                    5000: "€12.8",
-                    10000: "€25.8",
-                    20000: "€45.8",
-                    35000: "€52.9",
-                    50000: "€75.9",
+                    250: "€2.4",
+                    500: "€3.9",
+                    1000: "€5.9",
+                    2500: "€12.9",
+                    5000: "€21.9",
+                    10000: "€39.9",
+                    20000: "€69.9",
+                    25000: "€84.9"
                 };
                 basePrice = priceMapInsta[orderData.followers] || "€29.99";
             } else {
                 const priceMapTiktok = {
-                    500: "€2.8",
-                    1000: "€5.8",
-                    2500: "€8.9",
-                    5000: "€12.8",
-                    10000: "€38.8",
-                    20000: "€74.8",
-                    35000: "€110",
-                    50000: "€135",
+                    250: "€4.9",
+                    500: "€7.9",
+                    1000: "€11.9",
+                    2500: "€26.9",
+                    5000: "€47.9",
+                    10000: "€84.9",
+                    15000: "€119.9",
+                    25000: "€189.9"
                 };
                 basePrice = priceMapTiktok[orderData.followers] || "€29.99";
             }
