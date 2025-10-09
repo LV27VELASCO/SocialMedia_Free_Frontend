@@ -95,203 +95,6 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
 
 <PaymentModal />
 
-<!-- Modal de Selección -->
-<div id="followersModal"
-    class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-    <div
-        class="mx-4 w-full max-w-2xl h-[90%] overflow-y-scroll bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
-        <!-- Modal Header -->
-        <div class="text-center mb-8">
-            <div class="text-6xl mb-4">🚀</div>
-            <h2 class="text-3xl font-bold text-white mb-2">¡Casi Listo!</h2>
-            <p class="text-gray-300">
-                Elige un objetivo de seguidores y confirma tu email
-            </p>
-        </div>
-
-        <!-- Selected Platform Info -->
-        <div class="bg-white/5 rounded-xl p-4 mb-6 flex items-center justify-center space-x-3">
-            <span class="text-2xl" id="modal-platform-icon">🎵</span>
-            <span class="text-white font-medium">Usuario: <span id="modal-username" class="text-blue-300">
-                </span>
-            </span>
-        </div>
-
-        <form id="formFollowers" class="space-y-6">
-            <!-- Followers Selection -->
-            <div>
-                <p class="block text-white font-medium mb-4 text-center">
-                    👥 ¿Cual es tu objetivo de seguidores?
-                </p>
-                <div id="PriceTiktok" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 pt-6">
-                    <!-- 250 Followers -->
-                    <button type="button" onclick="selectFollowers(250)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">250</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€4.9</span>
-                            <span class="text-sm text-gray-400 line-through">€6.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -29%
-                        </div>
-                    </button>
-
-                    <!-- 500 Followers -->
-                    <button type="button" onclick="selectFollowers(500)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">500</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€7.9</span>
-                            <span class="text-sm text-gray-400 line-through">€12.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -39%
-                        </div>
-                    </button>
-
-                    <!-- 1K Followers -->
-                    <button type="button" onclick="selectFollowers(1000)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">1K</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€11.9</span>
-                            <span class="text-sm text-gray-400 line-through">€16</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -26%
-                        </div>
-                    </button>
-
-                    <!-- 2.5K Followers -->
-                    <button type="button" onclick="selectFollowers(2500)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">2.5K</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€26.9</span>
-                            <span class="text-sm text-gray-400 line-through">€39.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -33%
-                        </div>
-                    </button>
-
-                    <!-- 5K Followers - POPULAR -->
-                    <button type="button" onclick="selectFollowers(5000)"
-                        class="followers-option pricing-card popular rounded-2xl p-5 text-center cursor-pointer relative overflow-visible">
-                        <div
-                            class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
-                            Más Popular
-                        </div>
-                        <div class="text-4xl font-bold gradient-text mb-2">5K</div>
-                        <div class="text-blue-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€47.9</span>
-                            <span class="text-sm text-gray-400 line-through">€69.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -31%
-                        </div>
-                    </button>
-
-                    <!-- 10K Followers -->
-                    <button type="button" onclick="selectFollowers(10000)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">10K</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Premium</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€84.9</span>
-                            <span class="text-sm text-gray-400 line-through">€129.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -35%
-                        </div>
-                    </button>
-
-                    <!-- 15K Followers -->
-                    <button type="button" onclick="selectFollowers(15000)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">15K</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Premium</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€119.9</span>
-                            <span class="text-sm text-gray-400 line-through">€179.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -33%
-                        </div>
-                    </button>
-
-                    <!-- 25K Followers -->
-                    <button type="button" onclick="selectFollowers(25000)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">25K</div>
-                        <div class="text-yellow-300 text-xs font-semibold mb-3 uppercase tracking-wider">VIP</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">€189.9</span>
-                            <span class="text-sm text-gray-400 line-through">€289.9</span>
-                        </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">
-                            -34%
-                        </div>
-                    </button>
-                </div>
-                <input type="hidden" id="selectedFollowers" name="followers" required />
-            </div>
-            <!-- Email Input -->
-            <div>
-                <label for="modalEmail" class="block text-white font-medium mb-2">
-                    📧 Tu Email
-                </label>
-                <input type="email" id="modalEmail" name="email" placeholder="tu@email.com"
-                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    required />
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                <button type="submit"
-                    class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white font-bold rounded-xl hover:scale-105 transform transition-all duration-300 shadow-2xl">
-                    🚀 Continuar
-                </button>
-            </div>
-
-            <!-- Benefits -->
-            <div class="bg-white/20 border border-white/30 rounded-xl p-4 space-y-4">
-                <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                    <p><strong>TrendyUp</strong> opera en total conformidad con las políticas de TikTok, Instagram y
-                        Google Ads. Nuestro método excluye la automatización, las interacciones artificiales y
-                        cualquier acceso indebido a las cuentas de los usuarios.</p>
-                </div>
-                <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                    <p>Potenciamos la visibilidad de tu perfil compartiendo tu contenido de manera directa con una
-                        red global que reúne creadores auténticos, plataformas móviles, comunidades temáticas e
-                        influencers. El volumen contratado definirá tu nivel de exposición en estas colaboraciones.
-                    </p>
-                </div>
-
-                <div class="bg-gray-500/20 border border-gray-500/30 rounded-xl p-4">
-                    <h3 class="text-gray-200 font-semibold mb-2 flex items-center">
-                        <span class="mr-2">📄</span>
-                        Aviso legal:
-                    </h3>
-                    <ul class="text-gray-300 text-sm space-y-1">
-                        <li>El nivel de visibilidad está marcado por la calidad del contenido, su pertinencia en la
-                            audiencia y la consistencia al compartirlo. TrendyUp facilita herramientas para impulsarla,
-                            sin garantizar resultados concretos en métricas como seguidores o participación.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </form>
-    </div>
-</div>
-
-
 
 <div id="loaderModal"
     class="hidden opacity-0 fixed inset-0 z-[70] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-200"
@@ -409,10 +212,11 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
             orderData.followers.toLocaleString() + " Seguidores";
         // Set price based on followers
         let basePrice = "GRATIS";
-        if (orderData.followers > 200) {
+        let totalPay = "€1"
+        let freePay = document.querySelectorAll("#pay-verify");
+        if (orderData.followers > 250) {
             if (orderData.platform === "instagram") {
                 const priceMapInsta = {
-                    250: "€2.4",
                     500: "€3.9",
                     1000: "€5.9",
                     2500: "€12.9",
@@ -422,9 +226,9 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                     25000: "€84.9"
                 };
                 basePrice = priceMapInsta[orderData.followers] || "€29.99";
+                totalPay = basePrice;
             } else {
                 const priceMapTiktok = {
-                    250: "€4.9",
                     500: "€7.9",
                     1000: "€11.9",
                     2500: "€26.9",
@@ -434,10 +238,18 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
                     25000: "€189.9"
                 };
                 basePrice = priceMapTiktok[orderData.followers] || "€29.99";
+                totalPay = basePrice;
             }
+            freePay.forEach(element=>{
+                element.classList.add("hidden");
+            })
+        }else{
+            freePay.forEach(element=>{
+                element.classList.remove("hidden");
+            })
         }
         document.getElementById("payment-price").textContent = basePrice;
-        document.getElementById("total-pay").textContent = basePrice;
+        document.getElementById("total-pay").textContent = totalPay;
         // Show payment modal
         document.getElementById("paymentModal").classList.remove("hidden");
         document.body.classList.add("overflow-hidden");

@@ -3,8 +3,7 @@ const { id = "followersModal" } = Astro.props;
 ---
 
 <div id={id} class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-    <div
-        class="mx-4 w-full max-w-2xl h-[90%] overflow-y-scroll bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
+    <div class="mx-4 w-full max-w-2xl h-[90%] overflow-y-scroll bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
 
         <!-- Added close button in top-right corner -->
         <button onclick="closeModal()"
@@ -38,15 +37,17 @@ const { id = "followersModal" } = Astro.props;
                 </p>
                 <div id="PriceInsta" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 pt-6">
                     <!-- 250 Followers -->
-                    <button type="button" onclick="selectFollowers(250)"
-                        class="followers-option pricing-card rounded-2xl p-5 text-center cursor-pointer">
-                        <div class="text-4xl font-bold text-white mb-2">250</div>
-                        <div class="text-blue-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-2xl font-bold text-green-400">2.4€</span>
-                            <span class="text-sm text-gray-400 line-through">4.9€</span>
+                    <button type="button" onclick="selectFollowers(250)" class="followers-option  pricing-card rounded-2xl p-5 text-center cursor-pointer">
+                        <div class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold px-6 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
+                            Oferta Limitada
                         </div>
-                        <div class="savings-badge inline-block px-3 py-1 rounded-full text-xs font-bold text-white">-50%
+                        <div class="text-4xl font-bold text-white mb-2">250</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Prueba Gratuita</div>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-2xl font-bold text-green-400">€0</span>
+                        </div>
+                        <div class="free-badge inline-block px-3 py-1 rounded-full text-[11px] font-bold text-white">
+                            100% GRATIS
                         </div>
                     </button>
 
@@ -96,7 +97,7 @@ const { id = "followersModal" } = Astro.props;
                             class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
                             Más Popular
                         </div>
-                        <div class="text-4xl font-bold gradient-text mb-2">5K</div>
+                        <div class="text-4xl font-bold text-transparent bg-gradient-to-bl from-purple-500 to-pink-400 bg-clip-text mb-2">5K</div>
                         <div class="text-blue-300 text-xs font-semibold mb-3 uppercase tracking-wider">Popular</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
                             <span class="text-2xl font-bold text-green-400">21.9€</span>
