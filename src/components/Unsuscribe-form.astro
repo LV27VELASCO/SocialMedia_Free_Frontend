@@ -40,81 +40,13 @@
                         <div id="email-error" class="hidden text-red-300 text-sm mt-2">
                         </div>
                     </div>
+                    <!-- Error Message -->
+                    <p id="message2" class="text-center text-sm mt-2"></p>
                     <button type="submit"
                         class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300 flex items-center justify-center space-x-2 outline-none">
                         <span>Cancelar Suscripción</span>
                     </button>
-                    <!-- Error Message -->
-                    <p id="message2" class="text-center text-sm mt-2"></p>
                 </form>
-            </div>
-
-            <!-- Step 3: Confirmation -->
-            <div id="step-confirmation" class="step-container hidden">
-                <div class="text-center">
-                    <div class="text-8xl mb-6 success-animation">✅</div>
-                    <h2 class="text-3xl font-bold text-white mb-4">
-                        ¡Suscripciones Canceladas!
-                    </h2>
-                    <p class="text-xl text-gray-300 mb-8">
-                        Hemos procesado tu solicitud correctamente
-                    </p>
-
-                    <!-- Summary -->
-                    <div class="bg-white bg-opacity-5 rounded-xl p-6 mb-8 text-left">
-                        <h3 class="text-lg font-semibold text-white mb-4">
-                            📋 Resumen de Cambios:
-                        </h3>
-                        <div id="unsubscribe-summary" class="space-y-2 text-gray-300">
-                            <!-- Summary will be populated by JavaScript -->
-                        </div>
-                    </div>
-
-                    <!-- What happens next -->
-                    <div class="bg-blue-500 bg-opacity-20 border border-blue-500 border-opacity-30 rounded-xl p-6 mb-8">
-                        <h3 class="text-lg font-semibold text-blue-200 mb-3">
-                            🔮 ¿Qué sucede ahora?
-                        </h3>
-                        <ul class="text-blue-300 text-sm space-y-2 text-left">
-                            <li>• Los cambios son efectivos inmediatamente</li>
-                            <li>
-                                • Podrías recibir emails ya programados en las
-                                próximas 24-48 horas
-                            </li>
-                            <li>
-                                • Puedes reactivar tus suscripciones en
-                                cualquier momento
-                            </li>
-                            <li>
-                                • Los emails transaccionales (facturas,
-                                seguridad) continuarán llegando
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="goToHomepage()"
-                            class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300">
-                            🏠 Ir al Inicio
-                        </button>
-                        <button onclick="resubscribe()"
-                            class="flex-1 px-6 py-3 bg-green-600 bg-opacity-50 text-white font-semibold rounded-xl hover:bg-opacity-70 transition-all duration-300">
-                            🔄 Reactivar Suscripciones
-                        </button>
-                    </div>
-
-                    <!-- Contact Support -->
-                    <div class="mt-8 pt-6 border-t border-white border-opacity-20">
-                        <p class="text-gray-400 text-sm mb-4">
-                            ¿Necesitas ayuda o tienes alguna pregunta?
-                        </p>
-                        <button onclick="contactSupport()"
-                            class="px-4 py-2 bg-white bg-opacity-10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
-                            💬 Contactar Soporte
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -136,6 +68,77 @@
         </div>
     </div>
 </section>
+
+<div id="success-unsuscribe" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="mx-4 w-full max-w-2xl h-[90%] overflow-y-scroll bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-8 animate-scale-in">
+        <!-- Added close button in top-right corner -->
+        <button onclick="closeModal()"
+            class="close-button absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-red-500/20 border border-white/20 hover:border-red-400 text-white hover:text-red-400 text-xl font-bold transition-all z-10"
+            aria-label="Cerrar modal">
+            ×
+        </button>
+
+        <div class="step-container">
+            <div class="text-center">
+                <div class="text-8xl mb-6 success-animation">✅</div>
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    ¡Suscripcion Cancelada!
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Hemos procesado tu solicitud correctamente
+                </p>
+
+                <!-- What happens next -->
+                <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-blue-200 mb-3">
+                        🔮 ¿Qué sucede ahora?
+                    </h3>
+                    <ul class="text-blue-300 text-sm space-y-2 text-left">
+                        <li>• Los cambios son efectivos inmediatamente</li>
+                        <li>
+                            • Podrías recibir emails ya programados en las
+                            próximas 24-48 horas
+                        </li>
+                        <li>
+                            • Puedes reactivar tus suscripciones en
+                            cualquier momento
+                        </li>
+                        <li>
+                            • Los emails transaccionales (facturas,
+                            seguridad) continuarán llegando
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/"
+                        class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300">
+                        🏠 Ir al Inicio
+                    </a>
+                    <a href="/prices"
+                        class="flex-1 px-6 py-3 bg-green-400/50 text-white font-semibold rounded-xl hover:bg-green-400/70 transition-all duration-300">
+                        🔄 Reactivar Suscripciones
+                    </a>
+                </div>
+
+                <!-- Contact Support -->
+                <div class="mt-8 pt-6 border-t border-white/20">
+                    <p class="text-gray-400 text-sm mb-4">
+                        ¿Necesitas ayuda o tienes alguna pregunta?
+                    </p>
+                    <button onclick="contactSupport()"
+                        class="px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
+                        💬 Contactar Soporte
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <!-- JavaScript -->
 <script>
@@ -192,6 +195,7 @@
     async function unsubscribe_api(originalText:string, data_email:any) {
         const token = await getToken();
         const button = document.querySelector<HTMLButtonElement>('button[type="submit"]');
+        const SuccessElement = document.getElementById('success-unsuscribe');
         const messageEl = document.getElementById("message2");
         if (!button ||!messageEl) return;
 
@@ -221,7 +225,7 @@
         );
         const data = await res.json();
         if (!res.ok) {
-            messageEl.textContent = data.detail;
+            messageEl.textContent = data.message;
             messageEl.className =
                 "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
             button.innerHTML = originalText;
@@ -231,7 +235,7 @@
         }
 
         if (data.error) {
-            messageEl.textContent = data.error;
+            messageEl.textContent = data.message;
             messageEl.className =
                 "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
             button.innerHTML = originalText;
@@ -239,8 +243,7 @@
             hideLoader();
             return;
         } else {
-            messageEl.textContent = data.message;
-            messageEl.className = "text-green-600 text-center text-sm";
+            SuccessElement?.classList.remove("hidden")
             button.innerHTML = originalText;
             button.disabled = false;
             hideLoader();
@@ -269,5 +272,17 @@
             modal.classList.add("hidden");
             document.body.classList.remove("overflow-hidden");
         }, 200); // sincronizado con transition-opacity
+    }
+
+    
+</script>
+
+<script is:inline>
+// Función para cerrar el modal de seguidores
+    function closeModal() {
+        document.getElementById('success-unsuscribe').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        // Reset form
+        document.getElementById('unsuscribe-form').reset();
     }
 </script>
