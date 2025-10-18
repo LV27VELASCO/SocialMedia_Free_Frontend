@@ -1,205 +1,143 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+---
 <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                Política de <span class="gradient-text">Devolución y Reembolso</span>
-            </h1>
-            <p class="text-gray-300 text-sm">Fecha de entrada en vigor: 04/09/2024</p>
+  <!-- Header -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      {translate('refund.title')} <span class="gradient-text">{translate('refund.title.span')}</span>
+    </h1>
+    <p class="text-gray-300 text-sm">{translate('refund.date')}</p>
+  </div>
+
+  <!-- Content -->
+  <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 space-y-8">
+
+    <!-- Introduction -->
+    <section>
+      <p class="text-gray-200 leading-relaxed">{translate('refund.intro.text')}</p>
+    </section>
+
+    <!-- Order Cancellations -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">{translate('refund.cancelations.title')}</h2>
+      <p class="text-gray-200 leading-relaxed mb-4">{translate('refund.cancelations.text')}</p>
+      <ul class="space-y-2 text-gray-200 ml-6">
+        <li class="flex items-start">
+          <span class="text-purple-400 mr-2">•</span>
+          <span>{translate('refund.cancelations.list1')}</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-purple-400 mr-2">•</span>
+          <span>{translate('refund.cancelations.list2')}</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-purple-400 mr-2">•</span>
+          <span>{translate('refund.cancelations.list3')}</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 24-Hour Trial -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">{translate('refund.trial.title')}</h2>
+      <p class="text-gray-200 leading-relaxed mb-4">{translate('refund.trial.text')}</p>
+      <div class="bg-purple-500/10 border border-purple-400/30 rounded-lg p-4 mb-4">
+        <p class="text-purple-300 font-semibold mb-2">{translate('refund.trial.infoTitle')}</p>
+        <ul class="space-y-2 text-gray-200 ml-6">
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">•</span>
+            <span>{translate('refund.trial.list1')}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">•</span>
+            <span>{translate('refund.trial.list2')}</span>
+          </li>
+        </ul>
+      </div>
+      <p class="text-gray-300 italic">{translate('refund.trial.note')}</p>
+    </section>
+
+    <!-- 14-Day Guarantee -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">{translate('refund.guarantee.title')}</h2>
+      <p class="text-gray-200 leading-relaxed mb-4">{translate('refund.guarantee.text')}</p>
+
+      <!-- Eligible Reasons -->
+      <div class="bg-green-500/10 border border-green-400/30 rounded-lg p-4 mb-4">
+        <p class="text-green-400 font-semibold mb-3 flex items-center">
+          <span class="mr-2">✅</span>
+          {translate('refund.guarantee.eligibleTitle')}
+        </p>
+        <ul class="space-y-2 text-gray-200 ml-6">
+          <li class="flex items-start"><span class="text-green-400 mr-2">•</span> {translate('refund.guarantee.eligible.list1')}</li>
+          <li class="flex items-start"><span class="text-green-400 mr-2">•</span> {translate('refund.guarantee.eligible.list2')}</li>
+          <li class="flex items-start"><span class="text-green-400 mr-2">•</span> {translate('refund.guarantee.eligible.list3')}</li>
+          <li class="flex items-start"><span class="text-green-400 mr-2">•</span> {translate('refund.guarantee.eligible.list4')}</li>
+        </ul>
+      </div>
+
+      <!-- Ineligible Reasons -->
+      <div class="bg-red-500/10 border border-red-400/30 rounded-lg p-4">
+        <p class="text-red-400 font-semibold mb-3 flex items-center">
+          <span class="mr-2">❌</span>
+          {translate('refund.guarantee.ineligibleTitle')}
+        </p>
+        <ul class="space-y-2 text-gray-200 ml-6">
+          <li class="flex items-start"><span class="text-red-400 mr-2">•</span> {translate('refund.guarantee.ineligible.list1')}</li>
+          <li class="flex items-start"><span class="text-red-400 mr-2">•</span> {translate('refund.guarantee.ineligible.list2')}</li>
+          <li class="flex items-start"><span class="text-red-400 mr-2">•</span> {translate('refund.guarantee.ineligible.list3')}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How to Request -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">{translate('refund.request.title')}</h2>
+      <p class="text-gray-200 leading-relaxed mb-4">{translate('refund.request.text')}</p>
+      <div class="space-y-4">
+        <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+          <p class="text-purple-300 font-semibold mb-1">📧 {translate('refund.request.email.title')}</p>
+          <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300 transition-colors">{translate('refund.request.email.text')}</a>
         </div>
-
-        <!-- Content -->
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 space-y-8">
-            <!-- Introduction -->
-            <section>
-                <p class="text-gray-200 leading-relaxed">
-                    En <span class="text-purple-400 font-semibold">TrendyUp</span>, operado por <span class="font-semibold">Sponsor Telecom S.L.</span>, nos comprometemos a brindar servicios de soporte de visibilidad de alta calidad y a mantener la transparencia en nuestro proceso de reembolso. Dado que ofrecemos servicios digitales intangibles (como la promoción manual de contenido y la información basada en perfiles), no se envían ni devuelven artículos físicos.
-                </p>
-            </section>
-
-            <!-- Order Cancellations -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">
-                    Cancelaciones de Pedidos (antes de la activación del servicio)
-                </h2>
-                <p class="text-gray-200 leading-relaxed mb-4">
-                    Puede cancelar su pedido antes de que se procese o active y recibir un reembolso completo. Para cancelar su pedido:
-                </p>
-                <ul class="space-y-2 text-gray-200 ml-6">
-                    <li class="flex items-start">
-                        <span class="text-purple-400 mr-2">•</span>
-                        <span>Contáctenos a través del chat en vivo, correo electrónico o correo postal</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-400 mr-2">•</span>
-                        <span>Proporcione la dirección de correo electrónico de su cuenta para su identificación</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-400 mr-2">•</span>
-                        <span>Si el servicio aún no ha comenzado, emitiremos un reembolso completo a su método de pago original</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- 24-Hour Trial -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">
-                    Oferta de Prueba de 24 Horas
-                </h2>
-                <p class="text-gray-200 leading-relaxed mb-4">
-                    Ofrecemos una prueba de 24 horas para que pruebes la plataforma sin compromiso. Si no estás satisfecho, puedes cancelar tu suscripción dentro de este plazo sin coste alguno.
-                </p>
-                <div class="bg-purple-500/10 border border-purple-400/30 rounded-lg p-4 mb-4">
-                    <p class="text-purple-300 font-semibold mb-2">Para cancelar durante el período de prueba:</p>
-                    <ul class="space-y-2 text-gray-200 ml-6">
-                        <li class="flex items-start">
-                            <span class="text-purple-400 mr-2">•</span>
-                            <span>Utilice su panel de control de TrendyUp</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-purple-400 mr-2">•</span>
-                            <span>O contáctenos por correo electrónico o chat en vivo dentro de las 24 horas</span>
-                        </li>
-                    </ul>
-                </div>
-                <p class="text-gray-300 italic">
-                    No se aplicarán cargos y su suscripción no se renovará.
-                </p>
-            </section>
-
-            <!-- 14-Day Guarantee -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">
-                    Garantía de Reembolso de 14 Días
-                </h2>
-                <p class="text-gray-200 leading-relaxed mb-4">
-                    Puede solicitar un reembolso dentro de los 14 días posteriores a la compra si se aplican las siguientes condiciones:
-                </p>
-                
-                <!-- Eligible Reasons -->
-                <div class="bg-green-500/10 border border-green-400/30 rounded-lg p-4 mb-4">
-                    <p class="text-green-400 font-semibold mb-3 flex items-center">
-                        <span class="mr-2">✅</span>
-                        Motivos de reembolso elegibles incluyen:
-                    </p>
-                    <ul class="space-y-2 text-gray-200 ml-6">
-                        <li class="flex items-start">
-                            <span class="text-green-400 mr-2">•</span>
-                            <span>El servicio no fue entregado como se describe</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-400 mr-2">•</span>
-                            <span>Su solicitud de reembolso se envía dentro de los 14 días</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-400 mr-2">•</span>
-                            <span>La entrega fue parcial o no ha comenzado</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-400 mr-2">•</span>
-                            <span>Todavía estás dentro del período de prueba (si corresponde)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Ineligible Reasons -->
-                <div class="bg-red-500/10 border border-red-400/30 rounded-lg p-4">
-                    <p class="text-red-400 font-semibold mb-3 flex items-center">
-                        <span class="mr-2">❌</span>
-                        Los reembolsos no están disponibles si:
-                    </p>
-                    <ul class="space-y-2 text-gray-200 ml-6">
-                        <li class="flex items-start">
-                            <span class="text-red-400 mr-2">•</span>
-                            <span>Han pasado más de 14 días desde tu compra</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-400 mr-2">•</span>
-                            <span>El servicio ya se ha prestado en su totalidad</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-400 mr-2">•</span>
-                            <span>No se informó ningún problema válido durante el período de tiempo permitido</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- How to Request -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">
-                    Cómo Solicitar un Reembolso
-                </h2>
-                <p class="text-gray-200 leading-relaxed mb-4">
-                    Para solicitar un reembolso, contáctenos a través de uno de los siguientes métodos:
-                </p>
-                <div class="space-y-4">
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                        <p class="text-purple-300 font-semibold mb-1">📧 Correo electrónico:</p>
-                        <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300 transition-colors">
-                            contact@trendyup.es
-                        </a>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                        <p class="text-purple-300 font-semibold mb-1">💬 Chat en vivo:</p>
-                        <p class="text-gray-300">Disponible a través de nuestra <a href="/contact" class="text-blue-400 hover:text-blue-300 transition-colors">página de contacto</a></p>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                        <p class="text-purple-300 font-semibold mb-2">📮 Correo postal:</p>
-                        <p class="text-gray-300 leading-relaxed">
-                            Sponsor Telecom S.L. (dba TrendyUp)<br>
-                            Calle Capitan Haya 1 <br>
-                            Planta 15 28020<br>
-                            Madrid, España.
-                        </p>
-                    </div>
-                </div>
-                <div class="mt-6 bg-purple-500/10 border border-purple-400/30 rounded-lg p-4">
-                    <p class="text-gray-200 leading-relaxed">
-                        Incluya el correo electrónico de su cuenta y una breve explicación. Le responderemos en un plazo de <span class="text-purple-400 font-semibold">3 días hábiles</span>.
-                    </p>
-                    <p class="text-gray-200 leading-relaxed mt-2">
-                        Si se aprueba, los reembolsos se emiten al método de pago original dentro de <span class="text-purple-400 font-semibold">5 a 10 días hábiles</span>.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Additional Information -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">
-                    Información Adicional
-                </h2>
-                <ul class="space-y-2 text-gray-200">
-                    <li class="flex items-start">
-                        <span class="text-purple-400 mr-2">•</span>
-                        <span>No se necesitan etiquetas de envío ni devolución ya que todos los servicios son digitales</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-400 mr-2">•</span>
-                        <span>No se aplican tarifas de procesamiento ni de reposición</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-400 mr-2">•</span>
-                        <span>Las tarifas del procesador de pagos solo se reembolsan si no se prestó el servicio</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Support Hours -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">
-                    Horario de Soporte
-                </h2>
-                <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-gray-200">
-                        <span class="text-purple-400 font-semibold">De lunes a viernes:</span> de 9:00 a 18:00
-                    </p>
-                </div>
-                <p class="text-gray-300 mt-4 italic">
-                    Estamos aquí para ayudarte. Si tienes alguna pregunta, no dudes en contactarnos.
-                </p>
-            </section>
+        <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+          <p class="text-purple-300 font-semibold mb-1">💬 {translate('refund.request.chat.title')}</p>
+          <p class="text-gray-300">{translate('refund.request.chat.text')}</p>
         </div>
+        <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+          <p class="text-purple-300 font-semibold mb-2">📮 {translate('refund.request.post.title')}</p>
+          <p class="text-gray-300 leading-relaxed">{translate('refund.request.post.text')}</p>
+        </div>
+      </div>
+      <div class="mt-6 bg-purple-500/10 border border-purple-400/30 rounded-lg p-4">
+        <p class="text-gray-200 leading-relaxed">{translate('refund.request.info1')}</p>
+        <p class="text-gray-200 leading-relaxed mt-2">{translate('refund.request.info2')}</p>
+      </div>
+    </section>
+
+    <!-- Additional Information -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">{translate('refund.additional.title')}</h2>
+      <ul class="space-y-2 text-gray-200">
+        <li class="flex items-start"><span class="text-purple-400 mr-2">•</span> {translate('refund.additional.list1')}</li>
+        <li class="flex items-start"><span class="text-purple-400 mr-2">•</span> {translate('refund.additional.list2')}</li>
+        <li class="flex items-start"><span class="text-purple-400 mr-2">•</span> {translate('refund.additional.list3')}</li>
+      </ul>
+    </section>
+
+    <!-- Support Hours -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-400 mb-4">{translate('refund.support.title')}</h2>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <p class="text-gray-200"><span class="text-purple-400 font-semibold">{translate('refund.support.text')}</span></p>
+      </div>
+      <p class="text-gray-300 mt-4 italic">{translate('refund.support.text2')}</p>
+    </section>
+    
+  </div>
 </section>
+
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTop"

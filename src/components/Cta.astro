@@ -1,18 +1,23 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+---
+
 <!-- Final CTA -->
 <section class="py-20 text-center">
     <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-black text-white mb-6">
-                No es solo una solución <br><span class="gradient-text">Es un socio estratégico para tu evolución</span>
+                {translate('cta.title')} <br><span class="gradient-text">{translate('cta.title.span')}</span>
             </h2>
             <p class="text-xl text-gray-300 mb-8">
-                Únete a miles de usuarios que ya han transformado sus redes sociales
+                {translate('cta.subtitle')}
             </p>
 
             <div class="space-y-4">
                 <a href="#inicio"
                     class="group  relative inline-flex items-center justify-center px-24 py-4 text-2xl font-black text-white bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-full hover:scale-110 transform transition-all duration-300 shadow-[0_0_20px_rgba(255,107,107,0.5)] animate-pulse">
-                    <span class="relative z-10">EMPIEZA AHORA</span>
+                    <span class="relative z-10">{translate('cta.button')}</span>
                 </a>
             </div>
         </div>

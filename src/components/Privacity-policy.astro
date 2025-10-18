@@ -1,163 +1,176 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+const datatypes = translate('privacy.datatypes.personal.items') as unknown as {}[]
+const userdata = translate('privacy.userdata.automatic.items') as unknown as {}[]
+const usedata = translate('privacy.usedata.items') as unknown as {}[]
+const sharedata = translate('privacy.sharedata.items') as unknown as {}[]
+const rights = translate('privacy.rights.items') as unknown as {}[]
+---
 <!-- Main Content -->
 <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            {translate('privacy.title')} <span class="gradient-text">{translate('privacy.title.span')}</span>
+        </h1>
+        <p class="text-purple-300 text-lg">{translate('privacy.date')}</p>
+    </div>
 
-        <!-- Header -->
-        <div class="text-center mb-12 animate-fade-in">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Política de <span class="gradient-text">Privacidad</span></h1>
-                <p class="text-purple-300 text-lg">Fecha de entrada en vigor: 21/10/2024</p>
-        </div>
+    <!-- Content Container -->
+    <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12">
 
-        <!-- Content Container -->
-        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12">
+        <div class="space-y-8 text-gray-200 leading-relaxed">
+            <p>{translate('privacy.intro.text')}</p>
 
-            <div class="space-y-8 text-gray-200 leading-relaxed">
-                <p>
-                    Sponsor Telecom S.L. ("Nosotros", "Nos", "Nuestro") se compromete a proteger su privacidad. Esta Política de Privacidad explica cómo recopilamos, utilizamos, almacenamos y protegemos sus datos personales cuando visita nuestro sitio web TrendyUp o utiliza nuestros servicios. Al utilizar nuestro Sitio, usted acepta las prácticas descritas en esta Política de Privacidad. Si no está de acuerdo con esta Política de Privacidad, le rogamos que no utilice nuestro Sitio.
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    1. {translate('privacy.personal.title')}
+                </h2>
+                <p>{translate('privacy.personal.text')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    2. {translate('privacy.datatypes.title')}
+                </h2>
+                <p class="mb-4">{translate('privacy.datatypes.text')}</p>
+
+                <h3 class="text-xl font-semibold text-purple-200 mb-3 mt-6">
+                    {translate('privacy.datatypes.personal.title')}
+                </h3>
+                <p class="mb-2">{translate('privacy.datatypes.personal.text')}</p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
+                    {
+                     datatypes.map((item)=>(
+                            <li>{item}</li>
+                        ))
+                    }
+                </ul>
+
+                <h3 class="text-xl font-semibold text-purple-200 mb-3 mt-6">
+                    {translate('privacy.userdata.automatic.title')}
+                </h3>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
+                    {userdata.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    3. {translate('privacy.usedata.title')}
+                </h2>
+                <p class="mb-3">{translate('privacy.usedata.text')}</p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
+                    {
+                      usedata.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+                <p class="mt-4 text-gray-300">
+                    {translate('privacy.usedata.contact')} <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">contact@trendyup.es</a>
                 </p>
+            </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">1. ¿Qué son los datos personales?</h2>
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    4. {translate('privacy.sharedata.title')}
+                </h2>
+                <p class="mb-3">{translate('privacy.sharedata.text')}</p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
+                    {
+                      sharedata.map((item) => (
+                         <li>{item}</li>
+                    ))}
+                </ul>
+                <p class="mt-4 font-semibold text-purple-200">{translate('privacy.sharedata.note')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    5. {translate('privacy.datastorage.title')}
+                </h2>
+                <p>{translate('privacy.datastorage.text')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    6. {translate('privacy.dataprotection.title')}
+                </h2>
+                <p>{translate('privacy.dataprotection.text')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    7. {translate('privacy.dataretention.title')}
+                </h2>
+                <p>{translate('privacy.dataretention.text')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    8. {translate('privacy.cookies.title')}
+                </h2>
+                <p>{translate('privacy.cookies.text1')}</p>
+                <p class="mt-3 text-gray-300">{translate('privacy.cookies.text2')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    9. {translate('privacy.rights.title')}
+                </h2>
+                <p class="mb-3">{translate('privacy.rights.text')}</p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
+                    {
+                     rights.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+                <p class="mt-3 text-gray-300">{translate('privacy.rights.note')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    10. {translate('privacy.social.title')}
+                </h2>
+                <p>{translate('privacy.social.text')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    11. {translate('privacy.changes.title')}
+                </h2>
+                <p>{translate('privacy.changes.text')}</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    12. {translate('privacy.contact.title')}
+                </h2>
+                <p class="mb-3">{translate('privacy.contact.text')}</p>
+                <div class="bg-white/5 border border-white/10 rounded-lg p-4 space-y-2">
                     <p>
-                        Los datos personales se refieren a cualquier información que identifique o pueda identificar a una persona física. Esto incluye, entre otros, su nombre, dirección de correo electrónico, dirección IP, información de facturación y cualquier otra información relacionada con su uso de nuestro Sitio.
+                        <strong>{translate('privacy.contact.email.title')}</strong> 
+                        <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">{translate('privacy.contact.email.text')}</a>
                     </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">2. ¿Qué Tipos de datos recopilamos?</h2>
-                    <p class="mb-4">
-                        Recopilamos datos personales (proporcionados directamente por usted) y datos no personales (recopilados automáticamente durante sus interacciones con nuestro Sitio):
-                    </p>
-                    
-                    <h3 class="text-xl font-semibold text-purple-200 mb-3 mt-6">Datos personales que usted nos proporciona:</h3>
-                    <p class="mb-2"><strong>Datos de Registro:</strong> Cuando registra una cuenta, compra productos o se suscribe a servicios, recopilamos datos personales que incluyen:</p>
-                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
-                        <li>Nombre completo (nombre y apellido)</li>
-                        <li>Dirección de correo electrónico</li>
-                        <li>Información de pago (datos de tarjeta de crédito/débito)</li>
-                    </ul>
-
-                    <h3 class="text-xl font-semibold text-purple-200 mb-3 mt-6">Datos recopilados automáticamente:</h3>
-                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
-                        <li><strong>Información del dispositivo:</strong> Incluye modelo de hardware, sistema operativo, identificadores únicos del dispositivo y configuraciones del dispositivo.</li>
-                        <li><strong>Información de registro:</strong> Incluye su dirección IP, tipo de navegador, tiempos de acceso, páginas visitadas y acciones realizadas en el Sitio.</li>
-                        <li><strong>Cookies y tecnologías similares:</strong> Utilizamos cookies para rastrear patrones de uso y preferencias.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">3. ¿Cómo Utilizamos sus datos?</h2>
-                    <p class="mb-3">Tratamos sus datos personales para los siguientes fines:</p>
-                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
-                        <li><strong>Para proporcionar y mejorar nuestros servicios:</strong> Para procesar sus pedidos, administrar sus suscripciones y mejorar continuamente nuestros servicios.</li>
-                        <li><strong>Para comunicarnos con usted:</strong> Para responder consultas, enviar confirmaciones de pedidos, brindar atención al cliente y enviar comunicaciones de marketing (si opta por recibirlas).</li>
-                        <li><strong>Para personalizar su experiencia:</strong> Para adaptar el contenido y las ofertas que se muestran en nuestro Sitio y para enviarle anuncios específicos.</li>
-                        <li><strong>Cumplimiento legal:</strong> Para cumplir con las obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos.</li>
-                    </ul>
-                    <p class="mt-4 text-gray-300">
-                        Puede retirar su consentimiento en cualquier momento contactándonos a: 
-                        <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">contact@trendyup.es</a>
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">4. ¿Cómo Compartimos sus datos?</h2>
-                    <p class="mb-3">Podemos compartir sus datos personales con las siguientes partes:</p>
-                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
-                        <li><strong>Proveedores de servicios:</strong> Podemos compartir sus datos con proveedores de servicios externos de confianza que colaboran con el funcionamiento de nuestro Sitio, el procesamiento de pagos o la prestación de nuestros servicios (por ejemplo, procesadores de pagos, proveedores de alojamiento). Estos terceros deben manejar sus datos de forma segura y solo de acuerdo con nuestras instrucciones.</li>
-                        <li><strong>Cumplimiento legal:</strong> Podemos divulgar sus datos a autoridades gubernamentales o policiales si es necesario para cumplir con obligaciones legales o en respuesta a una orden judicial válida o un proceso legal.</li>
-                        <li><strong>Transferencias empresariales:</strong> En caso de fusión, adquisición o venta de activos, sus datos personales pueden transferirse como parte de la transacción. Le notificaremos cualquier cambio de este tipo por correo electrónico.</li>
-                    </ul>
-                    <p class="mt-4 font-semibold text-purple-200">No vendemos sus datos personales a terceros con fines de marketing.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">5. ¿Dónde se almacenan sus datos?</h2>
                     <p>
-                        Sus datos personales se almacenan de forma segura en nuestros proveedores de alojamiento de datos, incluido Google LLC (para servicios de alojamiento en la nube), y se encuentran principalmente dentro del Espacio Económico Europeo (EEE). Tomamos las medidas adecuadas para garantizar que sus datos se gestionen de conformidad con las leyes de protección de datos aplicables.
+                        <strong>{translate('privacy.contact.address.title')}</strong> {translate('privacy.contact.address.text')}
                     </p>
-                </section>
+                </div>
+            </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">6. ¿Cómo protegemos sus datos?</h2>
-                    <p>
-                        Utilizamos medidas de seguridad estándar de la industria para proteger sus datos personales contra accesos, alteraciones, divulgaciones o destrucción no autorizados. Estas medidas incluyen cifrado, cortafuegos y tecnología de capa de conexión segura (SSL). Sin embargo, tenga en cuenta que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">7. ¿Cuánto Tiempo conservamos sus datos?</h2>
-                    <p>
-                        Conservaremos sus datos personales durante el tiempo que sea necesario para cumplir con los fines descritos en esta Política de Privacidad, incluidos los requisitos legales, contables o de presentación de informes. Si desea cancelar su suscripción o eliminar su cuenta, sus datos se conservarán solo durante el período necesario para cumplir con las obligaciones legales o resolver disputas.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">8. Cookies y tecnologías de seguimiento</h2>
-                    <p>
-                        Nuestro sitio utiliza cookies y tecnologías de seguimiento similares para mejorar la experiencia del usuario, analizar el tráfico del sitio y ofrecer contenido personalizado. Las cookies son pequeños archivos de datos que se almacenan en su dispositivo. Puede administrar sus preferencias de cookies a través de la configuración de su navegador.
-                    </p>
-                    <p class="mt-3 text-gray-300">
-                        Para obtener más información, revise nuestro Aviso de Cookies.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">9. Sus derechos en materia de protección de datos</h2>
-                    <p class="mb-3">Según las leyes de protección de datos (incluido el RGPD), usted tiene los siguientes derechos con respecto a sus datos personales:</p>
-                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-300">
-                        <li><strong>Derecho de acceso:</strong> Puede solicitar información sobre los datos que tenemos sobre usted y cómo los utilizamos.</li>
-                        <li><strong>Derecho de rectificación:</strong> Puede solicitar la corrección de cualquier dato inexacto o incompleto que tengamos sobre usted.</li>
-                        <li><strong>Derecho de supresión:</strong> Puede solicitar que eliminemos sus datos, sujeto a ciertas condiciones.</li>
-                        <li><strong>Derecho de oposición:</strong> Puede oponerse al tratamiento de sus datos personales, en particular para fines de marketing directo.</li>
-                        <li><strong>Derecho a restringir el procesamiento:</strong> Puede solicitar restringir la forma en que procesamos sus datos en determinadas circunstancias.</li>
-                        <li><strong>Derecho de portabilidad de datos:</strong> Puede solicitar una copia de sus datos en un formato legible por máquina.</li>
-                    </ul>
-                    <p class="mt-4 text-gray-300">
-                        Para ejercer cualquiera de estos derechos, contáctenos a: 
-                        <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">contact@trendyup.es</a>
-                    </p>
-                    <p class="mt-3 text-gray-300">
-                        También tiene derecho a presentar una reclamación ante una autoridad supervisora si considera que se han vulnerado sus derechos en materia de protección de datos.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">10. Redes sociales y enlaces de terceros</h2>
-                    <p>
-                        Nuestro Sitio puede contener enlaces a sitios web y plataformas de redes sociales de terceros. Tenga en cuenta que estos sitios tienen sus propias políticas de privacidad y no somos responsables de sus prácticas. Le recomendamos que revise sus políticas de privacidad antes de proporcionar cualquier información personal a estas plataformas.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">11. Cambios a esta política de privacidad</h2>
-                    <p>
-                        Es posible que actualicemos esta Política de Privacidad periódicamente para reflejar cambios en nuestras prácticas o por otros motivos operativos, legales o reglamentarios. Le notificaremos cualquier cambio sustancial por correo electrónico o mediante la publicación de un aviso destacado en nuestro Sitio.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">12. Contáctenos</h2>
-                    <p class="mb-3">Si tiene alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de procesamiento de datos, contáctenos a:</p>
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 space-y-2">
-                        <p>
-                            <strong>Correo electrónico:</strong> 
-                            <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">contact@trendyup.es</a>
-                        </p>
-                        <p>
-                            <strong>Dirección postal:</strong> Sponsor Telecom S.L., Calle Capitan Haya 1, Planta 15 28020 Madrid
-                        </p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-purple-300 mb-4">13. Ley aplicable y jurisdicción</h2>
-                    <p>
-                        Esta Política de Privacidad se rige e interpreta de conformidad con las leyes del España. Cualquier disputa que surja de esta política o esté relacionada con ella estará sujeta a la jurisdicción exclusiva de los tribunales de Madrid.
-                    </p>
-                </section>
-            </div>
+            <section>
+                <h2 class="text-2xl font-bold text-purple-300 mb-4">
+                    13. {translate('privacy.law.title')}
+                </h2>
+                <p>{translate('privacy.law.text')}</p>
+            </section>
         </div>
+    </div>
 </section>
+
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTop"

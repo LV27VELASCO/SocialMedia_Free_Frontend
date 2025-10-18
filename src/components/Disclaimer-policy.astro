@@ -1,8 +1,13 @@
+---
+import { useI18n } from '../i18n';
+const { translate } = useI18n(Astro);
+const items: readonly string[] = translate('disclaimer.compliance.items') as readonly string[];
+---
 <section class="relative z-10 container mx-auto px-6 sm:px-10 py-20 lg:py-24">
         <!-- Header -->
         <div class="text-center mb-12 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Disclaimer</h1>
-            <p class="text-purple-300 text-lg">Fecha de entrada en vigor: 16/10/2024</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{translate('disclaimer.title')}</h1>
+            <p class="text-purple-300 text-lg">{translate('disclaimer.date')}</p>
         </div>
 
         <!-- Content Container -->
@@ -10,20 +15,19 @@
             
             <!-- Interpretación y Definiciones -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Interpretación y Definiciones</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.definitions.title')}</h2>
                 
-                <h3 class="text-xl font-semibold mb-3 mt-6">Interpretación</h3>
+                <h3 class="text-xl font-semibold mb-3 mt-6">{translate('disclaimer.definitions.interpretation.title')}</h3>
                 <p class="text-gray-300 leading-relaxed">
-                    Las palabras con mayúscula inicial tienen significados definidos en las siguientes condiciones. 
-                    Estas definiciones se aplican tanto al singular como al plural.
+                    {translate('disclaimer.definitions.interpretation.text')}
                 </p>
 
-                <h3 class="text-xl font-semibold mb-3 mt-6">Definiciones</h3>
+                <h3 class="text-xl font-semibold mb-3 mt-6">{translate('disclaimer.definitions.definitions.title')}</h3>
                 <ul class="space-y-3 text-gray-300">
-                    <li><strong class="text-white">Empresa:</strong> Sponsor Telecom S.L., que opera bajo el nombre TrendyUp.</li>
-                    <li><strong class="text-white">Servicio:</strong> se refiere al Sitio web y todos los servicios digitales asociados, incluida la mejora de la visibilidad, la promoción manual de contenido y el análisis del perfil público.</li>
-                    <li><strong class="text-white">Usted:</strong> la persona o entidad que accede o utiliza el Servicio</li>
-                    <li><strong class="text-white">Sitio web:</strong> TrendyUp, accesible desde <a href="https://www.trendyup.es" target="_blank" class="text-purple-400 hover:text-purple-300 underline">https://trendyup.es</a></li>
+                    <li><strong class="text-white">{translate('disclaimer.definitions.definitions.company.title')}</strong> {translate('disclaimer.definitions.definitions.company.text')}</li>
+                    <li><strong class="text-white">{translate('disclaimer.definitions.definitions.service.title')}</strong> {translate('disclaimer.definitions.definitions.service.text')}</li>
+                    <li><strong class="text-white">{translate('disclaimer.definitions.definitions.user.title')}</strong> {translate('disclaimer.definitions.definitions.user.text')}</li>
+                    <li><strong class="text-white">{translate('disclaimer.definitions.definitions.website.title')}</strong> {translate('disclaimer.definitions.definitions.website.text')} <a href="https://www.trendyup.es" target="_blank" class="text-purple-400 hover:text-purple-300 underline">{translate('disclaimer.definitions.definitions.website.span')}</a></li>
                 </ul>
             </section>
 
@@ -31,10 +35,9 @@
 
             <!-- Disclaimer General -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Disclaimer</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    La información proporcionada a través del Servicio es únicamente para fines informativos generales. 
-                    La Compañía no asume ninguna responsabilidad por omisiones o inexactitudes en el contenido.
+                    {translate('disclaimer.general.text')}
                 </p>
             </section>
 
@@ -42,28 +45,23 @@
 
             <!-- Cumplimiento de Plataforma -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Descargo de Responsabilidad de Cumplimiento de Plataforma</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    TrendyUp no ofrece servicios de interacción automatizados, no requiere credenciales de inicio de sesión 
-                    y no infringe los Términos de Servicio de TikTok, Instagram ni otras plataformas sociales. 
-                    Todas las mejoras de visibilidad son manuales y las realizan socios externos independientes.
-                </p>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    La Compañía no es responsable de daños indirectos o consecuentes.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                    La Compañía no garantiza que el Servicio esté libre de componentes dañinos.
-                </p>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.compliance.title')}</h2>
+                {
+                    items.map((item)=>(
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            {item}
+                        </p>
+                    ))
+                }
             </section>
 
             <div class="border-t border-white/10"></div>
 
             <!-- Enlaces Externos -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Descargo de Responsabilidad de Enlaces Externos</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.externalLinks.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    El sitio web puede contener enlaces a sitios web externos no operados por TrendyUp. 
-                    La empresa no garantiza la exactitud ni la relevancia del contenido de sitios de terceros.
+                    {translate('disclaimer.externalLinks.text')}
                 </p>
             </section>
 
@@ -71,10 +69,9 @@
 
             <!-- Errores y Omisiones -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Descargo de Responsabilidad por Errores y Omisiones</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.errors.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Si bien nuestro objetivo es mantener la información actualizada, la Compañía no es responsable 
-                    de inexactitudes, demoras o resultados resultantes del uso de este contenido.
+                    {translate('disclaimer.errors.text')}
                 </p>
             </section>
 
@@ -82,11 +79,9 @@
 
             <!-- Uso Justo -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Descargo de Responsabilidad de Uso Justo</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.fairUse.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Algunos medios o materiales pueden utilizarse de acuerdo con las leyes de uso legítimo. 
-                    Si desea utilizar dicho material más allá de lo permitido por la ley, debe obtener la 
-                    autorización del titular de los derechos de autor.
+                    {translate('disclaimer.fairUse.text')}
                 </p>
             </section>
 
@@ -94,10 +89,9 @@
 
             <!-- Opiniones Expresadas -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Descargo de Responsabilidad sobre Opiniones Expresadas</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.opinions.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Las opiniones compartidas por terceros o usuarios de la plataforma no reflejan necesariamente 
-                    las opiniones de TrendyUp o Sponsor S.L.
+                    {translate('disclaimer.opinions.text')}
                 </p>
             </section>
 
@@ -105,11 +99,9 @@
 
             <!-- Descargo de Responsabilidad de Resultados -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Descargo de Responsabilidad de Resultados</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.results.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    TrendyUp no garantiza ningún resultado específico en cuanto a número de seguidores, métricas de 
-                    interacción o monetización. Los resultados dependen de la calidad y la consistencia de tu contenido, 
-                    así como del comportamiento en plataformas externas.
+                    {translate('disclaimer.results.text')}
                 </p>
             </section>
 
@@ -117,10 +109,9 @@
 
             <!-- Uso Bajo Su Propia Responsabilidad -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Uso Bajo Su Propia Responsabilidad</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.responsibility.title')}</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Todos los servicios e información se proporcionan "tal cual". La Compañía no se responsabiliza 
-                    de ninguna acción derivada del uso del Servicio.
+                    {translate('disclaimer.responsibility.text')}
                 </p>
             </section>
 
@@ -128,15 +119,15 @@
 
             <!-- Contacto -->
             <section>
-                <h2 class="text-2xl font-bold mb-4 text-purple-300">Contacto</h2>
+                <h2 class="text-2xl font-bold mb-4 text-purple-300">{translate('disclaimer.contact.title')}</h2>
                 <p class="text-gray-300 leading-relaxed mb-4">
-                    Si tiene preguntas sobre este Descargo de responsabilidad, puede contactarnos:
+                    {translate('disclaimer.contact.intro')}
                 </p>
                 <ul class="space-y-2 text-gray-300">
-                    <li><strong class="text-white">Por correo electrónico:</strong> <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">contact@trendyup.es</a></li>
-                    <li><strong class="text-white">En nuestro sitio web:</strong> <a href="https://www.trendyup.es" target="_blank" class="text-purple-400 hover:text-purple-300 underline">https://trendyup.es</a></li>
-                    <li><strong class="text-white">Por teléfono:</strong> 913076630</li>
-                    <li><strong class="text-white">Por correo:</strong> Sponsor Telecom S.L., Calle Capitan Haya 1, Planta 15 28020 Madrid</li>
+                    <li><strong class="text-white">{translate('disclaimer.contact.email.title')}</strong> <a href="mailto:contact@trendyup.es" class="text-purple-400 hover:text-purple-300 underline">{translate('disclaimer.contact.email.text')}</a></li>
+                    <li><strong class="text-white">{translate('disclaimer.contact.website.title')}</strong> <a href="https://www.trendyup.es" target="_blank" class="text-purple-400 hover:text-purple-300 underline">{translate('disclaimer.contact.website.text')}</a></li>
+                    <li><strong class="text-white">{translate('disclaimer.contact.phone.title')}</strong> {translate('disclaimer.contact.phone.text')}</li>
+                    <li><strong class="text-white">{translate('disclaimer.contact.address.title')}</strong> {translate('disclaimer.contact.address.text')}</li>
                 </ul>
             </section>
 

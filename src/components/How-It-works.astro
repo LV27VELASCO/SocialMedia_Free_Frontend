@@ -1,63 +1,39 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+const items = translate('howitworks.steps') as unknown as {
+  title: string;
+  icon: string;
+  text: string;
+}[];
+---
+
 <section id="HowItWorks" class="pt-20 grid place-content-center">
     <div class="container mx-auto px-6">
         <!-- Section Header -->
         <div class="text-center mb-16 animate-fade-in">
             <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">
-                ¿Cómo <span class="gradient-text">Funciona</span>?
+                {translate('howitworks.title')} <span class="gradient-text">{translate('howitworks.span')}</span>?
             </h2>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                Obtener miles de seguidores nunca fue tan fácil. Sigue estos simples pasos y
-                ve cómo tu cuenta crece de forma orgánica y segura.
+               {translate('howitworks.subtitle')}
             </p>
         </div>
 
         <!-- Steps Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-7xl">
 
-            <!-- Step 1 -->
-            <div class="step-card card-hover rounded-2xl p-6 text-center animate-slide-up bg-white/10 backdrop-blur-lg border border-white/20"
-                style="animation-delay: 0.1s;">
-                <div
-                    class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                    1
+            {items.map((item, index) => (
+                <div class="step-card card-hover rounded-2xl p-6 text-center animate-slide-up bg-white/10 backdrop-blur-lg border border-white/20"
+                style={`animation-delay: ${0.1 * (index + 1)}s;`}>
+                <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                    {index + 1}
                 </div>
-                <div class="text-4xl mb-4">✅</div>
-                <h3 class="text-xl font-bold text-white mb-4">Escoge tu plan</h3>
-                <p class="text-gray-300 text-sm">
-                    Elige el paquete que mejor encaje con tus metas de crecimiento. Cada opción ofrece un nivel único de
-                    exposición dentro de nuestra red exclusiva de colaboradores.
-                </p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-card card-hover rounded-2xl p-6 text-center animate-slide-up bg-white/10 backdrop-blur-lg border border-white/20"
-                style="animation-delay: 0.2s;">
-                <div
-                    class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                    2
+                <div class="text-4xl mb-4">{item.icon}</div>
+                <h3 class="text-xl font-bold text-white mb-4">{item.title}</h3>
+                <p class="text-gray-300 text-sm">{item.text}</p>
                 </div>
-                <div class="text-4xl mb-4">📊</div>
-                <h3 class="text-xl font-bold text-white mb-4">Potenciamos tu alcance</h3>
-                <p class="text-gray-300 text-sm">
-                    Difundimos tu contenido a través de canales, comunidades y creadores seleccionados, asegurando que
-                    llegue a audiencias interesadas en tu sector.
-                </p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card card-hover rounded-2xl p-6 text-center animate-slide-up bg-white/10 backdrop-blur-lg border border-white/20"
-                style="animation-delay: 0.3s;">
-                <div
-                    class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                    3
-                </div>
-                <div class="text-4xl mb-4">👁️</div>
-                <h3 class="text-xl font-bold text-white mb-4">Observa el impacto</h3>
-                <p class="text-gray-300 text-sm">
-                    Accede a tu panel de control y analiza cómo tu contenido conecta con nuevas personas, incrementando
-                    tu visibilidad sin salirte de las normas de cada plataforma.
-                </p>
-            </div>
+            ))}
         </div>
     </div>
 </section>

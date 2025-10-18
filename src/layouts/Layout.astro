@@ -1,9 +1,12 @@
 ---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+
 const { title="Haz crecer tu audiencia con visibilidad real y sin atajos | TrendyUp" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLang}>
 	<head>
 		<meta charset="UTF-8" />
 		<title>{title}</title>
@@ -12,7 +15,7 @@ const { title="Haz crecer tu audiencia con visibilidad real y sin atajos | Trend
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Meta Description -->
-		<meta name="description" content="TrendyUp: potencia tu presencia en Instagram y TikTok con estrategias éticas y resultados reales, combinando promoción auténtica e inteligencia artificial.">
+		<meta name="description" content={String(translate('head.description'))} / >
 
 		<!-- Meta Keywords (opcional, Google ya no las usa mucho) -->
 		<meta name="keywords" content="crecimiento en Instagram, crecimiento en TikTok, promoción de perfiles, seguidores reales, marketing ético en redes sociales">

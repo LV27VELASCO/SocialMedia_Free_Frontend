@@ -1,136 +1,132 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+---
+
 <!-- Main Content -->
 <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Page Title -->
-        <div class="text-center mb-12 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 ">
-                 Aviso <span class="gradient-text">Legal</span>
-            </h1>
-            <p class="text-xl text-gray-300">
-                Información legal sobre TrendyUp y Sponsor Telecom S.L.
-            </p>
-        </div>
+  <!-- Page Title -->
+  <div class="text-center mb-12 animate-fade-in">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+      {translate('legal.title')} <span class="gradient-text">{translate('legal.title.span')}</span>
+    </h1>
+    <p class="text-xl text-gray-300">{translate('legal.subtitle')}</p>
+  </div>
 
-         <!-- Content Container  -->
-        <div class="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 md:p-12 space-y-8">
-            
-             <!-- Section 1: Editor del sitio web  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">1.</span>
-                    Editor del sitio web
-                </h2>
-                <div class="space-y-3 text-gray-200 leading-relaxed">
-                    <p><strong class="text-white">Sitio web:</strong> trendyup.es</p>
-                    <p><strong class="text-white">Editorial:</strong> Sponsor Telecom S.L.</p>
-                    <p><strong class="text-white">Número CIF:</strong> B97553424</p>
-                    <p><strong class="text-white">Domicilio social:</strong> Sponsor Telecom S.L., Calle Capitan Haya 1, Planta 15 28020 Madrid</p>
-                    <p><strong class="text-white">Correo electrónico:</strong> <a href="mailto:contact@trendyup.es" class="text-blue-300 hover:text-blue-200 underline">contact@trendyup.es</a></p>
-                </div>
-            </section>
+  <!-- Content Container -->
+  <div class="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 md:p-12 space-y-8">
 
-             <!-- Section 2: Proveedor de alojamiento  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">2.</span>
-                    Proveedor de alojamiento
-                </h2>
-                <div class="space-y-3 text-gray-200 leading-relaxed">
-                    <p><strong class="text-white">Empresa:</strong> Hostinger Inc.</p>
-                    <p><strong class="text-white">Dirección:</strong> 61 Lordou Vironos str., 6023 Larnaca, Chipre</p>
-                    <p><strong class="text-white">Sitio web:</strong> <a href="https://www.hostinger.com/" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-200 underline">https://hostinger.com/</a></p>
-                </div>
-            </section>
+    <!-- Section 1: Editor del sitio web -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">1.</span>
+        {translate('legal.editor.title')}
+      </h2>
+      <div class="space-y-3 text-gray-200 leading-relaxed">
+        <p><strong class="text-white">{translate('legal.editor.website.title')}</strong> {translate('legal.editor.website.text')}</p>
+        <p><strong class="text-white">{translate('legal.editor.editorial.title')}</strong> {translate('legal.editor.editorial.text')}</p>
+        <p><strong class="text-white">{translate('legal.editor.cif.title')}</strong> {translate('legal.editor.cif.text')}</p>
+        <p><strong class="text-white">{translate('legal.editor.address.title')}</strong> {translate('legal.editor.address.text')}</p>
+        <p><strong class="text-white">{translate('legal.editor.email.title')}</strong> 
+          <a href="mailto:contact@trendyup.es" class="text-blue-300 hover:text-blue-200 underline">{translate('legal.editor.email.text')}</a>
+        </p>
+      </div>
+    </section>
 
-             <!-- Section 3: Propiedad intelectual  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">3.</span>
-                    Propiedad intelectual
-                </h2>
-                <div class="text-gray-200 leading-relaxed">
-                    <p>
-                        Todo el contenido de este sitio web (texto, imágenes, logotipos, vídeos, etc.) es propiedad exclusiva de <strong class="text-white">Sponsor Telecom S.L.</strong>, salvo que se indique lo contrario. Queda estrictamente prohibida su reproducción, distribución o uso sin autorización previa por escrito.
-                    </p>
-                </div>
-            </section>
+    <!-- Section 2: Proveedor de alojamiento -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">2.</span>
+        {translate('legal.hosting.title')}
+      </h2>
+      <div class="space-y-3 text-gray-200 leading-relaxed">
+        <p><strong class="text-white">{translate('legal.hosting.company.title')}</strong> {translate('legal.hosting.company.text')}</p>
+        <p><strong class="text-white">{translate('legal.hosting.address.title')}</strong> {translate('legal.hosting.address.text')}</p>
+        <p><strong class="text-white">{translate('legal.hosting.website.title')}</strong> 
+          <a href="https://www.hostinger.com/" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-200 underline">{translate('legal.hosting.website.text')}</a>
+        </p>
+      </div>
+    </section>
 
-             <!-- Section 4: Limitación de responsabilidad  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">4.</span>
-                    Limitación de responsabilidad
-                </h2>
-                <div class="text-gray-200 leading-relaxed">
-                    <p>
-                        El sitio web <strong class="text-white">trendyup.es</strong> se esfuerza por ofrecer información precisa y actualizada. Sin embargo, el editor no se responsabiliza de errores, omisiones o posibles fallos de funcionamiento.
-                    </p>
-                </div>
-            </section>
+    <!-- Section 3: Propiedad intelectual -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">3.</span>
+        {translate('legal.intellectual.title')}
+      </h2>
+      <div class="text-gray-200 leading-relaxed">
+        <p>{translate('legal.intellectual.text')}</p>
+      </div>
+    </section>
 
-             <!-- Section 5: Datos personales  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">5.</span>
-                    Datos personales
-                </h2>
-                <div class="text-gray-200 leading-relaxed">
-                    <p>
-                        TrendyUp puede recopilar datos personales (como nombre, correo electrónico y nombres de usuario en redes sociales) como parte de sus servicios. Estos datos se procesan de acuerdo con el <strong class="text-white">RGPD</strong> y nunca se venden a terceros. Para ejercer sus derechos (acceso, rectificación y supresión), contáctenos en <a href="mailto:contact@trendyup.es" class="text-blue-300 hover:text-blue-200 underline">contact@trendyup.es</a>.
-                    </p>
-                </div>
-            </section>
+    <!-- Section 4: Limitación de responsabilidad -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">4.</span>
+        {translate('legal.liability.title')}
+      </h2>
+      <div class="text-gray-200 leading-relaxed">
+        <p>{translate('legal.liability.text')}</p>
+      </div>
+    </section>
 
-             <!-- Section 6: Cookies  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">6.</span>
-                    Cookies
-                </h2>
-                <div class="text-gray-200 leading-relaxed">
-                    <p>
-                        Este sitio utiliza cookies para medir la audiencia y mejorar la experiencia del usuario. Puede configurar o desactivar las cookies en la configuración de su navegador.
-                    </p>
-                </div>
-            </section>
+    <!-- Section 5: Datos personales -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">5.</span>
+        {translate('legal.personal.title')}
+      </h2>
+      <div class="text-gray-200 leading-relaxed">
+        <p>{translate('legal.personal.text')}</p>
+      </div>
+    </section>
 
-             <!-- Section 7: Ley aplicable  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
-                    <span class="mr-3">7.</span>
-                    Ley aplicable
-                </h2>
-                <div class="text-gray-200 leading-relaxed">
-                    <p>
-                        Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier controversia que pudiera derivarse del acceso o uso de este sitio web, las partes se someten expresamente a la jurisdicción de los Juzgados y Tribunales de Madrid.
-                    </p>
-                </div>
-            </section>
+    <!-- Section 6: Cookies -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">6.</span>
+        {translate('legal.cookies.title')}
+      </h2>
+      <div class="text-gray-200 leading-relaxed">
+        <p>{translate('legal.cookies.text')}</p>
+      </div>
+    </section>
 
-             <!-- Contact CTA  -->
-            <div class="mt-12 pt-8 border-t border-white/10">
-                <div class="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-6 border border-purple-400/30">
-                    <h3 class="text-xl font-bold mb-2">¿Tienes alguna pregunta legal?</h3>
-                    <p class="text-gray-300 mb-4">
-                        Si necesitas más información sobre nuestros avisos legales, no dudes en contactarnos.
-                    </p>
-                    <a href="contact" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        Contactar
-                    </a>
-                </div>
-            </div>
-        </div>
+    <!-- Section 7: Ley aplicable -->
+    <section>
+      <h2 class="text-2xl font-bold text-purple-300 mb-4 flex items-center">
+        <span class="mr-3">7.</span>
+        {translate('legal.law.title')}
+      </h2>
+      <div class="text-gray-200 leading-relaxed">
+        <p>{translate('legal.law.text')}</p>
+      </div>
+    </section>
 
-         <!-- Related Links  -->
-        <div class="mt-8 text-center">
-            <p class="text-gray-300 mb-4">Documentos relacionados:</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="/privacity" class="text-blue-300 hover:text-blue-200 underline">Política de Privacidad</a>
-                <a href="/terms" class="text-blue-300 hover:text-blue-200 underline">Términos y Condiciones</a>
-                <a href="/refund-policy" class="text-blue-300 hover:text-blue-200 underline">Política de Devolución</a>
-                <a href="/disclaimer" class="text-blue-300 hover:text-blue-200 underline">Disclaimer</a>
-            </div>
-        </div>
+    <!-- Contact CTA -->
+    <div class="mt-12 pt-8 border-t border-white/10">
+      <div class="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-6 border border-purple-400/30">
+        <h3 class="text-xl font-bold mb-2">{translate('legal.contactCTA.title')}</h3>
+        <p class="text-gray-300 mb-4">{translate('legal.contactCTA.text')}</p>
+        <a href={`/${currentLang}/contact`} class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+          {translate('legal.contactCTA.button')}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Links -->
+  <div class="mt-8 text-center">
+    <p class="text-gray-300 mb-4">{translate('legal.related.title')}</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href={`/${currentLang}/privacity`} class="text-blue-300 hover:text-blue-200 underline">{translate('legal.related.privacy.text')}</a>
+      <a href={`/${currentLang}/terms`} class="text-blue-300 hover:text-blue-200 underline">{translate('legal.related.terms.text')}</a>
+      <a href={`/${currentLang}/refund-policy`} class="text-blue-300 hover:text-blue-200 underline">{translate('legal.related.refund.text')}</a>
+      <a href={`/${currentLang}/disclaimer`} class="text-blue-300 hover:text-blue-200 underline">{translate('legal.related.disclaimer.text')}</a>
+    </div>
+  </div>
 </section>
+
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTop"

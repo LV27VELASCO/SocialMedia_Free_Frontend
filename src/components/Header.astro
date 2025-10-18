@@ -1,22 +1,179 @@
+---
+import { useI18n } from '../i18n';
+import { languageList, type Lang } from '../i18n/ui';
+const { translate, currentLang } = useI18n(Astro);
+const flagUrls: Record<Lang, string> = {
+  es: 'https://flagcdn.com/es.svg',
+  en: 'https://flagcdn.com/gb.svg',
+  fr: 'https://flagcdn.com/fr.svg',
+  pt: 'https://flagcdn.com/pt.svg',
+};
+const languages:Lang[] = ['es', 'en', 'fr', 'pt'];
+---
+
 <!-- Header -->
-<header class="relative z-50 border-b border-white/10">
-    <nav class="mx-auto px-6 pt-6 pb-4 max-w-7xl">
-        <div class="flex items-center justify-between">
-            <a href="/">
-                
-                <div class="text-2xl font-bold flex items-center">
-                    <img src="/TrendyUp.png" class="size-14 opacity-85" alt="Logo TrendyUp">
-                    <span class="bg-gradient-to-tr from-orange-400  to-purple-700 text-transparent bg-clip-text">Trendy</span><span class="gradient-text text-3xl">Up</span>
-                </div>
-            </a>
-            
-            <div class="hidden md:flex space-x-6 text-lg">
-                <a href="/insta" class="text-white hover:text-blue-300 transition-colors">Instagram</a>
-                <a href="/ttok" class="text-white hover:text-blue-300 transition-colors">Tiktok</a>
-                <a href="/contact" class="text-white hover:text-blue-300 transition-colors">Contacto</a>
-                <a href="/prices" class="text-white hover:text-blue-300 transition-colors">Precios</a>
-                <a href="/unsubscribe" class="text-white hover:text-blue-300 transition-colors">Cancelar suscripción</a>
-            </div>
+<header class="bg-gradient-to-b from-purple-900/80 to-purple-900/40 backdrop-blur-md border-b border-white/10 sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    
+    <!-- Mobile Menu Button (left) -->
+    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center p-2 rounded-lg hover:bg-white/10 transition-colors">
+      <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white hidden">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Logo (center on mobile, left on desktop) -->
+    <a href={`/${currentLang}/`} class="flex-1 lg:flex-none flex justify-center lg:justify-start">
+      <div class="text-2xl font-bold flex items-center">
+        <img src="/TrendyUp.png" class="size-14 opacity-85" alt="Icon TrendyUp">
+        <span class="bg-gradient-to-tr from-orange-400 to-purple-700 text-transparent bg-clip-text">Trendy</span>
+        <span class="gradient-text text-3xl">Up</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation + Language Selector -->
+    <div class="hidden lg:flex items-center space-x-6">
+      <!-- Navigation Links Desktop -->
+      <div class="flex space-x-6 text-lg">
+        <a href={`/${currentLang}/insta`} class="text-white hover:text-blue-300 transition-colors">{translate('header.nav.insta')}</a>
+        <a href={`/${currentLang}/ttok`} class="text-white hover:text-blue-300 transition-colors">{translate('header.nav.tiktok')}</a>
+        <a href={`/${currentLang}/contact`} class="text-white hover:text-blue-300 transition-colors">{translate('header.nav.contact')}</a>
+        <a href={`/${currentLang}/prices`} class="text-white hover:text-blue-300 transition-colors">{translate('header.nav.prices')}</a>
+        <a href={`/${currentLang}/unsubscribe`} class="text-white hover:text-blue-300 transition-colors">{translate('header.nav.unsubscribe')}</a>
+      </div>
+
+      <!-- Language Selector Desktop -->
+      <div class="relative language-selector">
+        <button onclick="toggleLanguageMenu()" class="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-purple-600/50">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-purple-200">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+          </svg>
+          <span class="text-purple-200 text-sm font-medium uppercase" id="currentLang">{currentLang}</span>
+          <svg class="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        
+        <!-- Dropdown Menu -->
+        <div id="languageMenu" class="hidden absolute top-full mt-2 right-0 w-48 bg-purple-800 rounded-xl border border-white/10 shadow-2xl overflow-hidden z-50">
+          <div class="py-2">
+            {languages.map((lang) => {
+              const info = languageList[currentLang][lang];
+              return (
+                <button
+                  onclick={`changeLanguage('${lang}')`}
+                  class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-white/5 transition-colors lang-option">
+                  <div
+                    class="h-8 w-8 border border-1 rounded-full flex justify-center items-center bg-cover bg-center"
+                    style={`background-image: url('${flagUrls[lang]}');`}>
+                  </div>
+                  <div class="flex-1 text-left">
+                    <div class="text-white text-sm font-medium">{info.name}</div>
+                    <div class="text-gray-400 text-xs">{info.nick}</div>
+                  </div>
+                  <span class="text-green-400 text-sm hidden" data-lang={lang}>✓</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Language Selector - Always visible on mobile -->
+    <div class="lg:hidden relative language-selector-mobile">
+      <button onclick="toggleMobileLanguageMenu()" class="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-purple-600/50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-purple-200">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+        </svg>
+        <span class="text-purple-200 text-sm font-medium uppercase">{currentLang}</span>
+      </button>
+
+      <!-- Mobile Language Dropdown -->
+      <div id="mobileLanguageMenu" class="hidden absolute top-full mt-2 right-0 w-48 bg-purple-800 rounded-xl border border-white/10 shadow-2xl overflow-hidden z-50">
+        <div class="py-2">
+          {languages.map((lang) => {
+            const info = languageList[currentLang][lang];
+            return (
+              <button
+                onclick={`changeLanguage('${lang}')`}
+                class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-white/5 transition-colors lang-option">
+                <div
+                  class="h-6 w-6 border border-1 rounded-full flex justify-center items-center bg-cover bg-center"
+                  style={`background-image: url('${flagUrls[lang]}');`}>
+                </div>
+                <div class="flex-1 text-left">
+                  <div class="text-white text-sm font-medium">{info.name}</div>
+                  <div class="text-gray-400 text-xs">{info.nick}</div>
+                </div>
+                <span class="text-green-400 text-sm hidden" data-lang={lang}>✓</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10">
+    <div class="px-4 py-4 space-y-3">
+      <a href={`/${currentLang}/insta`} class="block text-white hover:text-blue-300 transition-colors py-2">{translate('header.nav.insta')}</a>
+      <a href={`/${currentLang}/ttok`} class="block text-white hover:text-blue-300 transition-colors py-2">{translate('header.nav.tiktok')}</a>
+      <a href={`/${currentLang}/contact`} class="block text-white hover:text-blue-300 transition-colors py-2">{translate('header.nav.contact')}</a>
+      <a href={`/${currentLang}/prices`} class="block text-white hover:text-blue-300 transition-colors py-2">{translate('header.nav.prices')}</a>
+      <a href={`/${currentLang}/unsubscribe`} class="block text-white hover:text-blue-300 transition-colors py-2">{translate('header.nav.unsubscribe')}</a>
+    </div>
+  </div>
 </header>
+
+<script is:inline>
+        // Language functions
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            menu?.classList.toggle('hidden');
+        }
+
+        function toggleMobileLanguageMenu() {
+            const langMenu = document.getElementById('mobileLanguageMenu');
+            langMenu?.classList.toggle('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            const closeIcon = document.getElementById('closeIcon');
+            
+            menu?.classList.toggle('hidden');
+            menuIcon?.classList.toggle('hidden');
+            closeIcon?.classList.toggle('hidden');
+        }
+
+        function changeLanguage(lang) {
+            const currentLangEl = document.getElementById('currentLang');
+            const options = document.querySelectorAll('.lang-option');
+            // Actualiza la UI del selector
+            options.forEach(option => {
+                const flag = option.querySelector('span[data-lang]');
+                const check = option.querySelector('.text-green-400');
+                if (flag && flag.getAttribute('data-lang') === lang) {
+                currentLangEl.textContent = lang;
+                check?.classList.remove('hidden');
+                } else {
+                check?.classList.add('hidden');
+                }
+            });
+
+            // 🔁 Redirección con prefijo
+            const currentPath = window.location.pathname; // ej: /es/pricing
+            const parts = currentPath.split('/'); // ['', 'es', 'pricing']
+            parts[1] = lang; // reemplaza el idioma actual
+            const newPath = parts.join('/'); // -> /en/pricing
+
+            // Redirige manteniendo el dominio y los query params
+            window.location.href = `${window.location.origin}${newPath}${window.location.search}`;
+        }
+</script>

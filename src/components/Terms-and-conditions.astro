@@ -1,12 +1,21 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+const prohibiteds = translate('terms.usage.prohibited.items') as unknown as {}[]
+const services = translate('terms.service.items') as unknown as {}[]
+const access = translate('terms.service.access.items') as unknown as {}[]
+const liabilitys = translate('terms.liability.items') as unknown as {}[]
+const generals = translate('terms.general.items') as unknown as {}[]
+---
 <!-- Main Content -->
 <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Page Title -->
         <div class="text-center mb-12 animate-fade-in">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 ">
-                Términos y <span class="gradient-text">Condiciones</span>
+                {translate('terms.title')} <span class="gradient-text">{translate('terms.title.span')}</span>
             </h1>
             <p class="text-xl text-gray-300">
-                Última actualización: <strong>31/07/2025</strong>
+                {translate('terms.date')}
             </p>
         </div>
 
@@ -16,136 +25,149 @@
             <div class="space-y-8 text-gray-300 leading-relaxed">
                 <!-- Section 1 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">1. INTRODUCCIÓN</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">1. {translate('terms.introduction.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>1.1</strong> Estos Términos y Condiciones ("Acuerdo") son celebrados por <strong>Sponsor Telecom S.L.</strong> ("Nosotros", "Nos" o "Nuestro"), una empresa constituida y registrada en el España con el codigo CIF B97553424, con domicilio social en Calle Capitan Haya 1, Planta 15 28020 Madrid, España.</p>
-                        <p><strong>1.2</strong> Estos Términos rigen su acceso y uso de los servicios de suscripción que Sponsor Telecom S.L. ofrece a través del sitio web TrendyUp. Al acceder y utilizar el Servicio, usted («Usted» o «Su») acepta estos Términos. Si no los acepta, no debe utilizar nuestros servicios.</p>
+                        <p><strong>1.1 </strong>{translate('terms.introduction.text1')}</p>
+                        <p><strong>1.2 </strong>{translate('terms.introduction.text2')}</p>
                     </div>
                 </section>
 
                 <!-- Section 2 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">2. DEFINICIONES</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">2. {translate('terms.definitions.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>2.1 "Cliente"</strong> se refiere a cualquier individuo que se suscribe al servicio para uso personal.</p>
-                        <p><strong>2.2 "Servicio"</strong> se refiere a todos los servicios proporcionados por Sponsor Telecom S.L., incluidos los servicios de visibilidad de contenido, información de perfil público y soporte promocional manual a través de nuestra red de socios privados disponible a través del Servicio de suscripción.</p>
-                        <p><strong>2.3 "Servicio de suscripción"</strong> se refiere al paquete de suscripción opcional ofrecido por Sponsor Telecom S.L., que incluye la mejora de la visibilidad a través de información compartida gestionada por personas y segmentación de nichos y otras funciones relacionadas, como se detalla en la página de suscripción.</p>
+                        <p><strong>2.1 </strong>{translate('terms.definitions.text1')}</p>
+                        <p><strong>2.2 </strong>{translate('terms.definitions.text2')}</p>
+                        <p><strong>2.3 </strong>{translate('terms.definitions.text3')}</p>
                     </div>
                 </section>
 
                 <!-- Section 3 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">3. REGISTRO</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">3. {translate('terms.registration.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>3.1</strong> Para acceder y utilizar el Servicio, se crea automáticamente una cuenta en el Sitio ("Cuenta") que contendrá cierta información de registro, incluida una dirección de correo electrónico válida, una contraseña e información de pago. Usted acepta proporcionar información precisa y completa y actualizar esta información según sea necesario para mantenerla precisa.</p>
-                        <p><strong>3.2</strong> Para suscribirse al Servicio, debe ser mayor de edad y estar en condiciones de celebrar contratos vinculantes en su jurisdicción. Al crear una cuenta, declara y garantiza que cumple con estos requisitos de elegibilidad.</p>
-                        <p><strong>3.3</strong> Al registrarse, usted acepta suscribirse automáticamente al Servicio de suscripción, que proporciona acceso continuo a herramientas de participación de la audiencia y cualquier acceso relacionado a servicios de soporte de visibilidad como se describe en estos Términos y la Política de suscripción, sujeto a las políticas de cancelación detalladas en estos Términos.</p>
+                        <p><strong>3.1 </strong>{translate('terms.registration.text1')}</p>
+                        <p><strong>3.2 </strong>{translate('terms.registration.text2')}</p>
+                        <p><strong>3.3 </strong>{translate('terms.registration.text3')}</p>
                     </div>
                 </section>
 
                 <!-- Section 4 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">4. CONDICIONES DE USO</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">4. {translate('terms.usage.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>4.1 Validez:</strong> Su suscripción es válida únicamente después de que confirmemos el pago correspondiente. El acceso al Servicio es estrictamente personal e intransferible. Usted es responsable de mantener la confidencialidad de sus credenciales de inicio de sesión y de cualquier actividad realizada a través de su Cuenta.</p>
-                        <p><strong>4.2 Uso no autorizado:</strong> Está estrictamente prohibido compartir, transferir o sublicenciar su cuenta o el acceso al servicio. Cualquier acción de este tipo puede dar lugar a la cancelación inmediata sin reembolso y a posibles acciones legales.</p>
-                        <p><strong>4.3 Uso para Crecimiento Personal y Monetización:</strong> El Servicio está diseñado para ayudarte a aumentar tu visibilidad mediante la promoción manual de contenido que cumpla con las normas. Si bien puede contribuir a objetivos personales más amplios, como la monetización, no se ofrecen garantías directas de rendimiento.</p>
-                        <p class="pl-6">Sin embargo, las siguientes actividades están estrictamente prohibidas:</p>
+                        <p><strong>4.1 </strong>{translate('terms.usage.text1')}</p>
+                        <p><strong>4.2 </strong>{translate('terms.usage.text2')}</p>
+                        <p><strong>4.3 </strong>{translate('terms.usage.text3')}</p>
+                        <p class="pl-6">{translate('terms.usage.prohibited.title')}</p>
                         <ul class="list-disc pl-12 space-y-2">
-                            <li>Utilizar el Servicio para fines no relacionados con el crecimiento personal o de las redes sociales, como revender o redistribuir el servicio o su contenido.</li>
-                            <li>Participar en conductas que violen los términos de las plataformas en las que usted está construyendo su presencia en las redes sociales.</li>
-                            <li>Utilizar el Servicio de manera que dañe o denigre nuestra reputación o viole las leyes aplicables.</li>
+                            {
+                                prohibiteds.map((item)=>(
+                                    <li>{item}</li>
+                                ))
+                            }
                         </ul>
                     </div>
                 </section>
 
                 <!-- Section 5 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">5. FUNCIONAMIENTO DEL SERVICIO</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">5. {translate('terms.service.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>5.1 Restricciones de uso:</strong> Usted acepta utilizar el Servicio exclusivamente para fines personales relacionados con la mejora de su plataforma de redes sociales. Las siguientes actividades están prohibidas y constituirán un incumplimiento de estos Términos:</p>
+                        <p><strong>5.1 </strong>{translate('terms.service.text1')}</p>
                         <ul class="list-disc pl-12 space-y-2">
-                            <li>Compartir o distribuir estrategias, herramientas o contenido proporcionado bajo el Servicio.</li>
-                            <li>Intentar explotar el Servicio con fines fraudulentos, ilegales o comerciales no relacionados con el crecimiento personal.</li>
-                            <li>Utilizar el Servicio de cualquier forma que viole los términos y condiciones de plataformas de terceros.</li>
-                            <li>Participar en actividades que puedan dañar, interrumpir o degradar la calidad de nuestro Servicio.</li>
+                            {
+                                services.map((item)=>(
+                                    <li>{item}</li>
+                                ))
+                            }
+                            
                         </ul>
-                        <p><strong>5.2 Período de prueba:</strong> Algunas compras pueden incluir una suscripción de prueba de 24 horas. Pueden cancelarla sin cargo durante este período. Este período de prueba solo está disponible para ciertas compras y únicamente tras la aceptación de estos Términos.</p>
-                        <p><strong>5.3 Acceso y prestación del servicio:</strong> Tras la confirmación de la suscripción y el procesamiento exitoso del pago, recibirá:</p>
+                        <p><strong>5.2 </strong>{translate('terms.service.text2')}</p>
+                        <p><strong>5.3 </strong>{translate('terms.service.text3')}</p>
                         <ul class="list-disc pl-12 space-y-2">
-                            <li>Promoción manual de su contenido público a través de nuestra red examinada de aplicaciones, comunidades y creadores.</li>
-                            <li>Información de visibilidad basada en información de perfil disponible públicamente.</li>
+                            {
+                                access.map((item)=>(
+                                    <li>{item}</li>
+                                ))
+                            }
                         </ul>
-                        <p><strong>5.4 Modificación del Servicio:</strong> Nos reservamos el derecho de modificar, actualizar o discontinuar cualquier componente del Servicio a nuestra discreción, siempre que dichas modificaciones no disminuyan materialmente el valor del Servicio. Se le notificará cualquier cambio significativo por correo electrónico con al menos 30 días de anticipación.</p>
-                        <p><strong>5.5 Sin garantías de rendimiento:</strong> El Servicio no garantiza la interacción, el aumento de seguidores, el posicionamiento en la plataforma ni los ingresos. Los resultados varían según la calidad, la consistencia y la relevancia del contenido para la audiencia.</p>
-                        <p><strong>5.6 Autorización de pago:</strong> Al suscribirse, usted autoriza a Sponsor Telecom S.L. a cobrar la tarifa de suscripción al método de pago proporcionado al momento del pago.</p>
-                        <p><strong>5.7 Métodos de Pago:</strong> Los pagos del Servicio de Suscripción se procesan a través del Sitio mediante métodos de pago seguros. Sponsor Telecom S.L. utiliza proveedores de pago externos que cumplen con los estándares de seguridad PCI DSS. Su información de pago se procesa de forma segura y Sponsor Telecom S.L. no almacena sus datos de pago.</p>
+                        <p><strong>5.4 </strong>{translate('terms.service.text4')}</p>
+                        <p><strong>5.5 </strong>{translate('terms.service.text5')}</p>
+                        <p><strong>5.6 </strong>{translate('terms.service.text6')}</p>
+                        <p><strong>5.7 </strong>{translate('terms.service.text7')}</p>
                     </div>
                 </section>
 
                 <!-- Section 6 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">6. PROPIEDAD INTELECTUAL</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">6. {translate('terms.intellectual.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>6.1 Propiedad del contenido:</strong> Todos los derechos de propiedad intelectual relacionados con el Sitio, el Servicio y los materiales asociados pertenecen exclusivamente a Sponsor Telecom S.L..</p>
-                        <p><strong>6.2 Licencia limitada:</strong> Al suscribirse al Servicio, se le otorga una licencia no exclusiva, intransferible y revocable para acceder y utilizar el Servicio únicamente para fines personales de acuerdo con estos Términos.</p>
-                        <p><strong>6.3 Usos prohibidos:</strong> No puede reproducir, realizar ingeniería inversa, distribuir, modificar, crear trabajos derivados, exhibir públicamente ni explotar ninguna parte del Servicio sin nuestro consentimiento previo por escrito.</p>
-                        <p><strong>6.4 Cumplimiento de derechos:</strong> Tomaremos todas las medidas legales y técnicas para proteger nuestra propiedad intelectual. El uso no autorizado puede resultar en la terminación inmediata de su suscripción y en posibles acciones legales.</p>
+                        <p><strong>6.1 </strong>{translate('terms.intellectual.text1')}</p>
+                        <p><strong>6.2 </strong>{translate('terms.intellectual.text2')}</p>
+                        <p><strong>6.3 </strong>{translate('terms.intellectual.text3')}</p>
+                        <p><strong>6.4 </strong>{translate('terms.intellectual.text4')}</p>
                     </div>
                 </section>
 
                 <!-- Section 7 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">7. RESPONSABILIDAD Y LIMITACIONES</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">7. {translate('terms.liability.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>7.1 Exención de responsabilidad del servicio:</strong> El Servicio se proporciona "tal como está" y "según disponibilidad", sin garantías de ningún tipo, expresas o implícitas, incluidas, entre otras, garantías de comerciabilidad, idoneidad para un fin determinado o no infracción.</p>
-                        <p><strong>7.2 Limitaciones de responsabilidad:</strong> En la máxima medida permitida por la ley, Sponsor Telecom S.L. no será responsable de:</p>
+                        <p><strong>7.1 </strong>{translate('terms.liability.text1')}</p>
+                        <p><strong>7.2 </strong>{translate('terms.liability.text2')}</p>
                         <ul class="list-disc pl-12 space-y-2">
-                            <li>Cualquier daño directo, indirecto, incidental o consecuente que resulte de su uso o imposibilidad de usar el Servicio.</li>
-                            <li>Cualquier pérdida de ganancias, ingresos, datos u oportunidades comerciales que surjan de su uso del Servicio.</li>
+                            {
+                                liabilitys.map((item)=>(
+                                <li>{item}</li>
+                                ))
+                            }
                         </ul>
-                        <p><strong>7.3 Responsabilidad del cliente:</strong> Usted reconoce que los resultados del uso del Servicio dependen de factores fuera de nuestro control, incluidos su esfuerzo, cumplimiento de estrategias y algoritmos de plataformas de terceros.</p>
-                        <p><strong>7.4 Cumplimiento de la Plataforma:</strong> No nos responsabilizamos de ninguna acción que plataformas de terceros tomen contra sus cuentas debido a su uso del Servicio. Usted es responsable de garantizar el cumplimiento de las condiciones de uso de cualquier plataforma de terceros donde utilice nuestros servicios.</p>
-                        <p><strong>7.5 Disponibilidad del Servicio:</strong> Si bien nos esforzamos por garantizar un Servicio ininterrumpido, no garantizamos que el Sitio o el Servicio estén disponibles en todo momento. Pueden producirse interrupciones temporales debido a tareas de mantenimiento, problemas técnicos o factores que escapan a nuestro control.</p>
+                        <p><strong>7.3 </strong>{translate('terms.liability.text3')}</p>
+                        <p><strong>7.4 </strong>{translate('terms.liability.text4')}</p>
+                        <p><strong>7.5 </strong>{translate('terms.liability.text5')}</p>
                     </div>
                 </section>
 
                 <!-- Section 8 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">8. POLÍTICA DE PRIVACIDAD</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">8. {translate('terms.privacy.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>8.1 Seguridad:</strong> La información de los clientes se almacena de forma segura y se maneja de conformidad con las leyes aplicables. Para obtener más información, consulte nuestra <a href="/privacity" class="text-blue-400 hover:text-blue-300 underline">Política de Privacidad</a>.</p>
+                        <p><strong>8.1 </strong>{translate('terms.privacy.text1')} <a href={`/${currentLang}/privacity`}  class="text-blue-400 hover:text-blue-300 underline">{translate('terms.privacy.text1.span')}</a>.</p>
                     </div>
                 </section>
 
                 <!-- Section 9 -->
                 <section>
-                    <h2 class="text-2xl font-bold text-purple-400 mb-4">9. DISPOSICIONES GENERALES</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4">9. {translate('terms.general.title')}</h2>
                     <div class="space-y-3">
-                        <p><strong>9.1 Fuerza mayor:</strong> Ninguna de las partes será responsable por demoras o incumplimientos en el cumplimiento de las obligaciones bajo estos Términos debido a eventos fuera de su control razonable, incluidos desastres naturales, actos de gobierno o fallas técnicas.</p>
-                        <p><strong>9.2 Divisibilidad:</strong> Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes permanecerán en pleno vigor y efecto. La disposición inválida será reemplazada por una disposición válida que se aproxime lo más posible a la intención original.</p>
-                        <p><strong>9.3 Comunicación:</strong> Todas las comunicaciones relativas a estos Términos deberán enviarse a:</p>
+                        <p><strong>9.1 </strong>{translate('terms.general.text1')}</p>
+                        <p><strong>9.2 </strong>{translate('terms.general.text2')}</p>
+                        <p><strong>9.3 </strong>{translate('terms.general.text3')}</p>
                         <ul class="list-none pl-6 space-y-1">
-                            <li><strong>Correo electrónico:</strong> <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300">contact@trendyup.es</a></li>
-                            <li><strong>Dirección postal:</strong> Calle Capitan Haya 1, Planta 15 28020 Madrid, España</li>
+                            <li><strong>{translate('terms.general.email.title')}</strong> <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300">{translate('terms.general.email.text')}</a></li>
+                            <li><strong>{translate('terms.general.address.title')}</strong> {translate('terms.general.address.text')}</li>
                         </ul>
-                        <p><strong>9.4 Ley aplicable y jurisdicción:</strong> Estos Términos y cualquier disputa que surja de ellos se regirán e interpretarán de conformidad con las leyes del España.</p>
+                        <p><strong>9.4 </strong>{translate('terms.general.text4')}</p>
                         <ul class="list-disc pl-12 space-y-2">
-                            <li>Si usted inicia una reclamación legal, deberá presentarla ante los tribunales de Madrid.</li>
-                            <li>Si nosotros iniciamos una reclamación legal, se presentará ante los tribunales de su domicilio.</li>
+                            {
+                                generals.map((item)=>(
+                                <li>{item}</li>
+                                ))
+                            }
                         </ul>
-                        <p><strong>9.5 Acuerdo completo:</strong> Estos Términos constituyen el acuerdo completo entre usted y nosotros con respecto al Servicio y reemplazan cualquier acuerdo o comunicación anterior.</p>
+                        <p><strong>9.5 </strong>{translate('terms.general.text5')}</p>
                     </div>
                 </section>
 
                 <!-- Contact Section -->
                 <section class="mt-12 pt-8 border-t border-white/10">
-                    <h3 class="text-xl font-bold text-purple-400 mb-4">Contacto</h3>
-                    <p>Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos en:</p>
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">{translate('terms.contact.title')}</h3>
+                    <p>{translate('terms.contact.text')}</p>
                     <ul class="mt-4 space-y-2">
-                        <li><strong>Email:</strong> <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300">contact@trendyup.es</a></li>
-                        <li><strong>Dirección:</strong> Calle Capitan Haya 1, Planta 15 28020 Madrid, España</li>
-                        <li><strong>Empresa:</strong> Sponsor Telecom S.L. (Registro: 12553665)</li>
+                        <li><strong>{translate('terms.contact.email.title')}</strong> <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300">{translate('terms.contact.email.text')}</a></li>
+                        <li><strong>{translate('terms.contact.address.title')}</strong> {translate('terms.contact.address.text')}</li>
+                        <li><strong>{translate('terms.contact.company.title')}</strong> {translate('terms.contact.company.text')}</li>
                     </ul>
                 </section>
             </div>

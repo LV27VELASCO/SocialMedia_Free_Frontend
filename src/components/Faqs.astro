@@ -1,12 +1,19 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+// Primero obtenemos las tarjetas desde tu traducción
+const cards: readonly string[] = translate('faqs.payments.a2.cards') as readonly string[];
+---
+
 <section id="Faqs" class="py-20 grid place-content-center">
     <div class="container mx-auto px-6">
         <!-- Page Header -->
         <div class="text-center mb-12 animate-fade-in">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                ❓ <span class="gradient-text">Preguntas Frecuentes</span>
+                ❓ <span class="gradient-text">{translate('faqs.title')}</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                Encuentra respuestas a las dudas más comunes sobre nuestros servicios
+                {translate('faqs.subtitle')}
             </p>
         </div>
 
@@ -15,32 +22,32 @@
             <button onclick="filterFAQ('all')"
                 class="category-tab active px-6 py-3 rounded-full text-white font-medium border border-white/20"
                 data-category="all">
-                🌟 Todas
+                🌟 {translate('faqs.tab.all')}
             </button>
             <button onclick="filterFAQ('general')"
                 class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
                 data-category="general">
-                📋 General
+                📋 {translate('faqs.tab.general')}
             </button>
             <button onclick="filterFAQ('seguridad')"
                 class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
                 data-category="seguridad">
-                🔒 Seguridad
+                🔒 {translate('faqs.tab.security')}
             </button>
             <button onclick="filterFAQ('pagos')"
                 class="category-tab px-6 py-3 rounded-full text-white font-medium border border-white/20"
                 data-category="pagos">
-                💳 Pagos
+                💳 {translate('faqs.tab.payments')}
             </button>
         </div>
 
         <!-- FAQ Container -->
-        <div class="faq-card rounded-2xl max-w-3xl p-6 sm:p-8 animate-slide-up">
+        <div class="faq-card rounded-2xl m-auto max-w-3xl p-6 sm:p-8 animate-slide-up">
 
             <!-- Search Bar -->
             <div class="mb-8">
                 <div class="relative">
-                    <input type="text" id="searchFAQ" placeholder="🔍 Buscar en las preguntas frecuentes..."
+                    <input type="text" id="searchFAQ" placeholder={String(translate('faqs.search.placeholder'))}
                         class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                         oninput="searchFAQ()">
                     <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -59,13 +66,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">🤔</span>
-                            <span class="text-white font-semibold text-lg">¿Qué es TrendyUp y cómo funciona?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q1')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">TrendyUp impulsa tu contenido de forma manual a través de comunidades relevantes, creadores y plataformas externas. Nuestro objetivo es que personas interesadas en tu sector descubran tu trabajo, sin utilizar automatizaciones ni prácticas no autorizadas.</p>
+                            <p class="m-4">{translate('faqs.general.a1')}</p>
                         </div>
                     </div>
                 </div>
@@ -76,13 +83,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">📱</span>
-                            <span class="text-white font-semibold text-lg">¿TrendyUp vende seguidores o interacciones?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q2')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">No. TrendyUp no comercializa seguidores, "me gusta" ni interacciones. Nuestro servicio está enfocado en aumentar la exposición de tu contenido de forma ética y sostenible, mediante difusión realizada por personas reales.</p>
+                            <p class="m-4">{translate('faqs.general.a2')}</p>
                         </div>
                     </div>
                 </div>
@@ -93,13 +100,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">❓</span>
-                            <span class="text-white font-semibold text-lg">¿Cumple TrendyUp con las políticas de redes sociales y de Google Ads?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q3')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">Sí. Operamos en estricto cumplimiento con los términos de servicio de TikTok, Instagram, Google Ads y otras plataformas. No solicitamos acceso a tus cuentas ni empleamos bots. Todas las acciones de difusión son manuales y externas, garantizando transparencia y seguridad.</p>
+                            <p class="m-4">{translate('faqs.general.a3')}</p>
                         </div>
                     </div>
                 </div>
@@ -113,13 +120,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">🛡️</span>
-                            <span class="text-white font-semibold text-lg">¿Es seguro utilizar TrendyUp con mis cuentas de redes sociales?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.security.q1')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">Sí. Nunca pedimos acceso a tus credenciales. Nuestro enfoque es totalmente manual y no utiliza automatización ni técnicas que infrinjan las normas de las plataformas.</p>
+                            <p class="m-4">{translate('faqs.security.a1')}</p>
                         </div>
                     </div>
                 </div>
@@ -130,13 +137,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">🤔</span>
-                            <span class="text-white font-semibold text-lg">¿Qué resultados puedo esperar?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q4')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">Los resultados dependen de factores como la calidad de tu contenido, tu nicho y tu actividad. El servicio está diseñado para aumentar la visibilidad, pero no garantiza métricas específicas como número de seguidores o interacciones. Nuestro enfoque es fomentar un crecimiento responsable y sostenible.</p>
+                            <p class="m-4">{translate('faqs.general.a4')}</p>
                         </div>
                     </div>
                 </div>
@@ -149,13 +156,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">🤷‍♂️</span>
-                            <span class="text-white font-semibold text-lg">¿Por qué es importante la visibilidad digital para creadores y empresas?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q5')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">La visibilidad fortalece el reconocimiento de marca, genera confianza y permite conectar con audiencias reales. En TrendyUp utilizamos estrategias conformes y transparentes para ayudarte a llegar a personas interesadas en tu contenido.</p>
+                            <p class="m-4">{translate('faqs.general.a5')}</p>
                         </div>
                     </div>
                 </div>
@@ -166,13 +173,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">💰</span>
-                            <span class="text-white font-semibold text-lg">¿Cuál es el precio de la suscripción?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.payments.q1')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">El servicio cuesta 34,90 € al mes. Incluye una prueba inicial de 24 horas. Si no cancelas durante el periodo de prueba, la suscripción se renueva automáticamente cada mes. Puedes cancelarla en cualquier momento desde tu panel de usuario.</p>
+                            <p class="m-4">{translate('faqs.payments.a1')}</p>
                         </div>
                     </div>
                 </div>
@@ -183,34 +190,29 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">💳</span>
-                            <span class="text-white font-semibold text-lg">¿Qué métodos de pago aceptan?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.payments.q2')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed mx-4">
-                            <p class="mb-4">Aceptamos los siguientes métodos de pago seguros:</p>
+                            <p class="mb-4">{translate('faqs.payments.a2')}</p>
                             <div class="flex justify-center items-center gap-4">
                                 <div class="bg-white/5 rounded-lg p-4">
                                     <h4 class="text-white font-semibold flex items-center">
-                                        <span class="mr-2">💳</span>
-                                        Tarjetas de Crédito/Débito
+                                        <span class="mr-2 mb-1 inline-block">💳</span>
+                                        {translate('faqs.payments.a2.title')}
                                     </h4>
                                     <ul class="text-sm space-y-1">
-                                        <li>• Visa</li>
-                                        <li>• Mastercard</li>
-                                        <li>• American Express</li>
-                                        <li>• Maestro</li>
-                                        <li>• Discover</li>
-                                        <li>• Diners Club</li>
-                                        <li>• UnionPay</li>
+                                        {cards.map((card) => (
+                                            <li>• {card}</li>
+                                        ))}
                                     </ul>
                                 </div>
 
                             </div>
                             <div class="mt-4 p-3 bg-blue-500/20 rounded-lg">
-                                <p class="text-blue-200 text-sm">🔒 Todos los pagos están protegidos con encriptación
-                                    SSL de 256 bits</p>
+                                <p class="text-blue-200 text-sm">🔒 {translate('faqs.payments.a2.note')}</p>
                             </div>
                         </div>
                     </div>
@@ -223,13 +225,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">💬</span>
-                            <span class="text-white font-semibold text-lg">¿Ofrecen soporte al cliente?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q6')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">Sí. Nuestro equipo de soporte está disponible por correo electrónico y mediante formulario de contacto. Te ayudamos con el acceso a tu cuenta, la gestión de la suscripción o cualquier consulta sobre el servicio.</p>
+                            <p class="m-4">{translate('faqs.general.a6')}</p>
                         </div>
                     </div>
                 </div>
@@ -240,13 +242,13 @@
                         onclick="toggleFAQ(this)">
                         <div class="flex items-center space-x-4">
                             <span class="text-2xl">🔐</span>
-                            <span class="text-white font-semibold text-lg">Olvidé mi contraseña, ¿qué debo hacer?</span>
+                            <span class="text-white font-semibold text-lg">{translate('faqs.general.q7')}</span>
                         </div>
                         <span class="faq-icon text-white text-xl">▼</span>
                     </button>
                     <div class="faq-content px-6">
                         <div class="text-gray-300 leading-relaxed">
-                            <p class="m-4">En la página de inicio de sesión encontrarás el enlace “¿Olvidaste tu contraseña?”. Haz clic allí y sigue las instrucciones. Si tienes algún problema, contacta con nuestro equipo de soporte.</p>
+                            <p class="m-4">{translate('faqs.general.q7')}</p>
                         </div>
                     </div>
                 </div>

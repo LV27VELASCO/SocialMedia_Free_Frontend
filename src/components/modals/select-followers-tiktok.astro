@@ -1,4 +1,6 @@
 ---
+import { useI18n } from '../../i18n';
+const { translate } = useI18n(Astro);
 const { id = "followersModal" } = Astro.props;
 ---
 <div id={id} class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm">
@@ -14,14 +16,14 @@ const { id = "followersModal" } = Astro.props;
         {/* Modal Header */}
         <div class="text-center mb-8">
             <div class="text-6xl mb-4">🚀</div>
-            <h2 class="text-3xl font-bold text-white mb-2">¡Casi Listo!</h2>
-            <p class="text-gray-300">Elige un objetivo de seguidores</p>
+            <h2 class="text-3xl font-bold text-white mb-2">{translate('social.modal.title')}</h2>
+            <p class="text-gray-300">{translate('social.modal.subtitle')}</p>
         </div>
 
         {/* Selected Platform Info */}
         <div class="bg-white/5 rounded-xl p-4 mb-6 flex items-center justify-center space-x-3">
             <span class="text-2xl" id="modal-platform-icon">🎵</span>
-            <span class="text-white font-medium">Usuario:
+            <span class="text-white font-medium">{translate('social.modal.label.user')}
                 <span id="modal-username" class="text-blue-300"></span>
             </span>
         </div>
@@ -30,22 +32,22 @@ const { id = "followersModal" } = Astro.props;
             <!-- Followers Selection -->
             <div>
                 <p class="block text-white font-medium mb-4 text-center">
-                    👥 ¿Cual es tu objetivo de seguidores?
+                    👥 {translate('social.modal.span')}
                 </p>
                 <div id="PriceTiktok" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 pt-6">
                    
                     <!-- 250 Followers -->
                     <button type="button" onclick="selectFollowers(250)" class="followers-option  pricing-card rounded-2xl p-5 text-center cursor-pointer">
                         <div class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold px-6 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
-                            Oferta Limitada
+                            {translate('social.modal.card.free.bage')}
                         </div>
                         <div class="text-4xl font-bold text-white mb-2">250</div>
-                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">Prueba Gratuita</div>
+                        <div class="text-purple-300 text-xs font-semibold mb-3 uppercase tracking-wider">{translate('social.modal.card.free.p')}</div>
                         <div class="flex items-center justify-center gap-2 mb-2">
                             <span class="text-2xl font-bold text-green-400">€0</span>
                         </div>
-                        <div class="free-badge inline-block px-3 py-1 rounded-full text-[11px] font-bold text-white">
-                            100% GRATIS
+                        <div class="free-badge inline-block px-3 py-1 rounded-full text-[10px] font-bold text-white">
+                            100% {translate('social.modal.card.free.span')}
                         </div>
                     </button>
                     
@@ -96,7 +98,7 @@ const { id = "followersModal" } = Astro.props;
                     <button type="button" onclick="selectFollowers(5000)"
                         class="followers-option pricing-card popular rounded-2xl p-5 text-center cursor-pointer relative overflow-visible">
                         <div class="badge absolute top-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500/80 to-purple-500/80 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
-                            Más Popular
+                            {translate('social.modal.card.popular.bage')}
                         </div>
                         <div class="text-4xl font-bold text-transparent bg-gradient-to-bl from-purple-500 to-pink-400 bg-clip-text mb-2">5K</div>
                         <div class="text-blue-300 text-xs font-semibold mb-3 uppercase tracking-wider">Basic</div>
@@ -157,9 +159,9 @@ const { id = "followersModal" } = Astro.props;
             <!-- Email Input -->
             <div>
                 <label for="modalEmail" class="block text-white font-medium mb-2">
-                    📧 Tu Email
+                    📧 {translate('social.modal.form.label')}
                 </label>
-                <input type="email" id="modalEmail" name="email" placeholder="tu@email.com"
+                <input type="email" id="modalEmail" name="email" placeholder={String(translate('social.modal.form.placeholder'))}
                     class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     required />
             </div>
@@ -167,20 +169,17 @@ const { id = "followersModal" } = Astro.props;
             <div class="bg-green-500/20 border border-green-500/30 rounded-xl p-4">
                 <div class="flex items-start space-x-3">
                     <p class="text-green-300 text-sm">
-                        Para compartir y gestionar tu solicitud de manera efectiva, tu perfil debe estar configurado
-                        como público. Esto permite que nuestra red global de creadores, plataformas móviles y
-                        comunidades puedan acceder y potenciar la visibilidad de tu contenido.
+                        {translate('social.modal.form.span')}
                     </p>
                 </div>
             </div>
-            <p id="message-atention"
-                class="hidden text-yellow-300 text-sm bg-yellow-500/20 p-4 rounded-xl border border-yellow-400/30">HOLA
+            <p id="message-atention" class="hidden text-yellow-300 text-sm bg-yellow-500/20 p-4 rounded-xl border border-yellow-400/30">
             </p>
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 pt-4">
                 <button type="submit"
                     class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white font-bold rounded-xl hover:scale-105 transform transition-all duration-300 shadow-2xl">
-                    🚀 Continuar
+                    🚀 {translate('social.modal.form.button')}
                 </button>
             </div>
 
@@ -188,30 +187,23 @@ const { id = "followersModal" } = Astro.props;
             <div class="bg-white/20 border border-white/30 rounded-xl p-4 space-y-4">
 
                 <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                    <p><strong>TrendyUp</strong> opera en total conformidad con las políticas de TikTok, Instagram y
-                        Google Ads. Nuestro método excluye la automatización, las interacciones artificiales y
-                        cualquier acceso indebido a las cuentas de los usuarios.</p>
+                    <p><strong>{translate('social.modal.info.name')}</strong> {translate('social.modal.info.f1')}</p>
                 </div>
                 <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                    <p>Potenciamos la visibilidad de tu perfil compartiendo tu contenido de manera directa con una
-                        red global que reúne creadores auténticos, plataformas móviles, comunidades temáticas e
-                        influencers. El volumen contratado definirá tu nivel de exposición en estas colaboraciones.
-                    </p>
+                    <p>{translate('social.modal.info.f2')}</p>
                 </div>
 
                 <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4">
-                    <p>Prueba gratuita de <b>14 días</b>. Al finalizar el periodo de prueba, la suscripción continúa automáticamente por <b>$34.90</b> al mes. Puedes cancelarla en cualquier momento.</p>
+                    <p>{translate('social.modal.info.f3')}</p>
                 </div>
 
                 <div class="bg-gray-500/20 border border-gray-500/30 rounded-xl p-4">
                     <h3 class="text-gray-200 font-semibold mb-2 flex items-center">
                         <span class="mr-2">📄</span>
-                        Aviso legal:
+                        {translate('social.modal.info.legal')}
                     </h3>
                     <ul class="text-gray-300 text-sm space-y-1">
-                        <li>El nivel de visibilidad está marcado por la calidad del contenido, su pertinencia en la
-                            audiencia y la consistencia al compartirlo. TrendyUp facilita herramientas para impulsarla,
-                            sin garantizar resultados concretos en métricas como seguidores o participación.</li>
+                        <li>{translate('social.modal.info.f4')}</li>
                     </ul>
                 </div>
 

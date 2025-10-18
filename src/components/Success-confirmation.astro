@@ -1,3 +1,8 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+---
+
 <!-- Animated Background Elements -->
 <div class="fixed inset-0 overflow-hidden pointer-events-none">
     <div
@@ -16,7 +21,7 @@
     <div class="container mx-auto px-6">
         <div class="flex items-center justify-center">
             <!-- Logo -->
-            <a href="/" class="text-2xl font-bold text-white">
+            <a href={`/${currentLang}/`} class="text-2xl font-bold text-white">
                 🚀 <span class="gradient-text">TrendyUp</span>
             </a>
         </div>

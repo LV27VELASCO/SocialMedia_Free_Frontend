@@ -1,11 +1,16 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+const features = translate('pricing.features') as unknown as {}[]
+---
 <section class="container mx-auto px-8 py-16 max-w-6xl">
         <!-- Header -->
         <div class="text-center mb-14 animate-slide-up">
             <h2 class="text-5xl sm:text-[4rem] font-bold text-white mb-6 leading-tight">
-                <span class="gradient-text">Precios</span>
+                <span class="gradient-text">{translate('pricing.title')}</span>
             </h2>
             <p class="text-xl text-purple-200 max-w-2xl mx-auto text-pretty">
-                Explora nuestra suscripción con nuestra oferta inicial
+                {translate('pricing.subtitle')}
             </p>
         </div>
 
@@ -14,53 +19,37 @@
             <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
                 <!-- Trial Badge -->
                 <div class="inline-block bg-gradient-to-r from-purple-500 to-blue-400 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
-                    ✨ Prueba gratis 14 días
+                    ✨ {translate('pricing.badge')}
                 </div>
 
                 <!-- Plan Name -->
-                <h2 class="text-3xl text-white leading-tight font-bold mb-2">Plan Premium</h2>
-                <p class="text-purple-200 mb-8">Todo lo que necesitas para crecer</p>
+                <h2 class="text-3xl text-white leading-tight font-bold mb-2">{translate('pricing.plan.title')}</h2>
+                <p class="text-purple-200 mb-8">{translate('pricing.plan.subtitle')}</p>
 
                 <!-- Price -->
                 <div class="mb-8">
                     <div class="flex items-baseline gap-2">
-                        <span class="text-6xl text-white leading-tight font-bold">$34,90</span>
-                        <span class="text-2xl text-purple-200">/mes</span>
+                        <span class="text-6xl text-white leading-tight font-bold">{translate('pricing.price.amount')}</span>
+                        <span class="text-2xl text-purple-200">{translate('pricing.price.period')}</span>
                     </div>
-                    <p class="text-sm text-purple-300 mt-2">Cancela cuando quieras</p>
+                    <p class="text-sm text-purple-300 mt-2">{translate('pricing.price.note')}</p>
                 </div>
 
                 <!-- Features -->
                 <ul class="space-y-4 mb-8 [&>li>p]:text-white">
-                    <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl">✓</span>
-                        <p>Prueba de 14 dias para explorar todas las funciones</p>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl">✓</span>
-                        <p>Contenido auténtico diseñado por expertos</p>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl">✓</span>
-                        <p>Estrategias personalizadas para tu nicho</p>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl">✓</span>
-                        <p>Análisis y reportes mensuales</p>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl">✓</span>
-                        <p>Sin automatización, sin bots</p>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl">✓</span>
-                        <p>Soporte prioritario</p>
-                    </li>
+                    {
+                        Object.values(features).map(feature => (
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-green-400 text-xl">✓</span>
+                                        <p>{feature}</p>
+                                    </li>
+                                ))
+                    }
                 </ul>
 
                 <!-- CTA Button -->
-                <a href="/" class="w-full bg-gradient-to-r inline-block text-center from-purple-500 to-blue-400 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
-                    Suscríbete ahora
+                <a href={`/${currentLang}/`} class="w-full bg-gradient-to-r inline-block text-center from-purple-500 to-blue-400 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+                    {translate('pricing.cta')}
                 </a>
             </div>
 
@@ -69,16 +58,16 @@
                 <div class="flex items-center justify-center gap-8">
                     <div>
                         <div class="text-3xl font-bold text-green-400">+245%</div>
-                        <div class="text-sm text-purple-200">Alcance promedio</div>
+                        <div class="text-sm text-purple-200">{translate('pricing.metrics.reach.label')}</div>
                     </div>
                     <div class="w-px h-12 bg-white/20"></div>
                     <div>
                         <div class="text-3xl font-bold text-green-400">8.5%</div>
-                        <div class="text-sm text-purple-200">Engagement</div>
+                        <div class="text-sm text-purple-200">{translate('pricing.metrics.engagement.label')}</div>
                     </div>
                 </div>
                 <p class="text-purple-300 text-sm">
-                    Resultados reales de nuestros clientes
+                    {translate('pricing.metrics.note')}
                 </p>
             </div>
         </div>

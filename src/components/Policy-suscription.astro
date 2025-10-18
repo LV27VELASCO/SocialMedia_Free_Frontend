@@ -1,220 +1,182 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+const generalBenefits = translate('subscription.general.benefits.items') as unknown as {
+  title: string;
+  text: string;
+}[];
+const info = translate('subscription.general.info.items') as unknown as {
+  title: string;
+  text: string;
+}[];
+const benefits = translate('subscription.benefits.items') as unknown as {}[]
+const client = translate('subscription.unsubscribe.client.item') as unknown as {}[]
+const company = translate('subscription.unsubscribe.company.item') as unknown as {}[]
+const cancel = translate('subscription.cancel.items') as unknown as {}[]
+---
 <!-- Main Content -->
 <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {/* Page Title */}
+    <div class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            {translate('subscription.title')} <span class="gradient-text">{translate('subscription.title.span')}</span>
+        </h1>
+        <p class="text-xl text-gray-300">{translate('subscription.date')}</p>
+    </div>
 
-     <!-- Page Title -->
-        <div class="text-center mb-12 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 ">
-                Política de <span class="gradient-text">Suscripción</span>
-            </h1>
-            <p class="text-xl text-gray-300">
-                Última actualización: <strong>31/07/2025</strong>
-            </p>
-        </div>
+    {/* Content */}
+    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 space-y-8">
 
-         <!-- Content  -->
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 space-y-8">
-            
-             <!-- Section 1  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">1. Descripción General de la Suscripción</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Al suscribirte a nuestro servicio, tendrás acceso a contenido educativo exclusivo y herramientas diseñadas para ayudarte a aumentar tu presencia en redes sociales de forma orgánica. Nuestra suscripción incluye:
-                </p>
-                <ul class="space-y-3 text-gray-300 ml-6">
-                    <li class="flex items-start">
-                        <span class="text-green-400 mr-2">✓</span>
-                        <span><strong>Entrega mensual de libros electrónicos:</strong> Reciba un nuevo libro electrónico de capacitación sobre redes sociales y educación cada mes por correo electrónico.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-400 mr-2">✓</span>
-                        <span><strong>Acceso a la biblioteca privada de libros electrónicos:</strong> Obtenga acceso a libros electrónicos exclusivos, que permanecerán exclusivos durante al menos dos meses antes de estar disponibles en la biblioteca pública.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-400 mr-2">✓</span>
-                        <span><strong>Acceso a la tienda pública de libros electrónicos:</strong> Acceso gratuito a toda nuestra tienda pública de libros electrónicos, que ofrece una variedad de recursos útiles.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-400 mr-2">✓</span>
-                        <span><strong>Soporte de visibilidad:</strong> Obtenga exposición manual a través de nuestro Programa Community Boost, diseñado para ayudarlo a aplicar las estrategias de crecimiento descritas en los libros electrónicos exclusivos.</span>
-                    </li>
-                </ul>
+        {/* Section 1 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">1. {translate('subscription.general.title')}</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">{translate('subscription.general.text1')}</p>
+            <ul class="space-y-3 text-gray-300 ml-6">
+                {
+                    generalBenefits.map((item)=>(
+                         <li class="flex items-start">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span><strong>{item.title}</strong> {item.text}</span>
+                        </li>
+                    ))
+                }
+            </ul>
 
-                <div class="mt-6 p-4 bg-purple-500/10 border border-purple-400/30 rounded-lg">
-                    <p class="text-gray-300 leading-relaxed mb-3">
-                        <strong class="text-purple-300">Naturaleza principal de los eBooks:</strong> Los eBooks constituyen el enfoque y el valor principal del Servicio. El apoyo a la visibilidad es un componente secundario pero complementario que enriquece las estrategias explicadas en ellos.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed mb-3">
-                        <strong class="text-purple-300">Indivisibilidad del Servicio:</strong> El Servicio se vende como un paquete indivisible. La exclusividad de los componentes no se puede adquirir, acceder ni cobrar por separado.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed mb-3">
-                        <strong class="text-purple-300">Pagos:</strong> Los pagos se procesan en euros a través de un sistema seguro en línea. Los detalles de pago son gestionados por un procesador externo; no almacenamos información de tarjetas de crédito. Para obtener más información, consulte nuestra <a href="privacity" class="text-blue-400 hover:text-blue-300 underline">Política de Privacidad</a>.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        <strong class="text-purple-300">Autorización:</strong> Al suscribirse, nos autoriza a realizar cargos recurrentes en su método de pago hasta que cancele la suscripción. Usted es responsable de mantener la información de facturación precisa.
-                    </p>
-                </div>
-
-                <p class="text-gray-300 leading-relaxed mt-4">
-                    Todos los servicios de soporte de visibilidad incluidos en tu suscripción son gestionados manualmente por personas reales de nuestra red. <strong class="text-green-400">No utilizamos bots, automatizaciones ni ningún método que infrinja las Condiciones de Servicio de Instagram o TikTok.</strong>
-                </p>
-            </section>
-
-             <!-- Section 2  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">2. Prueba de 24 Horas</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    Al realizar ciertas compras, los nuevos clientes podrán acceder automáticamente a una prueba de 24 horas del Servicio de Suscripción tras aceptar los Términos y Condiciones. Si no cancela la suscripción dentro del periodo de prueba, se renovará automáticamente por <strong class="text-blue-400">34,90 €</strong> al mes y se le cobrarán los meses siguientes a menos que la cancele.
-                </p>
-            </section>
-
-             <!-- Section 3  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">3. Beneficios de la Suscripción</h2>
-                <ul class="space-y-3 text-gray-300 ml-6">
-                    <li class="flex items-start">
-                        <span class="text-blue-400 mr-2">•</span>
-                        <span>Un nuevo libro electrónico enviado a tu correo electrónico cada mes</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-400 mr-2">•</span>
-                        <span>Acceso a la Biblioteca Privada de Libros Electrónicos, que contiene contenido exclusivo</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-400 mr-2">•</span>
-                        <span>Acceso gratuito a la tienda pública de libros electrónicos</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-400 mr-2">•</span>
-                        <span>Acceso a exposición promocional manual a través de nuestra red de socios de confianza</span>
-                    </li>
-                </ul>
-                <p class="text-gray-300 leading-relaxed mt-4">
-                    Al suscribirse, usted acepta nuestros <a href="terms" class="text-blue-400 hover:text-blue-300 underline">Términos y Condiciones</a>, y autoriza a SPONSOR TELECOM S.L., que opera como TrendyUp, a cobrar su método de pago elegido mensualmente, a partir del período de prueba gratuito (si corresponde).
-                </p>
-            </section>
-
-             <!-- Section 4  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">4. Terminación de la Suscripción</h2>
-                
-                <h3 class="text-xl font-semibold text-purple-300 mb-3 mt-4">Rescisión por parte del Cliente</h3>
-                <p class="text-gray-300 leading-relaxed mb-3">
-                    Usted puede rescindir su suscripción en cualquier momento haciendo clic en el enlace "Cancelar suscripción" en la parte inferior del Sitio, siguiendo los pasos que se indican a continuación en "Proceso de cancelación" o comunicándose con Nosotros directamente. La rescisión surtirá efecto:
-                </p>
-                <ul class="space-y-2 text-gray-300 ml-6 mb-4">
-                    <li class="flex items-start">
-                        <span class="text-green-400 mr-2">→</span>
-                        <span>Al final del ciclo de facturación actual para suscriptores mensuales.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-400 mr-2">→</span>
-                        <span>Al final del período de prueba si la cancelación se produce dentro del período de prueba.</span>
-                    </li>
-                </ul>
-
-                <h3 class="text-xl font-semibold text-purple-300 mb-3 mt-4">Terminación por parte de SPONSOR TELECOM S.L. dba TrendyUp</h3>
-                <p class="text-gray-300 leading-relaxed mb-3">
-                    Nos reservamos el derecho de cancelar su suscripción inmediatamente, sin previo aviso, en las siguientes circunstancias:
-                </p>
-                <ul class="space-y-2 text-gray-300 ml-6 mb-4">
-                    <li class="flex items-start">
-                        <span class="text-red-400 mr-2">✕</span>
-                        <span>Incumplimiento de los Términos y Condiciones (por ejemplo, intercambio no autorizado de contenido del Servicio).</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-400 mr-2">✕</span>
-                        <span>Actividad fraudulenta o mal uso del Servicio.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-400 mr-2">✕</span>
-                        <span>Acciones que dañen o denigren nuestra reputación comercial.</span>
-                    </li>
-                </ul>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    En los casos en que cancelemos su suscripción por incumplimiento de los Términos, no tendrá derecho a un reembolso de las tarifas pagadas y se podrán emprender acciones legales.
-                </p>
-
-                <h3 class="text-xl font-semibold text-purple-300 mb-3 mt-4">Efectos de la Terminación</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Tras la terminación, cesará su acceso a todos los componentes del Servicio, incluidos los libros electrónicos, el catálogo y las funciones de soporte de visibilidad manual.
-                </p>
-            </section>
-
-             <!-- Section 5  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">5. Proceso de Cancelación</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Para cancelar su suscripción, siga estos pasos:
-                </p>
-                <ol class="space-y-3 text-gray-300 ml-6 list-decimal">
-                    <li>Inicie sesión en su cuenta en el Sitio.</li>
-                    <li>Vaya a la sección "Suscripción" o "Configuración de la cuenta".</li>
-                    <li>Seleccione la opción para cancelar su suscripción y confirme su cancelación.</li>
-                </ol>
-                <p class="text-gray-300 leading-relaxed mt-4">
-                    Una vez cancelada, no se le cobrarán los meses futuros y su suscripción se dará por terminada al final del período de facturación actual.
-                </p>
-                <p class="text-gray-300 leading-relaxed mt-4">
-                    También puede cancelar en cualquier momento haciendo clic en el enlace de cancelación que aparece en el pie de página del Sitio.
-                </p>
-            </section>
-
-             <!-- Section 6  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">6. Información de Contacto</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos a:
-                </p>
-                <div class="bg-purple-500/10 border border-purple-400/30 rounded-lg p-4 space-y-2">
-                    <p class="text-gray-300">
-                        <strong class="text-purple-300">Correo electrónico:</strong> 
-                        <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300 underline">contact@trendyup.es</a>
-                    </p>
-                    <p class="text-gray-300">
-                        <strong class="text-purple-300">Correo postal:</strong> SPONSOR TELECOM S.L., Calle Capitan Haya 1, Planta 15 28020 Madrid
-                    </p>
-                </div>
-            </section>
-
-             <!-- Section 7  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">7. Derecho de Desistimiento</h2>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Usted tiene derecho a rescindir el Contrato dentro de los <strong class="text-blue-400">14 (catorce) días</strong> siguientes a recibir la confirmación de su suscripción ("Período de Retiro").
-                </p>
-                <p class="text-gray-300 leading-relaxed mb-4">
-                    Para ejercer su derecho de desistimiento, deberá seguir los pasos indicados anteriormente o notificarnos por correo electrónico. Tras la confirmación, le reembolsaremos cualquier pago realizado en un plazo de 5 a 10 días hábiles, siempre que aún no haya accedido o utilizado el Servicio.
-                </p>
-                <div class="bg-yellow-500/10 border border-yellow-400/30 rounded-lg p-4">
-                    <p class="text-gray-300 leading-relaxed mb-3">
-                        <strong class="text-yellow-300">Importante:</strong> Si ha accedido o utilizado el Servicio, incluida la descarga de cualquier libro electrónico o la recepción de asistencia de visibilidad, perderá el derecho de desistimiento y su solicitud será tratada como una cancelación según el Artículo 6 de nuestros Términos de Servicio.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Este derecho de desistimiento no se aplica a los Clientes domiciliados en jurisdicciones donde tales derechos están excluidos según la legislación local, en cuyo caso una solicitud de desistimiento se tratará como una cancelación.
-                    </p>
-                </div>
-            </section>
-
-             <!-- Section 8  -->
-            <section>
-                <h2 class="text-2xl font-bold text-purple-400 mb-4">8. Precios e IVA</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    La suscripción tiene un precio de <strong class="text-blue-400 text-xl">34,90 €</strong> al mes (treinta y cuatro euros y noventa céntimos). El paquete completo de suscripción incluye el tipo de IVA correspondiente según la legislación Española y la UE en función de su país de residencia.
-                </p>
-            </section>
-
-        </div>
-
-         <!-- Related Links  -->
-        <div class="mt-8 text-center">
-            <p class="text-gray-400 mb-4">Documentos relacionados:</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="terms" class="text-purple-400 hover:text-purple-300 underline">Términos y Condiciones</a>
-                <a href="privacity" class="text-purple-400 hover:text-purple-300 underline">Política de Privacidad</a>
-                <a href="refund-policy" class="text-purple-400 hover:text-purple-300 underline">Política de Devolución</a>
+            <div class="mt-6 p-4 bg-purple-500/10 border border-purple-400/30 rounded-lg">
+                {
+                    info.map((item)=>(
+                        <p class="text-gray-300 leading-relaxed mb-3">
+                            <strong class="text-purple-300">{item.title}</strong> {item.text}
+                        </p>
+                    ))
+                }
             </div>
+
+            <p class="text-gray-300 leading-relaxed mt-4">{translate('subscription.general.text2')}</p>
+        </section>
+
+        {/* Section 2 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">2. {translate('subscription.info.title')}</h2>
+            <p class="text-gray-300 leading-relaxed">{translate('subscription.info.text')}</p>
+        </section>
+
+        {/* Section 3 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">3. {translate('subscription.benefits.title')}</h2>
+            <ul class="list-disc space-y-3 text-gray-300 ml-6">
+                {
+                    benefits.map((item)=>(
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">•</span>
+                            <span>{item}</span>
+                        </li>
+                    ))
+                }
+            </ul>
+            <p class="text-gray-300 leading-relaxed mt-4">{translate('subscription.benefits.text')}</p>
+        </section>
+
+        {/* Section 4 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">4. {translate('subscription.unsubscribe.title')}</h2>
+
+            <h3 class="text-xl font-semibold text-purple-300 mb-3 mt-4">{translate('subscription.sunsubscribe.client.title')}</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">{translate('subscription.unsubscribe.client.text')}</p>
+            <ul class="space-y-2 text-gray-300 ml-6 mb-4">
+                {
+                    client.map((item)=>(
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2">→</span>
+                            <span>{item}</span>
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <h3 class="text-xl font-semibold text-purple-300 mb-3 mt-4">{translate('subscription.unsubscribe.company.title')}</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">{translate('subscription.unsubscribe.company.text')}</p>
+            <ul class="space-y-2 text-gray-300 ml-6 mb-4">
+                {
+                    company.map((item)=>(
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2">✕</span>
+                            <span>{item}</span>
+                        </li>
+                    ))
+                }
+            </ul>
+            <p class="text-gray-300 leading-relaxed mb-4">{translate('subscription.unsubscribe.company.notice')}</p>
+
+            <h3 class="text-xl font-semibold text-purple-300 mb-3 mt-4">{translate('subscription.unsubscribe.effects.title')}</h3>
+            <p class="text-gray-300 leading-relaxed">{translate('subscription.unsubscribe.effects.text')}</p>
+        </section>
+
+        {/* Section 5 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">5. {translate('subscription.cancel.title')}</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">{translate('subscription.cancel.text1')}</p>
+            <ol class="space-y-3 text-gray-300 ml-6 list-decimal">
+                {
+                    cancel.map((item)=>(
+                        <li>
+                            {item}
+                        </li>
+                    ))
+                }
+            </ol>
+            <p class="text-gray-300 leading-relaxed mt-4">{translate('subscription.cancel.text2')}</p>
+            <p class="text-gray-300 leading-relaxed mt-4">{translate('subscription.cancel.text3')}</p>
+        </section>
+
+        {/* Section 6 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">6. {translate('subscription.contact.title')}</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">{translate('subscription.contact.text')}</p>
+            <div class="bg-purple-500/10 border border-purple-400/30 rounded-lg p-4 space-y-2">
+                <p class="text-gray-300">
+                    <strong class="text-purple-300">{translate('subscription.contact.email.title')}</strong> 
+                    <a href="mailto:contact@trendyup.es" class="text-blue-400 hover:text-blue-300 underline">{translate('subscription.contact.email.text')}</a>
+                </p>
+                <p class="text-gray-300">
+                    <strong class="text-purple-300">{translate('subscription.contact.address.title')}</strong> {translate('subscription.contact.address.text')}
+                </p>
+            </div>
+        </section>
+
+        {/* Section 7 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">7. {translate('subscription.withdrawal.title')}</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">{translate('subscription.withdrawal.text1')}</p>
+            <p class="text-gray-300 leading-relaxed mb-4">{translate('subscription.withdrawal.text2')}</p>
+            <div class="bg-yellow-500/10 border border-yellow-400/30 rounded-lg p-4">
+                <p class="text-gray-300 leading-relaxed mb-3">
+                    <strong class="text-yellow-300">{translate('subscription.withdrawal.notice1.title')}</strong> {translate('subscription.withdrawal.notice1.text')}
+                </p>
+                <p class="text-gray-300 leading-relaxed">{translate('subscription.withdrawal.notice2.text')}</p>
+            </div>
+        </section>
+
+        {/* Section 8 */}
+        <section>
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">8. {translate('subscription.prices.title')}</h2>
+            <p class="text-gray-300 leading-relaxed">{translate('subscription.prices.text')}</p>
+        </section>
+
+    </div>
+
+    {/* Related Links */}
+    <div class="mt-8 text-center">
+        <p class="text-gray-400 mb-4">{translate('subscription.related.title')}</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href={`/${currentLang}/terms`} class="text-purple-400 hover:text-purple-300 underline">{translate('subscription.related.terms')}</a>
+            <a href={`/${currentLang}/privacity`} class="text-purple-400 hover:text-purple-300 underline">{translate('subscription.related.privacy')}</a>
+            <a href={`/${currentLang}/refund-policy`} class="text-purple-400 hover:text-purple-300 underline">{translate('subscription.related.refund')}</a>
         </div>
+    </div>
+
 </section>
+
 <!-- Scroll to Top Button -->
 <button id="scrollToTop"
     class="fixed  bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300 opacity-0 pointer-events-none z-50">

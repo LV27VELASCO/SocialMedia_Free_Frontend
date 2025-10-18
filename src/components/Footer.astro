@@ -1,3 +1,8 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+---
+
 <!-- Footer -->
 <footer class="border-t border-white/10 mt-16">
         <div class="container mx-auto px-8 py-12 max-w-7xl">
@@ -5,46 +10,46 @@
                 <!-- Logo and Description -->
                 <div class="md:col-span-2">
                     <div class="text-2xl font-bold flex items-center">
-                        <img src="/TrendyUp.png" class="size-14 opacity-85" alt="Logo TrendyUp">
+                        <img src="/TrendyUp.png" class="size-14 opacity-85" alt="Icon TrendyUp">
                         <span class="bg-gradient-to-tr from-orange-400  to-purple-700 text-transparent bg-clip-text">Trendy</span><span class="gradient-text text-3xl">Up</span>
                     </div>
                     <p class="text-purple-200 leading-relaxed max-w-md">
-                        <strong>Aviso de conformidad:</strong> No ofrecemos la venta de seguidores ni de interacciones. Nuestros servicios se orientan exclusivamente a estrategias de crecimiento y visibilidad orgánica, en estricto cumplimiento con las políticas de Google Ads y las directrices de cada plataforma.
+                        <strong>{translate('footer.accordance.title')}</strong> {translate('footer.accordance.text')}
                     </p>
                 </div>
 
                 <!-- Services Links -->
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Explorar</h3>
+                    <h3 class="font-bold text-lg mb-4">{translate('footer.title.explore')}</h3>
                     <ul class="space-y-2 text-purple-200">
-                        <li><a href="insta" class="hover:text-white transition-colors">Instagram</a></li>
-                        <li><a href="ttok" class="hover:text-white transition-colors">TikTok</a></li>
-                        <li><a href="login" class="hover:text-white transition-colors">Iniciar sesión</a></li>
+                        <li><a href={`/${currentLang}/insta`}  class="hover:text-white transition-colors">{translate('header.nav.insta')}</a></li>
+                        <li><a href={`/${currentLang}/ttok`} class="hover:text-white transition-colors">{translate('header.nav.tiktok')}</a></li>
+                        <li><a href={`/${currentLang}/login`} class="hover:text-white transition-colors">{translate('footer.nav.login')}</a></li>
                     </ul>
                 </div>
 
                 <!-- Company Links -->
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Empresa</h3>
+                    <h3 class="font-bold text-lg mb-4">{translate('footer.title.company')}</h3>
                     <ul class="space-y-2 text-purple-200">
-                        <li><a href="prices" class="hover:text-white transition-colors">Precios</a></li>
-                        <li><a href="contact" class="hover:text-white transition-colors">Contacto</a></li>
-                        <li><a href="about-us" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
-                        <li><a href="unsubscribe" class="hover:text-white transition-colors">Cancelar Suscripción</a></li>
+                        <li><a href={`/${currentLang}/prices`} class="hover:text-white transition-colors">{translate('header.nav.prices')}</a></li>
+                        <li><a href={`/${currentLang}/contact`} class="hover:text-white transition-colors">{translate('header.nav.contact')}</a></li>
+                        <li><a href={`/${currentLang}/about-us`} class="hover:text-white transition-colors">{translate('footer.nav.about')}</a></li>
+                        <li><a href={`/${currentLang}/unsubscribe`} class="hover:text-white transition-colors">{translate('header.nav.unsubscribe')}</a></li>
                     </ul>
                 </div>
 
                 <!-- Legal Links -->
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Legal</h3>
+                    <h3 class="font-bold text-lg mb-4">{translate('footer.title.legal')}</h3>
                     <ul class="space-y-2 text-purple-200">
-                        <li><a href="disclaimer" class="hover:text-white transition-colors">Disclaimer</a></li>
-                        <li><a href="legal" class="hover:text-white transition-colors">Aviso legal</a></li>
-                        <li><a href="subscription" class="hover:text-white transition-colors">Suscripción</a></li>
-                        <li><a href="refund-policy" class="hover:text-white transition-colors">Política de Rembolso</a></li>
-                        <li><a href="terms" class="hover:text-white transition-colors">Términos de Servicio</a></li>
-                        <li><a href="privacity" class="hover:text-white transition-colors">Política de Privacidad</a></li>
-                        <li><a href="compliance" class="hover:text-white transition-colors">Compromiso con el cumplimiento</a></li>
+                        <li><a href={`/${currentLang}/disclaimer`} class="hover:text-white transition-colors">{translate('footer.nav.disclaimer')}</a></li>
+                        <li><a href={`/${currentLang}/legal`} class="hover:text-white transition-colors">{translate('footer.nav.legal')}</a></li>
+                        <li><a href={`/${currentLang}/subscription`} class="hover:text-white transition-colors">{translate('footer.nav.subscription')}</a></li>
+                        <li><a href={`/${currentLang}/refund-policy`} class="hover:text-white transition-colors">{translate('footer.nav.refund')}</a></li>
+                        <li><a href={`/${currentLang}/terms`} class="hover:text-white transition-colors">{translate('footer.nav.terms')}</a></li>
+                        <li><a href={`/${currentLang}/privacity`} class="hover:text-white transition-colors">{translate('footer.nav.privacity')}</a></li>
+                        <li><a href={`/${currentLang}/compliance`} class="hover:text-white transition-colors">{translate('footer.nav.compliance')}</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,14 +57,8 @@
             <!-- Bottom Bar -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
                 <p class="text-purple-200 text-sm">
-                    &copy; 2025 TrendyUp. Todos los derechos reservados.
+                    &copy; 2025 TrendyUp. {translate('footer.allrights')}
                 </p>
-                <!-- <div class="flex gap-4">
-                    <a href="privacity" class="text-purple-200 hover:text-white transition-colors text-sm">Política de Privacidad</a>
-                    <a href="refund-policy" class="text-purple-200 hover:text-white transition-colors text-sm">Política de Rembolso</a>
-                    <a href="disclaimer" class="text-purple-200 hover:text-white transition-colors text-sm">Disclaimer</a>
-                    <a href="terms" class="text-purple-200 hover:text-white transition-colors text-sm">Términos de Servicio</a>
-                </div> -->
             </div>
         </div>
     </footer>

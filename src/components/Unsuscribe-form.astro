@@ -1,17 +1,23 @@
+---
+import { useI18n } from '../i18n';
+const { translate, currentLang } = useI18n(Astro);
+const steps: readonly string[] = translate('unsubscribe.success.steps') as readonly string[];
+---
+
 <!-- Main Content -->
 <section class="relative px-4 sm:px-10 py-20 lg:py-24">
     <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+        <input id="lang" type="hidden" value={currentLang}>
         <!-- Page Header -->
         <div class="text-center mb-8 animate-fade-in">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                📧 <span class="gradient-text">Cancelar Suscripción</span>
+                📧 <span class="gradient-text">{translate('unsubscribe.title')}</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                ¡Oh no! 😢 Nos entristece que quieras irte.
+                {translate('unsubscribe.subtitle1')}
             </p>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                Antes de despedirnos, por favor verifica tu email para que
-                podamos gestionar tu suscripción de forma segura.
+                {translate('unsubscribe.subtitle2')}
             </p>
         </div>
 
@@ -22,17 +28,17 @@
                 <div class="text-center mb-8">
                     <div class="text-6xl mb-4">📮</div>
                     <h2 class="text-2xl font-bold text-white mb-4">
-                        Verificar Email
+                        {translate('unsubscribe.form.title')}
                     </h2>
                     <p class="text-gray-300">
-                        Introduce tu dirección de correo y confirma tu decisión.
+                        {translate('unsubscribe.form.text')}
                     </p>
                 </div>
 
                 <form id="unsuscribe-form" class="space-y-6">
                     <div>
                         <label for="email" class="block text-white font-medium mb-2">
-                            📧 Dirección de Email
+                            📧 {translate('unsubscribe.email.label')}
                         </label>
                         <input type="email" id="email" name="email" autocomplete="off" required
                             placeholder="JohnDoe@email.com"
@@ -44,7 +50,7 @@
                     <p id="message2" class="text-center text-sm mt-2"></p>
                     <button type="submit"
                         class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300 flex items-center justify-center space-x-2 outline-none">
-                        <span>Cancelar Suscripción</span>
+                        <span>{translate('unsubscribe.form.button')}</span>
                     </button>
                 </form>
             </div>
@@ -60,10 +66,10 @@
                 class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-blue-400/40 border-t-transparent animate-spin">
             </div>
             <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">
-                Procesando
+                {translate('unsubscribe.loader.title')}
             </h2>
             <p data-loader-text class="text-gray-200 text-sm">
-                Por favor, espera un momento...
+                {translate('unsubscribe.loader.text')}
             </p>
         </div>
     </div>
@@ -82,54 +88,46 @@
             <div class="text-center">
                 <div class="text-8xl mb-6 success-animation">✅</div>
                 <h2 class="text-3xl font-bold text-white mb-4">
-                    ¡Suscripcion Cancelada!
+                    {translate('unsubscribe.success.title')}
                 </h2>
                 <p class="text-xl text-gray-300 mb-8">
-                    Hemos procesado tu solicitud correctamente
+                    {translate('unsubscribe.success.text')}
                 </p>
 
                 <!-- What happens next -->
                 <div class="bg-blue-500/20 border border-blue-500/30 rounded-xl p-6 mb-8">
                     <h3 class="text-lg font-semibold text-blue-200 mb-3">
-                        🔮 ¿Qué sucede ahora?
+                        🔮 {translate('unsubscribe.success.subtitle')}
                     </h3>
                     <ul class="text-blue-300 text-sm space-y-2 text-left">
-                        <li>• Los cambios son efectivos inmediatamente</li>
-                        <li>
-                            • Podrías recibir emails ya programados en las
-                            próximas 24-48 horas
-                        </li>
-                        <li>
-                            • Puedes reactivar tus suscripciones en
-                            cualquier momento
-                        </li>
-                        <li>
-                            • Los emails transaccionales (facturas,
-                            seguridad) continuarán llegando
-                        </li>
+                        {
+                            steps.map((item)=>(
+                              <li>• {item}</li>
+                            ))
+                        }
                     </ul>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/"
-                        class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300">
-                        🏠 Ir al Inicio
+                    <a href={`/${currentLang}/`}
+                        class="flex-1 px-6 py-3 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-300">
+                        🏠 {translate('unsubscribe.success.home')}
                     </a>
-                    <a href="/prices"
+                    <a href={`/${currentLang}/prices`}
                         class="flex-1 px-6 py-3 bg-green-400/50 text-white font-semibold rounded-xl hover:bg-green-400/70 transition-all duration-300">
-                        🔄 Reactivar Suscripciones
+                        🔄 {translate('unsubscribe.success.reactive')}
                     </a>
                 </div>
 
                 <!-- Contact Support -->
                 <div class="mt-8 pt-6 border-t border-white/20">
                     <p class="text-gray-400 text-sm mb-4">
-                        ¿Necesitas ayuda o tienes alguna pregunta?
+                        {translate('unsubscribe.success.contact.title')}
                     </p>
                     <button onclick="contactSupport()"
                         class="px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
-                        💬 Contactar Soporte
+                        💬 {translate('unsubscribe.success.contact.button')}
                     </button>
                 </div>
             </div>
@@ -143,9 +141,31 @@
 <!-- JavaScript -->
 <script>
 
+    const MESSAGES: Record<string, Record<string, string>> = {
+        email_required: {
+            es: "Email obligatorio",
+            en: "Email is required",
+            fr: "Email requis",
+            pt: "Email obrigatório"
+        },
+        processing: {
+            es: "Procesando...",
+            en: "Processing...",
+            fr: "Traitement...",
+            pt: "Processando..."
+        },
+        token_error: {
+            es: "Ocurrió un error, intentarlo más tarde",
+            en: "An error occurred, please try later",
+            fr: "Une erreur est survenue, veuillez réessayer plus tard",
+            pt: "Ocorreu um erro, tente novamente mais tarde"
+        }
+    };
+
     window.addEventListener('load', () => {
 
         const form = document.getElementById("unsuscribe-form");
+        const language = document.getElementById("lang") as HTMLInputElement;
 
         if (!form) return; // Evita el error de null
 
@@ -162,11 +182,14 @@
             showLoader();
             const originalText = button.innerHTML;
             button.innerHTML =
-                '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Procesando...</span></span>';
+                `<span class="flex items-center justify-center space-x-2">
+                    <span class="animate-spin">⏳</span>
+                    <span>${getMessage("processing", language.value)}</span>
+                </span>`;
             button.disabled = true;
 
             if(!emailInput.value){
-                messageEl.textContent = "Email obligatorio";
+                messageEl.textContent = getMessage("email_required", language.value);
                 messageEl.className =
                     "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
                 button.innerHTML = originalText;
@@ -175,7 +198,7 @@
                 return;
             }
 
-            const res = await unsubscribe_api(originalText, emailInput.value);
+            const res = await unsubscribe_api(originalText, emailInput.value, language.value);
         });
     })
 
@@ -192,7 +215,7 @@
     }
 
 
-    async function unsubscribe_api(originalText:string, data_email:any) {
+    async function unsubscribe_api(originalText:string, data_email:any, language:string) {
         const token = await getToken();
         const button = document.querySelector<HTMLButtonElement>('button[type="submit"]');
         const SuccessElement = document.getElementById('success-unsuscribe');
@@ -200,7 +223,7 @@
         if (!button ||!messageEl) return;
 
         if (!token) {
-            messageEl.textContent = "Ocurrió un error, intentarlo más tarde";
+            messageEl.textContent = getMessage("token_error", language);
             messageEl.className =
                 "text-red-300 text-center text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30";
             button.innerHTML = originalText;
@@ -219,7 +242,8 @@
                     Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
-                    email: data_email
+                    email: data_email,
+                    locale:language.trim()
                 }),
             },
         );
@@ -251,10 +275,8 @@
     }
 
     
-    function showLoader(message = "Procesando solicitud...") {
+    function showLoader() {
         const modal = document.getElementById("loaderModal") as HTMLDivElement;
-        const label = modal.querySelector("[data-loader-text]");
-        if (label) label.textContent = message;
 
         modal.classList.remove("hidden");
         requestAnimationFrame(() => {
@@ -274,6 +296,9 @@
         }, 200); // sincronizado con transition-opacity
     }
 
+    function getMessage(key: string, locale: string = "es"): string {
+        return MESSAGES[key]?.[locale] || MESSAGES[key]?.["en"] || "";
+    }
     
 </script>
 
