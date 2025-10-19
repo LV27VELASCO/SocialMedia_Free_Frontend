@@ -121,10 +121,8 @@ const { translate, currentLang } = useI18n(Astro);
                         </label>
                         <p class="text-gray-300 text-sm mt-2">
                             {translate('social.modal.payment.banner.form.check.p1')}
-                            <a href="/terms" target="_blank"
-                                class="text-blue-300 hover:text-blue-200 underline">{translate('social.modal.payment.banner.form.check.p2')}</a> {translate('social.modal.payment.banner.form.check.p3')} <a
-                                href="/privacity" target="_blank"
-                                class="text-blue-300 hover:text-blue-200 underline">{translate('social.modal.payment.banner.form.check.p4')}</a>.
+                            <a href={`/${currentLang}/terms`} target="_blank" class="text-blue-300 hover:text-blue-200 underline">{translate('social.modal.payment.banner.form.check.p2')}</a> {translate('social.modal.payment.banner.form.check.p3')} 
+                            <a href={`/${currentLang}/privacity`} target="_blank" class="text-blue-300 hover:text-blue-200 underline">{translate('social.modal.payment.banner.form.check.p4')}</a>.
                         </p>
                     </div>
                 </div>
@@ -235,11 +233,52 @@ const { translate, currentLang } = useI18n(Astro);
 </script>
 <!-- Logica Pagos -->
 <script>
+    // === Sistema de traducciones ===
+    const MESSAGES:any = {
+        validating_card: {
+            es: "Validando tarjeta...",
+            en: "Validating card...",
+            fr: "Validation de la carte...",
+            pt: "Validando cartão..."
+        },
+        accept_terms: {
+            es: "🚨 Debes aceptar los términos",
+            en: "🚨 You must accept the terms",
+            fr: "🚨 Vous devez accepter les conditions",
+            pt: "🚨 Você deve aceitar os termos"
+        },
+        card_name_required: {
+            es: "🚨 El nombre del titular es requerido",
+            en: "🚨 Cardholder name is required",
+            fr: "🚨 Le nom du titulaire est requis",
+            pt: "🚨 O nome do titular é obrigatório"
+        },
+        token_error: {
+            es: "¡Ups! Ocurrió un error, por favor inténtalo más tarde",
+            en: "Oops! An error occurred, please try again later",
+            fr: "Oups ! Une erreur s’est produite, veuillez réessayer plus tard",
+            pt: "Opa! Ocorreu um erro, tente novamente mais tarde"
+        },
+        loader_text: {
+            es: "Este proceso puede tardar algunos minutos. Por favor, espere mientras completamos la operación.",
+            en: "This process may take a few minutes. Please wait while we complete the operation.",
+            fr: "Ce processus peut prendre quelques minutes. Veuillez patienter pendant que nous terminons l’opération.",
+            pt: "Este processo pode levar alguns minutos. Por favor, aguarde enquanto concluímos a operação."
+        }
+    };
+
+    // Obtener idioma (de input o navegador)
+    const langInput = document.getElementById("lang") as HTMLInputElement;
+    const locale = langInput?.value.trim() || navigator.language.slice(0, 2) || "es";
+
+    function getMessage(key:any, lang = locale) {
+        return MESSAGES[key]?.[lang] || MESSAGES[key]?.["en"] || "";
+    }
+
+    // === Configuración de Stripe ===
     window.addEventListener("load", () => {
-        const lang = document.getElementById("lang") as HTMLInputElement;
-
-
         const stripe = Stripe(import.meta.env.PUBLIC_STRIPE_PK);
+
         const appearance = {
             theme: "night",
             variables: {
@@ -262,10 +301,12 @@ const { translate, currentLang } = useI18n(Astro);
                 },
             },
         };
+
         const elements = stripe.elements({
             appearance,
-            locale:lang.value.trim()
+            locale
         });
+
         const cardNumber = elements.create("cardNumber");
         cardNumber.mount("#card-number");
         const cardExpiry = elements.create("cardExpiry");
@@ -275,128 +316,89 @@ const { translate, currentLang } = useI18n(Astro);
 
         const errormessage = document.getElementById("errorMessage");
         if (!errormessage) return;
-        
         errormessage.classList.add("hidden");
 
+        const form = document.getElementById("payment-form") as HTMLFormElement;
+        if (!form) return;
 
-        const form = document.getElementById("payment-form");
-        if (!form) return; // Evita el error de null
-        form.addEventListener("submit", async (e: any) => {
+        form.addEventListener("submit", async (e:any) => {
             e.preventDefault();
+
             const formData = new FormData(e.target);
-            const orderData = JSON.parse(
-                localStorage.getItem("orderData") as string,
-            );
-            // // Show loading state
-            const button = document.querySelector<HTMLButtonElement>("#btn-pay");
+            const orderData = JSON.parse(localStorage.getItem("orderData") as string);;
+
+            const button = document.querySelector<HTMLButtonElement>("#btn-pay");;
             if (!button) return;
+
             showLoader();
             const originalText = button.innerHTML;
             button.innerHTML =
-                '<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>Validando tarjeta...</span></span>';
+                `<span class="flex items-center justify-center space-x-2"><span class="animate-spin">⏳</span><span>${getMessage("validating_card")}</span></span>`;
             button.disabled = true;
-            // Validate terms acceptance
+
+            // Validar aceptación de términos
             if (!formData.get("acceptTerms")) {
-                errormessage.textContent = `🚨: Debes aceptar los terminos`;
-                errormessage.classList.add(
-                    "text-red-300",
-                    "text-sm",
-                    "bg-red-500/20",
-                    "p-4",
-                    "rounded-xl",
-                    "border",
-                    "border-red-400/30",
-                );
-                errormessage.classList.remove("hidden");
-                button.innerHTML = originalText;
-                button.disabled = false;
-                hideLoader();
+                showError(errormessage, getMessage("accept_terms"));
+                resetButton(button, originalText);
                 return;
             }
-            // Validate card name
+
+            // Validar nombre del titular
             if (!formData.get("card-name")) {
-                errormessage.textContent = `🚨: Nombre del Titular es requerido`;
-                errormessage.classList.add(
-                    "text-red-300",
-                    "text-sm",
-                    "bg-red-500/20",
-                    "p-4",
-                    "rounded-xl",
-                    "border",
-                    "border-red-400/30",
-                );
-                errormessage.classList.remove("hidden");
-                button.innerHTML = originalText;
-                button.disabled = false;
-                hideLoader();
+                showError(errormessage, getMessage("card_name_required"));
+                resetButton(button, originalText);
                 return;
             }
+
+            // Crear método de pago con Stripe
             const { paymentMethod, error } = await stripe.createPaymentMethod({
                 type: "card",
                 card: cardNumber,
             });
+
             if (error) {
-                errormessage.textContent = `🚨: ${error.message}`;
-                errormessage.classList.add(
-                    "text-red-300",
-                    "text-sm",
-                    "bg-red-500/20",
-                    "p-4",
-                    "rounded-xl",
-                    "border",
-                    "border-red-400/30",
-                );
-                errormessage.classList.remove("hidden");
-                button.innerHTML = originalText;
-                button.disabled = false;
-                hideLoader();
+                showError(errormessage, `🚨 ${error.message}`);
+                resetButton(button, originalText);
                 return;
             }
-            
-            const res = await checkout_product(
-                paymentMethod,
-                originalText,
-                formData.get("card-name")?.toString(),
-            );
-        });
 
+            // Continuar con checkout
+            await checkout_product(paymentMethod, originalText, formData.get("card-name")?.toString());
+        });
     });
+
+    // === Función para obtener token ===
     async function getToken() {
         try {
             const res = await fetch(`${import.meta.env.PUBLIC_API}/token`);
-
-            if (!res.ok) {
-            return false; // el servidor respondió pero con error
-            }
-
+            if (!res.ok) return false;
             const data = await res.json();
-            return data.token; // tu token
+            return data.token;
         } catch (err) {
             console.error("Error en getToken:", err);
-            return false; // error de red o fetch roto
-        } 
+            return false;
+        }
     }
-    async function checkout_product( paymentMethod: any, originalText: any, cardName: any, ) {
+
+    // === Checkout con el backend ===
+    async function checkout_product(paymentMethod: any, originalText: any, cardName: any) {
         const token = await getToken();
-        console.log(token)
-        const orderData = JSON.parse(
-            localStorage.getItem("orderData") as string,
-        );
-        const button = document.querySelector<HTMLButtonElement>("#btn-pay");
+        const orderData = JSON.parse(localStorage.getItem("orderData") as string);
+        const button = document.querySelector("#btn-pay");
         const errormessage = document.getElementById("errorMessage");
         const successmessage = document.getElementById("SuccessMessage");
-        const language = document.getElementById("lang") as HTMLInputElement;
+
         if (!button || !errormessage || !successmessage) return;
+
         successmessage.classList.add("hidden");
         errormessage.classList.add("hidden");
+
         if (!token) {
-            errormessage.classList.remove("hidden");
-            errormessage.textContent = "¡Ups! Ocurrió un error, por favor intentarlo mas tarde";
-            button.innerHTML = originalText;
-            button.disabled = false;
-            hideLoader();
+            showError(errormessage, getMessage("token_error"));
+            resetButton(button, originalText);
             return;
         }
+
         const res = await fetch(`${import.meta.env.PUBLIC_API}/checkout`, {
             method: "POST",
             headers: {
@@ -410,62 +412,68 @@ const { translate, currentLang } = useI18n(Astro);
                 email: orderData.email.toLowerCase().trim(),
                 platform: orderData.platform.toLowerCase().trim(),
                 quantity: orderData.followers,
-                locale:language.value.trim()
+                locale
             }),
         });
+
         const data = await res.json();
-        if (!res.ok) {
-            errormessage.classList.remove("hidden");
-            errormessage.textContent = data.error;
-            button.innerHTML = originalText;
-            button.disabled = false;
-            hideLoader();
+
+        if (!res.ok || data.error) {
+            showError(errormessage, data.error || getMessage("token_error"));
+            resetButton(button, originalText);
             return;
         }
-        if (data.error) {
-            errormessage.classList.remove("hidden");
-            errormessage.textContent = data.error;
-            button.innerHTML = originalText;
-            button.disabled = false;
-            hideLoader();
-            return;
-        } else {
-            (
-                document.getElementById("formFollowers") as HTMLFormElement
-            ).reset();
-            // Simulate form processing
-            setTimeout(() => {
-                window.location.href = "confirmation-success";
-            }, 2000);
-            localStorage.setItem("url", data.url);
-            successmessage.classList.remove("hidden");
-            successmessage.textContent = data.message;
-            button.innerHTML = originalText;
-            button.disabled = false;
-            hideLoader();
-        }
+
+        // Éxito
+        (document.getElementById("formFollowers") as HTMLFormElement).reset();
+        localStorage.setItem("url", data.url);
+        successmessage.classList.remove("hidden");
+        successmessage.textContent = data.message;
+        resetButton(button, originalText);
+
+        setTimeout(() => {
+            window.location.href = `${locale}/confirmation-success`;
+        }, 2000);
     }
 
-    function showLoader(message = "Este proceso puede tardar algunos minutos. Por favor, espere mientras completamos la operación.") {
-        const modal = document.getElementById("loaderModal") as HTMLDivElement;
-        const label = modal.querySelector("[data-loader-text]");
+    // === Utilidades ===
+    function showError(element:any, message:any) {
+        element.textContent = message;
+        element.classList.remove("hidden");
+        element.classList.add(
+            "text-red-300",
+            "text-sm",
+            "bg-red-500/20",
+            "p-4",
+            "rounded-xl",
+            "border",
+            "border-red-400/30"
+        );
+        hideLoader();
+    }
+
+    function resetButton(button:any, text:any) {
+        button.innerHTML = text;
+        button.disabled = false;
+        hideLoader();
+    }
+
+    function showLoader(message = getMessage("loader_text")) {
+        const modal = document.getElementById("loaderModal");
+        const label = modal?.querySelector("[data-loader-text]");
         if (label) label.textContent = message;
-        modal.classList.remove("hidden");
-        requestAnimationFrame(() => {
-            modal.classList.remove("opacity-0");
-        });
-        // Bloquea el scroll de fondo
+        modal?.classList.remove("hidden");
+        requestAnimationFrame(() => modal?.classList.remove("opacity-0"));
         document.body.classList.add("overflow-hidden");
     }
 
     function hideLoader() {
-        const modal = document.getElementById("loaderModal") as HTMLDivElement;
-        modal.classList.add("opacity-0");
+        const modal = document.getElementById("loaderModal");
+        modal?.classList.add("opacity-0");
         setTimeout(() => {
-            modal.classList.add("hidden");
+            modal?.classList.add("hidden");
             document.body.classList.remove("overflow-hidden");
-        }, 200); // sincronizado con transition-opacity
+        }, 200);
     }
-
-
 </script>
+

@@ -1,6 +1,6 @@
 ---
 import { useI18n } from '../../i18n';
-const { translate } = useI18n(Astro);
+const { translate, currentLang } = useI18n(Astro);
 const { id = "followersModal" } = Astro.props;
 ---
 
@@ -13,7 +13,7 @@ const { id = "followersModal" } = Astro.props;
             aria-label="Cerrar modal">
             ×
         </button>
-
+         <input id="lang" type="hidden" value={currentLang}>
         {/* Modal Header */}
         <div class="text-center mb-8">
             <div class="text-6xl mb-4">🚀</div>
@@ -207,82 +207,98 @@ const { id = "followersModal" } = Astro.props;
     </div>
 </div>
 <script is:inline>
-    // Variables para el modal de seguidores
-    let selectedFollowersCount = null;
-    let selectedPlatform = 'instagram'; // Default platform
-    // Form Seguidores Submit
-     document.getElementById('formFollowers').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.getElementById('modalEmail').value.trim();
-        const username = document.getElementById('usernameInput').value.trim();
-        const error = document.getElementById('message-atention');
-        if (!selectedFollowersCount) {
-            error.classList.remove("hidden")
-            error.innerText = "⚠️ Por favor selecciona tu objetivo de seguidores"
-            setTimeout(() => {
-                error.classList.add("hidden")
-            }, 5000);
-            return;
-        }
-        if (!email) {
-            error.classList.remove("hidden")
-            error.innerText = "⚠️ Por favor, ingresa tu email"
-            setTimeout(() => {
-                error.classList.add("hidden")
-            }, 5000);
-            return;
-        }
-        // Clean username
-        const cleanUsername = username.startsWith('@') ? username.slice(1) : username;
-        // Store all data
-        localStorage.setItem('orderData', JSON.stringify({
-            username: cleanUsername,
-            platform: selectedPlatform,
-            followers: selectedFollowersCount,
-            email: email,
-            timestamp: new Date().toISOString()
-        }));
-        // Close followers modal and open payment modal
-        closeModal();
-        await openPaymentModal();
-    });
-    
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    // Función para seleccionar cantidad de seguidores
-    function selectFollowers(count) {
-        selectedFollowersCount = count;
-        
-        document.getElementById('selectedFollowers').value = count;
-        // Remove active class from all options
-        document.querySelectorAll('.followers-option').forEach(card => {
-            card.classList.remove('selected');
-        });
-        // Add selected class to clicked card
-      event.currentTarget.classList.add('selected');
-    }
+        // Variables del modal
+        let selectedFollowersCount = null;
+        let selectedPlatform = 'instagram'; // Plataforma por defecto
 
-    // Función para cerrar el modal de seguidores
-    function closeModal() {
-        document.getElementById('followersModal').classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-        // Reset form
-        document.getElementById('formFollowers').reset();
-        selectedFollowersCount = null;
-        // Remove active classes
-        document.querySelectorAll('.followers-option').forEach(card => {
-           card.classList.remove('selected');
+        // Detectar idioma del navegador (por ejemplo: "es", "en", "fr", "pt")
+        const locale = document.getElementById("lang")?.value;
+
+        // Función para obtener el mensaje según el idioma
+        function getMessage(key, locale = "es") {
+            return MESSAGES_HERO[key]?.[locale] || MESSAGES_HERO[key]?.["en"] || "";
+        }
+        
+
+        // Formulario de seguidores
+        document.getElementById('formFollowers').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('modalEmail').value.trim();
+            const username = document.getElementById('usernameInput').value.trim();
+            const error = document.getElementById('message-atention');
+
+            // Validar selección de seguidores
+            if (!selectedFollowersCount) {
+                showError(getMessage('select_goal', locale));
+                return;
+            }
+
+            // Validar email
+            if (!email) {
+                showError(getMessage('enter_email', locale));
+                return;
+            }
+
+            // Limpiar nombre de usuario
+            const cleanUsername = username.startsWith('@') ? username.slice(1) : username;
+
+                // Guardar datos en localStorage
+            localStorage.setItem('orderData', JSON.stringify({
+                    username: cleanUsername,
+                    platform: selectedPlatform,
+                    followers: selectedFollowersCount,
+                    email: email,
+                    timestamp: new Date().toISOString()
+            }));
+
+                // Cerrar modal de seguidores y abrir el de pago
+            closeModal();
+            await openPaymentModal();
         });
-    }
+
+            // Mostrar error con animación temporal
+        function showError(message) {
+                const error = document.getElementById('message-atention');
+                error.classList.remove("hidden");
+                error.innerText = message;
+                setTimeout(() => {
+                    error.classList.add("hidden");
+                }, 5000);
+        }
+
+            // Scroll suave para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+        });
+
+            // Seleccionar cantidad de seguidores
+        function selectFollowers(count) {
+                selectedFollowersCount = count;
+                document.getElementById('selectedFollowers').value = count;
+
+                // Quitar selección anterior
+                document.querySelectorAll('.followers-option').forEach(card => {
+                    card.classList.remove('selected');
+                });
+
+                // Marcar la opción actual
+                event.currentTarget.classList.add('selected');
+        }
+        
+        // Cerrar modal de seguidores
+        function closeModal() {
+            document.getElementById('followersModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            document.getElementById('formFollowers').reset();
+            selectedFollowersCount = null;
+            document.querySelectorAll('.followers-option').forEach(card => {
+                card.classList.remove('selected');
+            });
+        }
 </script>

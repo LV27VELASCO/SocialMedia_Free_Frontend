@@ -41,7 +41,7 @@ import SelectFollowersInstagram from "./modals/select-followers-instagram.astro"
                         </button>
                     </form>
 
-                    <p id="message-error" class="hidden text-red-300 text-sm bg-red-500/20 p-4 rounded-xl border border-red-400/30"></p>
+                    <p id="message-error" class="hidden text-red-300 text-sm bg-red-500/20 p-3 mt-2 rounded-xl border border-red-400/30"></p>
                     <div class="flex items-center justify-center space-x-6 mt-4 text-sm text-gray-300">
                         <div class="flex items-center space-x-1">
                             <span class="text-green-400">✓</span>
@@ -101,16 +101,31 @@ import SelectFollowersInstagram from "./modals/select-followers-instagram.astro"
         <div class="mx-auto mb-4 h-12 w-12 rounded-full border-4 border-blue-400/40 border-t-transparent animate-spin">
         </div>
         <h2 id="loaderTitle" class="text-white text-lg font-semibold mb-1">
-            Procesando solicitud...
+            {translate('social.modal.loader.title')}
         </h2>
         <p data-loader-text class="text-gray-200 text-sm">
-            Este proceso puede tardar algunos minutos. Por favor, espere mientras completamos la operación.
+            {translate('social.modal.loader.subtitle')}
         </p>
     </div>
 </div>
 
 <!-- Hero Form -->
 <script is:inline>
+
+    window.addEventListener("load", () => {
+            localStorage.clear();
+    })
+
+    const lag1 = document.getElementById("lang")?.value;
+
+    const get_in_user = {
+            es: "Debe ingresar usuario de Instagram",
+            en: "You must enter your Instagram username",
+            fr: "Vous devez entrer votre nom d’utilisateur Instagram",
+            pt: "Você deve inserir seu nome de usuário do Instagram"
+        }
+
+
     // Hero input Submit
     document .getElementById("heroForm").addEventListener("submit", function (e) {
             e.preventDefault();
@@ -181,7 +196,7 @@ import SelectFollowersInstagram from "./modals/select-followers-instagram.astro"
         
         if (!username || username === '@') {
             error.classList.remove("hidden")
-            error.innerText = "Debe ingresar usuario de instagram"
+            error.innerText = get_in_user[lag1];
             setTimeout(() => {
                 error.classList.add("hidden")
             }, 5000);
@@ -198,25 +213,70 @@ import SelectFollowersInstagram from "./modals/select-followers-instagram.astro"
 </script>
 
 <script is:inline>
+    // === Sistema de traducciones ===
+    const MESSAGES_HERO = {
+        order_not_found: {
+            es: "🚨 Error: No se encontraron datos del pedido",
+            en: "🚨 Error: No order data found",
+            fr: "🚨 Erreur : aucune donnée de commande trouvée",
+            pt: "🚨 Erro: Nenhum dado do pedido encontrado"
+        },
+        followers_label: {
+            es: "Seguidores",
+            en: "Followers",
+            fr: "Abonnés",
+            pt: "Seguidores"
+        },
+        free_label: {
+            es: "GRATIS",
+            en: "FREE",
+            fr: "GRATUIT",
+            pt: "GRÁTIS"
+        },
+        select_goal: {
+                es: "⚠️ Por favor selecciona tu objetivo de seguidores",
+                en: "⚠️ Please select your follower goal",
+                fr: "⚠️ Veuillez sélectionner votre objectif d'abonnés",
+                pt: "⚠️ Por favor, selecione sua meta de seguidores"
+            },
+        enter_email: {
+            es: "⚠️ Por favor, ingresa tu email",
+            en: "⚠️ Please enter your email",
+            fr: "⚠️ Veuillez entrer votre e-mail",
+            pt: "⚠️ Por favor, insira seu e-mail"
+        }
+    };
+
+    const lag2 = document.getElementById("lang")?.value;
+
+    function getMessage(key, lang = lag2) {
+        return MESSAGES_HERO[key]?.[lang] || MESSAGES_HERO[key]?.["en"] || "";
+    }
+
     async function openPaymentModal() {
         const orderData = JSON.parse(localStorage.getItem("orderData"));
         if (!orderData) {
-            alert("Error: No se encontraron datos del pedido");
+            alert(getMessage("order_not_found"));
             return;
         }
-        // Update payment modal with order data
-        document.getElementById("payment-username").textContent =
-            "@" + orderData.username;
+
+        // Actualizar datos en el modal
+        document.getElementById("payment-username").textContent = "@" + orderData.username;
         document.getElementById("payment-platform").textContent =
-            orderData.platform === "instagram" ? "Instagram" : "TikTok";
+            orderData.platform === "instagram"
+                ? "Instagram"
+                : "Tiktok";
         document.getElementById("payment-platform-icon").textContent =
             orderData.platform === "instagram" ? "📸" : "🎵";
+
         document.getElementById("payment-followers").textContent =
-            orderData.followers.toLocaleString() + " Seguidores";
-        // Set price based on followers
-        let basePrice = "GRATIS";
-        let totalPay = "€1"
-        let freePay = document.querySelectorAll("#pay-verify");
+            orderData.followers.toLocaleString() + " " + getMessage("followers_label");
+
+        // Asignar precios según la plataforma y cantidad
+        let basePrice = getMessage("free_label");
+        let totalPay = "€1";
+        const freePay = document.querySelectorAll("#pay-verify");
+
         if (orderData.followers > 250) {
             if (orderData.platform === "instagram") {
                 const priceMapInsta = {
@@ -258,18 +318,19 @@ import SelectFollowersInstagram from "./modals/select-followers-instagram.astro"
         document.getElementById("paymentModal").classList.remove("hidden");
         document.body.classList.add("overflow-hidden");
     }
-    // Función para volver al modal de seguidores
+    
+    // Volver al modal de seguidores
     function backToFollowersModal() {
         closePaymentModal();
         document.getElementById("followersModal").classList.remove("hidden");
-        document.body.classList.add("overflow-hidden"); // Ensure body overflow is handled
+        document.body.classList.add("overflow-hidden");
     }
-  
-    // Función para cerrar modal de pago
+
+    // Cerrar modal de pago
     function closePaymentModal() {
         document.getElementById("paymentModal").classList.add("hidden");
         document.body.classList.remove("overflow-hidden");
-        // Reset form
         document.getElementById("payment-form").reset();
+        localStorage.clear();
     }
 </script>

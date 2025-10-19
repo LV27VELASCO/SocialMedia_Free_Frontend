@@ -1,27 +1,18 @@
 ---
 import { useI18n } from '../i18n';
 const { translate, currentLang } = useI18n(Astro);
+const expects = translate('success.expect.items') as unknown as {}[]
+const nexts = translate('success.next.items') as unknown as {}[]
 ---
 
 <!-- Animated Background Elements -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div
-        class="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element">
-    </div>
-    <div class="absolute top-40 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element"
-        style="animation-delay: 2s;">
-    </div>
-    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element"
-        style="animation-delay: 4s;">
-    </div>
-</div>
 
 <!-- Header -->
-<header class="relative z-50 py-6">
+<header class="relative z-50 py-8">
     <div class="container mx-auto px-6">
         <div class="flex items-center justify-center">
             <!-- Logo -->
-            <a href={`/${currentLang}/`} class="text-2xl font-bold text-white">
+            <a href={`/${currentLang}/`} class="text-4xl font-bold text-white">
                 🚀 <span class="gradient-text">TrendyUp</span>
             </a>
         </div>
@@ -30,14 +21,15 @@ const { translate, currentLang } = useI18n(Astro);
 
 <!-- Main Content -->
 <main class="relative z-10 container mx-auto px-6 pb-12">
+    <input id="lang" type="hidden" value={currentLang}>
     <!-- Success Icon -->
     <div class="text-center mb-8 animate-fade-in">
         <div class="success-animation inline-block text-8xl mb-4">✅</div>
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            ¡<span class="gradient-text">Proceso Iniciado</span> Exitosamente!
+            {translate('success.process.title')} <span class="gradient-text">{translate('success.process.title.span')}</span>
         </h1>
         <p class="text-xl text-gray-300">
-            Tu tarjeta ha sido validada y el proceso de carga está comenzando
+            {translate('success.process.subtitle')}
         </p>
     </div>
 
@@ -45,18 +37,15 @@ const { translate, currentLang } = useI18n(Astro);
     <div class="max-w-md mx-auto mb-12 animate-slide-up">
         <div class="flex justify-center mb-6">
             <div class="flex items-center space-x-2">
-                <div
-                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     ✓
                 </div>
                 <div class="w-12 h-1 bg-green-500 rounded-full"></div>
-                <div
-                    class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     ✓
                 </div>
                 <div class="w-12 h-1 bg-green-500 rounded-full"></div>
-                <div
-                    class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold animate-pulse">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold animate-pulse">
                     3
                 </div>
             </div>
@@ -68,11 +57,10 @@ const { translate, currentLang } = useI18n(Astro);
         <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 content-glow border border-white/20 animate-slide-up">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-bold text-white mb-4">
-                    Resumen de tu pedido
+                    {translate('success.summary.progress.title')}
                 </h2>
-                <div
-                    class="notification-badge inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-400/50 rounded-full text-green-300 text-sm font-semibold">
-                    🟢 Procesando ahora mismo
+                <div class="notification-badge inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-400/50 rounded-full text-green-300 text-sm font-semibold">
+                    {translate('success.summary.progress.badge')}
                 </div>
             </div>
 
@@ -82,28 +70,26 @@ const { translate, currentLang } = useI18n(Astro);
                 <div class="bg-gradient-to-r from-blue-500 to-purple-500/70 rounded-2xl p-6 border border-blue-400/30">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-white">
-                            Servicio Solicitado
+                            {translate('success.summary.progress.service.title')}
                         </h3>
                         <span class="text-3xl" id="serviceIcon">🤖</span>
                     </div>
                     <div class="grid md:grid-cols-2 gap-4 text-white">
                         <div>
-                            <div class="text-sm text-gray-300">Red Social</div>
+                            <div class="text-sm text-gray-300">{translate('success.summary.progress.service.network')}</div>
                             <div class="text-lg font-semibold" id="socialNetwork">
                                 📸 Instagram
                             </div>
                         </div>
                         <div>
-                            <div class="text-sm text-gray-300">Servicio</div>
+                            <div class="text-sm text-gray-300">{translate('success.summary.progress.service.type')}</div>
                             <div class="text-lg font-semibold" id="serviceType">
                                 👥 Seguidores
                             </div>
                         </div>
                     </div>
                     <div class="mt-4">
-                        <div class="text-sm text-gray-300">
-                            URL del perfil/publicación
-                        </div>
+                        <div class="text-sm text-gray-300">{translate('success.summary.progress.service.url')}</div>
                         <div class="text-lg font-semibold text-blue-300 break-all" id="targetUrl">
                             https://instagram.com/tu_usuario
                         </div>
@@ -113,33 +99,25 @@ const { translate, currentLang } = useI18n(Astro);
                 <!-- Delivery Info -->
                 <div class="bg-gradient-to-r from-green-500 to-teal-500/70 rounded-2xl p-6 border border-green-400/30">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-white">
-                            Información de Entrega
-                        </h3>
+                        <h3 class="text-xl font-bold text-white">{translate('success.summary.progress.delivery.title')}</h3>
                         <span class="text-3xl animate-spin-slow">⚡</span>
                     </div>
                     <div class="grid md:grid-cols-2 gap-4 text-white">
                         <div>
-                            <div class="text-sm text-gray-300">Cantidad</div>
-                            <div class="text-2xl font-bold text-green-300" id="quantity">
-                                500 seguidores
-                            </div>
+                            <div class="text-sm text-gray-300">{translate('success.summary.progress.delivery.quantity')}</div>
+                            <div class="text-2xl font-bold text-green-300" id="quantity">500 seguidores</div>
                         </div>
                         <div>
-                            <div class="text-sm text-gray-300">
-                                Tiempo estimado
-                            </div>
-                            <div class="text-lg font-semibold text-yellow-300" id="estimatedTime">
-                                5-15 minutos
-                            </div>
+                            <div class="text-sm text-gray-300">{translate('success.summary.progress.delivery.time')}</div>
+                            <div class="text-lg font-semibold text-yellow-300" id="estimatedTime">5-15 minutos</div>
                         </div>
                     </div>
 
                     <!-- Progress Bar -->
                     <div class="mt-6">
                         <div class="flex justify-between text-sm text-gray-300 mb-2">
-                            <span>Progreso de entrega</span>
-                            <span id="progressPercent">Iniciando...</span>
+                            <span>{translate('success.process.progress.label')}</span>
+                            <span id="progressPercent">{translate('success.process.progress.status')}</span>
                         </div>
                         <div class="progress-container">
                             <div class="progress-bar" id="progressBar"></div>
@@ -148,22 +126,19 @@ const { translate, currentLang } = useI18n(Astro);
                 </div>
 
                 <!-- Payment Info -->
-                <div
-                    class="bg-gradient-to-r from-yellow-500 to-orange-500/70 rounded-2xl p-6 border border-yellow-400/30">
+                <div class="bg-gradient-to-r from-yellow-500 to-orange-500/70 rounded-2xl p-6 border border-yellow-400/30">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-white">
-                            Información de Pago
-                        </h3>
+                        <h3 class="text-xl font-bold text-white">{translate('success.summary.progress.payment.title')}</h3>
                         <span class="text-3xl">💳</span>
                     </div>
                     <div class="space-y-3 text-white">
                         <div class="flex justify-between">
-                            <span class="text-gray-300">Validación de tarjeta:</span>
-                            <span class="text-green-300 font-semibold">✅ Entidad apta</span>
+                            <span class="text-gray-300">{translate('success.summary.progress.payment.card')}</span>
+                            <span class="text-green-300 font-semibold">{translate('success.summary.progress.payment.card.status')}</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-gray-300">Estado:</span>
-                            <span class="text-blue-300 font-semibold">Éxitoso</span>
+                            <span class="text-gray-300">{translate('success.summary.progress.payment.state')}</span>
+                            <span class="text-blue-300 font-semibold">{translate('success.summary.progress.payment.state.status')}</span>
                         </div>
                     </div>
                 </div>
@@ -175,58 +150,36 @@ const { translate, currentLang } = useI18n(Astro);
     <div class="max-w-2xl mx-auto mb-12">
         <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
             <div class="text-center mb-6">
-                <h3 class="text-2xl font-bold text-white mb-2">
-                    Estado del Proceso
-                </h3>
-                <p class="text-gray-300">
-                    Seguimiento en tiempo real de tu pedido
-                </p>
+                <h3 class="text-2xl font-bold text-white mb-2">{translate('success.status.title')}</h3>
+                <p class="text-gray-300">{translate('success.status.subtitle')}</p>
             </div>
 
             <!-- Status Timeline -->
             <div class="space-y-4" id="statusTimeline">
                 <!-- Step 1 -->
-                <div
-                    class="step1 flex items-center space-x-4 p-4 bg-green-500/20 rounded-xl border border-green-400/30">
-                    <div
-                        class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
-                        ✓
-                    </div>
+                <div class="step1 flex items-center space-x-4 p-4 bg-green-500/20 rounded-xl border border-green-400/30">
+                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">✓</div>
                     <div class="flex-1">
-                        <div class="text-white font-semibold">
-                            Compra exitosa
-                        </div>
-                        <div class="text-green-300 text-sm" id="step1Time">
-                            Completado hace unos segundos
-                        </div>
+                        <div class="text-white font-semibold">{translate('success.process.progress.step1')}</div>
+                        <div class="text-green-300 text-sm" id="step1Time">{translate('success.process.progress.step1.time')}</div>
                     </div>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="step2 flex items-center space-x-4 p-4 bg-blue-500/20 rounded-xl border border-blue-400/30">
-                    <div
-                        class="contend w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold animate-pulse">
-                        ⚡
-                    </div>
+                    <div class="contend w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold animate-pulse">⚡</div>
                     <div class="flex-1">
-                        <div class="text-white font-semibold">
-                            Iniciando proceso de entrega
-                        </div>
-                        <div class="text text-blue-300 text-sm">En progreso...</div>
+                        <div class="text-white font-semibold">{translate('success.process.progress.step2')}</div>
+                        <div class="text text-blue-300 text-sm">{translate('success.process.progress.step2.status')}</div>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="step3 flex items-center space-x-4 p-4 bg-gray-500/20 rounded-xl border border-gray-400/30">
-                    <div
-                        class="contend w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">
-                        3
-                    </div>
+                    <div class="contend w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
                     <div class="flex-1">
-                        <div class="text-gray-300 font-semibold">
-                            Entrega completada
-                        </div>
-                        <div class="text text-gray-400 text-sm">Pendiente</div>
+                        <div class="text-gray-300 font-semibold">{translate('success.process.progress.step3')}</div>
+                        <div class="text text-gray-400 text-sm">{translate('success.process.progress.step3.status')}</div>
                     </div>
                 </div>
             </div>
@@ -240,25 +193,17 @@ const { translate, currentLang } = useI18n(Astro);
             <div class="card-hover bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
                 <div class="text-center mb-4">
                     <div class="text-4xl mb-2">📈</div>
-                    <h4 class="text-xl font-bold text-white">Qué esperar</h4>
+                    <h4 class="text-xl font-bold text-white">{translate('success.expect.title')}</h4>
                 </div>
                 <ul class="space-y-2 text-gray-300 text-sm">
-                    <li class="flex items-center space-x-2">
-                        <span class="text-green-400">✓</span>
-                        <span>Entrega gradual y natural</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-green-400">✓</span>
-                        <span>Seguidores/interacciones reales</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-green-400">✓</span>
-                        <span>Sin riesgo para tu cuenta</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-green-400">✓</span>
-                        <span>Soporte 24/7 disponible</span>
-                    </li>
+                    {
+                        expects.map((item)=>(
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-400">✓</span> 
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
 
@@ -266,21 +211,17 @@ const { translate, currentLang } = useI18n(Astro);
             <div class="card-hover bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
                 <div class="text-center mb-4">
                     <div class="text-4xl mb-2">📋</div>
-                    <h4 class="text-xl font-bold text-white">Próximos pasos</h4>
+                    <h4 class="text-xl font-bold text-white">{translate('success.next.title')}</h4>
                 </div>
                 <ul class="space-y-2 text-gray-300 text-sm">
-                    <li class="flex items-start space-x-2">
-                        <span class="text-blue-400">1.</span>
-                        <span>Recibirás email con tus credenciales (Revisar bandeja spam)</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-blue-400">2.</span>
-                        <span>Acceso a panel de usuario</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-blue-400">3.</span>
-                        <span>Podrás ver tus ordenes y más!</span>
-                    </li>
+                    {
+                        nexts.map((item, index)=>(
+                            <li class="flex items-start space-x-2">
+                                <span class="text-blue-400">{index + 1}.</span> 
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
         </div>
@@ -288,17 +229,13 @@ const { translate, currentLang } = useI18n(Astro);
 
     <!-- Login -->
     <div class="max-w-xl mx-auto text-center mb-12">
-        <div
-            class="bg-gradient-to-r from-purple-500 to-blue-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/30">
+        <div class="bg-gradient-to-r from-purple-500 to-blue-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/30">
             <div class="text-3xl mb-4">😊</div>
-            <h3 class="text-xl font-bold text-white mb-4">¿Ya tienes tus credenciales?</h3>
-            <p class="text-gray-300 mb-6">
-                ¡Inicia sesión y accede al panel de usuario ahora!
-            </p>
+            <h3 class="text-xl font-bold text-white mb-4">{translate('success.login.title')}</h3>
+            <p class="text-gray-300 mb-6">{translate('success.login.subtitle')}</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/login"
-                    class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors">
-                    🔐 Iniciar sesión
+                <a href="/login" class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors">
+                    {translate('success.login.button')}
                 </a>
             </div>
         </div>
@@ -306,17 +243,13 @@ const { translate, currentLang } = useI18n(Astro);
 
     <!-- Contact Support -->
     <div class="max-w-xl mx-auto text-center">
-        <div
-            class="bg-gradient-to-r from-blue-500 to-purple-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/30">
+        <div class="bg-gradient-to-r from-blue-500 to-purple-500/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-400/30">
             <div class="text-3xl mb-4">💬</div>
-            <h3 class="text-xl font-bold text-white mb-4">¿Necesitas ayuda?</h3>
-            <p class="text-gray-300 mb-6">
-                Nuestro equipo de soporte está disponible 24/7 para ayudarte
-            </p>
+            <h3 class="text-xl font-bold text-white mb-4">{translate('success.support.title')}</h3>
+            <p class="text-gray-300 mb-6">{translate('success.support.subtitle')}</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:soporte@trendyup.es"
-                    class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors">
-                    📧 Email Soporte
+                <a href="mailto:soporte@trendyup.es" class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors">
+                    {translate('success.support.button')}
                 </a>
             </div>
         </div>
@@ -327,105 +260,155 @@ const { translate, currentLang } = useI18n(Astro);
 <footer class="relative z-10 py-8 text-center">
     <div class="container mx-auto px-6">
         <p class="text-gray-400 text-sm">
-            © 2025 TrendyUp. ¡Gracias por confiar en nosotros! 🚀
+            {translate('success.footer.text')}
         </p>
     </div>
 </footer>
+
 <!-- JavaScript -->
 <script is:inline>
+    // === Diccionario de traducciones ===
+    const MESSAGES_SUCCESS = {
+        progress_completed: {
+            es: "% completado",
+            en: "% completed",
+            fr: "% terminé",
+            pt: "% concluído"
+        },
+        completed: {
+            es: "Completado",
+            en: "Completed",
+            fr: "Terminé",
+            pt: "Concluído"
+        },
+        completed_successfully: {
+            es: "Completado exitosamente",
+            en: "Completed successfully",
+            fr: "Terminé avec succès",
+            pt: "Concluído com sucesso"
+        },
+        delivery_completed: {
+            es: "¡Entrega Completada!",
+            en: "Delivery Completed!",
+            fr: "Livraison terminée !",
+            pt: "Entrega Concluída!"
+        },
+        check_profile_now: {
+            es: "Revisa tu perfil ahora",
+            en: "Check your profile now",
+            fr: "Vérifiez votre profil maintenant",
+            pt: "Verifique seu perfil agora"
+        },
+        likes: {
+            es: "Likes",
+            en: "Likes",
+            fr: "J’aime",
+            pt: "Curtidas"
+        },
+        followers: {
+            es: "Seguidores",
+            en: "Followers",
+            fr: "Abonnés",
+            pt: "Seguidores"
+        },
+        views: {
+            es: "Visualizaciones",
+            en: "Views",
+            fr: "Vues",
+            pt: "Visualizações"
+        },
+        estimated_time: {
+            es: "20-50 minutos",
+            en: "20-50 minutes",
+            fr: "20-50 minutes",
+            pt: "20-50 minutos"
+        }
+    };
+
+    const locale = document.getElementById("lang")?.value;
+
+    function getMessage(key) {
+        return MESSAGES_SUCCESS[key]?.[locale] || MESSAGES_SUCCESS[key]?.["en"] || "";
+    }
 
     let progress = 0;
     const progressBar = document.getElementById("progressBar");
     const progressPercent = document.getElementById("progressPercent");
 
-    // Duración total en ms (5 min)
-    const totalDuration = 20 * 60 * 1000; 
-    const interval = 2000; // cada 2 segundos
-    const totalSteps = totalDuration / interval; 
-    const baseIncrement = 100 / totalSteps; // avance base por tick
+    const totalDuration = 20 * 60 * 1000;
+    const interval = 2000;
+    const totalSteps = totalDuration / interval;
+    const baseIncrement = 100 / totalSteps;
 
     function updateProgress() {
-        // Avance base + pequeño factor aleatorio
-        const randomFactor = Math.random() * 0.5 + 0.75; // 75% a 125% del paso
+        const randomFactor = Math.random() * 0.5 + 0.75;
         progress += baseIncrement * randomFactor;
 
         if (progress > 100) progress = 100;
 
         progressBar.style.width = progress + "%";
-        progressPercent.textContent = Math.round(progress) + "% completado";
+        progressPercent.textContent = Math.round(progress) + " " + getMessage("progress_completed");
 
         if (progress < 100) {
             setTimeout(updateProgress, interval);
         } else {
-            progressPercent.textContent = "✅ Completado";
+            progressPercent.textContent = "✅ " + getMessage("completed");
             updateStatusTimeline();
         }
     }
 
-    // Update status timeline when complete
     function updateStatusTimeline() {
         const step2 = document.querySelector("#statusTimeline .step2");
         const step3 = document.querySelector("#statusTimeline .step3");
 
-        // Guardar referencias antes de cambiar clases
         const circle = step2.querySelector(".contend");
         const statusText = step2.querySelector(".text");
 
-        // Actualizar colores del contenedor
         step2.className = step2.className
             .replace("bg-blue-500/20", "bg-green-500/20")
             .replace("border-blue-400/30", "border-green-400/30");
 
-        // Actualizar círculo
         circle.className =
             "w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold";
         circle.textContent = "✓";
 
-        // Actualizar texto de estado
-        statusText.textContent = "Completado";
+        statusText.textContent = getMessage("completed");
         statusText.className = "text-green-300 text-sm";
 
-        // Update step 3 to in progress
         setTimeout(() => {
-            // Step 3 Update
             const circle3 = step3.querySelector(".contend");
             const title3 = step3.querySelector(".text-gray-300");
             const status3 = step3.querySelector(".text-gray-400");
 
-            // Actualizar contenedor
             step3.className = step3.className
                 .replace("bg-gray-500/20", "bg-green-500/20")
                 .replace("border-gray-400/30", "border-green-400/30");
 
-            // Actualizar círculo
             circle3.className =
                 "w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold";
             circle3.textContent = "✓";
 
-            // Actualizar textos
             title3.className = "text-white font-semibold";
-            status3.textContent = "Completado exitosamente";
+            status3.textContent = getMessage("completed_successfully");
             status3.className = "text-green-300 text-sm";
 
-            // Show completion notification
             showCompletionNotification();
         }, 2000);
     }
 
-    // Show completion notification
     function showCompletionNotification() {
         const notification = document.createElement("div");
         notification.className =
             "fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg z-50 animate-slide-up";
         notification.innerHTML = `
-                <div class="flex items-center space-x-2">
-                    <span class="text-2xl">🎉</span>
-                    <div>
-                        <div class="font-bold">¡Entrega Completada!</div>
-                        <div class="text-sm">Revisa tu perfil ahora</div>
-                    </div>
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🎉</span>
+                <div>
+                    <div class="font-bold">${getMessage("delivery_completed")}</div>
+                    <div class="text-sm">${getMessage("check_profile_now")}</div>
                 </div>
-            `;
+            </div>
+        `;
         document.body.appendChild(notification);
 
         setTimeout(() => {
@@ -433,50 +416,41 @@ const { translate, currentLang } = useI18n(Astro);
         }, 5000);
     }
 
-    // Start progress simulation
     setTimeout(updateProgress, 1000);
 
-    // Update timestamps
     function updateTimestamps() {
         const now = new Date();
         document.getElementById("step1Time").textContent =
-            `Completado a las ${now.toLocaleTimeString()}`;
+            `${getMessage("completed")} a las ${now.toLocaleTimeString()}`;
     }
 
     updateTimestamps();
 
-    // Simulate dynamic content based on user selection
-    // In a real app, this would come from the previous form data
-
     const socialNetwork= {
         instagram:'📸 Instagram',
         tiktok:'🎵 Tiktok'
-    }
+    };
 
     const serviceType= {
-        likes:{icon:'❤️', text:'Likes'},
-        followers:{icon:'👥', text:'Seguidores'},
-        views:{icon:'👁️', text:'Visualizaciones'}
-    }
+        likes:{icon:'❤️', text:getMessage("likes")},
+        followers:{icon:'👥', text:getMessage("followers")},
+        views:{icon:'👁️', text:getMessage("views")}
+    };
 
     const orderData = JSON.parse(localStorage.getItem("orderData"));
     const url = localStorage.getItem("url");
 
-
-    // Update UI with user data
     document.getElementById("socialNetwork").textContent = socialNetwork[orderData.platform];
     document.getElementById("serviceType").textContent = serviceType["followers"].icon + ' ' + serviceType["followers"].text;
     document.getElementById("serviceIcon").textContent = serviceType["followers"].icon;
     document.getElementById("targetUrl").textContent = url;
     document.getElementById("quantity").textContent = orderData.followers + ' ' + serviceType["followers"].text;
-    document.getElementById("estimatedTime").textContent = '20-50 minutos';
+    document.getElementById("estimatedTime").textContent = getMessage("estimated_time");
 
-    // Add some interactive effects
     document.querySelectorAll(".card-hover").forEach((card) => {
         card.addEventListener("mouseenter", function () {
             this.style.transform = "translateY(-5px) scale(1.02)";
         });
-
         card.addEventListener("mouseleave", function () {
             this.style.transform = "translateY(0) scale(1)";
         });
