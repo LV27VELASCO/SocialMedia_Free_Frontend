@@ -269,7 +269,7 @@ const { translate, currentLang } = useI18n(Astro);
 
     // Obtener idioma (de input o navegador)
     const langInput = document.getElementById("lang") as HTMLInputElement;
-    const locale = langInput?.value.trim() || navigator.language.slice(0, 2) || "es";
+    const locale = langInput?.value.trim();
 
     function getMessage(key:any, lang = locale) {
         return MESSAGES[key]?.[lang] || MESSAGES[key]?.["en"] || "";
@@ -432,7 +432,7 @@ const { translate, currentLang } = useI18n(Astro);
         resetButton(button, originalText);
 
         setTimeout(() => {
-            window.location.href = `${locale}/confirmation-success`;
+            window.location.href = `/${locale}/confirmation-success`;
         }, 2000);
     }
 
