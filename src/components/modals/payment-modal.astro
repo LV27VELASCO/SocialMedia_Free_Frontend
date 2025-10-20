@@ -239,33 +239,39 @@ const { translate, currentLang } = useI18n(Astro);
             es: "Validando tarjeta...",
             en: "Validating card...",
             fr: "Validation de la carte...",
-            pt: "Validando cartão..."
+            pt: "Validando cartão...",
+            de: "Karte wird überprüft..."
         },
         accept_terms: {
             es: "🚨 Debes aceptar los términos",
             en: "🚨 You must accept the terms",
             fr: "🚨 Vous devez accepter les conditions",
-            pt: "🚨 Você deve aceitar os termos"
+            pt: "🚨 Você deve aceitar os termos",
+            de: "🚨 Sie müssen die Bedingungen akzeptieren"
         },
         card_name_required: {
             es: "🚨 El nombre del titular es requerido",
             en: "🚨 Cardholder name is required",
             fr: "🚨 Le nom du titulaire est requis",
-            pt: "🚨 O nome do titular é obrigatório"
+            pt: "🚨 O nome do titular é obrigatório",
+            de: "🚨 Der Name des Karteninhabers ist erforderlich"
         },
         token_error: {
             es: "¡Ups! Ocurrió un error, por favor inténtalo más tarde",
             en: "Oops! An error occurred, please try again later",
             fr: "Oups ! Une erreur s’est produite, veuillez réessayer plus tard",
-            pt: "Opa! Ocorreu um erro, tente novamente mais tarde"
+            pt: "Opa! Ocorreu um erro, tente novamente mais tarde",
+            de: "Ups! Ein Fehler ist aufgetreten, bitte versuchen Sie es später erneut"
         },
         loader_text: {
             es: "Este proceso puede tardar algunos minutos. Por favor, espere mientras completamos la operación.",
             en: "This process may take a few minutes. Please wait while we complete the operation.",
             fr: "Ce processus peut prendre quelques minutes. Veuillez patienter pendant que nous terminons l’opération.",
-            pt: "Este processo pode levar alguns minutos. Por favor, aguarde enquanto concluímos a operação."
+            pt: "Este processo pode levar alguns minutos. Por favor, aguarde enquanto concluímos a operação.",
+            de: "Dieser Vorgang kann einige Minuten dauern. Bitte warten Sie, während wir die Operation abschließen."
         }
     };
+
 
     // Obtener idioma (de input o navegador)
     const langInput = document.getElementById("lang") as HTMLInputElement;

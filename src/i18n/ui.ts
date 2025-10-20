@@ -7,7 +7,6 @@ export const labels = {
         "head.og:description":"Impulsa tu perfil en Instagram y TikTok con seguidores auténticos y estrategias efectivas. TrendyUp combina IA y promoción humana para resultados reales.",
         "head.twitter:title":"TrendyUp: Crece en Instagram y TikTok de manera ética y real",
         "head.twitter:description":"Haz crecer tu perfil en Instagram y TikTok con estrategias auténticas y seguras. TrendyUp combina promoción humana e inteligencia artificial para resultados reales.",
-
         // HEADER
         "header.nav.insta":"Instagram",
         "header.nav.tiktok":"Tiktok",
@@ -15,7 +14,6 @@ export const labels = {
         "header.nav.contact":"Contacto",
         "header.nav.prices":"Precios",
         "header.nav.unsubscribe":"Cancelar suscripción",
-
         // HERO
         "hero.title": "Impulsa tu",
         "hero.title.span": "presencia digital",
@@ -37,7 +35,6 @@ export const labels = {
         "hero.metrics.engagement.period": "Promedio",
         "hero.bottom.title": "Aumenta tu Visibilidad",
         "hero.bottom.subtitle": "Crecimiento orgánico y sostenible",
-
         //FAQS
         "faqs.title": "Preguntas Frecuentes",
         "faqs.subtitle": "Encuentra respuestas a las dudas más comunes sobre nuestros servicios",
@@ -46,7 +43,6 @@ export const labels = {
         "faqs.tab.security": "Seguridad",
         "faqs.tab.payments": "Pagos",
         "faqs.search.placeholder": "🔍 Buscar en las preguntas frecuentes...",
-        
             // FAQS General Questions
             "faqs.general.q1": "¿Qué es TrendyUp y cómo funciona?",
             "faqs.general.a1": "TrendyUp impulsa tu contenido de forma manual a través de comunidades relevantes, creadores y plataformas externas. Nuestro objetivo es que personas interesadas en tu sector descubran tu trabajo, sin utilizar automatizaciones ni prácticas no autorizadas.",
@@ -62,11 +58,9 @@ export const labels = {
             "faqs.general.a6": "Sí. Nuestro equipo de soporte está disponible por correo electrónico y mediante formulario de contacto. Te ayudamos con el acceso a tu cuenta, la gestión de la suscripción o cualquier consulta sobre el servicio.",
             "faqs.general.q7": "Olvidé mi contraseña, ¿qué debo hacer?",
             "faqs.general.a7": "En la página de inicio de sesión encontrarás el enlace “¿Olvidaste tu contraseña?”. Haz clic allí y sigue las instrucciones. Si tienes algún problema, contacta con nuestro equipo de soporte.",
-
             // FAQS Security Questions
             "faqs.security.q1": "¿Es seguro utilizar TrendyUp con mis cuentas de redes sociales?",
             "faqs.security.a1": "Sí. Nunca pedimos acceso a tus credenciales. Nuestro enfoque es totalmente manual y no utiliza automatización ni técnicas que infrinjan las normas de las plataformas.",
-
             // FAQS Payment Questions
             "faqs.payments.q1": "¿Cuál es el precio de la suscripción?",
             "faqs.payments.a1": "El servicio cuesta 34,90 € al mes. Incluye una prueba inicial de 24 horas. Si no cancelas durante el periodo de prueba, la suscripción se renueva automáticamente cada mes. Puedes cancelarla en cualquier momento desde tu panel de usuario.",
@@ -83,7 +77,6 @@ export const labels = {
             "UnionPay"
             ] as const,
             "faqs.payments.a2.note":"Todos los pagos están protegidos con encriptación SSL de 256 bits",
-
         //HERO SOCIAL MEDIA
         "social.hero.title": "Impulsa tu visibilidad en",
         "social.hero.subtitle": "Solo visibilidad verdadera a través de nuestra red confiable de socios, siguiendo todas las reglas de la plataforma.",
@@ -147,11 +140,9 @@ export const labels = {
         "social.modal.payment.banner.span.p3": "Servicio garantizado",
         "social.modal.payment.button.prev": "Volver",
         "social.modal.payment.button.next": "Procesar Pago",
-        //MODAL loader
+        //MODAL LOADER
         "social.modal.loader.title": "Procesando solicitud...",
         "social.modal.loader.subtitle": "Este proceso puede tardar algunos minutos. Por favor, espere mientras completamos la operación.",
-
-
         //CTA
         "cta.title": "No es solo una solución",
         "cta.title.span": "Es un socio estratégico para tu evolución",
@@ -199,7 +190,6 @@ export const labels = {
         "contact.form.error": "Ocurrió un error al enviar el mensaje. Inténtalo de nuevo más tarde.",
         "contact.modal.success": "Tu mensaje ha sido registrado con éxito. Te contactaremos en el menor tiempo posible.",
         "contact.modal.button": "Entendido",
-
 
         //TESTIMONIALS
         "testimonials.title": "Lo que dicen nuestros clientes",
@@ -959,7 +949,7 @@ export const labels = {
         "social.modal.payment.button.prev": "Back",
         "social.modal.payment.button.next": "Process Payment",
 
-        //MODAL loader
+        //MODAL LOADER
         "social.modal.loader.title": "Processing request...",
         "social.modal.loader.subtitle": "This process may take a few minutes. Please wait while we complete the operation.",
 
@@ -1770,7 +1760,7 @@ export const labels = {
         "social.modal.payment.button.prev": "Retour",
         "social.modal.payment.button.next": "Procéder au Paiement",
 
-        //MODAL loader
+        //MODAL LOADER
         "social.modal.loader.title": "Traitement de la demande...",
         "social.modal.loader.subtitle": "Ce processus peut prendre quelques minutes. Veuillez patienter pendant que nous complétons l'opération.",
 
@@ -2583,7 +2573,7 @@ export const labels = {
         "social.modal.payment.button.prev": "Voltar",
         "social.modal.payment.button.next": "Processar Pagamento",
 
-        //MODAL loader
+        //MODAL LOADER
         "social.modal.loader.title": "Processando solicitação...",
         "social.modal.loader.subtitle": "Este processo pode levar alguns minutos. Por favor, aguarde enquanto completamos a operação.",
 
@@ -3244,34 +3234,827 @@ export const labels = {
         "footer.accordance.text": "Não oferecemos venda de seguidores nem de interações. Nossos serviços são voltados exclusivamente para estratégias de crescimento e visibilidade orgânica, em total conformidade com as políticas do Google Ads e as diretrizes de cada plataforma.",
         "footer.allrights": "Todos os direitos reservados.",
     },
+    de:{
+        //HEAD
+        "head.description":"TrendyUp: Steigere deine Präsenz auf Instagram und TikTok mit ethischen Strategien und echten Ergebnissen – echte Promotion kombiniert mit künstlicher Intelligenz.",
+        "head.keywords":"Instagram-Wachstum, TikTok-Wachstum, Profilpromotion, echte Follower, ethisches Social-Media-Marketing",
+        "head.og:title":"TrendyUp: Ethisches und echtes Wachstum auf Instagram & TikTok | 2025",
+        "head.og:description":"Boost dein Instagram- und TikTok-Profil mit echten Followern und effektiven Strategien. TrendyUp vereint KI und menschliche Promotion für greifbare Ergebnisse.",
+        "head.twitter:title":"TrendyUp: Ethisches und echtes Wachstum auf Instagram & TikTok",
+        "head.twitter:description":"Lass dein Instagram- und TikTok-Profil wachsen mit authentischen, sicheren Strategien. TrendyUp kombiniert menschliche Promotion mit KI für echte Resultate.",
+        //HEADER
+        "header.nav.insta":"Instagram",
+        "header.nav.tiktok":"TikTok",
+        //HEADER-FOOTER
+        "header.nav.contact":"Kontakt",
+        "header.nav.prices":"Preise",
+        "header.nav.unsubscribe":"Abonnement kündigen",
+        //HERO
+        "hero.title": "Steigere deine",
+        "hero.title.span": "digitale Präsenz",
+        "hero.title2": "transparent und authentisch",
+        "hero.subtitle": "Wir arbeiten mit von Experten entwickelten Strategien, damit du Sichtbarkeit gewinnst und dein Publikum erreichst – ohne Automatisierung, ohne Bots.",
+        "hero.platform.insta": "INSTAGRAM",
+        "hero.platform.ttok": "TIKTOK",
+        "hero.trust.nobots.title": "Keine Bots, keine",
+        "hero.trust.nobots.title2": "Automatisierung",
+        "hero.trust.secure.title": "Sicher und",
+        "hero.trust.secure.title2": "privat",
+        "hero.trust.satisfied.title": "Zufriedene",
+        "hero.trust.satisfied.title2": "Kunden",
+        "hero.card.main.title": "Authentischer Content",
+        "hero.card.main.subtitle": "Echtes und nachhaltiges Wachstum",
+        "hero.metrics.reach.title": "Reichweite",
+        "hero.metrics.reach.period": "Diesen Monat",
+        "hero.metrics.engagement.title": "Engagement",
+        "hero.metrics.engagement.period": "Durchschnitt",
+        "hero.bottom.title": "Steigere deine Sichtbarkeit",
+        "hero.bottom.subtitle": "Organisches und nachhaltiges Wachstum",
+
+        //FAQS
+        "faqs.title": "Häufig gestellte Fragen",
+        "faqs.subtitle": "Finde Antworten auf die häufigsten Fragen zu unseren Services",
+        "faqs.tab.all": "Alle",
+        "faqs.tab.general": "Allgemein",
+        "faqs.tab.security": "Sicherheit",
+        "faqs.tab.payments": "Zahlungen",
+        "faqs.search.placeholder": "🔍 In den FAQs suchen...",
+        //FAQS General Questions
+        "faqs.general.q1": "Was ist TrendyUp und wie funktioniert es?",
+        "faqs.general.a1": "TrendyUp fördert deine Inhalte manuell über relevante Communities, Creator und externe Plattformen. Unser Ziel ist es, dass Menschen, die sich für dein Thema interessieren, deine Arbeit entdecken – ohne Automatisierung oder nicht autorisierte Praktiken.",
+        "faqs.general.q2": "Verkauft TrendyUp Follower oder Interaktionen?",
+        "faqs.general.a2": "Nein. TrendyUp verkauft weder Follower, Likes noch Interaktionen. Unser Service konzentriert sich auf ethische und nachhaltige Sichtbarkeitssteigerung durch echte menschliche Promotion.",
+        "faqs.general.q3": "Entspricht TrendyUp den Richtlinien von Social Media und Google Ads?",
+        "faqs.general.a3": "Ja. Wir arbeiten streng gemäß den Nutzungsbedingungen von TikTok, Instagram, Google Ads und anderen Plattformen. Wir verlangen keinen Zugriff auf deine Konten und verwenden keine Bots. Alle Promotion-Aktionen erfolgen manuell und extern, was Transparenz und Sicherheit garantiert.",
+        "faqs.general.q4": "Welche Ergebnisse kann ich erwarten?",
+        "faqs.general.a4": "Ergebnisse hängen von Faktoren wie der Qualität deiner Inhalte, deiner Nische und Aktivität ab. Der Service ist darauf ausgelegt, deine Sichtbarkeit zu erhöhen, garantiert jedoch keine spezifischen Kennzahlen wie Follower oder Interaktionen. Unser Ansatz fördert verantwortungsbewusstes und nachhaltiges Wachstum.",
+        "faqs.general.q5": "Warum ist digitale Sichtbarkeit für Creator und Unternehmen wichtig?",
+        "faqs.general.a5": "Sichtbarkeit stärkt Markenbekanntheit, erzeugt Vertrauen und ermöglicht echte Verbindungen mit deiner Zielgruppe. TrendyUp nutzt transparente Strategien, um interessierte Menschen für deine Inhalte zu erreichen.",
+        "faqs.general.q6": "Bietet ihr Kundensupport an?",
+        "faqs.general.a6": "Ja. Unser Support-Team ist per E-Mail und über das Kontaktformular erreichbar. Wir helfen bei Konto-Zugang, Abo-Verwaltung oder allen Fragen zu unserem Service.",
+        "faqs.general.q7": "Ich habe mein Passwort vergessen, was soll ich tun?",
+        "faqs.general.a7": "Auf der Login-Seite findest du den Link „Passwort vergessen?“. Klicke darauf und folge den Anweisungen. Bei Problemen kontaktiere unser Support-Team.",
+        //FAQS Security Questions
+        "faqs.security.q1": "Ist die Nutzung von TrendyUp mit meinen Social-Media-Konten sicher?",
+        "faqs.security.a1": "Ja. Wir fragen niemals nach deinen Zugangsdaten. Unser Ansatz ist komplett manuell und nutzt keine Automatisierung oder Techniken, die gegen Plattformrichtlinien verstoßen.",
+        //FAQS Payment Questions
+        "faqs.payments.q1": "Wie hoch ist der Preis für das Abonnement?",
+        "faqs.payments.a1": "Der Service kostet 34,90 € pro Monat. Eine 24-stündige Testphase ist inklusive. Wenn du während der Testphase nicht kündigst, verlängert sich das Abonnement automatisch monatlich. Du kannst jederzeit über dein Benutzerkonto kündigen.",
+        "faqs.payments.q2": "Welche Zahlungsmethoden werden akzeptiert?",
+        "faqs.payments.a2": "Wir akzeptieren die folgenden sicheren Zahlungsmethoden: Kredit-/Debitkarten (Visa, Mastercard, American Express, Maestro, Discover, Diners Club, UnionPay). Alle Zahlungen sind mit 256-Bit-SSL-Verschlüsselung geschützt.",
+        "faqs.payments.a2.title":"Kredit-/Debitkarten",
+        "faqs.payments.a2.cards":[
+            "Visa",
+            "Mastercard",
+            "American Express",
+            "Maestro",
+            "Discover",
+            "Diners Club",
+            "UnionPay"
+        ],
+        "faqs.payments.a2.note":"Alle Zahlungen sind mit 256-Bit-SSL-Verschlüsselung geschützt",
+        //HERO SOCIAL MEDIA
+        "social.hero.title": "Steigere deine Sichtbarkeit auf",
+        "social.hero.subtitle": "Nur echte Sichtbarkeit durch unser vertrauenswürdiges Partnernetzwerk – stets im Einklang mit den Plattformrichtlinien.",
+        "social.hero.subtitle.span": "Keine Bots. Keine Fake-Accounts.",
+        "social.form.placeholder": "@Benutzernamen eingeben",
+        "social.form.button": "Weiter",
+        "social.form.f1": "Sicher & privat",
+        "social.form.f2": "Keine Bots",
+        "social.form.f3": "Echte Ergebnisse",
+        "social.metrics.f1": "Verkaufte Kampagnen",
+        "social.metrics.f2": "Zufriedenheit",
+        "social.metrics.f3": "Virale Inhalte",
+        "social.metrics.note":"Verbessere deine Social-Media-Präsenz",
+        //MODAL SEGUIDORES
+        "social.modal.title":"Fast fertig!",
+        "social.modal.subtitle":"Wähle ein Follower-Ziel",
+        "social.modal.label.user":"Benutzer:",
+        "social.modal.span":"Was ist dein Follower-Ziel?",
+        "social.modal.card.free.bage":"LIMITIERTES ANGEBOT",
+        "social.modal.card.free.p":"KOSTENLOSE TESTPHASE",
+        "social.modal.card.free.span":"GRATIS",
+        "social.modal.card.popular.bage":"AM BELIEBTESTEN",
+        "social.modal.form.label":"Deine E-Mail",
+        "social.modal.form.placeholder":"deine@email.com",
+        "social.modal.form.span":"Damit wir deine Anfrage effektiv teilen und verwalten können, muss dein Profil öffentlich sein. So kann unser globales Netzwerk aus Creatorn, mobilen Plattformen und Communities deine Inhalte sehen und deren Sichtbarkeit erhöhen.",
+        "social.modal.form.button":"Weiter",
+        "social.modal.info.name":"TrendyUp",
+        "social.modal.info.legal":"Rechtlicher Hinweis:",
+        "social.modal.info.f1":"TrendyUp arbeitet vollständig im Einklang mit den Richtlinien von TikTok, Instagram und Google Ads. Unser Ansatz schließt Automatisierung, künstliche Interaktionen oder unbefugten Kontozugriff aus.",
+        "social.modal.info.f2":"Wir steigern die Sichtbarkeit deines Profils, indem wir Inhalte direkt mit einem globalen Netzwerk aus echten Creatorn, mobilen Plattformen, thematischen Communities und Influencern teilen. Dein gebuchtes Volumen bestimmt die Reichweite dieser Kooperationen.",
+        "social.modal.info.f3":"14-tägige kostenlose Testphase. Nach Ablauf verlängert sich das Abonnement automatisch für 34,90 € pro Monat. Jederzeit kündbar.",
+        "social.modal.info.f4":"Die Sichtbarkeit hängt von der Qualität der Inhalte, ihrer Relevanz für die Zielgruppe und der Konsistenz beim Teilen ab. TrendyUp bietet Tools zur Optimierung, garantiert jedoch keine konkreten Kennzahlen wie Follower oder Engagement.",
+        //MODAL 2 PAGO
+        "social.modal.payment.title": "Bestellung abschließen",
+        "social.modal.payment.subtitle": "Zahle jetzt und erhalte Follower",
+        "social.modal.payment.banner.b1.title": "Bestellübersicht",
+        "social.modal.payment.banner.form.title": "Kreditkarteninformationen",
+        "social.modal.payment.banner.form.number": "Kartennummer",
+        "social.modal.payment.banner.form.caducate": "Ablaufdatum",
+        "social.modal.payment.banner.form.ccv": "CCV",
+        "social.modal.payment.banner.form.name": "Karteninhaber",
+        "social.modal.payment.banner.form.check.title": "Ich akzeptiere die AGB",
+        "social.modal.payment.banner.form.check.p1": "Mit dem Setzen dieses Häkchens akzeptiere ich die",
+        "social.modal.payment.banner.form.check.p2": "Allgemeinen Geschäftsbedingungen",
+        "social.modal.payment.banner.form.check.p3": "und die",
+        "social.modal.payment.banner.form.check.p4": "Datenschutzerklärung.",
+        "social.modal.payment.banner.b2.title": "100% Sichere Zahlung",
+        "social.modal.payment.banner.b2.p1": "Es wird nur 1 € zur Verifizierung und Missbrauchsvermeidung berechnet.",
+        "social.modal.payment.banner.b2.p2": "Automatische Rückerstattung innerhalb von 24 Stunden.",
+        "social.modal.payment.banner.b2.p3": "24/7 Support",
+        "social.modal.payment.banner.b2.p4": "Daten verschlüsselt mit SSL",
+        "social.modal.payment.banner.b2.p5": "Keine versteckten Kosten",
+        "social.modal.payment.banner.b2.p6": "100% Sichere Zahlung",
+        "social.modal.payment.banner.b3.title": "Zu zahlender Gesamtbetrag",
+        "social.modal.payment.banner.b3.subtitle": "Verifizierung (erstattbar in 24h)",
+        "social.modal.payment.banner.b3.span": "+ Gratis Follower",
+        "social.modal.payment.banner.span.p1": "Sichere Transaktion",
+        "social.modal.payment.banner.span.p2": "SSL-Verschlüsselung",
+        "social.modal.payment.banner.span.p3": "Garantierter Service",
+        "social.modal.payment.button.prev": "Zurück",
+        "social.modal.payment.button.next": "Zahlung verarbeiten",
+        //MODAL LOADER
+        "social.modal.loader.title": "Anfrage wird verarbeitet...",
+        "social.modal.loader.subtitle": "Dieser Vorgang kann einige Minuten dauern. Bitte warten, während wir die Aktion abschließen.",
+        //CTA
+        "cta.title": "Nicht nur eine Lösung",
+        "cta.title.span": "Ein strategischer Partner für dein Wachstum",
+        "cta.subtitle": "Schließe dich Tausenden von Nutzern an, die ihre Social-Media-Präsenz bereits transformiert haben",
+        "cta.button": "JETZT STARTEN",
+        //HOW IT WORKS
+        "howitworks.title": "Wie",
+        "howitworks.span": "es funktioniert",
+        "howitworks.subtitle": "Tausende Follower zu gewinnen war noch nie so einfach. Folge diesen einfachen Schritten und beobachte, wie dein Konto organisch und sicher wächst.",
+        "howitworks.steps": [
+            {
+                "title": "Wähle deinen Plan",
+                "icon": "✅",
+                "text": "Wähle das Paket, das am besten zu deinen Wachstumszielen passt. Jede Option bietet ein einzigartiges Sichtbarkeitsniveau innerhalb unseres exklusiven Partnernetzwerks."
+            },
+            {
+                "title": "Wir steigern deine Reichweite",
+                "icon": "📊",
+                "text": "Wir verbreiten deine Inhalte über ausgewählte Kanäle, Communities und Creator, sodass sie genau die interessierte Zielgruppe erreichen."
+            },
+            {
+                "title": "Beobachte die Wirkung",
+                "icon": "👁️",
+                "text": "Greife auf dein Dashboard zu und analysiere, wie deine Inhalte neue Menschen erreichen und deine Sichtbarkeit erhöhen – alles regelkonform."
+            }
+        ],
+        //CONTACT
+        "contact.title": "Kontaktiere uns",
+        "contact.subtitle": "Wir sind für dich da.",
+        "contact.subtitle2": "Antwort garantiert innerhalb von 24 Stunden",
+        "contact.info.schedule.title": "Öffnungszeiten:",
+        "contact.info.schedule.text": "Montag bis Freitag: 9:00 bis 18:00 Uhr",
+        "contact.info.email.title": "E-Mail Kontakt:",
+        "contact.info.phone.title": "Telefonischer Kontakt:",
+        "contact.info.message": "Wenn du Fragen zu unseren Services hast, sende uns bitte das Kontaktformular und wir melden uns so schnell wie möglich bei dir.",
+        "contact.form.name.label": "Vollständiger Name",
+        "contact.form.name.placeholder": "Dein vollständiger Name",
+        "contact.form.email.label": "E-Mail-Adresse",
+        "contact.form.email.placeholder": "deine@email.com",
+        "contact.form.message.label": "Nachricht",
+        "contact.form.message.placeholder": "Beschreibe dein Anliegen so detailliert wie möglich...",
+        "contact.form.button": "Nachricht senden",
+        "contact.form.error": "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+        "contact.modal.success": "Deine Nachricht wurde erfolgreich gesendet. Wir werden uns so schnell wie möglich bei dir melden.",
+        "contact.modal.button": "Verstanden",
+        //TESTIMONIALS
+        "testimonials.title": "Was unsere Kunden sagen",
+        "testimonials.subtitle": "Echte Geschichten über authentisches Wachstum",
+        "testimonials.items": [
+            {
+                "name": "Anna Müller",
+                "username": "@annamueller",
+                "avatar": "👩",
+                "text": "In nur 3 Monaten stieg mein Engagement um 180%. Das Team versteht meine Marke wirklich und erstellt Inhalte, die bei meiner Zielgruppe ankommen."
+            },
+            {
+                "name": "Lukas Schneider",
+                "username": "@lukasschneider",
+                "avatar": "👨",
+                "text": "Endlich habe ich einen Service ohne Bots gefunden. Alles ist echt und authentisch. Meine Follower interagieren jetzt wirklich mit meinen Inhalten."
+            },
+            {
+                "name": "Sophie Fischer",
+                "username": "@sophiefischer",
+                "avatar": "👩",
+                "text": "Meine Reichweite wuchs um über 300% und ich konnte Kooperationen mit großen Marken abschließen. TrendyUp hat mein Geschäft komplett verändert."
+            },
+            {
+                "name": "Maximilian Weber",
+                "username": "@maxweber",
+                "avatar": "👨",
+                "text": "Die personalisierte Strategie funktionierte unglaublich. Ich ging von 5k auf 50k Follower in 6 Monaten – alle echt und engagiert."
+            },
+            {
+                "name": "Laura Becker",
+                "username": "@laurabecker",
+                "avatar": "👩",
+                "text": "Die Inhalte, die sie erstellen, waren genau das, was ich brauchte. Authentisch, professionell und repräsentieren perfekt meine Marke."
+            },
+            {
+                "name": "Robert Wagner",
+                "username": "@robertwagner",
+                "avatar": "👨",
+                "text": "Totale Transparenz in jedem Schritt. Die monatlichen Reports zeigen mir genau, wie meine digitale Präsenz wächst."
+            },
+            {
+                "name": "Anna Müller",
+                "username": "@annamueller",
+                "avatar": "👩",
+                "text": "In nur 3 Monaten stieg mein Engagement um 180%. Das Team versteht meine Marke wirklich und erstellt Inhalte, die bei meiner Zielgruppe ankommen."
+            },
+            {
+                "name": "Lukas Schneider",
+                "username": "@lukasschneider",
+                "avatar": "👨",
+                "text": "Endlich habe ich einen Service ohne Bots gefunden. Alles ist echt und authentisch. Meine Follower interagieren jetzt wirklich mit meinen Inhalten."
+            },
+            {
+                "name": "Sophie Fischer",
+                "username": "@sophiefischer",
+                "avatar": "👩",
+                "text": "Meine Reichweite wuchs um über 300% und ich konnte Kooperationen mit großen Marken abschließen. TrendyUp hat mein Geschäft komplett verändert."
+            },
+            {
+                "name": "Maximilian Weber",
+                "username": "@maxweber",
+                "avatar": "👨",
+                "text": "Die personalisierte Strategie funktionierte unglaublich. Ich ging von 5k auf 50k Follower in 6 Monaten – alle echt und engagiert."
+            },
+            {
+                "name": "Laura Becker",
+                "username": "@laurabecker",
+                "avatar": "👩",
+                "text": "Die Inhalte, die sie erstellen, waren genau das, was ich brauchte. Authentisch, professionell und repräsentieren perfekt meine Marke."
+            },
+            {
+                "name": "Robert Wagner",
+                "username": "@robertwagner",
+                "avatar": "👨",
+                "text": "Totale Transparenz in jedem Schritt. Die monatlichen Reports zeigen mir genau, wie meine digitale Präsenz wächst."
+            }
+        ],
+        //PRICING
+        "pricing.title": "Preise",
+        "pricing.subtitle": "Entdecke unser Abo mit unserem Einführungsangebot",
+        "pricing.badge": "14 Tage kostenlos testen",
+        "pricing.plan.title": "Premium-Plan",
+        "pricing.plan.subtitle": "Alles, was du zum Wachsen brauchst",
+        "pricing.price.amount": "€34,90",
+        "pricing.price.period": "/Monat",
+        "pricing.price.note": "Jederzeit kündbar",
+        "pricing.features": {
+            "f1": "14-tägige Testphase für alle Funktionen",
+            "f2": "Authentische Inhalte von Experten erstellt",
+            "f3": "Personalisierte Strategien für deine Nische",
+            "f4": "Monatliche Analysen und Reports",
+            "f5": "Keine Automatisierung, keine Bots",
+            "f6": "Priorisierter Support"
+        },
+        "pricing.cta": "Jetzt abonnieren",
+        "pricing.metrics.reach.label": "Durchschnittliche Reichweite",
+        "pricing.metrics.engagement.label": "Engagement",
+        "pricing.metrics.note": "Echte Ergebnisse unserer Kunden",
+        //UNSUBSCRIBE
+        "unsubscribe.title": "Abonnement kündigen",
+        "unsubscribe.subtitle1": "Oh nein! 😢 Es macht uns traurig, dass du gehen möchtest.",
+        "unsubscribe.subtitle2": "Bevor wir uns verabschieden, überprüfe bitte deine E-Mail, damit wir dein Abonnement sicher verwalten können.",
+        "unsubscribe.form.title": "E-Mail bestätigen",
+        "unsubscribe.form.text": "Gib deine E-Mail-Adresse ein und bestätige deine Entscheidung.",
+        "unsubscribe.email.label": "E-Mail-Adresse",
+        "unsubscribe.form.errorMessage": "Beim Verarbeiten deiner Anfrage ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+        "unsubscribe.form.button": "Abonnement kündigen",
+        "unsubscribe.loader.title": "Verarbeitung",
+        "unsubscribe.loader.text": "Bitte einen Moment Geduld...",
+        "unsubscribe.success.title": "Abonnement gekündigt!",
+        "unsubscribe.success.text": "Wir haben deine Anfrage erfolgreich bearbeitet",
+        "unsubscribe.success.subtitle": "Was passiert jetzt?",
+        "unsubscribe.success.steps": [
+            "Die Änderungen sind sofort wirksam",
+            "Du könntest in den nächsten 24-48 Stunden bereits geplante E-Mails erhalten",
+            "Du kannst dein Abonnement jederzeit reaktivieren",
+            "Transaktionale E-Mails (Rechnungen, Sicherheit) werden weiterhin zugestellt"
+        ],
+        "unsubscribe.success.home": "Zur Startseite",
+        "unsubscribe.success.reactive": "Abonnement reaktivieren",
+        "unsubscribe.success.contact.title": "Benötigst du Hilfe oder hast Fragen?",
+        "unsubscribe.success.contact.button": "Support kontaktieren",
+        //LOGIN
+        "login.welcome.title": "Willkommen zurück!",
+        "login.welcome.subtitle": "Bitte gib deine Login-Daten unten ein",
+        "login.form.email.label": "E-Mail",
+        "login.form.password.label": "Passwort",
+        "login.form.password.placeholder": "Dein sicheres Passwort",
+        "login.form.tip.text": "Nach dem Kauf wurden deine Login-Daten per E-Mail zugesendet.",
+        "login.form.forgotPassword": "Passwort vergessen?",
+        "login.form.error.text": "Falscher Benutzername oder Passwort",
+        "login.form.button.text": "Einloggen",
+        //FORGOT PASSWORD
+        "forgotpassword.title": "Passwort wiederherstellen",
+        "forgotpassword.subtitle": "Wir senden dir eine E-Mail mit deinen Zugangsdaten",
+        "forgotpassword.form.email.label": "E-Mail",
+        "forgotpassword.form.buttons.cancel": "Abbrechen",
+        "forgotpassword.form.buttons.submit": "Senden",
+        //DISCLAIMER
+        "disclaimer.title": "Haftungsausschluss",
+        "disclaimer.date": "Datum des Inkrafttretens:",
+        "disclaimer.definitions.title": "Auslegung und Definitionen",
+        "disclaimer.definitions.interpretation.title": "Auslegung",
+        "disclaimer.definitions.interpretation.text": "Wörter mit Großbuchstaben haben Bedeutungen, die in den folgenden Bedingungen definiert sind. Diese Definitionen gelten sowohl im Singular als auch im Plural.",
+        "disclaimer.definitions.definitions.title":"Definitionen",
+        "disclaimer.definitions.definitions.company.title":"Unternehmen:",
+        "disclaimer.definitions.definitions.company.text":"Sponsor Telecom S.L., tätig unter dem Namen TrendyUp.",
+        "disclaimer.definitions.definitions.service.title":"Dienst:",
+        "disclaimer.definitions.definitions.service.text":"bezieht sich auf die Website und alle damit verbundenen digitalen Services, einschließlich Sichtbarkeitssteigerung, manuelle Content-Promotion und Analyse öffentlicher Profile.",
+        "disclaimer.definitions.definitions.user.title":"Du:",
+        "disclaimer.definitions.definitions.user.text":"die Person oder Organisation, die den Service nutzt.",
+        "disclaimer.definitions.definitions.website.title":"Website:",
+        "disclaimer.definitions.definitions.website.text":"TrendyUp, erreichbar unter",
+        "disclaimer.definitions.definitions.website.span":"https://www.trendyup.es",
+        "disclaimer.general.text": "Die bereitgestellten Informationen dienen ausschließlich allgemeinen Informationszwecken. Das Unternehmen übernimmt keine Verantwortung für Auslassungen oder Ungenauigkeiten im Inhalt.",
+        "disclaimer.compliance.title":"Haftungsausschluss zur Plattform-Compliance",
+        "disclaimer.compliance.items": [
+            "TrendyUp bietet keine automatisierten Interaktionsdienste an, verlangt keine Login-Daten und verstößt nicht gegen die Nutzungsbedingungen von TikTok, Instagram oder anderen Social-Media-Plattformen. Alle Sichtbarkeitssteigerungen erfolgen manuell durch unabhängige Partner.",
+            "Das Unternehmen haftet nicht für indirekte oder Folgeschäden.",
+            "Das Unternehmen garantiert nicht, dass der Service frei von schädlichen Komponenten ist."
+        ],
+        "disclaimer.externalLinks.title": "Haftungsausschluss für externe Links",
+        "disclaimer.externalLinks.text": "Die Website kann Links zu externen Websites enthalten, die nicht von TrendyUp betrieben werden. Das Unternehmen übernimmt keine Verantwortung für die Genauigkeit oder Relevanz von Inhalten auf Drittseiten.",
+        "disclaimer.errors.title": "Haftungsausschluss für Fehler und Auslassungen",
+        "disclaimer.errors.text": "Obwohl wir bemüht sind, die Informationen aktuell zu halten, übernimmt das Unternehmen keine Verantwortung für Ungenauigkeiten, Verzögerungen oder Konsequenzen aus der Nutzung der Inhalte.",
+        "disclaimer.fairUse.title": "Haftungsausschluss zur fairen Nutzung",
+        "disclaimer.fairUse.text": "Einige Medien oder Materialien können gemäß den Gesetzen zur fairen Nutzung verwendet werden. Für darüber hinausgehende Nutzung muss die Genehmigung des Urheberrechtsinhabers eingeholt werden.",
+        "disclaimer.opinions.title": "Haftungsausschluss zu geäußerten Meinungen",
+        "disclaimer.opinions.text": "Die Meinungen von Dritten oder Nutzern der Plattform spiegeln nicht unbedingt die Ansichten von TrendyUp oder Sponsor S.L. wider.",
+        "disclaimer.results.title": "Haftungsausschluss zu Ergebnissen",
+        "disclaimer.results.text": "TrendyUp garantiert keine spezifischen Ergebnisse in Bezug auf Followerzahlen, Interaktionsmetriken oder Monetarisierung. Ergebnisse hängen von Qualität, Konsistenz und Aktivität deiner Inhalte sowie externem Plattformverhalten ab.",
+        "disclaimer.responsibility.title": "Nutzung auf eigene Verantwortung",
+        "disclaimer.responsibility.text": "Alle Services und Informationen werden 'wie besehen' bereitgestellt. Das Unternehmen übernimmt keine Verantwortung für Handlungen, die aus der Nutzung des Services resultieren.",
+        "disclaimer.contact.title": "Kontakt",
+        "disclaimer.contact.intro": "Bei Fragen zu diesem Haftungsausschluss kannst du uns kontaktieren:",
+        "disclaimer.contact.email.title":"Per E-Mail:",
+        "disclaimer.contact.email.text":"contact@trendyup.es",
+        "disclaimer.contact.website.title":"Auf unserer Website:",
+        "disclaimer.contact.website.text":"https://www.trendyup.es",
+        "disclaimer.contact.phone.title":"Per Telefon:",
+        "disclaimer.contact.phone.text":"913076630",
+        "disclaimer.contact.address.title":"Per Post:",
+        "disclaimer.contact.address.text":"Sponsor Telecom S.L., Calle Capitan Haya 1, Etage 15, 28020 Madrid",
+        //AVISO LEGAL
+        "legal.title": "Hinweis",
+        "legal.title.span": "Rechtliches",
+        "legal.subtitle": "Rechtliche Informationen zu TrendyUp und Sponsor Telecom S.L.",
+        "legal.editor.title": "Website-Herausgeber",
+        "legal.editor.website.title": "Website:",
+        "legal.editor.website.text": "trendyup.es",
+        "legal.editor.editorial.title": "Verlag:",
+        "legal.editor.editorial.text": "Sponsor Telecom S.L.",
+        "legal.editor.cif.title": "USt-IdNr.:",
+        "legal.editor.cif.text": "B97553424",
+        "legal.editor.address.title": "Sitz der Gesellschaft:",
+        "legal.editor.address.text": "Sponsor Telecom S.L., Calle Capitan Haya 1, Etage 15, 28020 Madrid",
+        "legal.editor.email.title": "E-Mail:",
+        "legal.editor.email.text": "contact@trendyup.es",
+        "legal.hosting.title": "Hosting-Anbieter",
+        "legal.hosting.company.title": "Unternehmen:",
+        "legal.hosting.company.text": "Hostinger Inc.",
+        "legal.hosting.address.title": "Adresse:",
+        "legal.hosting.address.text": "61 Lordou Vironos str., 6023 Larnaca, Zypern",
+        "legal.hosting.website.title": "Website:",
+        "legal.hosting.website.text": "https://www.hostinger.com/",
+        "legal.intellectual.title": "Geistiges Eigentum",
+        "legal.intellectual.text": "Alle Inhalte dieser Website (Texte, Bilder, Logos, Videos usw.) sind Eigentum von Sponsor Telecom S.L., sofern nicht anders angegeben. Jegliche Vervielfältigung, Verbreitung oder Nutzung ohne schriftliche Genehmigung ist strengstens untersagt.",
+        "legal.liability.title": "Haftungsbeschränkung",
+        "legal.liability.text": "Die Website trendyup.es bemüht sich um genaue und aktuelle Informationen. Der Herausgeber übernimmt jedoch keine Haftung für Fehler, Auslassungen oder mögliche Funktionsstörungen.",
+        "legal.personal.title": "Personenbezogene Daten",
+        "legal.personal.text": "TrendyUp kann personenbezogene Daten (wie Name, E-Mail und Social-Media-Benutzernamen) im Rahmen der Services erfassen. Diese Daten werden gemäß DSGVO verarbeitet und niemals an Dritte verkauft. Zur Ausübung Ihrer Rechte (Zugang, Berichtigung, Löschung) kontaktieren Sie uns unter contact@trendyup.es.",
+        "legal.cookies.title": "Cookies",
+        "legal.cookies.text": "Diese Website verwendet Cookies, um die Nutzerzahlen zu messen und die Benutzererfahrung zu verbessern. Sie können Cookies in den Browser-Einstellungen konfigurieren oder deaktivieren.",
+        "legal.law.title": "Anwendbares Recht",
+        "legal.law.text": "Diese Bedingungen unterliegen dem spanischen Recht. Für Streitigkeiten aus der Nutzung der Website unterwerfen sich die Parteien ausdrücklich der Zuständigkeit der Gerichte in Madrid.",
+        "legal.contactCTA.title": "Hast du rechtliche Fragen?",
+        "legal.contactCTA.text": "Wenn du weitere Informationen zu unseren rechtlichen Hinweisen benötigst, kontaktiere uns gerne.",
+        "legal.contactCTA.button": "Kontakt aufnehmen",
+        "legal.related.title": "Verwandte Dokumente:",
+        "legal.related.privacy.text": "Datenschutzrichtlinie",
+        "legal.related.terms.text": "Allgemeine Geschäftsbedingungen",
+        "legal.related.refund.text": "Rückerstattungsrichtlinie",
+        "legal.related.disclaimer.text": "Haftungsausschluss",
+        //SUBSCRIPTION POLICY
+        "subscription.title": "Abonnement",
+        "subscription.title.span": "Richtlinie",
+        "subscription.date": "Letzte Aktualisierung: 31.07.2025",
+        "subscription.general.title": "Allgemeine Beschreibung des Abonnements",
+        "subscription.general.text1": "Mit dem Abonnement unseres Services erhalten Sie Zugang zu exklusiven Schulungsinhalten und Tools, die Ihnen helfen, Ihre Social-Media-Präsenz organisch zu steigern. Das Abonnement umfasst:",
+        "subscription.general.benefits.items":[
+            {"title":"Monatliche Lieferung von E-Books:", "text":"Erhalte jeden Monat ein neues Schulungs-E-Book zu Social Media und Weiterbildung per E-Mail."},
+            {"title":"Zugang zur privaten E-Book-Bibliothek:", "text":"Exklusiver Zugriff auf E-Books, die mindestens zwei Monate lang exklusiv bleiben, bevor sie öffentlich verfügbar werden."},
+            {"title":"Zugang zum öffentlichen E-Book-Shop:", "text":"Kostenloser Zugriff auf unseren gesamten öffentlichen E-Book-Shop mit nützlichen Ressourcen."},
+            {"title":"Sichtbarkeitsunterstützung:", "text":"Manuelle Sichtbarkeit über unser Community-Boost-Programm, um die im E-Book beschriebenen Wachstumsstrategien anzuwenden."}
+        ],
+        "subscription.general.info.items":[
+            {"title":"Hauptcharakter der E-Books:", "text":"Die E-Books bilden den Kernwert des Services. Die Sichtbarkeitsunterstützung ist sekundär, ergänzt aber die Strategien der E-Books."},
+            {"title":"Unteilbarkeit des Services:", "text":"Der Service wird als unteilbares Paket verkauft. Die einzelnen Komponenten können nicht separat erworben, genutzt oder berechnet werden."},
+            {"title":"Zahlungen:", "text":"Zahlungen erfolgen in Euro über ein sicheres Online-System. Zahlungsinformationen werden von einem externen Anbieter verarbeitet; wir speichern keine Kreditkartendaten. Weitere Informationen finden Sie in unserer Datenschutzrichtlinie."},
+            {"title":"Autorisierung:", "text":"Mit dem Abonnement erteilen Sie uns die Erlaubnis, wiederkehrende Zahlungen über Ihre gewählte Zahlungsmethode bis zur Kündigung vorzunehmen. Sie sind für korrekte Abrechnungsinformationen verantwortlich."}
+        ],
+        "subscription.general.text2": "Alle Sichtbarkeitsunterstützungsleistungen werden manuell von echten Personen aus unserem Netzwerk durchgeführt. Wir nutzen keine Bots, Automatisierungen oder Methoden, die gegen die Nutzungsbedingungen von Instagram oder TikTok verstoßen.",
+        "subscription.info.title": "24-Stunden-Test",
+        "subscription.info.text": "Bei bestimmten Käufen erhalten neue Kunden automatisch Zugriff auf eine 24-stündige Testversion des Abonnement-Services, nachdem sie die AGB akzeptiert haben. Wird das Abonnement nicht innerhalb der Testphase gekündigt, verlängert es sich automatisch um 34,90 € pro Monat.",
+        "subscription.benefits.title": "Vorteile des Abonnements",
+        "subscription.benefits.items": [
+            "Jeden Monat ein neues E-Book per E-Mail.",
+            "Zugang zur privaten E-Book-Bibliothek mit exklusiven Inhalten.",
+            "Kostenloser Zugriff auf den öffentlichen E-Book-Shop.",
+            "Manuelle Promotionssichtbarkeit über unser vertrauenswürdiges Partnernetzwerk."
+        ],
+        "subscription.benefits.text": "Mit dem Abonnement akzeptieren Sie unsere AGB und autorisieren SPONSOR TELECOM S.L., tätig als TrendyUp, die monatliche Zahlung über Ihre gewählte Zahlungsmethode ab Beginn der kostenlosen Testphase (falls zutreffend).",
+        "subscription.unsubscribe.title": "Beendigung des Abonnements",
+        "subscription.unsubscribe.client.title": "Kündigung durch den Kunden",
+        "subscription.unsubscribe.client.text": "Sie können Ihr Abonnement jederzeit über den Link 'Abonnement kündigen' auf der Website beenden oder uns direkt kontaktieren. Die Kündigung tritt in Kraft:",
+        "subscription.unsubscribe.client.item":[
+            "Am Ende des aktuellen Abrechnungszyklus für monatliche Abonnements.",
+            "Am Ende der Testphase, wenn innerhalb dieser gekündigt wird."
+        ],
+        "subscription.unsubscribe.company.title": "Kündigung durch SPONSOR TELECOM S.L. dba TrendyUp",
+        "subscription.unsubscribe.company.text": "Wir behalten uns das Recht vor, Ihr Abonnement sofort ohne Vorankündigung zu kündigen in folgenden Fällen:",
+        "subscription.unsubscribe.company.item": [
+            "Verstoß gegen die AGB (z. B. unautorisierter Austausch von Inhalten).",
+            "Betrügerische Aktivitäten oder missbräuchliche Nutzung des Services.",
+            "Handlungen, die unserem geschäftlichen Ruf schaden."
+        ],
+        "subscription.unsubscribe.company.notice": "In Fällen von Kündigungen wegen AGB-Verstößen besteht kein Anspruch auf Rückerstattung bereits gezahlter Gebühren und rechtliche Schritte können eingeleitet werden.",
+        "subscription.unsubscribe.effects.title": "Auswirkungen der Kündigung",
+        "subscription.unsubscribe.effects.text": "Nach der Kündigung verlieren Sie den Zugriff auf alle Service-Komponenten, einschließlich E-Books, Katalog und manuelle Sichtbarkeitsfunktionen.",
+        "subscription.cancel.title": "Kündigungsprozess",
+        "subscription.cancel.text1": "So kündigen Sie Ihr Abonnement:",
+        "subscription.cancel.items": [
+            "Melden Sie sich in Ihrem Konto auf der Website an.",
+            "Gehen Sie zum Bereich 'Abonnement' oder 'Kontoeinstellungen'.",
+            "Wählen Sie die Option zum Kündigen und bestätigen Sie die Kündigung."
+        ],
+        "subscription.cancel.text2": "Nach der Kündigung werden keine zukünftigen Zahlungen mehr belastet, und Ihr Abonnement endet am Ende des aktuellen Abrechnungszeitraums.",
+        "subscription.cancel.text3": "Alternativ können Sie jederzeit über den Link 'Abonnement kündigen' im Footer der Website kündigen.",
+        "subscription.contact.title": "Kontaktinformationen",
+        "subscription.contact.text": "Bei Fragen oder für Unterstützung kontaktieren Sie uns unter:",
+        "subscription.contact.email.title": "E-Mail:",
+        "subscription.contact.email.text": "contact@trendyup.es",
+        "subscription.contact.address.title": "Postadresse:",
+        "subscription.contact.address.text": "SPONSOR TELECOM S.L., Calle Capitan Haya 1, Etage 15, 28020 Madrid",
+        "subscription.withdrawal.title": "Widerrufsrecht",
+        "subscription.withdrawal.text1": "Sie haben das Recht, den Vertrag innerhalb von 14 Tagen nach Bestätigung Ihres Abonnements zu widerrufen ('Widerrufsfrist').",
+        "subscription.withdrawal.text2": "Zur Ausübung Ihres Widerrufsrechts folgen Sie den obigen Schritten oder benachrichtigen uns per E-Mail. Nach Bestätigung erstatten wir alle Zahlungen innerhalb von 5-10 Werktagen zurück, sofern Sie den Service noch nicht genutzt haben.",
+        "subscription.withdrawal.notice1.title": "Wichtig:",
+        "subscription.withdrawal.notice1.text": "Wenn Sie den Service bereits genutzt haben, einschließlich Download von E-Books oder Sichtbarkeitssupport, erlischt das Widerrufsrecht und Ihr Antrag wird als Kündigung gemäß Art. 6 unserer AGB behandelt.",
+        "subscription.withdrawal.notice2.text": "Das Widerrufsrecht gilt nicht für Kunden in Rechtsordnungen, in denen es ausgeschlossen ist; in diesem Fall wird ein Widerruf als Kündigung behandelt.",
+        "subscription.prices.title": "Preise und MwSt.",
+        "subscription.prices.text": "Das Abonnement kostet 34,90 € pro Monat. Das Paket enthält die gesetzliche Mehrwertsteuer gemäß spanischem und EU-Recht basierend auf Ihrem Wohnsitzland.",
+        "subscription.related.title": "Verwandte Dokumente:",
+        "subscription.related.terms": "Allgemeine Geschäftsbedingungen",
+        "subscription.related.privacy": "Datenschutzrichtlinie",
+        "subscription.related.refund": "Rückerstattungsrichtlinie",
+        //REFUND POLICY
+        "refund.title": "Richtlinie für",
+        "refund.title.span": "Rückgabe und Erstattung",
+        "refund.date": "Gültig ab: 04.09.2024",
+        "refund.intro.text": "Bei TrendyUp, betrieben von Sponsor Telecom S.L., verpflichten wir uns, hochwertige Sichtbarkeitsunterstützungsdienste anzubieten und unseren Erstattungsprozess transparent zu gestalten. Da es sich um digitale immaterielle Dienstleistungen handelt (z. B. manuelle Inhaltsförderung und profilbasierte Informationen), werden keine physischen Artikel versendet oder zurückgegeben.",
+        "refund.cancelations.title": "Bestellstornierungen (vor Aktivierung des Dienstes)",
+        "refund.cancelations.text": "Sie können Ihre Bestellung stornieren, bevor sie verarbeitet oder aktiviert wird, und eine volle Rückerstattung erhalten. So stornieren Sie Ihre Bestellung:",
+        "refund.cancelations.list1": "Kontaktieren Sie uns über Live-Chat, E-Mail oder Post",
+        "refund.cancelations.list2": "Geben Sie die E-Mail-Adresse Ihres Kontos zur Identifikation an",
+        "refund.cancelations.list3": "Wenn der Dienst noch nicht begonnen hat, erstatten wir den vollen Betrag auf Ihre ursprüngliche Zahlungsmethode",
+        "refund.trial.title": "24-Stunden-Testangebot",
+        "refund.trial.text": "Wir bieten eine 24-stündige Testversion, um die Plattform unverbindlich zu testen. Wenn Sie nicht zufrieden sind, können Sie Ihr Abonnement innerhalb dieses Zeitraums kostenlos kündigen.",
+        "refund.trial.infoTitle": "So kündigen Sie während der Testphase:",
+        "refund.trial.list1": "Verwenden Sie Ihr TrendyUp-Dashboard",
+        "refund.trial.list2": "Oder kontaktieren Sie uns per E-Mail oder Live-Chat innerhalb von 24 Stunden",
+        "refund.trial.note": "Es werden keine Gebühren erhoben, und Ihr Abonnement wird nicht verlängert.",
+        "refund.guarantee.title": "14-Tage-Geld-zurück-Garantie",
+        "refund.guarantee.text": "Sie können innerhalb von 14 Tagen nach dem Kauf eine Rückerstattung beantragen, wenn folgende Bedingungen erfüllt sind:",
+        "refund.guarantee.eligibleTitle": "Berechtigte Erstattungsgründe umfassen:",
+        "refund.guarantee.eligible.list1": "Der Dienst wurde nicht wie beschrieben bereitgestellt",
+        "refund.guarantee.eligible.list2": "Ihr Erstattungsantrag wird innerhalb von 14 Tagen eingereicht",
+        "refund.guarantee.eligible.list3": "Die Lieferung war teilweise oder noch nicht begonnen",
+        "refund.guarantee.eligible.list4": "Sie befinden sich noch innerhalb der Testphase (falls zutreffend)",
+        "refund.guarantee.ineligibleTitle": "Erstattungen sind nicht verfügbar, wenn:",
+        "refund.guarantee.ineligible.list1": "Mehr als 14 Tage seit Ihrem Kauf vergangen sind",
+        "refund.guarantee.ineligible.list2": "Der Dienst vollständig erbracht wurde",
+        "refund.guarantee.ineligible.list3": "Kein gültiges Problem innerhalb des zulässigen Zeitraums gemeldet wurde",
+        "refund.request.title": "Wie man eine Rückerstattung beantragt",
+        "refund.request.text": "Um eine Rückerstattung zu beantragen, kontaktieren Sie uns über eine der folgenden Methoden:",
+        "refund.request.email.title": "E-Mail:",
+        "refund.request.email.text": "contact@trendyup.es",
+        "refund.request.chat.title": "Live-Chat:",
+        "refund.request.chat.text": "Verfügbar über unsere Kontaktseite",
+        "refund.request.post.title": "Post:",
+        "refund.request.post.text": "Sponsor Telecom S.L. (dba TrendyUp), Calle Capitan Haya 1, Etage 15, 28020 Madrid, Spanien",
+        "refund.request.info1": "Geben Sie die E-Mail-Adresse Ihres Kontos und eine kurze Erklärung an. Wir antworten innerhalb von 3 Werktagen.",
+        "refund.request.info2": "Bei Genehmigung erfolgt die Rückerstattung auf die ursprüngliche Zahlungsmethode innerhalb von 5–10 Werktagen.",
+        "refund.additional.title": "Zusätzliche Informationen",
+        "refund.additional.list1": "Keine Versand- oder Rücksendeetiketten erforderlich, da alle Dienste digital sind",
+        "refund.additional.list2": "Keine Bearbeitungs- oder Wiedereinrichtungsgebühren",
+        "refund.additional.list3": "Zahlungsanbietergebühren werden nur erstattet, wenn der Dienst nicht erbracht wurde",
+        "refund.support.title": "Supportzeiten",
+        "refund.support.text": "Montag bis Freitag: 9:00–18:00 Uhr",
+        "refund.support.text2": "Wir sind hier, um Ihnen zu helfen. Bei Fragen kontaktieren Sie uns gerne.",
+        //TERMS & CONDITIONS
+        "terms.title": "Allgemeine",
+        "terms.title.span": "Geschäftsbedingungen",
+        "terms.date": "Letzte Aktualisierung: 31.07.2025",
+        "terms.introduction.title": "EINFÜHRUNG",
+        "terms.introduction.text1": "Diese Allgemeinen Geschäftsbedingungen ('Vereinbarung') werden von Sponsor Telecom S.L. ('Wir', 'Uns' oder 'Unser') geschlossen, einem in Spanien registrierten Unternehmen mit USt-IdNr. B97553424, Sitz in Calle Capitan Haya 1, Etage 15, 28020 Madrid, Spanien.",
+        "terms.introduction.text2": "Diese Bedingungen regeln Ihren Zugang und Ihre Nutzung der Abonnementdienste, die Sponsor Telecom S.L. über die Website TrendyUp anbietet. Durch Zugriff und Nutzung des Dienstes stimmen Sie diesen Bedingungen zu. Andernfalls dürfen Sie unsere Dienste nicht nutzen.",
+        "terms.definitions.title": "DEFINITIONEN",
+        "terms.definitions.text1": "'Kunde' bezeichnet jede Person, die das Abonnement für den persönlichen Gebrauch abschließt.",
+        "terms.definitions.text2": "'Dienst' bezeichnet alle von Sponsor Telecom S.L. bereitgestellten Dienste, einschließlich Inhalts-Sichtbarkeitsdienste, öffentlich verfügbare Profilinformationen und manuelle Werbeunterstützung über unser privates Partnernetzwerk.",
+        "terms.definitions.text3": "'Abonnementdienst' bezeichnet das optionale Abonnementpaket von Sponsor Telecom S.L., das die Sichtbarkeitssteigerung durch manuell verwaltete Informationen, Nischen-Targeting und weitere Funktionen umfasst, wie auf der Abonnementseite beschrieben.",
+        "terms.registration.title": "REGISTRIERUNG",
+        "terms.registration.text1": "Für die Nutzung des Dienstes wird automatisch ein Konto ('Konto') auf der Website erstellt, das Registrierungsinformationen wie E-Mail, Passwort und Zahlungsinformationen enthält. Sie erklären sich damit einverstanden, genaue und vollständige Informationen bereitzustellen und diese bei Bedarf zu aktualisieren.",
+        "terms.registration.text2": "Sie müssen volljährig sein und rechtsverbindliche Verträge in Ihrer Jurisdiktion abschließen können. Mit der Erstellung eines Kontos bestätigen Sie Ihre Berechtigung.",
+        "terms.registration.text3": "Durch Registrierung stimmen Sie dem Abonnementdienst zu, der kontinuierlichen Zugriff auf Audience-Engagement-Tools und Sichtbarkeitsunterstützung bietet, wie in diesen Bedingungen und der Abonnementpolitik beschrieben.",
+        "terms.usage.title": "NUTZUNGSBEDINGUNGEN",
+        "terms.usage.text1": "Gültigkeit: Ihr Abonnement ist nur nach Bestätigung der Zahlung gültig. Der Zugriff ist persönlich und nicht übertragbar. Sie sind für die Geheimhaltung Ihrer Zugangsdaten verantwortlich.",
+        "terms.usage.text2": "Unbefugte Nutzung: Das Teilen, Übertragen oder Unterlizenzieren des Kontos ist strengstens verboten. Verstöße können zur sofortigen Kündigung ohne Rückerstattung und zu rechtlichen Schritten führen.",
+        "terms.usage.text3": "Persönliches Wachstum & Monetarisierung: Der Dienst dient der Sichtbarkeitssteigerung durch regelkonforme Inhalte. Eine direkte Leistungszusicherung erfolgt nicht.",
+        "terms.usage.prohibited.title": "Folgende Aktivitäten sind streng verboten:",
+        "terms.usage.prohibited.items": [
+            "Dienst für andere als persönliche Wachstumszwecke zu nutzen, z. B. Wiederverkauf oder Weitergabe des Dienstes oder Inhalts.",
+            "Verhaltensweisen, die gegen Plattformbedingungen verstoßen, auf denen Sie aktiv sind.",
+            "Dienst auf eine Weise zu nutzen, die unseren Ruf schädigt oder geltendes Recht verletzt."
+        ],
+        "terms.service.title": "DIENSTLEISTUNGSBETRIEB",
+        "terms.service.text1": "Nutzungseinschränkungen: Sie dürfen den Dienst nur für persönliche Zwecke zur Verbesserung Ihrer Social-Media-Präsenz verwenden. Folgende Handlungen sind verboten:",
+        "terms.service.items": [
+            "Teilen oder Verteilen von Strategien, Tools oder Inhalten aus dem Dienst.",
+            "Versuch, den Dienst für betrügerische, illegale oder kommerzielle Zwecke zu nutzen, die nicht dem persönlichen Wachstum dienen.",
+            "Dienst in einer Weise nutzen, die Drittplattformbedingungen verletzt.",
+            "Teilnahme an Aktivitäten, die den Dienst stören oder beeinträchtigen."
+        ],
+        "terms.service.text2": "Testzeitraum: Einige Käufe enthalten eine 24-Stunden-Testversion. Diese kann kostenfrei gekündigt werden.",
+        "terms.service.text3": "Zugang: Nach Bestätigung und erfolgreicher Zahlung erhalten Sie:",
+        "terms.service.access.items": [
+            "Manuelle Förderung Ihrer Inhalte über unser geprüftes Netzwerk von Communities und Creators.",
+            "Sichtbarkeitsinformationen auf Grundlage öffentlich verfügbarer Profildaten."
+        ],
+        "terms.service.text4": "Änderungen: Wir behalten uns das Recht vor, den Dienst nach eigenem Ermessen zu ändern, zu aktualisieren oder einzustellen, solange der Wert des Dienstes nicht wesentlich verringert wird. Wesentliche Änderungen werden per E-Mail mindestens 30 Tage vorher angekündigt.",
+        "terms.service.text5": "Keine Leistungszusicherungen: Der Dienst garantiert keine Interaktionen, Follower-Zuwächse, Ranking oder Einnahmen. Ergebnisse variieren je nach Inhalt, Konsistenz und Relevanz.",
+        "terms.service.text6": "Zahlungsautorisierung: Durch das Abonnement autorisieren Sie Sponsor Telecom S.L., die Gebühren über Ihre angegebene Zahlungsmethode abzubuchen.",
+        "terms.service.text7": "Zahlungsmethoden: Zahlungen erfolgen über die Website über sichere Anbieter, die PCI DSS-konform sind. Sponsor Telecom S.L. speichert keine Zahlungsdaten.",
+        "terms.intellectual.title": "GEISTIGES EIGENTUM",
+        "terms.intellectual.text1": "Alle Rechte am Inhalt der Website, des Dienstes und zugehöriger Materialien liegen ausschließlich bei Sponsor Telecom S.L.",
+        "terms.intellectual.text2": "Eingeschränkte Lizenz: Mit dem Abonnement erhalten Sie eine nicht-exklusive, nicht übertragbare Lizenz zur persönlichen Nutzung des Dienstes gemäß diesen Bedingungen.",
+        "terms.intellectual.text3": "Verbotene Nutzung: Reproduktion, Reverse Engineering, Weitergabe, Modifikation, Erstellung abgeleiteter Werke oder öffentliche Nutzung ohne schriftliche Genehmigung ist untersagt.",
+        "terms.intellectual.text4": "Rechtsdurchsetzung: Unautorisierte Nutzung kann zur sofortigen Kündigung und rechtlichen Schritten führen.",
+        "terms.liability.title": "HAFTUNG & BESCHRÄNKUNGEN",
+        "terms.liability.text1": "Dienstleistungsausschluss: Der Dienst wird 'wie besehen' bereitgestellt ohne jegliche ausdrückliche oder stillschweigende Garantie.",
+        "terms.liability.text2": "Haftungsbeschränkung: Soweit gesetzlich zulässig, haftet Sponsor Telecom S.L. nicht für:",
+        "terms.liability.items": [
+            "Direkte oder indirekte Schäden aus Nutzung oder Unfähigkeit zur Nutzung des Dienstes.",
+            "Verlust von Einnahmen, Daten oder Geschäftsmöglichkeiten."
+        ],
+        "terms.liability.text3": "Verantwortung des Kunden: Ergebnisse hängen von Faktoren außerhalb unserer Kontrolle ab, einschließlich Anstrengung, Strategieumsetzung und Plattformalgorithmen.",
+        "terms.liability.text4": "Plattform-Compliance: Wir haften nicht für Maßnahmen Dritter gegen Ihr Konto aufgrund Ihrer Nutzung. Sie sind verantwortlich für die Einhaltung der Plattformbedingungen.",
+        "terms.liability.text5": "Verfügbarkeit: Wir bemühen uns um ununterbrochenen Service, garantieren dies jedoch nicht. Vorübergehende Unterbrechungen sind möglich.",
+        "terms.privacy.title": "DATENSCHUTZRICHTLINIE",
+        "terms.privacy.text1": "Sicherheit: Kundendaten werden sicher gespeichert und gemäß geltendem Recht verarbeitet. Weitere Informationen siehe unsere",
+        "terms.privacy.text1.span":"Datenschutzrichtlinie",
+        "terms.general.title": "ALLGEMEINE BESTIMMUNGEN",
+        "terms.general.text1": "Höhere Gewalt: Keine Partei haftet für Verzögerungen oder Nichterfüllung aufgrund unvorhersehbarer Ereignisse wie Naturkatastrophen, Regierungsmaßnahmen oder technische Probleme.",
+        "terms.general.text2": "Salvatorische Klausel: Ungültige Bestimmungen werden durch gültige, möglichst nahe an der ursprünglichen Intention liegende Klauseln ersetzt.",
+        "terms.general.text3": "Kommunikation: Alle Mitteilungen erfolgen an:",
+        "terms.general.email.title": "E-Mail:",
+        "terms.general.email.text": "contact@trendyup.es",
+        "terms.general.address.title": "Postadresse:",
+        "terms.general.address.text": "Calle Capitan Haya 1, Etage 15, 28020 Madrid, Spanien",
+        "terms.general.text4": "Anwendbares Recht & Gerichtsstand: Diese Bedingungen unterliegen spanischem Recht.",
+        "terms.general.items":[
+            "Bei rechtlichen Ansprüchen Ihrerseits sind die Gerichte in Madrid zuständig.",
+            "Bei rechtlichen Ansprüchen unsererseits werden diese am Sitz des Kunden verhandelt."
+        ],
+        "terms.general.text5": "Vollständige Vereinbarung: Diese Bedingungen stellen die gesamte Vereinbarung dar und ersetzen vorherige Absprachen.",
+        "terms.contact.title": "Kontakt",
+        "terms.contact.text": "Bei Fragen zu diesen Bedingungen kontaktieren Sie uns unter:",
+        "terms.contact.email.title": "E-Mail:",
+        "terms.contact.email.text": "contact@trendyup.es",
+        "terms.contact.address.title": "Adresse:",
+        "terms.contact.address.text": "Calle Capitan Haya 1, Etage 15, 28020 Madrid, Spanien",
+        "terms.contact.company.title": "Unternehmen:",
+        "terms.contact.company.text": "Sponsor Telecom S.L. (Handelsregister: 12553665)",
+        //PRIVACY POLICY
+        "privacy.title": "Datenschutz",
+        "privacy.title.span": "Richtlinie",
+        "privacy.date": "Gültig ab: 21.10.2024",
+        "privacy.intro.text": "Sponsor Telecom S.L. ('Wir', 'Uns', 'Unser') verpflichtet sich, Ihre Privatsphäre zu schützen. Diese Datenschutzrichtlinie erklärt, wie wir Ihre personenbezogenen Daten erfassen, verwenden, speichern und schützen, wenn Sie unsere Website TrendyUp besuchen oder unsere Dienste nutzen. Durch die Nutzung unserer Website stimmen Sie den in dieser Richtlinie beschriebenen Praktiken zu. Wenn Sie nicht zustimmen, verwenden Sie bitte nicht unsere Website.",
+        "privacy.personal.title": "Was sind personenbezogene Daten?",
+        "privacy.personal.text": "Personenbezogene Daten beziehen sich auf alle Informationen, die eine natürliche Person identifizieren oder identifizierbar machen können. Dazu gehören u. a. Name, E-Mail-Adresse, IP-Adresse, Rechnungsinformationen und alle weiteren Informationen, die sich auf Ihre Nutzung unserer Website beziehen.",
+        "privacy.datatypes.title": "Welche Arten von Daten erfassen wir?",
+        "privacy.datatypes.text": "Wir erfassen personenbezogene Daten (direkt von Ihnen bereitgestellt) und nicht-personenbezogene Daten (automatisch während Ihrer Interaktionen mit unserer Website gesammelt):",
+        "privacy.datatypes.personal.title": "Personenbezogene Daten, die Sie uns bereitstellen:",
+        "privacy.datatypes.personal.text": "Registrierungsdaten: Bei Erstellung eines Kontos, Kauf von Produkten oder Abonnement unserer Dienste erfassen wir folgende personenbezogene Daten:",
+        "privacy.datatypes.personal.items":[
+            "Vollständiger Name (Vor- und Nachname)",
+            "E-Mail-Adresse",
+            "Zahlungsinformationen (Kredit-/Debitkartendaten)"
+        ],
+        "privacy.userdata.automatic.title": "Automatisch erfasste Daten:",
+        "privacy.userdata.automatic.items":[
+            "Geräteinformationen: Modell, Betriebssystem, eindeutige Gerätekennungen und Geräteeinstellungen.",
+            "Protokolldaten: IP-Adresse, Browsertyp, Zugriffszeiten, besuchte Seiten und Aktionen auf der Website.",
+            "Cookies und ähnliche Technologien: Wir verwenden Cookies zur Verfolgung von Nutzungsmustern und Präferenzen."
+        ],
+        "privacy.usedata.title": "Wie verwenden wir Ihre Daten?",
+        "privacy.usedata.text": "Wir verarbeiten Ihre personenbezogenen Daten für folgende Zwecke:",
+        "privacy.usedata.items":[
+            "Zur Bereitstellung und Verbesserung unserer Dienste: Zur Bearbeitung Ihrer Bestellungen, Verwaltung von Abonnements und kontinuierlichen Verbesserung unserer Dienstleistungen.",
+            "Zur Kommunikation mit Ihnen: Beantwortung von Anfragen, Versand von Bestellbestätigungen, Kundenservice und Marketingkommunikation (falls Sie zugestimmt haben).",
+            "Zur Personalisierung Ihrer Erfahrung: Anpassung von Inhalten und Angeboten auf unserer Website sowie zielgerichtete Werbung.",
+            "Gesetzliche Erfüllung: Einhaltung gesetzlicher Verpflichtungen, Beilegung von Streitigkeiten und Durchsetzung von Vereinbarungen."
+        ],
+        "privacy.usedata.contact": "Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie uns kontaktieren unter:",
+        "privacy.sharedata.title": "Wie teilen wir Ihre Daten?",
+        "privacy.sharedata.text": "Wir können Ihre personenbezogenen Daten mit folgenden Parteien teilen:",
+        "privacy.sharedata.items":[
+            "Dienstleister: Externe, vertrauenswürdige Dienstleister, die mit Betrieb, Zahlungsabwicklung oder Bereitstellung unserer Dienste zusammenarbeiten. Diese Dritten müssen Daten sicher und nur gemäß unseren Anweisungen behandeln.",
+            "Gesetzliche Erfüllung: Offenlegung an Behörden, falls gesetzlich erforderlich oder auf Grundlage einer gültigen gerichtlichen Anordnung.",
+            "Unternehmensübertragungen: Im Falle von Fusion, Übernahme oder Verkauf von Vermögenswerten können personenbezogene Daten übertragen werden. Änderungen werden wir per E-Mail ankündigen."
+        ],
+        "privacy.sharedata.note": "Wir verkaufen Ihre personenbezogenen Daten nicht zu Marketingzwecken.",
+        "privacy.datastorage.title": "Wo werden Ihre Daten gespeichert?",
+        "privacy.datastorage.text": "Ihre Daten werden sicher bei unseren Hosting-Providern gespeichert, einschließlich Google LLC (Cloud-Hosting-Dienste), hauptsächlich innerhalb des Europäischen Wirtschaftsraums (EWR). Wir treffen angemessene Maßnahmen, um die Datenverarbeitung gemäß geltendem Datenschutzrecht sicherzustellen.",
+        "privacy.dataprotection.title": "Wie schützen wir Ihre Daten?",
+        "privacy.dataprotection.text": "Wir verwenden branchenübliche Sicherheitsmaßnahmen zum Schutz personenbezogener Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung, einschließlich Verschlüsselung, Firewalls und SSL-Technologie. Dennoch ist keine Internet- oder elektronische Speicherungsmethode 100 % sicher.",
+        "privacy.dataretention.title": "Wie lange speichern wir Ihre Daten?",
+        "privacy.dataretention.text": "Wir speichern personenbezogene Daten nur so lange, wie es für die Zwecke dieser Richtlinie erforderlich ist, einschließlich gesetzlicher, buchhalterischer oder berichtspflichtiger Anforderungen. Wenn Sie Ihr Abonnement kündigen oder Ihr Konto löschen, werden Daten nur so lange aufbewahrt, wie es zur Erfüllung gesetzlicher Pflichten oder Streitbeilegung nötig ist.",
+        "privacy.cookies.title": "Cookies und Tracking-Technologien",
+        "privacy.cookies.text1": "Unsere Website verwendet Cookies und ähnliche Technologien zur Verbesserung der Benutzererfahrung, Analyse des Website-Verkehrs und Bereitstellung personalisierter Inhalte. Cookies sind kleine Datendateien auf Ihrem Gerät. Cookie-Einstellungen können über den Browser angepasst werden.",
+        "privacy.cookies.text2": "Weitere Informationen finden Sie in unserem Cookie-Hinweis.",
+        "privacy.rights.title": "Ihre Datenschutzrechte",
+        "privacy.rights.text": "Nach Datenschutzgesetzen (einschließlich DSGVO) haben Sie folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
+        "privacy.rights.items":[
+            "Auskunftsrecht: Zugriff auf gespeicherte Daten und deren Nutzung.",
+            "Recht auf Berichtigung: Korrektur unvollständiger oder falscher Daten.",
+            "Recht auf Löschung: Löschung personenbezogener Daten unter bestimmten Bedingungen.",
+            "Widerspruchsrecht: Einspruch gegen die Verarbeitung, insbesondere für Direktmarketing.",
+            "Recht auf Einschränkung der Verarbeitung: Einschränkung der Nutzung unter bestimmten Umständen.",
+            "Recht auf Datenübertragbarkeit: Kopie der Daten in maschinenlesbarem Format.",
+            "Zur Ausübung dieser Rechte kontaktieren Sie uns unter: contact@trendyup.es"
+        ],
+        "privacy.rights.note": "Sie haben auch das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen.",
+        "privacy.social.title": "Soziale Netzwerke und Links von Dritten",
+        "privacy.social.text": "Unsere Website kann Links zu Websites und Social-Media-Plattformen Dritter enthalten. Diese haben eigene Datenschutzrichtlinien, für die wir nicht verantwortlich sind. Bitte prüfen Sie deren Richtlinien, bevor Sie persönliche Daten bereitstellen.",
+        "privacy.changes.title": "Änderungen dieser Datenschutzrichtlinie",
+        "privacy.changes.text": "Wir können diese Richtlinie regelmäßig aktualisieren, um Änderungen in unseren Praktiken oder aus betrieblichen, rechtlichen oder regulatorischen Gründen widerzuspiegeln. Wesentliche Änderungen werden per E-Mail oder durch einen Hinweis auf der Website bekanntgegeben.",
+        "privacy.contact.title": "Kontakt",
+        "privacy.contact.text": "Bei Fragen zu dieser Datenschutzrichtlinie oder unseren Datenverarbeitungspraktiken kontaktieren Sie uns unter:",
+        "privacy.contact.email.title": "E-Mail:",
+        "privacy.contact.email.text": "contact@trendyup.es",
+        "privacy.contact.address.title": "Postadresse:",
+        "privacy.contact.address.text": "Sponsor Telecom S.L., Calle Capitan Haya 1, Etage 15, 28020 Madrid",
+        "privacy.law.title": "Anwendbares Recht und Gerichtsstand",
+        "privacy.law.text": "Diese Datenschutzrichtlinie unterliegt spanischem Recht. Streitigkeiten werden ausschließlich vor den Gerichten in Madrid verhandelt.",
+        // COMPROMISO CON EL CUMPLIMIENTO
+        "compliance.title": "Unser Engagement für",
+        "compliance.title.span": "Compliance",
+        "compliance.intro.text": "Bei TrendyUp sind wir der Meinung, dass Sichtbarkeit durch ethische und transparente Praktiken erreicht werden sollte. Diese Seite beschreibt, wie unsere Dienste darauf ausgelegt sind, die Plattformrichtlinien von TikTok, Instagram und Google Ads einzuhalten.",
+        "compliance.visibility.title": "100 % Plattformkonforme Sichtbarkeit",
+        "compliance.visibility.items": [
+            "Es werden keine Bots, Skripte oder automatisierten Aktionen zur Generierung von Engagement verwendet.",
+            "Wir fordern niemals Ihre Social-Media-Passwörter an oder greifen auf Ihre Konten zu.",
+            "Insights werden unter Verwendung von öffentlich zugänglichen Profildaten und KI-gestützter Analyse generiert.",
+            "Die Content-Promotion erfolgt manuell über unser Partnernetzwerk (Creator, Communities, Apps und Medienplattformen)."
+        ],
+        "compliance.security.title": "Sicherheit der Nutzer hat Priorität",
+        "compliance.security.items": [
+            "Alle Sichtbarkeitsunterstützungen erfolgen durch echte Personen und entsprechen den Plattformrichtlinien.",
+            "Sie behalten jederzeit die volle Kontrolle über Ihre Inhalte und Interaktionen.",
+            "Unser Service unterstützt Ihre Sichtbarkeitsstrategie, ohne jemals in Ihr Konto einzugreifen."
+        ],
+        "compliance.advertisement.title": "Google Ads und Transparenz",
+        "compliance.advertisement.text": "Wir folgen verantwortungsvollen Marketingstandards. TrendyUp vermeidet übertriebene Aussagen und verbotene Formulierungen.",
+        "compliance.advertisement.highlight": "Wir garantieren niemals die Anzahl der Follower oder Interaktionsmetriken; der Fokus liegt auf ethischer Unterstützung der Sichtbarkeit und Reichweite.",
+        "compliance.terms.title": "Einhaltung der Plattformbedingungen",
+        "compliance.terms.text": "Alle angebotenen Funktionen entsprechen den Richtlinien von TikTok, Instagram und ähnlichen Plattformen. Unsere Methoden fördern authentisches Wachstum durch echte Reichweite, ohne künstliche Manipulation oder Abkürzungen.",
+        "compliance.network.title": "Unser privates Promotionsnetzwerk",
+        "compliance.network.text": "Anstatt auf künstliche Interaktion oder riskante Automatisierung zu setzen, promoten wir Inhalte manuell über unser privates Netzwerk: ein vertrauenswürdiges Ökosystem aus Creators, Community-Seiten, Apps und Medienpartnern, das Sichtbarkeit auf korrekte Weise steigert.",
+        "compliance.network.items": [
+            { "icon": "👥", "title": "Microinfluencer", "text": "Verifizierte Creator präsentieren Ihre Inhalte realen Zielgruppen." },
+            { "icon": "🎯", "title": "Community-Seiten", "text": "Fokus auf Themenkonten, die Inhalte organisch teilen." },
+            { "icon": "🤝", "title": "Partner-Creator", "text": "Unabhängige Mitwirkende, die auf Ihre Nische ausgerichtet sind." },
+            { "icon": "📱", "title": "Apps und Plattformen", "text": "Strategische Orte zur Hervorhebung Ihres Profils." },
+            { "icon": "🌐", "title": "Affiliate- und Werbenetzwerke", "text": "Sorgfältig verwaltete Sichtbarkeitskampagnen, 100 % konform." }
+        ],
+        "compliance.contact.title": "Fragen zu unseren Compliance-Praktiken?",
+        "compliance.contact.text": "Wir helfen Ihnen gerne und beantworten alle Ihre Fragen.",
+        "compliance.contact.email": "contact@trendyup.es",
+        //SUCCESS
+        "success.process.title": "Prozess gestartet",
+        "success.process.title.span": "Erfolgreich",
+        "success.process.subtitle": "Ihre Karte wurde validiert und der Ladeprozess beginnt",
+        "success.process.progress.step1": "Kauf erfolgreich",
+        "success.process.progress.step1.time": "Vor wenigen Sekunden abgeschlossen",
+        "success.process.progress.step2": "Start der Lieferung",
+        "success.process.progress.step2.status": "In Bearbeitung...",
+        "success.process.progress.step3": "Lieferung abgeschlossen",
+        "success.process.progress.step3.status": "Ausstehend",
+        "success.process.progress.label": "Lieferfortschritt",
+        "success.process.progress.status": "Starte...",
+        "success.summary.progress.title": "Bestellübersicht",
+        "success.summary.progress.badge": "🟢 Wird gerade bearbeitet",
+        "success.summary.progress.service.title": "Angeforderter Service",
+        "success.summary.progress.service.network": "Soziales Netzwerk",
+        "success.summary.progress.service.type": "Service",
+        "success.summary.progress.service.url": "Profil-/Post-URL",
+        "success.summary.progress.delivery.title": "Lieferinformationen",
+        "success.summary.progress.delivery.quantity": "Menge",
+        "success.summary.progress.delivery.time": "Geschätzte Zeit",
+        "success.summary.progress.payment.title": "Zahlungsinformationen",
+        "success.summary.progress.payment.card": "Kartenvalidierung:",
+        "success.summary.progress.payment.card.status": "✅ Geeignete Institution",
+        "success.summary.progress.payment.state": "Status:",
+        "success.summary.progress.payment.state.status": "Erfolgreich",
+        "success.status.title": "Prozessstatus",
+        "success.status.subtitle": "Echtzeit-Tracking Ihrer Bestellung",
+        "success.expect.title": "Was Sie erwarten können",
+        "success.expect.items": [
+            "Allmähliche und natürliche Lieferung",
+            "Echte Follower/Interaktionen",
+            "Kein Risiko für Ihr Konto",
+            "24/7 Support verfügbar"
+        ],
+        "success.next.title": "Nächste Schritte",
+        "success.next.items": [
+            "Sie erhalten eine E-Mail mit Ihren Zugangsdaten (Spam-Ordner prüfen)",
+            "Zugang zum Benutzerpanel",
+            "Sie können Ihre Bestellungen und mehr einsehen!"
+        ],
+        "success.login.title": "Haben Sie bereits Ihre Zugangsdaten?",
+        "success.login.subtitle": "Melden Sie sich jetzt an und greifen Sie auf das Benutzerpanel zu!",
+        "success.login.button": "🔐 Anmelden",
+        "success.support.title": "Brauchen Sie Hilfe?",
+        "success.support.subtitle": "Unser Support-Team ist rund um die Uhr für Sie da",
+        "success.support.button": "📧 Support per E-Mail",
+        "success.footer.text": "© 2025 TrendyUp. Vielen Dank für Ihr Vertrauen! 🚀",
+        // FOOTER
+        "footer.title.explore": "Entdecken",
+        "footer.title.company": "Unternehmen",
+        "footer.title.legal": "Rechtliches",
+        "footer.nav.login": "Anmelden",
+        "footer.nav.about": "Über uns",
+        "footer.nav.disclaimer": "Haftungsausschluss",
+        "footer.nav.legal": "Rechtlicher Hinweis",
+        "footer.nav.subscription": "Abonnement",
+        "footer.nav.refund": "Rückerstattungsrichtlinie",
+        "footer.nav.terms": "Nutzungsbedingungen",
+        "footer.nav.privacity": "Datenschutzrichtlinie",
+        "footer.nav.compliance": "Compliance-Verpflichtung",
+        "footer.accordance.title": "Konformitätshinweis:",
+        "footer.accordance.text": "Wir bieten keinen Verkauf von Followern oder Interaktionen an. Unsere Dienste konzentrieren sich ausschließlich auf Wachstums- und organische Sichtbarkeitsstrategien, in voller Übereinstimmung mit den Google Ads-Richtlinien und den jeweiligen Plattformrichtlinien.",
+        "footer.allrights": "Alle Rechte vorbehalten."
+    }
 } as const;
 
 export const languageList: Record<Lang, Record<Lang, { name: string; nick: string }>> = {
-  es: {
-    es: { name: "Español", nick: "Spanish" },
-    en: { name: "Inglés", nick: "English" },
-    fr: { name: "Francés", nick: "French" },
-    pt: { name: "Portugués", nick: "Portuguese" }
+    es: {
+        es: { name: "Español", nick: "Spanish" },
+        en: { name: "Inglés", nick: "English" },
+        fr: { name: "Francés", nick: "French" },
+        pt: { name: "Portugués", nick: "Portuguese" },
+        de: { name: "Alemán", nick: "German" }
     },
     en: {
-    es: { name: "Spanish", nick: "Español" },
-    en: { name: "English", nick: "Inglés" },
-    fr: { name: "French", nick: "Francés" },
-    pt: { name: "Portuguese", nick: "Portugués" }
+        es: { name: "Spanish", nick: "Español" },
+        en: { name: "English", nick: "Inglés" },
+        fr: { name: "French", nick: "Francés" },
+        pt: { name: "Portuguese", nick: "Portugués" },
+        de: { name: "German", nick: "Alemán" }
     },
-  fr: {
-    es: { name: "Espagnol", nick: "Spanish" },
-    en: { name: "Anglais", nick: "English" },
-    fr: { name: "Français", nick: "French" },
-    pt: { name: "Portugais", nick: "Portuguese" }
-  },
-  pt: {
-    es: { name: "Espanhol", nick: "Spanish" },
-    en: { name: "Inglês", nick: "English" },
-    fr: { name: "Francês", nick: "French" },
-    pt: { name: "Português", nick: "Portuguese" },
+    fr: {
+        es: { name: "Espagnol", nick: "Spanish" },
+        en: { name: "Anglais", nick: "English" },
+        fr: { name: "Français", nick: "French" },
+        pt: { name: "Portugais", nick: "Portuguese" },
+        de: { name: "Allemand", nick: "German" }
     },
+    pt: {
+        es: { name: "Espanhol", nick: "Spanish" },
+        en: { name: "Inglês", nick: "English" },
+        fr: { name: "Francês", nick: "French" },
+        pt: { name: "Português", nick: "Portuguese" },
+        de: { name: "Alemão", nick: "German" }
+    },
+    de: {
+        es: { name: "Spanisch", nick: "Spanish" },
+        en: { name: "Englisch", nick: "English" },
+        fr: { name: "Französisch", nick: "French" },
+        pt: { name: "Portugiesisch", nick: "Portuguese" },
+        de: { name: "Deutsch", nick: "German" }
+    }
 };
 
-export const languages = ['es', 'en', 'fr', 'pt'] as const;
-export type Lang = (typeof languages)[number]; // "es" | "en" | "fr" | "pt"
+export const languages = ['es', 'en', 'fr', 'pt','de'] as const;
+export type Lang = (typeof languages)[number]; // "es" | "en" | "fr" | "pt" | "de"

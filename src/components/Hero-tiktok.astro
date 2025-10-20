@@ -123,11 +123,13 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
     const lag1 = document.getElementById("lang")?.value;
 
     const get_in_user = {
-            es: "Debe ingresar usuario de Tiktok",
-            en: "You must enter your TikTok username",
-            fr: "Vous devez entrer votre nom d’utilisateur TikTok",
-            pt: "Você deve inserir seu nome de usuário do TikTok"
-        }
+        es: "Debe ingresar usuario de Tiktok",
+        en: "You must enter your TikTok username",
+        fr: "Vous devez entrer votre nom d’utilisateur TikTok",
+        pt: "Você deve inserir seu nome de usuário do TikTok",
+        de: "Sie müssen Ihren TikTok-Benutzernamen eingeben"
+    }
+
 
     // Hero input Submit
     document.getElementById('heroForm').addEventListener('submit', function(e) {
@@ -217,33 +219,39 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
             es: "🚨 Error: No se encontraron datos del pedido",
             en: "🚨 Error: No order data found",
             fr: "🚨 Erreur : aucune donnée de commande trouvée",
-            pt: "🚨 Erro: Nenhum dado do pedido encontrado"
+            pt: "🚨 Erro: Nenhum dado do pedido encontrado",
+            de: "🚨 Fehler: Keine Bestelldaten gefunden"
         },
         followers_label: {
             es: "Seguidores",
             en: "Followers",
             fr: "Abonnés",
-            pt: "Seguidores"
+            pt: "Seguidores",
+            de: "Follower"
         },
         free_label: {
             es: "GRATIS",
             en: "FREE",
             fr: "GRATUIT",
-            pt: "GRÁTIS"
+            pt: "GRÁTIS",
+            de: "KOSTENLOS"
         },
         select_goal: {
             en: "⚠️ Please select your follower goal",
             es: "⚠️ Por favor selecciona tu objetivo de seguidores",
             pt: "⚠️ Por favor, selecione sua meta de seguidores",
             fr: "⚠️ Veuillez sélectionner votre objectif d'abonnés",
+            de: "⚠️ Bitte wählen Sie Ihr Follower-Ziel aus"
         },
         enter_email: {
             en: "⚠️ Please enter your email",
             es: "⚠️ Por favor, ingresa tu email",
             pt: "⚠️ Por favor, insira seu e-mail",
             fr: "⚠️ Veuillez entrer votre e-mail",
+            de: "⚠️ Bitte geben Sie Ihre E-Mail-Adresse ein"
         },
     };
+
 
     // Detecta idioma del navegador (ej: "es", "en", "fr", "pt")
     const lag2 = document.getElementById("lang")?.value;
