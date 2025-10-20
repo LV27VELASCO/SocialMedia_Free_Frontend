@@ -451,7 +451,7 @@ export const labels = {
         ],
         "subscription.benefits.text": "Al suscribirse, usted acepta nuestros Términos y Condiciones, y autoriza a SPONSOR TELECOM S.L., que opera como TrendyUp, a cobrar su método de pago elegido mensualmente, a partir del período de prueba gratuito (si corresponde).",
         "subscription.unsubscribe.title": "Terminación de la Suscripción",
-        "subscription.sunsubscribe.client.title": "Rescisión por parte del Cliente",
+        "subscription.unsubscribe.client.title": "Rescisión por parte del Cliente",
         "subscription.unsubscribe.client.text": "Usted puede rescindir su suscripción en cualquier momento haciendo clic en el enlace 'Cancelar suscripción' en la parte inferior del Sitio, siguiendo los pasos que se indican a continuación en 'Proceso de cancelación' o comunicándose con Nosotros directamente. La rescisión surtirá efecto:",
         "subscription.unsubscribe.client.item":[
             "Al final del ciclo de facturación actual para suscriptores mensuales.",
@@ -1263,7 +1263,7 @@ export const labels = {
         ],
         "subscription.benefits.text": "By subscribing, you agree to our Terms and Conditions and authorize SPONSOR TELECOM S.L., operating as TrendyUp, to charge your chosen payment method monthly, starting after the free trial period (if applicable).",
         "subscription.unsubscribe.title": "Subscription Termination",
-        "subscription.sunsubscribe.client.title": "Termination by the Customer",
+        "subscription.unsubscribe.client.title": "Termination by the Customer",
         "subscription.unsubscribe.client.text": "You may terminate your subscription at any time by clicking the 'Cancel Subscription' link at the bottom of the Site, following the steps under 'Cancellation Process', or by contacting us directly. Termination will take effect:",
         "subscription.unsubscribe.client.item": [
             "At the end of the current billing cycle for monthly subscribers.",
@@ -2076,7 +2076,7 @@ export const labels = {
         ],
         "subscription.benefits.text": "En vous abonnant, vous acceptez nos Conditions Générales et autorisez SPONSOR TELECOM S.L., opérant sous le nom TrendyUp, à débiter votre moyen de paiement choisi chaque mois, à partir de la période d’essai gratuite (le cas échéant).",
         "subscription.unsubscribe.title": "Résiliation de l’Abonnement",
-        "subscription.sunsubscribe.client.title": "Résiliation par le Client",
+        "subscription.unsubscribe.client.title": "Résiliation par le Client",
         "subscription.unsubscribe.client.text": "Vous pouvez résilier votre abonnement à tout moment en cliquant sur le lien « Annuler l’abonnement » en bas du Site, en suivant les étapes décrites dans « Processus d’Annulation » ou en nous contactant directement. La résiliation prendra effet :",
         "subscription.unsubscribe.client.item":[
             "À la fin du cycle de facturation en cours pour les abonnés mensuels.",
@@ -2886,7 +2886,7 @@ export const labels = {
         ],
         "subscription.benefits.text": "Ao subscrever, aceita os nossos Termos e Condições e autoriza a SPONSOR TELECOM S.L., que opera como TrendyUp, a cobrar mensalmente o método de pagamento escolhido, a partir do período de teste gratuito (se aplicável).",
         "subscription.unsubscribe.title": "Rescisão da Assinatura",
-        "subscription.sunsubscribe.client.title": "Rescisão pelo Cliente",
+        "subscription.unsubscribe.client.title": "Rescisão pelo Cliente",
         "subscription.unsubscribe.client.text": "Pode rescindir a sua assinatura a qualquer momento clicando no link 'Cancelar Assinatura' no rodapé do Site, seguindo os passos descritos em 'Processo de Cancelamento' ou contactando-nos diretamente. A rescisão terá efeito:",
         "subscription.unsubscribe.client.item":[
             "No final do ciclo de faturação atual para assinantes mensais.",
@@ -3942,7 +3942,7 @@ export const labels = {
         "compliance.network.title": "Unser privates Promotionsnetzwerk",
         "compliance.network.text": "Anstatt auf künstliche Interaktion oder riskante Automatisierung zu setzen, promoten wir Inhalte manuell über unser privates Netzwerk: ein vertrauenswürdiges Ökosystem aus Creators, Community-Seiten, Apps und Medienpartnern, das Sichtbarkeit auf korrekte Weise steigert.",
         "compliance.network.items": [
-            { "icon": "👥", "title": "Microinfluencer", "text": "Verifizierte Creator präsentieren Ihre Inhalte realen Zielgruppen." },
+            { "icon": "👥", "title": "Mikroinfluencer", "text": "Verifizierte Creator präsentieren Ihre Inhalte realen Zielgruppen." },
             { "icon": "🎯", "title": "Community-Seiten", "text": "Fokus auf Themenkonten, die Inhalte organisch teilen." },
             { "icon": "🤝", "title": "Partner-Creator", "text": "Unabhängige Mitwirkende, die auf Ihre Nische ausgerichtet sind." },
             { "icon": "📱", "title": "Apps und Plattformen", "text": "Strategische Orte zur Hervorhebung Ihres Profils." },
