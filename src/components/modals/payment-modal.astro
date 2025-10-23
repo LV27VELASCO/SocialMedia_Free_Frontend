@@ -55,6 +55,28 @@ const { translate, currentLang } = useI18n(Astro);
                 </div>
             </div>
 
+            <!-- Security Notice -->
+            <div class="bg-green-500/20 border border-green-500/30 rounded-xl p-4">
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🔒</span>
+                    <div>
+                        <h4 class="text-green-200 font-semibold mb-2">
+                            {translate('social.modal.payment.banner.b2.title')}
+                        </h4>
+                        
+                        <ul class="text-green-300 text-sm space-y-1">
+                            <div id="pay-verify" class="hidden">
+                                <li>• {translate('social.modal.payment.banner.b2.p1')}</li>
+                                <li>• {translate('social.modal.payment.banner.b2.p2')}</li>
+                            </div>
+                            <li>• {translate('social.modal.payment.banner.b2.p3')}</li>
+                            <li>• {translate('social.modal.payment.banner.b2.p4')}</li>
+                            <li>• {translate('social.modal.payment.banner.b2.p5')}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <!-- Card Information -->
             <div class="bg-white/5 rounded-xl p-6">
                 <h3 class="text-xl font-bold text-white mb-6 flex items-center">
@@ -124,28 +146,6 @@ const { translate, currentLang } = useI18n(Astro);
                             <a href={`/${currentLang}/terms`} target="_blank" class="text-blue-300 hover:text-blue-200 underline">{translate('social.modal.payment.banner.form.check.p2')}</a> {translate('social.modal.payment.banner.form.check.p3')} 
                             <a href={`/${currentLang}/privacity`} target="_blank" class="text-blue-300 hover:text-blue-200 underline">{translate('social.modal.payment.banner.form.check.p4')}</a>.
                         </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Security Notice -->
-            <div class="bg-green-500/20 border border-green-500/30 rounded-xl p-4">
-                <div class="flex items-start space-x-3">
-                    <span class="text-2xl">🔒</span>
-                    <div>
-                        <h4 class="text-green-200 font-semibold mb-2">
-                            {translate('social.modal.payment.banner.b2.title')}
-                        </h4>
-                        
-                        <ul class="text-green-300 text-sm space-y-1">
-                            <div id="pay-verify" class="hidden">
-                                <li>• {translate('social.modal.payment.banner.b2.p1')}</li>
-                                <li>• {translate('social.modal.payment.banner.b2.p2')}</li>
-                            </div>
-                            <li>• {translate('social.modal.payment.banner.b2.p3')}</li>
-                            <li>• {translate('social.modal.payment.banner.b2.p4')}</li>
-                            <li>• {translate('social.modal.payment.banner.b2.p5')}</li>
-                        </ul>
                     </div>
                 </div>
             </div>

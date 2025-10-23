@@ -285,13 +285,13 @@ import SelectFollowersTiktok from "./modals/select-followers-tiktok.astro";
         let totalPay = "€1";
         const freePay = document.querySelectorAll("#pay-verify");
 
-        if (orderData.followers > 250) {
+        if (orderData.followers > 50) {
             if (orderData.platform === "instagram") {
                 const priceMapInsta = {
                     500: "€3.9",
                     1000: "€5.9",
                     2500: "€12.9",
-                    5000: "€21.9",
+                    5000: "€29.9",
                     10000: "€39.9",
                     20000: "€69.9",
                     25000: "€84.9"
