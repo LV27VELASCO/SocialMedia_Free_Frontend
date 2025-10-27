@@ -269,8 +269,49 @@ const { translate, currentLang } = useI18n(Astro);
             fr: "Ce processus peut prendre quelques minutes. Veuillez patienter pendant que nous terminons l’opération.",
             pt: "Este processo pode levar alguns minutos. Por favor, aguarde enquanto concluímos a operação.",
             de: "Dieser Vorgang kann einige Minuten dauern. Bitte warten Sie, während wir die Operation abschließen."
+        },
+        // 🆕 Mensajes añadidos para el nuevo flujo:
+        payment_pending: {
+            es: "El pago está pendiente. Por favor, completa la autenticación si es necesario.",
+            en: "The payment is pending. Please complete authentication if required.",
+            fr: "Le paiement est en attente. Veuillez terminer l’authentification si nécessaire.",
+            pt: "O pagamento está pendente. Conclua a autenticação se necessário.",
+            de: "Die Zahlung ist ausstehend. Bitte schließen Sie die Authentifizierung ab, falls erforderlich."
+        },
+        payment_failed: {
+            es: "❌ El pago no se completó. Por favor, revisa tu tarjeta o intenta nuevamente.",
+            en: "❌ Payment could not be completed. Please check your card or try again.",
+            fr: "❌ Le paiement n’a pas pu être effectué. Veuillez vérifier votre carte ou réessayer.",
+            pt: "❌ O pagamento não pôde ser concluído. Verifique seu cartão ou tente novamente.",
+            de: "❌ Die Zahlung konnte nicht abgeschlossen werden. Bitte überprüfen Sie Ihre Karte oder versuchen Sie es erneut."
+        },
+        success_purchase: {
+            es: "✅ ¡Pago realizado con éxito! Procesando tu pedido...",
+            en: "✅ Payment successful! Processing your order...",
+            fr: "✅ Paiement réussi ! Traitement de votre commande...",
+            pt: "✅ Pagamento realizado com sucesso! Processando seu pedido...",
+            de: "✅ Zahlung erfolgreich! Ihre Bestellung wird bearbeitet..."
+        },
+        trial_used: {
+            es: "🚫 Ya has usado la prueba gratuita con esta tarjeta.",
+            en: "🚫 You have already used the free trial with this card.",
+            fr: "🚫 Vous avez déjà utilisé l’essai gratuit avec cette carte.",
+            pt: "🚫 Você já usou o teste gratuito com este cartão.",
+            de: "🚫 Sie haben das kostenlose Probeangebot mit dieser Karte bereits genutzt."
+        },
+        price_invalid: {
+            es: "❌ El precio del producto no es válido.",
+            en: "❌ The product price is invalid.",
+            fr: "❌ Le prix du produit est invalide.",
+            pt: "❌ O preço do produto é inválido.",
+            de: "❌ Der Produktpreis ist ungültig."
         }
     };
+
+    const URL_SERVICE:any = {
+        "instagram": "https://www.instagram.com/",
+        "tiktok": "https://www.tiktok.com/@"
+    }
 
 
     // Obtener idioma (de input o navegador)
@@ -369,7 +410,7 @@ const { translate, currentLang } = useI18n(Astro);
             }
 
             // Continuar con checkout
-            await checkout_product(paymentMethod, originalText, formData.get("card-name")?.toString());
+            await checkout_product(stripe,paymentMethod, originalText, formData.get("card-name")?.toString());
         });
     });
 
@@ -387,7 +428,7 @@ const { translate, currentLang } = useI18n(Astro);
     }
 
     // === Checkout con el backend ===
-    async function checkout_product(paymentMethod: any, originalText: any, cardName: any) {
+    async function checkout_product(stripe:any, paymentMethod: any, originalText: any, cardName: any) {
         const token = await getToken();
         const orderData = JSON.parse(localStorage.getItem("orderData") as string);
         const button = document.querySelector("#btn-pay");
@@ -405,6 +446,9 @@ const { translate, currentLang } = useI18n(Astro);
             return;
         }
 
+        let platform = orderData.platform.toLowerCase().trim();
+        let username = orderData.username.toLowerCase().trim();
+
         const res = await fetch(`${import.meta.env.PUBLIC_API}/checkout`, {
             method: "POST",
             headers: {
@@ -414,9 +458,9 @@ const { translate, currentLang } = useI18n(Astro);
             body: JSON.stringify({
                 paymentMethodId: paymentMethod.id,
                 cardName: cardName.toLowerCase().trim(),
-                username: orderData.username.toLowerCase().trim(),
+                username: username,
                 email: orderData.email.toLowerCase().trim(),
-                platform: orderData.platform.toLowerCase().trim(),
+                platform: platform,
                 quantity: orderData.followers,
                 locale
             }),
@@ -430,16 +474,32 @@ const { translate, currentLang } = useI18n(Astro);
             return;
         }
 
-        // Éxito
-        (document.getElementById("formFollowers") as HTMLFormElement).reset();
-        localStorage.setItem("url", data.url);
-        successmessage.classList.remove("hidden");
-        successmessage.textContent = data.message;
-        resetButton(button, originalText);
+        // 2️⃣ Confirmar el pago con Stripe.js
+        const { error, paymentIntent } = await stripe.confirmCardPayment(data.clientSecret, {
+            payment_method: paymentMethod.id,
+        });
 
-        setTimeout(() => {
-            window.location.href = `/${locale}/confirmation-success`;
-        }, 2000);
+        if (error) {
+            showError(errormessage, error.message || getMessage("payment_failed"));
+            resetButton(button, originalText);
+            return;
+        }
+
+        if (paymentIntent.status === "succeeded") {
+            (document.getElementById("formFollowers") as HTMLFormElement).reset();
+            let urlProfile = URL_SERVICE[platform] + username
+            localStorage.setItem("url", urlProfile);
+            successmessage.classList.remove("hidden");
+            successmessage.textContent = getMessage("success_purchase");
+            resetButton(button, originalText);
+
+            // 3️⃣ Opcional: redirigir tras confirmación visual
+            setTimeout(() => {
+                window.location.href = `/${locale}/confirmation-success`;
+            }, 2000);
+        } else {
+            showError(errormessage, getMessage("payment_pending"));
+        }
     }
 
     // === Utilidades ===
